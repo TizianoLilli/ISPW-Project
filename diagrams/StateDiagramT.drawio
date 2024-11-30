@@ -1,0 +1,180 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36 Edg/131.0.0.0" version="25.0.0">
+  <diagram name="Page-1" id="58cdce13-f638-feb5-8d6f-7d28b1aa9fa0">
+    <mxGraphModel dx="832" dy="422" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1700" pageHeight="1100" background="none" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="382b91b5511bd0f7-1" value="" style="ellipse;html=1;shape=startState;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;fontFamily=Verdana;fontSize=12;align=center;direction=south;" parent="1" vertex="1">
+          <mxGeometry x="181" y="321" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="5QsQOhjldrLPA7mB9u9R-50" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=open;endFill=0;" edge="1" parent="1" source="382b91b5511bd0f7-6" target="5QsQOhjldrLPA7mB9u9R-49">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="382b91b5511bd0f7-6" value="&lt;b&gt;On Main Menu&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=24;shadow=0;comic=0;labelBackgroundColor=none;fontFamily=Verdana;fontSize=12;align=center;" parent="1" vertex="1">
+          <mxGeometry x="291" y="306" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="2a3bc250acf0617d-9" style="edgeStyle=orthogonalEdgeStyle;html=1;labelBackgroundColor=none;endArrow=open;endSize=8;fontFamily=Verdana;fontSize=12;align=left;fontColor=default;" parent="1" source="382b91b5511bd0f7-1" target="382b91b5511bd0f7-6" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="5QsQOhjldrLPA7mB9u9R-30" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;curved=0;endArrow=open;endFill=0;" edge="1" parent="1" source="5QsQOhjldrLPA7mB9u9R-1" target="5QsQOhjldrLPA7mB9u9R-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="5QsQOhjldrLPA7mB9u9R-54" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;curved=0;endArrow=open;endFill=0;" edge="1" parent="1" source="5QsQOhjldrLPA7mB9u9R-1" target="382b91b5511bd0f7-6">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="640" y="520" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="350" y="520" />
+              <mxPoint x="350" y="366" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="5QsQOhjldrLPA7mB9u9R-1" value="&lt;b&gt;On Recovery&lt;/b&gt;&lt;div&gt;&lt;b&gt;&lt;i&gt;Dream Guitar&lt;/i&gt;&lt;/b&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=24;shadow=0;comic=0;labelBackgroundColor=none;fontFamily=Verdana;fontSize=12;align=center;" vertex="1" parent="1">
+          <mxGeometry x="646" y="490" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="5QsQOhjldrLPA7mB9u9R-2" style="edgeStyle=orthogonalEdgeStyle;html=1;labelBackgroundColor=none;endArrow=open;endSize=8;fontFamily=Verdana;fontSize=12;align=left;fontColor=default;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" target="5QsQOhjldrLPA7mB9u9R-1" source="5QsQOhjldrLPA7mB9u9R-49">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="411" y="336" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="5QsQOhjldrLPA7mB9u9R-3" value="&lt;b&gt;Create d&lt;i style=&quot;&quot;&gt;ream guitar&lt;/i&gt;&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;labelBackgroundColor=none;" vertex="1" parent="1">
+          <mxGeometry x="30" y="321" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="5QsQOhjldrLPA7mB9u9R-44" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.25;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;curved=0;endArrow=open;endFill=0;" edge="1" parent="1" source="5QsQOhjldrLPA7mB9u9R-4" target="382b91b5511bd0f7-6">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="351" y="100" />
+              <mxPoint x="431" y="100" />
+              <mxPoint x="431" y="321" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="5QsQOhjldrLPA7mB9u9R-4" value="&lt;b&gt;*On &lt;u&gt;Log In&lt;/u&gt; Menu&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=24;shadow=0;comic=0;labelBackgroundColor=none;fontFamily=Verdana;fontSize=12;align=center;" vertex="1" parent="1">
+          <mxGeometry x="291" y="120" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="5QsQOhjldrLPA7mB9u9R-5" style="edgeStyle=orthogonalEdgeStyle;html=1;labelBackgroundColor=none;endArrow=open;endSize=8;fontFamily=Verdana;fontSize=12;align=left;fontColor=default;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="382b91b5511bd0f7-6" target="5QsQOhjldrLPA7mB9u9R-4">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="421" y="346" as="sourcePoint" />
+            <mxPoint x="501" y="346" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="5QsQOhjldrLPA7mB9u9R-24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;endArrow=open;endFill=0;labelBackgroundColor=none;fontColor=default;" edge="1" parent="1" source="5QsQOhjldrLPA7mB9u9R-6" target="5QsQOhjldrLPA7mB9u9R-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="5QsQOhjldrLPA7mB9u9R-27" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=open;endFill=0;labelBackgroundColor=none;fontColor=default;" edge="1" parent="1" source="5QsQOhjldrLPA7mB9u9R-6" target="5QsQOhjldrLPA7mB9u9R-15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="5QsQOhjldrLPA7mB9u9R-6" value="&lt;b&gt;On Component Selection&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=24;shadow=0;comic=0;labelBackgroundColor=none;fontFamily=Verdana;fontSize=12;align=center;" vertex="1" parent="1">
+          <mxGeometry x="1010" y="306" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="5QsQOhjldrLPA7mB9u9R-36" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=1;entryY=0.25;entryDx=0;entryDy=0;curved=0;endArrow=open;endFill=0;" edge="1" parent="1" source="5QsQOhjldrLPA7mB9u9R-8" target="5QsQOhjldrLPA7mB9u9R-6">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1070" y="100" />
+              <mxPoint x="1150" y="100" />
+              <mxPoint x="1150" y="321" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="5QsQOhjldrLPA7mB9u9R-56" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;endArrow=open;endFill=0;curved=0;" edge="1" parent="1" source="5QsQOhjldrLPA7mB9u9R-8" target="5QsQOhjldrLPA7mB9u9R-6">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1040" y="100" />
+              <mxPoint x="800" y="100" />
+              <mxPoint x="800" y="320" />
+              <mxPoint x="990" y="320" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="5QsQOhjldrLPA7mB9u9R-8" value="&lt;b&gt;On Alternative Selection&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=24;shadow=0;comic=0;labelBackgroundColor=none;fontFamily=Verdana;fontSize=12;align=center;" vertex="1" parent="1">
+          <mxGeometry x="1010" y="120" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="5QsQOhjldrLPA7mB9u9R-58" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;endArrow=open;endFill=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1350" y="366" as="sourcePoint" />
+            <mxPoint x="1350" y="490" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="5QsQOhjldrLPA7mB9u9R-59" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.25;entryDx=0;entryDy=0;" edge="1" parent="1" source="5QsQOhjldrLPA7mB9u9R-15" target="5QsQOhjldrLPA7mB9u9R-20">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1550" y="336" />
+              <mxPoint x="1550" y="649" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="5QsQOhjldrLPA7mB9u9R-15" value="&lt;b&gt;On Dream Guitar View&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=24;shadow=0;comic=0;labelBackgroundColor=none;fontFamily=Verdana;fontSize=12;align=center;" vertex="1" parent="1">
+          <mxGeometry x="1320" y="306" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="5QsQOhjldrLPA7mB9u9R-61" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=0;exitDx=0;exitDy=0;entryX=0.75;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1378" y="490" as="sourcePoint" />
+            <mxPoint x="1378" y="366" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="5QsQOhjldrLPA7mB9u9R-18" value="&lt;b&gt;*On &lt;u&gt;Noticeboard&lt;/u&gt;&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=24;shadow=0;comic=0;labelBackgroundColor=none;fontFamily=Verdana;fontSize=12;align=center;" vertex="1" parent="1">
+          <mxGeometry x="1320" y="490" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="5QsQOhjldrLPA7mB9u9R-20" value="&lt;b&gt;On Luthier Overview&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=24;shadow=0;comic=0;labelBackgroundColor=none;fontFamily=Verdana;fontSize=12;align=center;" vertex="1" parent="1">
+          <mxGeometry x="1320" y="634" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="5QsQOhjldrLPA7mB9u9R-28" value="" style="ellipse;html=1;shape=endState;labelBackgroundColor=none;" vertex="1" parent="1">
+          <mxGeometry x="1630" y="650" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="5QsQOhjldrLPA7mB9u9R-29" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=open;endFill=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;labelBackgroundColor=none;fontColor=default;" edge="1" parent="1" source="5QsQOhjldrLPA7mB9u9R-20" target="5QsQOhjldrLPA7mB9u9R-28">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1440" y="665" as="sourcePoint" />
+            <mxPoint x="1251" y="665" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="5QsQOhjldrLPA7mB9u9R-33" value="&lt;b&gt;tap [selection == create&lt;i&gt;DreamGuitar&lt;/i&gt;&amp;nbsp;&lt;/b&gt;&lt;div&gt;&lt;b&gt;&amp;amp;&amp;amp;&amp;nbsp;&lt;/b&gt;&lt;b style=&quot;background-color: initial;&quot;&gt;user == premiumUser] &lt;/b&gt;&lt;b style=&quot;background-color: initial;&quot;&gt;/&amp;nbsp;&lt;/b&gt;&lt;div&gt;&lt;div&gt;&lt;b&gt;display create &lt;i&gt;dream guitar&lt;/i&gt; menu&lt;/b&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="416" y="341" width="230" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="5QsQOhjldrLPA7mB9u9R-34" value="&lt;b&gt;tap [selection == component] /&amp;nbsp;&lt;/b&gt;&lt;div&gt;&lt;b&gt;display&amp;nbsp;&lt;/b&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;b&gt;selectable&amp;nbsp;&lt;/b&gt;&lt;/span&gt;&lt;b style=&quot;background-color: initial;&quot;&gt;alternatives&lt;/b&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="878" y="220" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="5QsQOhjldrLPA7mB9u9R-35" value="&lt;b&gt;tap [selection == alternative] /&amp;nbsp;&lt;/b&gt;&lt;div&gt;&lt;b&gt;display&amp;nbsp;&lt;/b&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;b&gt;selectable&amp;nbsp;&lt;/b&gt;&lt;/span&gt;&lt;b style=&quot;background-color: initial;&quot;&gt;components&lt;/b&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="1028" y="54" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="5QsQOhjldrLPA7mB9u9R-37" value="&lt;b&gt;tap [selection == done] /&amp;nbsp;&lt;/b&gt;&lt;div&gt;&lt;b&gt;display d&lt;i&gt;ream guitar &lt;/i&gt;&amp;amp;&amp;amp;&amp;nbsp;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;save configuration&lt;/b&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="1145" y="341" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="5QsQOhjldrLPA7mB9u9R-38" value="&lt;b&gt;tap [selection == publish] /&amp;nbsp;&lt;/b&gt;&lt;div&gt;&lt;b&gt;attach&amp;nbsp;&lt;i&gt;dream guitar&amp;nbsp;&lt;/i&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;to the noticeboard&lt;/b&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="1180" y="410" width="180" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="5QsQOhjldrLPA7mB9u9R-41" value="&lt;b&gt;tap [selection == done] /&amp;nbsp;&lt;/b&gt;&lt;div&gt;&lt;b&gt;display &lt;i&gt;dream guitar&lt;/i&gt;&lt;/b&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="1374" y="420" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="5QsQOhjldrLPA7mB9u9R-45" value="&lt;b&gt;tap [user == premiumUser] /&amp;nbsp;&lt;/b&gt;&lt;div&gt;&lt;b&gt;display main menu&lt;/b&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="301" y="54" width="190" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="5QsQOhjldrLPA7mB9u9R-47" value="&lt;b&gt;tap [&lt;/b&gt;&lt;b&gt;selection == selectComponents&amp;nbsp;&lt;br&gt;&lt;/b&gt;&lt;b style=&quot;background-color: initial;&quot;&gt;&amp;amp;&amp;amp;&amp;nbsp;&lt;/b&gt;&lt;b style=&quot;background-color: initial;&quot;&gt;Old&lt;i&gt;DreamGuitar&amp;nbsp;&lt;/i&gt;== TRUE&lt;/b&gt;&lt;b&gt;]&lt;/b&gt;&lt;b style=&quot;background-color: initial;&quot;&gt;/&amp;nbsp;&lt;/b&gt;&lt;div&gt;&lt;b&gt;recover &lt;i&gt;dream guitar &lt;/i&gt;configuration&lt;/b&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="475" y="410" width="230" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="5QsQOhjldrLPA7mB9u9R-48" value="&lt;b&gt;tap [selection == create&lt;i&gt;DreamGuitar&lt;/i&gt;&amp;nbsp;&lt;/b&gt;&lt;div&gt;&lt;b&gt;&amp;amp;&amp;amp;&amp;nbsp;&lt;/b&gt;&lt;b style=&quot;background-color: initial;&quot;&gt;user != premiumUser] &lt;/b&gt;&lt;b style=&quot;background-color: initial;&quot;&gt;/&amp;nbsp;&lt;/b&gt;&lt;div&gt;&lt;div&gt;&lt;b style=&quot;background-color: initial;&quot;&gt;display log in menu&lt;/b&gt;&lt;b style=&quot;background-color: initial;&quot;&gt;&amp;nbsp;&lt;/b&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="110" y="210" width="230" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="5QsQOhjldrLPA7mB9u9R-51" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=open;endFill=0;" edge="1" parent="1" source="5QsQOhjldrLPA7mB9u9R-49" target="5QsQOhjldrLPA7mB9u9R-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="5QsQOhjldrLPA7mB9u9R-49" value="&lt;b&gt;On Create&amp;nbsp;&lt;/b&gt;&lt;div&gt;&lt;b&gt;&lt;i&gt;Dream Guitar &lt;/i&gt;Menu&lt;/b&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=24;shadow=0;comic=0;labelBackgroundColor=none;fontFamily=Verdana;fontSize=12;align=center;" vertex="1" parent="1">
+          <mxGeometry x="646" y="306" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="5QsQOhjldrLPA7mB9u9R-52" value="&lt;b&gt;tap [&lt;/b&gt;&lt;b&gt;selection == selectComponents&amp;nbsp;&lt;br&gt;&lt;/b&gt;&lt;b style=&quot;background-color: initial;&quot;&gt;&amp;amp;&amp;amp;&amp;nbsp;&lt;/b&gt;&lt;b style=&quot;background-color: initial;&quot;&gt;Old&lt;i&gt;DreamGuitar &lt;/i&gt;== FALSE&lt;/b&gt;&lt;b style=&quot;background-color: initial;&quot;&gt;] &lt;/b&gt;&lt;b style=&quot;background-color: initial;&quot;&gt;/&amp;nbsp;&lt;/b&gt;&lt;div&gt;&lt;div&gt;&lt;div&gt;&lt;b&gt;display&amp;nbsp;&lt;/b&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;b&gt;selectable&amp;nbsp;&lt;/b&gt;&lt;/span&gt;&lt;b style=&quot;background-color: initial;&quot;&gt;components&amp;nbsp;&lt;/b&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="770" y="341" width="230" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="5QsQOhjldrLPA7mB9u9R-53" value="&lt;b&gt;tap [&lt;/b&gt;&lt;b&gt;selection == recover&lt;/b&gt;&lt;b&gt;]&lt;/b&gt;&lt;b style=&quot;background-color: initial;&quot;&gt;/&amp;nbsp;&lt;/b&gt;&lt;div&gt;&lt;b&gt;display&amp;nbsp;&lt;/b&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;b&gt;selectable&amp;nbsp;&lt;/b&gt;&lt;/span&gt;&lt;b style=&quot;background-color: initial;&quot;&gt;components&lt;/b&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="800" y="530" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="5QsQOhjldrLPA7mB9u9R-55" value="&lt;b&gt;tap [&lt;/b&gt;&lt;b&gt;selection == don&#39;tRecover&lt;/b&gt;&lt;b&gt;]&lt;/b&gt;&lt;b style=&quot;background-color: initial;&quot;&gt;/&amp;nbsp;&lt;/b&gt;&lt;div&gt;&lt;b&gt;display main menu&lt;/b&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="426" y="530" width="210" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="5QsQOhjldrLPA7mB9u9R-57" value="&lt;b&gt;tap [selection == back] /&amp;nbsp;&lt;/b&gt;&lt;div&gt;&lt;b&gt;display&amp;nbsp;&lt;/b&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;b&gt;selectable&amp;nbsp;&lt;/b&gt;&lt;/span&gt;&lt;b style=&quot;background-color: initial;&quot;&gt;components&lt;/b&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="790" y="54" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="5QsQOhjldrLPA7mB9u9R-60" value="&lt;b&gt;time [5secs == TRUE] /&amp;nbsp;&lt;/b&gt;&lt;div&gt;&lt;b&gt;pop-up the luthier&#39;s&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;telephone number&lt;/b&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="1540" y="450" width="160" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
