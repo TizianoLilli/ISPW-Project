@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="600" prefWidth="900" stylesheets="@style.css" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17.0.6">
+    <!-- Sidebar -->
+    <VBox id="sidebar" layoutX="0" layoutY="0" prefWidth="200">
+        <Label id="userLabel" text="Guest" />
+        <ListView id="menuList" prefHeight="550">
+            <Label text="Home" />
+            <Label text="Settings" />
+            <Label text="Log In" />
+            <Label text="New Dream Guitar" />
+            <Label text="Discover Dream Guitars" />
+            <Label text="New Recommended Guitar" />
+            <Label text="Find Music Shops" />
+            <Label text="Discover Concerts" />
+        </ListView>
+        <Label id="helpLabel" text="Help" />
+    </VBox>
+
+    <!-- Main Content -->
+    <VBox id="mainContent" layoutX="200" layoutY="0" prefWidth="700" spacing="20">
+        <!-- Banner -->
+        <HBox id="banner">
+            <Label id="bannerText" text="MyGuitar/nFollow your style" />
+        </HBox>
+
+        <Button id="createButton" text="Create your Dream Guitar" />
+
+        <!-- Noticeboard Section -->
+        <ScrollPane id="noticeboardScroll" prefHeight="350">
+            <HBox id="noticeboard" spacing="20">
+                <!-- Card 1 -->
+                <VBox id="card1" spacing="10">
+                    <Label id="guitarTitle1" text="Tiziano's Dream Guitar" />
+                    <Text id="comment1" text="Comments\nMatteo: Amazing guitar!!!" />
+                </VBox>
+
+                <!-- Card 2 -->
+                <VBox id="card2" spacing="10">
+                    <Label id="guitarTitle2" text="Matteo's Dream Guitar" />
+                    <Text id="comment2" text="Comments\nTiziano: In this app there are only beautiful guitars!!!" />
+                </VBox>
+            </HBox>
+        </ScrollPane>
+    </VBox>
+</AnchorPane>
