@@ -11,6 +11,9 @@ public class HomePageController {
 
     @FXML
     private Label rightStatusLabel;
+
+    @FXML
+    private Label saveText;
     
     @FXML
     private MenuItem newMenuItem;
@@ -64,7 +67,7 @@ public class HomePageController {
 
     @FXML
     private void handleSaveMenuAction() {
-        System.out.println("Salvataggio file.");
+        saveText.setText("Welcome to JavaFX Application!");
     }
 
     @FXML
