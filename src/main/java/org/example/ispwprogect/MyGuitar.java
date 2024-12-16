@@ -14,7 +14,7 @@ public class MyGuitar extends Application {
     @Override
     public void start(Stage primaryStage) throws IOException {
 
-        FXMLLoader fxmlLoader = new FXMLLoader(MyGuitar.class.getResource("homePage.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(MyGuitar.class.getResource("homePage2.fxml"));
         Parent root = fxmlLoader.load();
 
         primaryStage.getIcons().add(new Image("logoApp.jpg")); //da rivedere (non scala correttamente l'immagine)

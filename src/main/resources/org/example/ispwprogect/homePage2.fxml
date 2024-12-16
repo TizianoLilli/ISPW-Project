@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+<AnchorPane prefWidth="900" prefHeight="600" stylesheets="@style.css" xmlns:fx="http://javafx.com/fxml">
+    <!-- Sidebar -->
+    <VBox id="sidebar" prefWidth="200" layoutY="0" layoutX="0">
+        <Label text="Hi Jane" id="userLabel" />
+        <ListView id="menuList" prefHeight="550">
+            <Label text="Home" />
+            <Label text="Settings" />
+            <Label text="Log Out" />
+            <Label text="+ New Dream Guitar" />
+            <Label text="Discover Dream Guitars" />
+            <Label text="New Recommended Guitar" />
+            <Label text="Find Music Shops" />
+            <Label text="Discover Concerts" />
+        </ListView>
+        <Label text="Help" id="helpLabel" />
+    </VBox>
+
+    <!-- Main Content -->
+    <VBox id="mainContent" layoutX="200" layoutY="0" spacing="20" prefWidth="700">
+        <!-- Banner -->
+        <HBox id="banner">
+            <ImageView fitWidth="700" fitHeight="200" preserveRatio="false">
+                <image>
+                    <!-- Replace with your image URL -->
+                    <image>
+                        @/org/example/ispwprogect/banner.jpg
+                    </image>
+                </image>
+            </ImageView>
+            <Label id="bannerText" text="MyGuitar\nFollow your style" />
+        </HBox>
+
+        <Button text="Create your Dream Guitar" id="createButton" />
+
+        <!-- Noticeboard Section -->
+        <ScrollPane id="noticeboardScroll" prefHeight="350">
+            <HBox spacing="20" id="noticeboard">
+                <!-- Card 1 -->
+                <VBox id="card1" spacing="10">
+                    <ImageView fitHeight="150" fitWidth="150" preserveRatio="true">
+                        <image>
+                            @/org/example/ispwprogect/electric-guitar.jpg
+                        </image>
+                    </ImageView>
+                    <Label text="Tiziano's Dream Guitar" id="guitarTitle1" />
+                    <Text id="comment1" text="Comments\nMatteo: Amazing guitar!!!" />
+                </VBox>
+
+                <!-- Card 2 -->
+                <VBox id="card2" spacing="10">
+                    <ImageView fitHeight="150" fitWidth="150" preserveRatio="true">
+                        <image>
+                            @/org/example/ispwprogect/classic-guitar.jpg
+                        </image>
+                    </ImageView>
+                    <Label text="Matteo's Dream Guitar" id="guitarTitle2" />
+                    <Text id="comment2" text="Comments\nTiziano: In this app there are only beautiful guitars!!!" />
+                </VBox>
+            </HBox>
+        </ScrollPane>
+    </VBox>
+</AnchorPane>
