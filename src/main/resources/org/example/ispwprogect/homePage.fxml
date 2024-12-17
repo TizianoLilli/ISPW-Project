@@ -9,18 +9,17 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane fx:controller="org.example.ispwprogect.HomePageController" prefHeight="600" prefWidth="900" stylesheets="@style.css" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17.0.6" >
+<AnchorPane prefHeight="600" prefWidth="900" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17.0.6" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.ispwprogect.HomePageController">
     <!-- Sidebar -->
-    <VBox id="sidebar" layoutX="0" layoutY="0" prefWidth="200">
+    <VBox id="sidebar" layoutX="0" layoutY="0" prefHeight="681.0" prefWidth="200">
         <Label id="userLabel" text="Guest" />
         <Label fx:id="leftStatusLabel" text="Initial Text" />
         <Label fx:id="rightStatusLabel" text="Benvenuto!" />
-        <Label fx:id="masterLabel" text="Log In effettuato!" layoutX="50" layoutY="50"/>
+        <Label fx:id="masterLabel" layoutX="50" layoutY="50" text="Log In effettuato!" />
         <ListView id="menuList" prefHeight="550">
             <Label text="Home" />
             <Label text="Settings" />
-            <Button text="Log In" onAction="#handleLoginClick"/>
+            <Button onAction="#handleLoginClick" text="Log In" />
             <Label text="New Dream Guitar" />
             <Label text="Discover Dream Guitars" />
             <Label text="New Recommended Guitar" />
@@ -35,13 +34,13 @@
         <!-- Banner -->
         <HBox id="banner">
             <VBox alignment="CENTER">
-                <Label id="bannerText" text="MyGuitar" style="-fx-font-size: 36px"/>
-                <Label id="bannerText" text="Follow your style" style="-fx-font-size: 18px;" />
+                <Label id="bannerText" style="-fx-font-size: 36px" text="MyGuitar" />
+                <Label id="bannerText" style="-fx-font-size: 18px;" text="Follow your style" />
             </VBox>
         </HBox>
 
         <VBox alignment="CENTER">
-            <Button id="createButton" text="Create your Dream Guitar"/>
+            <Button id="createButton" text="Create your Dream Guitar" />
         </VBox>
 
         <!-- Noticeboard Section -->
@@ -51,7 +50,7 @@
                 <VBox id="card1" spacing="10">
                     <Label id="guitarTitle1" text="Tiziano's Dream Guitar" />
                     <HBox alignment="TOP_LEFT">
-                        <Text id="comment1" text="Comments:"/>
+                        <Text id="comment1" text="Comments:" />
                     </HBox>
                     <Text id="comment2" text="Matteo: Amazing guitar!!!" />
                 </VBox>

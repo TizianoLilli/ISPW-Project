@@ -12,6 +12,6 @@
     <PasswordField fx:id="passwordField" promptText="Password" />
     <Label fx:id="errorLabel" textFill="red" />
     <Button text="Log In" onAction="#handleLogin" />
-    <Button text="Back to Home" onAction="#handleBackToHome" />
+    <Button text="Back Home" onAction="#handleBackToHome" />
 </VBox>
 
