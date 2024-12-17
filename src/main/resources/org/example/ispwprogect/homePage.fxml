@@ -9,14 +9,18 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="600" prefWidth="900" stylesheets="@style.css" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17.0.6">
+
+<AnchorPane fx:controller="org.example.ispwprogect.HomePageController" prefHeight="600" prefWidth="900" stylesheets="@style.css" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17.0.6" >
     <!-- Sidebar -->
     <VBox id="sidebar" layoutX="0" layoutY="0" prefWidth="200">
         <Label id="userLabel" text="Guest" />
+        <Label fx:id="leftStatusLabel" text="Initial Text" />
+        <Label fx:id="rightStatusLabel" text="Benvenuto!" />
+        <Label fx:id="masterLabel" text="Log In effettuato!" layoutX="50" layoutY="50"/>
         <ListView id="menuList" prefHeight="550">
             <Label text="Home" />
             <Label text="Settings" />
-            <Button text="Log In" />
+            <Button text="Log In" onAction="#handleLoginClick"/>
             <Label text="New Dream Guitar" />
             <Label text="Discover Dream Guitars" />
             <Label text="New Recommended Guitar" />
