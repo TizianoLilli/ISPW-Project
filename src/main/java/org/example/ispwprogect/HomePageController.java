@@ -74,4 +74,6 @@ public class HomePageController {
     private void handleAboutMenuAction() {
         System.out.println("Informazioni sull'app.");
     }
+
+
 }

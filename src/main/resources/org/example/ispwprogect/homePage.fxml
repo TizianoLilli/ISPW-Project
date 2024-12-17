@@ -16,7 +16,7 @@
         <ListView id="menuList" prefHeight="550">
             <Label text="Home" />
             <Label text="Settings" />
-            <Label text="Log In" />
+            <Button text="Log In" />
             <Label text="New Dream Guitar" />
             <Label text="Discover Dream Guitars" />
             <Label text="New Recommended Guitar" />
@@ -30,10 +30,15 @@
     <VBox id="mainContent" layoutX="200" layoutY="0" prefWidth="700" spacing="20">
         <!-- Banner -->
         <HBox id="banner">
-            <Label id="bannerText" text="MyGuitar/nFollow your style" />
+            <VBox alignment="CENTER">
+                <Label id="bannerText" text="MyGuitar" style="-fx-font-size: 36px"/>
+                <Label id="bannerText" text="Follow your style" style="-fx-font-size: 18px;" />
+            </VBox>
         </HBox>
 
-        <Button id="createButton" text="Create your Dream Guitar" />
+        <VBox alignment="CENTER">
+            <Button id="createButton" text="Create your Dream Guitar"/>
+        </VBox>
 
         <!-- Noticeboard Section -->
         <ScrollPane id="noticeboardScroll" prefHeight="350">
@@ -41,13 +46,19 @@
                 <!-- Card 1 -->
                 <VBox id="card1" spacing="10">
                     <Label id="guitarTitle1" text="Tiziano's Dream Guitar" />
-                    <Text id="comment1" text="Comments\nMatteo: Amazing guitar!!!" />
+                    <HBox alignment="TOP_LEFT">
+                        <Text id="comment1" text="Comments:"/>
+                    </HBox>
+                    <Text id="comment2" text="Matteo: Amazing guitar!!!" />
                 </VBox>
 
                 <!-- Card 2 -->
                 <VBox id="card2" spacing="10">
                     <Label id="guitarTitle2" text="Matteo's Dream Guitar" />
-                    <Text id="comment2" text="Comments\nTiziano: In this app there are only beautiful guitars!!!" />
+                    <HBox alignment="TOP_LEFT">
+                        <Text id="comment3" text="Comments:" />
+                    </HBox>
+                    <Text id="comment4" text="Tiziano: In this app there are only beautiful guitars!!!" />
                 </VBox>
             </HBox>
         </ScrollPane>
