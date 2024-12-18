@@ -1,7 +1,10 @@
 package org.example.ispwprogect;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.CheckBox;
 import javafx.scene.layout.AnchorPane;
@@ -11,10 +14,25 @@ import java.io.IOException;
 
 public class GetRecommendedGuitarController {
 
-    @FXML
-    private void handleBackClick() {
-        // Torna alla home page
-        loadScene("homePage.fxml");
+    public void handleBackClick(ActionEvent event) {
+        try {
+            // Carica il file FXML della HomePage
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("HomePage.fxml"));
+            Parent homePageRoot = loader.load();
+
+            // Crea una nuova scena
+            Scene homePageScene = new Scene(homePageRoot);
+
+            // Ottieni lo Stage corrente e imposta la nuova scena
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(homePageScene);
+            stage.setTitle("Home Page");
+            stage.show();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.out.println("Errore nel caricamento della HomePage.");
+        }
     }
 
     @FXML
