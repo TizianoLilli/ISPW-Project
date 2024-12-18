@@ -20,7 +20,7 @@
             <Label text="Home" />
             <Label text="Settings" />
             <Button onAction="#handleLoginClick" text="Log In" />
-            <Label text="New Dream Guitar" />
+            <Button text="New Dream Guitar" onAction="#handleNewRecommendedGuitarClick"  />
             <Label text="Discover Dream Guitars" />
             <Label text="New Recommended Guitar" />
             <Label text="Find Music Shops" />

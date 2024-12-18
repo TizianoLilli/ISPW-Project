@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuItem;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
@@ -103,6 +104,23 @@ public class HomePageController {
             e.printStackTrace();
         }
     }
+
+    @FXML
+    public void handleNewRecommendedGuitarClick() {
+        try {
+            // Carica la nuova schermata "getRecommendedGuitar.fxml"
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("getRecommendedGuitar.fxml"));
+            AnchorPane recommendedRoot = loader.load();
+
+            // Ottieni la finestra corrente e imposta la nuova scena
+            Stage stage = (Stage) masterLabel.getScene().getWindow();
+            stage.setScene(new Scene(recommendedRoot, 900, 600));
+            stage.setTitle("New Recommended Guitar - MyGuitar");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 
 
 
