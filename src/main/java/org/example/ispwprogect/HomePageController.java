@@ -15,12 +15,6 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class HomePageController {
-    
-    @FXML
-    private Label leftStatusLabel;
-
-    @FXML
-    private Label rightStatusLabel;
 
     @FXML
     private Label saveText;
@@ -44,29 +38,10 @@ public class HomePageController {
     private MenuItem aboutMenuItem;
 
     @FXML
-    private Label masterLabel;
-
-    @FXML
     private Label viewLabel;
 
     @FXML
     private Label detailsLabel;
-
-    @FXML
-    public void initialize() {
-        if (leftStatusLabel != null) {
-            // Questo metodo sarà automaticamente chiamato dopo che la vista è stata caricata
-            leftStatusLabel.setText("Applicazione pronta.");
-        } else {
-            System.out.println("leftStatusLabel non e' stato inizializzato!");
-        }
-
-        if (rightStatusLabel != null) {
-            rightStatusLabel.setText("Benvenuto!");
-        } else {
-            System.out.println("rightStatusLabel è null!");
-        }
-    }
 
     @FXML
     private void handleNewMenuAction() {
@@ -93,39 +68,5 @@ public class HomePageController {
     private void handleAboutMenuAction() {
         System.out.println("Informazioni sull'app.");
     }
-
-    @FXML
-    public void handleLoginClick() {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("login.fxml"));
-            VBox loginRoot = loader.load();
-
-            Stage stage = (Stage) masterLabel.getScene().getWindow();
-            stage.setScene(new Scene(loginRoot, 400, 300)); // Dimensioni della schermata di login
-            stage.setTitle("Login - MyGuitar");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    @FXML
-    public void handleNewRecommendedGuitarClick() {
-        try {
-            // Carica la nuova schermata "getRecommendedGuitar.fxml"
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("getRecommendedGuitar.fxml"));
-            AnchorPane recommendedRoot = loader.load();
-
-            // Ottieni la finestra corrente e imposta la nuova scena
-            Stage stage = (Stage) masterLabel.getScene().getWindow();
-            stage.setScene(new Scene(recommendedRoot, 900, 600));
-            stage.setTitle("New Recommended Guitar - MyGuitar");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-
-
-
 
 }

@@ -10,18 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 
 <AnchorPane prefHeight="600" prefWidth="900" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17.0.6" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.ispwprogect.GetRecommendedGuitarController">
-    <!-- Sidebar -->
-    <VBox id="sidebar" layoutX="0" layoutY="0" prefHeight="600" prefWidth="200" spacing="15">
-        <Label text="Hi Jane" styleClass="sidebar-header" />
-        <Button text="Home" onAction="#handleHomeClick" />
-        <Button text="Log Out" onAction="#handleLogoutClick" />
-        <Label text="New Dream Guitar" styleClass="menu-item" />
-        <Label text="Discover Dream Guitars" styleClass="menu-item" />
-        <Label text="New Recommended Guitar" styleClass="menu-selected" />
-        <Label text="Find Music Shops" styleClass="menu-item" />
-        <Label text="Discover Concerts" styleClass="menu-item" />
-        <Button text="Help" styleClass="help-button" />
-    </VBox>
+    <fx:include source="sidebar.fxml"/>
 
     <!-- Main Content -->
     <VBox layoutX="200" layoutY="0" prefWidth="700" spacing="20">

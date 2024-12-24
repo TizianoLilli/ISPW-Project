@@ -9,25 +9,8 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="600" prefWidth="900" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17.0.6" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.ispwprogect.HomePageController">
-    <!-- Sidebar -->
-    <VBox id="sidebar" layoutX="0" layoutY="0" prefHeight="681.0" prefWidth="200">
-        <Label id="userLabel" text="Guest" />
-        <Label fx:id="leftStatusLabel" text="Initial Text" />
-        <Label fx:id="rightStatusLabel" text="Benvenuto!" />
-        <Label fx:id="masterLabel" layoutX="50" layoutY="50" text="Log In effettuato!" />
-        <ListView id="menuList" prefHeight="550">
-            <Label text="Home" />
-            <Label text="Settings" />
-            <Button onAction="#handleLoginClick" text="Log In" />
-            <Button text="New Dream Guitar" onAction="#handleNewRecommendedGuitarClick"  />
-            <Label text="Discover Dream Guitars" />
-            <Label text="New Recommended Guitar" />
-            <Label text="Find Music Shops" />
-            <Label text="Discover Concerts" />
-        </ListView>
-        <Label id="helpLabel" text="Help" />
-    </VBox>
+<AnchorPane prefHeight="600" prefWidth="900" stylesheets="@style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.ispwprogect.HomePageController">
+    <fx:include source="sidebar.fxml"/>
 
     <!-- Main Content -->
     <VBox id="mainContent" layoutX="200" layoutY="0" prefWidth="700" spacing="20">

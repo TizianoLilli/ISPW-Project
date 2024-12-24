@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="org.example.ispwprogect.sidebarController">
+
+    <!-- Sidebar -->
+    <VBox id="sidebar" layoutX="0" layoutY="0" prefHeight="681.0" prefWidth="200">
+        <Label id="userLabel" text="Guest" />
+        <Label fx:id="rightStatusLabel" text="Benvenuto!" />
+        <Label fx:id="masterLabel" layoutX="50" layoutY="50" text="Log In effettuato!" />
+        <ListView id="menuList" prefHeight="550">
+            <Label text="Home" />
+            <Label text="Settings" />
+            <Button onAction="#handleLoginClick" text="Log In" />
+            <Button onAction="#handleNewRecommendedGuitarClick" text="New Dream Guitar" />
+            <Label text="Discover Dream Guitars" />
+            <Label text="New Recommended Guitar" />
+            <Label text="Find Music Shops" />
+            <Label text="Discover Concerts" />
+        </ListView>
+        <Label id="helpLabel" text="Help" />
+    </VBox>
+
+</AnchorPane>
