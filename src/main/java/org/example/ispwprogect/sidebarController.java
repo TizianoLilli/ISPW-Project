@@ -1,22 +1,23 @@
 package org.example.ispwprogect;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
+import javafx.scene.input.MouseEvent;
 import java.io.IOException;
 
 public class sidebarController {
 
     @FXML
     private Label rightStatusLabel;
-
-    @FXML
-    private Label masterLabel;
 
     @FXML
     public void initialize() {
@@ -28,12 +29,17 @@ public class sidebarController {
     }
 
     @FXML
-    public void handleLoginClick() {
+    private void handleHomeClick(MouseEvent event) {
+        loadScene("homePage.fxml", "", event);
+    }
+
+    @FXML
+    public void handleLoginClick(MouseEvent event) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("login.fxml"));
             VBox loginRoot = loader.load();
 
-            Stage stage = (Stage) masterLabel.getScene().getWindow();
+            Stage stage = (Stage) ((Label)event.getSource()).getScene().getWindow();
             stage.setScene(new Scene(loginRoot, 400, 300)); // Dimensioni della schermata di login
             stage.setTitle("Login - MyGuitar");
         } catch (IOException e) {
@@ -42,16 +48,20 @@ public class sidebarController {
     }
 
     @FXML
-    public void handleNewRecommendedGuitarClick() {
+    public void handleNewRecommendedGuitarClick(MouseEvent event) {
+        loadScene("getRecommendedGuitar.fxml", "New Recommended Guitar - ", event);
+    }
+
+    private void loadScene(String fxml, String title, MouseEvent event) {
         try {
-            // Carica la nuova schermata "getRecommendedGuitar.fxml"
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("getRecommendedGuitar.fxml"));
-            AnchorPane recommendedRoot = loader.load();
+            // Carica la nuova schermata ".fxml"
+            FXMLLoader loader = new FXMLLoader(getClass().getResource(fxml));
+            AnchorPane sidebarRoot = loader.load();
 
             // Ottieni la finestra corrente e imposta la nuova scena
-            Stage stage = (Stage) masterLabel.getScene().getWindow();
-            stage.setScene(new Scene(recommendedRoot, 900, 600));
-            stage.setTitle("New Recommended Guitar - MyGuitar");
+            Stage stage = (Stage) ((Label)event.getSource()).getScene().getWindow();
+            stage.setScene(new Scene(sidebarRoot));
+            stage.setTitle(title + "MyGuitar");
         } catch (IOException e) {
             e.printStackTrace();
         }

@@ -26,7 +26,7 @@ public class GetRecommendedGuitarController {
             // Ottieni lo Stage corrente e imposta la nuova scena
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             stage.setScene(homePageScene);
-            stage.setTitle("Home Page");
+            stage.setTitle("MyGuitar");
             stage.show();
 
         } catch (IOException e) {
@@ -42,30 +42,8 @@ public class GetRecommendedGuitarController {
     }
 
     @FXML
-    private void handleHomeClick() {
-        loadScene("homePage.fxml");
-    }
-
-    @FXML
     private void handleSettingsClick() {
         System.out.println("Settings clicked!");
     }
 
-    @FXML
-    private void handleLogoutClick() {
-        loadScene("login.fxml");
-    }
-
-    private void loadScene(String fxml) {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource(fxml));
-            AnchorPane root = loader.load();
-
-            Stage stage = (Stage) ((AnchorPane) root.getScene().getRoot()).getScene().getWindow();
-            stage.setScene(new Scene(root));
-            stage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
 }

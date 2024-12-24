@@ -49,8 +49,8 @@ public class LoginController {
             AnchorPane homeRoot = loader.load();
 
             Stage stage = (Stage) usernameField.getScene().getWindow();
-            stage.setScene(new Scene(homeRoot, 900, 600));
-            stage.setTitle("MyGuitar - Home");
+            stage.setScene(new Scene(homeRoot));
+            stage.setTitle("MyGuitar");
         } catch (IOException e) {
             e.printStackTrace();
         }
