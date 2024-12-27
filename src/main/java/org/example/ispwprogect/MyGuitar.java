@@ -17,7 +17,7 @@ public class MyGuitar extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(MyGuitar.class.getResource("homePage.fxml"));
         Parent root = fxmlLoader.load();
 
-        primaryStage.getIcons().add(new Image("logoApp.jpg")); //da rivedere (non scala correttamente l'immagine)
+        primaryStage.getIcons().add(new Image("logoApp.png")); //da rivedere (non scala correttamente l'immagine)
 
         primaryStage.setTitle("MyGuitar");
         primaryStage.setResizable(false); // Opzionale: finestra non ridimensionabile
