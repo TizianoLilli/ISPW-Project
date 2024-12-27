@@ -9,6 +9,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
+<?import javafx.scene.image.ImageView?>
 <AnchorPane prefHeight="600" prefWidth="900" stylesheets="@style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.ispwprogect.HomePageController">
     <fx:include source="sidebar.fxml"/>
 
@@ -19,8 +20,10 @@
             <VBox alignment="CENTER">
                 <Label id="bannerText" style="-fx-font-size: 36px" text="MyGuitar" />
                 <Label id="bannerText" style="-fx-font-size: 18px;" text="Follow your style" />
+                <ImageView fx:id="bannerImage" fitWidth="700" preserveRatio="true"/>
             </VBox>
         </HBox>
+
 
         <VBox alignment="CENTER">
             <Button id="createButton" text="Create your Dream Guitar" />

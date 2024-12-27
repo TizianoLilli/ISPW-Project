@@ -3,18 +3,25 @@ package org.example.ispwprogect;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuItem;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-import java.io.IOException;
 
-public class HomePageController {
+
+import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class HomePageController implements Initializable {
 
     @FXML
     private Label saveText;
@@ -67,6 +74,16 @@ public class HomePageController {
     @FXML
     private void handleAboutMenuAction() {
         System.out.println("Informazioni sull'app.");
+    }
+
+    @FXML
+    private ImageView bannerImage;
+
+
+    public void initialize(URL location, ResourceBundle resources) {
+        // Carica l'immagine e impostala nell'ImageView
+        Image banner = new Image("file:main/java/org/example/ispwprogect/images/banner.jpg");
+        bannerImage.setImage(banner);
     }
 
 }
