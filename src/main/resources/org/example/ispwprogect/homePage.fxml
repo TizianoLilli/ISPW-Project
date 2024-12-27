@@ -17,7 +17,7 @@
     <VBox id="mainContent" layoutX="200" layoutY="0" prefWidth="700" spacing="20">
         <!-- Banner -->
         <HBox id="banner">
-            <VBox alignment="CENTER">
+            <VBox alignment="TOP_LEFT">
                 <Label id="bannerText" style="-fx-font-size: 36px" text="MyGuitar" />
                 <Label id="bannerText" style="-fx-font-size: 18px;" text="Follow your style" />
                 <ImageView fx:id="bannerImage" fitWidth="700" preserveRatio="true"/>
