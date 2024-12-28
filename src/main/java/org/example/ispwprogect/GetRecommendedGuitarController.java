@@ -6,8 +6,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.CheckBox;
-import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -17,7 +15,7 @@ public class GetRecommendedGuitarController {
     public void handleBackClick(ActionEvent event) {
         try {
             // Carica il file FXML della HomePage
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("HomePage.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("view/homePage.fxml"));
             Parent homePageRoot = loader.load();
 
             // Crea una nuova scena

@@ -27,13 +27,13 @@ public class SidebarController {
 
     @FXML
     private void handleHomeClick(MouseEvent event) {
-        loadScene("homePage.fxml", "", event);
+        loadScene("view/homePage.fxml", "", event);
     }
 
     @FXML
     public void handleLoginClick(MouseEvent event) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("login.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("view/login.fxml"));
             VBox loginRoot = loader.load();
 
             Stage stage = (Stage) ((Label)event.getSource()).getScene().getWindow();
@@ -46,7 +46,7 @@ public class SidebarController {
 
     @FXML
     public void handleNewRecommendedGuitarClick(MouseEvent event) {
-        loadScene("getRecommendedGuitar.fxml", "New Recommended Guitar - ", event);
+        loadScene("view/getRecommendedGuitar.fxml", "New Recommended Guitar - ", event);
     }
 
     private void loadScene(String fxml, String title, MouseEvent event) {

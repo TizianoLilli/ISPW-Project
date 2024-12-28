@@ -45,7 +45,7 @@ public class LoginController {
 
     private void loadHomePage() {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("homePage.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("view/homePage.fxml"));
             AnchorPane homeRoot = loader.load();
 
             Stage stage = (Stage) usernameField.getScene().getWindow();
