@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="600.0" prefWidth="900.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.ispwprogect.BuyDreamGuitarController">
+    <fx:include source="sidebar.fxml" />
+
+     <VBox spacing="10" style="-fx-padding: 20;" />
+
+         <!-- Main Content -->
+         <VBox layoutX="199.0" layoutY="30.0" prefHeight="630.0" prefWidth="673.0" spacing="15" style="-fx-padding: 20; -fx-background-color: #ffffff; -fx-border-color: #cccccc; -fx-border-width: 1;">
+             <Label style="-fx-font-size: 20; -fx-font-weight: bold;" text="New Dream Guitar" />
+             <Label style="-fx-font-size: 14;" text="Select your favorite components" />
+
+             <VBox spacing="10">
+                 <!-- Pickup Section -->
+                 <Label style="-fx-font-weight: bold;" text="Pickup" />
+                 <Label text="A pickup is a transducer that captures or senses mechanical vibrations produced by stringed instruments such as the electric guitar, and converts these to an electrical signal that is amplified to produce musical sounds through a loudspeaker in a speaker enclosure (Wikipedia)." wrapText="true" />
+
+                 <!-- Options -->
+                 <VBox spacing="5">
+                     <HBox spacing="10">
+                         <RadioButton text="Single coil" />
+                         <RadioButton selected="true" text="Humbucker" />
+                     </HBox>
+                     <HBox alignment="CENTER_LEFT" spacing="10">
+                         <ImageView fx:id="humbuckerImage" fitHeight="133.0" fitWidth="208.0">
+                  <image>
+                     <Image url="@../images/humbucker.png" />
+                  </image></ImageView>
+                         <Label text="A humbucker, humbucking pickup, or double coil, is a guitar pickup that uses two wire coils to cancel out noisy interference from coil pickups. Humbucking coils are also used in dynamic microphones to cancel electromagnetic hum. Humbuckers are one of two main types of guitar pickups." wrapText="true" />
+                     </HBox>
+                     <RadioButton text="P-90" />
+                 </VBox>
+             </VBox>
+
+             <!-- Buttons -->
+             <HBox alignment="CENTER_RIGHT" spacing="10">
+                 <Button text="Back" />
+                 <Button text="Next" />
+             </HBox>
+         </VBox>
+
+</AnchorPane>

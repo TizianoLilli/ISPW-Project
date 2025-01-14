@@ -20,7 +20,7 @@
             <Label onMouseClicked="#handleLoginClick" text="Log In" />
             <Label onMouseClicked="#handleNewRecommendedGuitarClick" text="New Recommended Guitar" />
             <Label text="Discover Dream Guitars" />
-            <Label text="New Dream Guitar" />
+            <Label onMouseClicked="#handleNewDreamGuitarClick" text="New Dream Guitar" />
             <Label text="Find Music Shops" />
             <Label text="Discover Concerts" />
         </ListView>
