@@ -1,51 +1,111 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Accordion?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="600.0" prefWidth="900.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.ispwprogect.BuyDreamGuitarController">
+
+          <!-- Buttons -->
+          <HBox alignment="BOTTOM_RIGHT" layoutX="199.0" layoutY="623.0" prefHeight="25.0" prefWidth="673.0" spacing="10">
+              <Button text="Back" />
+              <Button text="Next" />
+          </HBox>
     <fx:include source="sidebar.fxml" />
 
      <VBox spacing="10" style="-fx-padding: 20;" />
 
          <!-- Main Content -->
-         <VBox layoutX="199.0" layoutY="30.0" prefHeight="630.0" prefWidth="673.0" spacing="15" style="-fx-padding: 20; -fx-background-color: #ffffff; -fx-border-color: #cccccc; -fx-border-width: 1;">
+         <VBox layoutX="199.0" layoutY="30.0" prefHeight="575.0" prefWidth="673.0" spacing="15" style="-fx-padding: 20; -fx-background-color: #ffffff; -fx-border-color: #cccccc; -fx-border-width: 1;">
              <Label style="-fx-font-size: 20; -fx-font-weight: bold;" text="New Dream Guitar" />
              <Label style="-fx-font-size: 14;" text="Select your favorite components" />
 
              <VBox spacing="10">
                  <!-- Pickup Section -->
                  <Label style="-fx-font-weight: bold;" text="Pickup" />
-                 <Label text="A pickup is a transducer that captures or senses mechanical vibrations produced by stringed instruments such as the electric guitar, and converts these to an electrical signal that is amplified to produce musical sounds through a loudspeaker in a speaker enclosure (Wikipedia)." wrapText="true" />
-
-                 <!-- Options -->
-                 <VBox spacing="5">
-                     <HBox spacing="10">
-                         <RadioButton text="Single coil" />
-                         <RadioButton selected="true" text="Humbucker" />
-                     </HBox>
-                     <HBox alignment="CENTER_LEFT" spacing="10">
-                         <ImageView fx:id="humbuckerImage" fitHeight="133.0" fitWidth="208.0">
-                  <image>
-                     <Image url="@../images/humbucker.png" />
-                  </image></ImageView>
-                         <Label text="A humbucker, humbucking pickup, or double coil, is a guitar pickup that uses two wire coils to cancel out noisy interference from coil pickups. Humbucking coils are also used in dynamic microphones to cancel electromagnetic hum. Humbuckers are one of two main types of guitar pickups." wrapText="true" />
-                     </HBox>
-                     <RadioButton text="P-90" />
-                 </VBox>
+                 <Label text="A pickup is a transducer that captures or senses mechanical vibrations produced by stringed instruments such as the electric guitar, and converts these to an electrical signal that is amplified to produce musical sounds through a loudspeaker in a speaker enclosure (Wikipedia)." textAlignment="JUSTIFY" wrapText="true" />
+         <Accordion>
+           <panes>
+             <TitledPane animated="false" prefWidth="591.0" text="Single coil">
+               <content>
+                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                        <children>
+                                    <HBox alignment="CENTER_LEFT" layoutX="-1.0" layoutY="24.0" prefHeight="108.0" prefWidth="631.0" spacing="10">
+                              <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="131.0" prefWidth="631.0">
+                                 <children>
+                                              <ImageView fx:id="humbuckerImage" fitHeight="108.0" fitWidth="193.0" layoutX="14.0" layoutY="15.0" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/single-coil.png" />
+                                       </image>
+                                    </ImageView>
+                                              <Label layoutX="222.0" layoutY="24.0" prefHeight="85.0" prefWidth="383.0" text="A single-coil pickup is a type of magnetic transducer, or pickup, for the electric guitar and the electric bass. It electromagnetically converts the vibration of the strings to an electric signal. Single-coil pickups are one of the two most popular designs, along with dual-coil or &quot;humbucking&quot; pickups." textAlignment="JUSTIFY" wrapText="true" />
+                                 </children>
+                              </AnchorPane>
+                                    </HBox>
+                                     <RadioButton alignment="TOP_LEFT" layoutX="546.0" layoutY="147.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="17.0" prefWidth="58.0" text="+ $40">
+                              <toggleGroup>
+                                 <ToggleGroup fx:id="pickupGroup" />
+                              </toggleGroup>
+                           </RadioButton>
+                        </children>
+                     </AnchorPane>
+               </content>
+             </TitledPane>
+             <TitledPane animated="false" prefWidth="631.0" text="Humbucker">
+               <content>
+                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="629.0">
+                        <children>
+                           <HBox alignment="CENTER_LEFT" layoutY="24.0" prefHeight="108.0" prefWidth="631.0" spacing="10">
+                              <children>
+                                 <ImageView fx:id="humbuckerImage1" fitHeight="133.0" fitWidth="208.0">
+                                    <image>
+                                       <Image url="@../images/humbucker.png" />
+                                    </image>
+                                 </ImageView>
+                                 <Label prefHeight="85.0" prefWidth="383.0" text="A humbucker, humbucking pickup, or double coil, is a guitar pickup that uses two wire coils to cancel out noisy interference from coil pickups. Humbucking coils are also used in dynamic microphones to cancel electromagnetic hum. Humbuckers are one of two main types of guitar pickups." textAlignment="JUSTIFY" wrapText="true" />
+                              </children>
+                           </HBox>
+                           <RadioButton alignment="TOP_LEFT" layoutX="549.0" layoutY="149.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="17.0" prefWidth="55.0" text="+ $50" toggleGroup="$pickupGroup" />
+                        </children>
+                     </AnchorPane>
+               </content>
+             </TitledPane>
+             <TitledPane animated="false" text="P-90">
+               <content>
+                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                        <children>
+                           <HBox alignment="CENTER_LEFT" layoutX="-1.0" layoutY="24.0" prefHeight="133.0" prefWidth="631.0" spacing="10">
+                              <children>
+                                 <ImageView fx:id="humbuckerImage11" fitHeight="133.0" fitWidth="208.0">
+                                    <image>
+                                       <Image url="@../images/P90.png" />
+                                    </image>
+                                 </ImageView>
+                                 <Label prefHeight="85.0" prefWidth="383.0" text="The P-90 is a single coil pickup produced by Gibson Guitar Corporation since 1946. Compared to other single coil designs, such as the Fender single coil, the bobbin for a P-90 is wider but shorter. The Fender style single coil is wound in a taller bobbin, but the wires are closer to the individual poles. This makes the P-90 produce a somewhat warmer tone with less edge and brightness. As with other single-coil pickups, the P-90 is subject to AC hum unless some form of cancellation is used." textAlignment="JUSTIFY" wrapText="true" />
+                              </children>
+                           </HBox>
+                           <RadioButton alignment="TOP_LEFT" layoutX="546.0" layoutY="149.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="18.0" prefWidth="56.0" text="+ $80" toggleGroup="$pickupGroup" />
+                        </children>
+                     </AnchorPane>
+               </content>
+             </TitledPane>
+           </panes>
+         </Accordion>
              </VBox>
-
-             <!-- Buttons -->
-             <HBox alignment="CENTER_RIGHT" spacing="10">
-                 <Button text="Back" />
-                 <Button text="Next" />
-             </HBox>
+      <Label alignment="BOTTOM_RIGHT" prefHeight="93.0" prefWidth="630.0" style="-fx-font-weight: bold;" text="TOT = 0$">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
          </VBox>
 
 </AnchorPane>
