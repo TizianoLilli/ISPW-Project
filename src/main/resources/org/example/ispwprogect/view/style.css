@@ -27,7 +27,7 @@
 
 #banner {
     -fx-alignment: center;
-    -fx-background-image: url("../images/banner.jpg");
+    -fx-background-image: url("../images/pickup/banner.jpg");
     -fx-background-repeat: no-repeat;
     -fx-background-size: cover;
     -fx-background-position: center;

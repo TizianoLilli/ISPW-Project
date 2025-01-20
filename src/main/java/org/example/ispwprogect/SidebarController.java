@@ -51,7 +51,7 @@ public class SidebarController {
 
     @FXML
     public void handleNewDreamGuitarClick(MouseEvent event) {
-        loadScene("view/buyDreamGuitar.fxml", "New Dream Guitar - ", event);
+        loadScene("view/buyDreamGuitarF.fxml", "New Dream Guitar - ", event);
     }
 
     private void loadScene(String fxml, String title, MouseEvent event) {

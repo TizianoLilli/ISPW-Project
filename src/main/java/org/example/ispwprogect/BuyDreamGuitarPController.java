@@ -1,13 +1,8 @@
 package org.example.ispwprogect;
 
-import javafx.fxml.FXML;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
+//attualmente contiene tutte le pagine FXML di buyDreamGuitar
 
-import java.net.URL;
-import java.util.ResourceBundle;
-
-public class BuyDreamGuitarController {
+public class BuyDreamGuitarPController {
 
     //le seguenti linee non funzionano!
     // Carico l'immagine dall'fxml (probabilmente invece vorrei farlo da quì dopo che clicco un bottone)
