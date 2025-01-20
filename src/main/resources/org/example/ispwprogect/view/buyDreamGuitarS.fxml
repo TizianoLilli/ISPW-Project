@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="900.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.ispwprogect.BuyDreamGuitarPController">
+
+    <!-- Buttons -->
+    <HBox alignment="BOTTOM_RIGHT" layoutX="199.0" layoutY="623.0" prefHeight="25.0" prefWidth="673.0" spacing="10">
+        <Button text="Back" />
+        <Button text="Next" />
+    </HBox>
+    <fx:include source="sidebar.fxml" />
+
+    <VBox spacing="10" style="-fx-padding: 20;" />
+
+    <!-- Main Content -->
+    <VBox layoutX="199.0" layoutY="30.0" prefHeight="575.0" prefWidth="673.0" spacing="15" style="-fx-padding: 20; -fx-background-color: #ffffff; -fx-border-color: #cccccc; -fx-border-width: 1;">
+        <Label style="-fx-font-size: 20; -fx-font-weight: bold;" text="New Dream Guitar" />
+        <Label style="-fx-font-size: 14;" text="Select your favorite components" />
+
+        <VBox spacing="10">
+            <!-- Pickup Section -->
+            <Label style="-fx-font-weight: bold;" text="Strings" />
+            <Label prefHeight="97.0" prefWidth="631.0" text="Strings are long flexible structures that produce sound through vibration. Strings are held under tension so that they can vibrate freely. The pitch (frequency) at which a string will vibrate is primarily related to its vibrating length, its tension, and its mass per unit of length. The gauge refers to the thickness of the individual strings, typically measured in thousandths of an inch. A set of strings includes several gauges, ranging from the thinnest (high E) to the thickest (low E)." textAlignment="JUSTIFY" wrapText="true" />
+            <Accordion>
+                <panes>
+                    <TitledPane animated="false" prefWidth="591.0" style="-fx-font-weight: bold;" text="9-Gauge">
+                        <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                <children>
+                                    <RadioButton alignment="TOP_LEFT" layoutX="546.0" layoutY="140.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="17.0" prefWidth="58.0" style="-fx-font-weight: bold;" text="+ $40">
+                                        <toggleGroup>
+                                            <ToggleGroup fx:id="pickupGroup" />
+                                        </toggleGroup>
+                                    </RadioButton>
+                                    <ImageView fx:id="humbuckerImage" fitHeight="141.0" fitWidth="136.0" layoutX="29.0" layoutY="17.0" preserveRatio="true">
+                                        <image>
+                                            <Image url="@../images/strings/9-gauge.jpg" />
+                                        </image>
+                                    </ImageView>
+                                    <Label layoutX="188.0" layoutY="48.0" prefHeight="85.0" prefWidth="414.0" style="-fx-font-weight: normal;" text="These are easier to play, especially for beginners or players which can make bending and fretting notes easier. The tone is generally bright and sharp, but with the lack of the fullness or depth of thicker strings. Light strings are commonly used for styles like rock, pop, or punk." textAlignment="JUSTIFY" wrapText="true" />
+                                </children>
+                            </AnchorPane>
+                        </content>
+                    </TitledPane>
+                    <TitledPane animated="false" prefWidth="631.0" style="-fx-font-weight: bold;" text="10-Gauge">
+                        <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="629.0">
+                                <children>
+                                    <ImageView fx:id="humbuckerImage1" fitHeight="141.0" fitWidth="136.0" layoutX="29.0" layoutY="17.0" preserveRatio="true">
+                                        <image>
+                                            <Image url="@../images/strings/10-gauge.jpg" />
+                                        </image>
+                                    </ImageView>
+                                    <Label layoutX="188.0" layoutY="48.0" prefHeight="85.0" prefWidth="414.0" style="-fx-font-weight: normal;" text="These strings offer a good balance between playability and tone. They are still relatively easy to play but have a bit more substance and a fuller and warmer sound compared to 9s.They can provide a good mix of clarity and depth. This gauge is very popular in many rock genres, blues, and alternative styles." textAlignment="JUSTIFY" wrapText="true" />
+                                    <RadioButton alignment="TOP_LEFT" layoutX="546.0" layoutY="140.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="17.0" prefWidth="55.0" style="-fx-font-weight: bold;" text="+ $50" toggleGroup="$pickupGroup" />
+                                </children>
+                            </AnchorPane>
+                        </content>
+                    </TitledPane>
+                    <TitledPane animated="false" style="-fx-font-weight: bold;" text="11-Gauge">
+                        <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                <children>
+                                    <ImageView fx:id="humbuckerImage11" fitHeight="141.0" fitWidth="136.0" layoutX="29.0" layoutY="17.0" preserveRatio="true">
+                                        <image>
+                                            <Image url="@../images/strings/11-gauge.jpg" />
+                                        </image>
+                                    </ImageView>
+                                    <Label layoutX="188.0" layoutY="48.0" prefHeight="85.0" prefWidth="414.0" style="-fx-font-weight: normal;" text="Thicker strings tend to produce a fuller, warmer tone with more sustain and resonance. Thicker strings require more finger strength and pressure, making them more difficult to bend or fret, which may make them less ideal for beginners. 11-gauge strings are favored by players who need a more robust sound, such as for blues, jazz, and heavier rock." textAlignment="JUSTIFY" wrapText="true" />
+                                    <RadioButton alignment="TOP_LEFT" layoutX="546.0" layoutY="140.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="18.0" prefWidth="56.0" style="-fx-font-weight: bold;" text="+ $80" toggleGroup="$pickupGroup" />
+                                </children>
+                            </AnchorPane>
+                        </content>
+                    </TitledPane>
+                </panes>
+            </Accordion>
+        </VBox>
+        <Label alignment="BOTTOM_RIGHT" prefHeight="93.0" prefWidth="630.0" style="-fx-font-weight: bold;" text="TOT = 0$">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </Label>
+    </VBox>
+
+</AnchorPane>
