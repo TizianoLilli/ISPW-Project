@@ -32,7 +32,7 @@
         <VBox spacing="10">
             <!-- Pickup Section -->
             <Label style="-fx-font-weight: bold;" text="Fretboard" />
-            <Label prefHeight="97.0" prefWidth="631.0" text="The fingerboard (also known as a fretboard on fretted instruments) is a thin, long strip of material, usually wood, that is laminated to the front of the neck of an instrument. The strings run over the fingerboard, between the nut and bridge. Pressing strings down to the fingerboard you can change the vibrating length, changing the pitch. Frets let the player stop the string consistently in the same place, which enables the musician to play notes with the correct intonation (Wikipedia)." textAlignment="JUSTIFY" wrapText="true" />
+            <Label prefHeight="97.0" prefWidth="631.0" text="The fingerboard (also known as a fretboard on fretted instruments) is a thin, long strip of material, usually wood, that is laminated to the front of the neck of an instrument. The strings run over the fingerboard, between the nut and bridge. Pressing strings down to the fingerboard you can change the vibrating length, changing the pitch. Frets let the player stop the string consistently in the same place, which enables the musician to play notes with the correct intonation." textAlignment="JUSTIFY" wrapText="true" />
             <Accordion>
                 <panes>
                     <TitledPane animated="false" prefWidth="591.0" style="-fx-font-weight: bold;" text="Maple">
@@ -46,7 +46,7 @@
                                     </RadioButton>
                                        <ImageView fx:id="humbuckerImage" fitHeight="133.0" fitWidth="187.0" layoutX="14.0" layoutY="28.0" preserveRatio="true">
                                            <image>
-                                               <Image url="@../images/fretboard/maple.jpg" />
+                                               <Image url="@../images/wood/maple.jpg" />
                                            </image>
                                        </ImageView>
                                        <Label layoutX="221.0" layoutY="48.0" prefHeight="85.0" prefWidth="383.0" style="-fx-font-weight: normal;" text="Maple produces a brighter, more focused tone with a sharp attack. It emphasizes high-end frequencies, making it ideal for players who want a clear, cutting sound. Maple fretboards are typically smoother, and their natural light color can give the instrument a modern look with a lighter and natural appearance. It has a great durability." textAlignment="JUSTIFY" wrapText="true" />
@@ -60,7 +60,7 @@
                                 <children>
                                       <ImageView fx:id="humbuckerImage1" fitHeight="133.0" fitWidth="187.0" layoutX="14.0" layoutY="28.0" preserveRatio="true">
                                           <image>
-                                              <Image url="@../images/fretboard/rosewood.jpg" />
+                                              <Image url="@../images/wood/rosewood.jpg" />
                                           </image>
                                       </ImageView>
                                       <Label layoutX="221.0" layoutY="48.0" prefHeight="85.0" prefWidth="383.0" style="-fx-font-weight: normal;" text="Rosewood is known for producing a warm tone that makes it great for blues and jazz for its smoother sound. His texture provides a comfortable grip and it is slightly softer than maple, which can be beneficial for playability over long sessions, but requires periodic cleaning. Rosewood has a rich color, with a vintage appearance." textAlignment="JUSTIFY" wrapText="true" />
@@ -75,7 +75,7 @@
                                 <children>
                                       <ImageView fx:id="humbuckerImage11" fitHeight="133.0" fitWidth="187.0" layoutX="14.0" layoutY="28.0" preserveRatio="true">
                                           <image>
-                                              <Image url="@../images/fretboard/ebony.jpg" />
+                                              <Image url="@../images/wood/ebony.jpg" />
                                           </image>
                                       </ImageView>
                                       <Label layoutX="219.0" layoutY="48.0" prefHeight="85.0" prefWidth="383.0" style="-fx-font-weight: normal;" text="Ebony is known for its incredibly smooth surface, making it one of the fastest fretboards in terms of playability. Ebony contributes to a bright and clear tone. It's very durable and resistant to wear and tear. It also tends to resist dirt and oil buildup.Ebony fretboards are often deep black, though they can have subtle color variations. " textAlignment="JUSTIFY" wrapText="true" />

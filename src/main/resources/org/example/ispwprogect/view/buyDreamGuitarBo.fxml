@@ -1,14 +1,97 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="org.example.ispwprogect.viBuyDreamGuitar"
-            prefHeight="400.0" prefWidth="600.0">
+<AnchorPane prefHeight="600.0" prefWidth="900.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.ispwprogect.BuyDreamGuitarPController">
+
+    <!-- Buttons -->
+    <HBox alignment="BOTTOM_RIGHT" layoutX="199.0" layoutY="623.0" prefHeight="25.0" prefWidth="673.0" spacing="10">
+        <Button text="Back" />
+        <Button text="Next" />
+    </HBox>
+    <fx:include source="sidebar.fxml" />
+
+    <VBox spacing="10" style="-fx-padding: 20;" />
+
+    <!-- Main Content -->
+    <VBox layoutX="199.0" layoutY="30.0" prefHeight="575.0" prefWidth="673.0" spacing="15" style="-fx-padding: 20; -fx-background-color: #ffffff; -fx-border-color: #cccccc; -fx-border-width: 1;">
+        <Label style="-fx-font-size: 20; -fx-font-weight: bold;" text="New Dream Guitar" />
+        <Label style="-fx-font-size: 14;" text="Select your favorite components" />
+
+        <VBox spacing="10">
+            <!-- Pickup Section -->
+            <Label style="-fx-font-weight: bold;" text="Body" />
+            <Label prefHeight="97.0" prefWidth="631.0" text="Most electric guitar bodies are made of wood and include a plastic pickguard. Boards wide enough to use as a solid body are very expensive due to the worldwide depletion of hardwood stock since the 1970s, so the wood is rarely one solid piece. Most bodies are made from two pieces of wood with some of them including a seam running down the center line of the body." textAlignment="JUSTIFY" wrapText="true" />
+            <Accordion>
+                <panes>
+                    <TitledPane animated="false" prefWidth="591.0" style="-fx-font-weight: bold;" text="Maple">
+                        <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                <children>
+                                    <RadioButton alignment="TOP_LEFT" layoutX="546.0" layoutY="140.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="17.0" prefWidth="58.0" style="-fx-font-weight: bold;" text="+ $40">
+                                        <toggleGroup>
+                                            <ToggleGroup fx:id="pickupGroup" />
+                                        </toggleGroup>
+                                    </RadioButton>
+                                    <ImageView fx:id="humbuckerImage" fitHeight="133.0" fitWidth="187.0" layoutX="14.0" layoutY="25.0" preserveRatio="true">
+                                        <image>
+                                            <Image url="@../images/wood/maple.jpg" />
+                                        </image>
+                                    </ImageView>
+                                    <Label layoutX="221.0" layoutY="48.0" prefHeight="85.0" prefWidth="383.0" style="-fx-font-weight: normal;" text="Maple produces a brighter, more focused tone with a sharp attack. It emphasizes high-end frequencies, making it ideal for players who want a clear, cutting sound. Maple can be quite heavy compared to other woods, so a full maple body may make the guitar feel weighty, which might be uncomfortable for some players." textAlignment="JUSTIFY" wrapText="true" />
+                                </children>
+                            </AnchorPane>
+                        </content>
+                    </TitledPane>
+                    <TitledPane animated="false" prefWidth="631.0" style="-fx-font-weight: bold;" text="Mogany">
+                        <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="629.0">
+                                <children>
+                                    <ImageView fx:id="humbuckerImage1" fitHeight="133.0" fitWidth="187.0" layoutX="14.0" layoutY="28.0" preserveRatio="true">
+                                        <image>
+                                            <Image url="@../images/wood/mahogany.jpg" />
+                                        </image>
+                                    </ImageView>
+                                    <Label layoutX="221.0" layoutY="48.0" prefHeight="85.0" prefWidth="383.0" style="-fx-font-weight: normal;" text="Mahogany is known for producing a warm, thick tone with pronounced midrange frequencies. The tone is smooth, mellow, and well-roundedwhit a more intimate sound. Its density and stiffness provide excellent sustain. Mahogany is generally heavier than ash or maple. It has a deep, reddish-brown color with a subtle, straight grain. " textAlignment="JUSTIFY" wrapText="true" />
+                                    <RadioButton alignment="TOP_LEFT" layoutX="549.0" layoutY="140.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="17.0" prefWidth="55.0" style="-fx-font-weight: bold;" text="+ $50" toggleGroup="$pickupGroup" />
+                                </children>
+                            </AnchorPane>
+                        </content>
+                    </TitledPane>
+                    <TitledPane animated="false" style="-fx-font-weight: bold;" text="Ash">
+                        <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                <children>
+                                    <ImageView fx:id="humbuckerImage11" fitHeight="133.0" fitWidth="187.0" layoutX="14.0" layoutY="18.0">
+                                        <image>
+                                            <Image url="@../images/wood/ash.jpg" />
+                                        </image>
+                                    </ImageView>
+                                    <Label layoutX="219.0" layoutY="48.0" prefHeight="85.0" prefWidth="383.0" style="-fx-font-weight: normal;" text="Ash bodies provide a bright yet balanced tone. The sound has a crisp, high-end shimmer with articulate mids and a tight low-end. It has a full-range response compared to maple and provides great resonance and sustain. Ash is a relatively lightweight compared to maple and mahogany, making it easier to handle for long playing sessions." textAlignment="JUSTIFY" wrapText="true" />
+                                    <RadioButton alignment="TOP_LEFT" layoutX="546.0" layoutY="140.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="18.0" prefWidth="56.0" style="-fx-font-weight: bold;" text="+ $80" toggleGroup="$pickupGroup" />
+                                </children>
+                            </AnchorPane>
+                        </content>
+                    </TitledPane>
+                </panes>
+            </Accordion>
+        </VBox>
+        <Label alignment="BOTTOM_RIGHT" prefHeight="93.0" prefWidth="630.0" style="-fx-font-weight: bold;" text="TOT = 0$">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </Label>
+    </VBox>
 
 </AnchorPane>

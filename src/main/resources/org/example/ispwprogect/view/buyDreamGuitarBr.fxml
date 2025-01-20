@@ -1,14 +1,97 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="org.example.ispwprogect.view.BuyDreamGuitarB"
-            prefHeight="400.0" prefWidth="600.0">
+<AnchorPane prefHeight="600.0" prefWidth="900.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.ispwprogect.BuyDreamGuitarPController">
+
+    <!-- Buttons -->
+    <HBox alignment="BOTTOM_RIGHT" layoutX="199.0" layoutY="623.0" prefHeight="25.0" prefWidth="673.0" spacing="10">
+        <Button text="Back" />
+        <Button text="Next" />
+    </HBox>
+    <fx:include source="sidebar.fxml" />
+
+    <VBox spacing="10" style="-fx-padding: 20;" />
+
+    <!-- Main Content -->
+    <VBox layoutX="199.0" layoutY="30.0" prefHeight="575.0" prefWidth="673.0" spacing="15" style="-fx-padding: 20; -fx-background-color: #ffffff; -fx-border-color: #cccccc; -fx-border-width: 1;">
+        <Label style="-fx-font-size: 20; -fx-font-weight: bold;" text="New Dream Guitar" />
+        <Label style="-fx-font-size: 14;" text="Select your favorite components" />
+
+        <VBox spacing="10">
+            <!-- Pickup Section -->
+            <Label style="-fx-font-weight: bold;" text="Bridge" />
+            <Label prefHeight="97.0" prefWidth="631.0" text="A bridge is a device that supports the strings on a stringed musical instrument and transmits the vibration of those strings to another structural component of the instrument (typically a soundboard, such as the top of a guitar) which transfers the sound to the surrounding air." textAlignment="JUSTIFY" wrapText="true" />
+            <Accordion>
+                <panes>
+                    <TitledPane animated="false" prefWidth="591.0" style="-fx-font-weight: bold;" text="Hardtail">
+                        <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                <children>
+                                    <RadioButton alignment="TOP_LEFT" layoutX="546.0" layoutY="140.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="17.0" prefWidth="58.0" style="-fx-font-weight: bold;" text="+ $40">
+                                        <toggleGroup>
+                                            <ToggleGroup fx:id="pickupGroup" />
+                                        </toggleGroup>
+                                    </RadioButton>
+                                    <ImageView fx:id="humbuckerImage" fitHeight="133.0" fitWidth="187.0" layoutX="23.0" layoutY="18.0" preserveRatio="true">
+                                        <image>
+                                            <Image url="@../images/bridge/hardtail.png" />
+                                        </image>
+                                    </ImageView>
+                                    <Label layoutX="221.0" layoutY="48.0" prefHeight="85.0" prefWidth="383.0" style="-fx-font-weight: normal;" text="A hardtail bridge is a fixed bridge where the strings are anchored directly to the body of the guitar without any moving parts for pitch modulation. It provides excellent sustain, exceptional tuning stability and it's easy to set up. There’s no chance of the bridge shifting or pulling the strings out of tune, even during aggressive playing. " textAlignment="JUSTIFY" wrapText="true" />
+                                </children>
+                            </AnchorPane>
+                        </content>
+                    </TitledPane>
+                    <TitledPane animated="false" prefWidth="631.0" style="-fx-font-weight: bold;" text="Tremolo">
+                        <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="629.0">
+                                <children>
+                                    <ImageView fx:id="humbuckerImage1" fitHeight="133.0" fitWidth="187.0" layoutX="28.0" layoutY="18.0" preserveRatio="true">
+                                        <image>
+                                            <Image url="@../images/bridge/tremolo.png" />
+                                        </image>
+                                    </ImageView>
+                                    <Label layoutX="221.0" layoutY="48.0" prefHeight="85.0" prefWidth="383.0" style="-fx-font-weight: normal;" text="A tremolo bridge allows you to adjust the pitch of the strings by pushing or pulling a lever (the whammy bar). The bridge is connected to the guitar via a system of springs, allowing it to alter string tension.You can achieve everything from subtle vibrato to extreme dive bombs and swooping pitch changes, but it's a challenge to keep the guitar in tune." textAlignment="JUSTIFY" wrapText="true" />
+                                    <RadioButton alignment="TOP_LEFT" layoutX="549.0" layoutY="140.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="17.0" prefWidth="55.0" style="-fx-font-weight: bold;" text="+ $50" toggleGroup="$pickupGroup" />
+                                </children>
+                            </AnchorPane>
+                        </content>
+                    </TitledPane>
+                    <TitledPane animated="false" style="-fx-font-weight: bold;" text="Tune-O-Matic">
+                        <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                <children>
+                                    <ImageView fx:id="humbuckerImage11" fitHeight="133.0" fitWidth="187.0" layoutX="14.0" layoutY="48.0" preserveRatio="true">
+                                        <image>
+                                            <Image url="@../images/bridge/tune-o-matic.png" />
+                                        </image>
+                                    </ImageView>
+                                    <Label layoutX="219.0" layoutY="48.0" prefHeight="85.0" prefWidth="383.0" style="-fx-font-weight: normal;" text="The Tune-o-Matic bridge design features a separate bridge section (where the strings sit) and a tailpiece (where the strings are anchored to the body). The bridge typically provides great tuning stability (it's a fixed bridge, like hardtail), sustain, and tone. It allows for precise intonation adjustments (like tremolo), but it's very heavy." textAlignment="JUSTIFY" wrapText="true" />
+                                    <RadioButton alignment="TOP_LEFT" layoutX="546.0" layoutY="140.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="18.0" prefWidth="56.0" style="-fx-font-weight: bold;" text="+ $80" toggleGroup="$pickupGroup" />
+                                </children>
+                            </AnchorPane>
+                        </content>
+                    </TitledPane>
+                </panes>
+            </Accordion>
+        </VBox>
+        <Label alignment="BOTTOM_RIGHT" prefHeight="93.0" prefWidth="630.0" style="-fx-font-weight: bold;" text="TOT = 0$">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </Label>
+    </VBox>
 
 </AnchorPane>

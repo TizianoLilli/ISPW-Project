@@ -32,7 +32,7 @@
              <VBox spacing="10">
                  <!-- Pickup Section -->
                  <Label style="-fx-font-weight: bold;" text="Pickup" />
-                 <Label text="A pickup is a transducer that captures or senses mechanical vibrations produced by stringed instruments such as the electric guitar, and converts these to an electrical signal that is amplified to produce musical sounds through a loudspeaker in a speaker enclosure (Wikipedia)." textAlignment="JUSTIFY" wrapText="true" />
+                 <Label text="A pickup is a transducer that captures or senses mechanical vibrations produced by stringed instruments such as the electric guitar, and converts these to an electrical signal that is amplified to produce musical sounds through a loudspeaker in a speaker enclosure." textAlignment="JUSTIFY" wrapText="true" />
          <Accordion>
            <panes>
              <TitledPane animated="false" prefWidth="591.0" style="-fx-font-weight: bold;" text="Single coil">
