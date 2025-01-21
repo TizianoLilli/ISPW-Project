@@ -17,8 +17,8 @@
 
     <!-- Buttons -->
     <HBox alignment="BOTTOM_RIGHT" layoutX="199.0" layoutY="623.0" prefHeight="25.0" prefWidth="673.0" spacing="10">
-        <Button fx:id="backButton" text="Back" onAction="#handleClick"/>
-        <Button text="Next" />
+        <Button fx:id="backButton" onAction="#handleClick" text="Back" />
+        <Button fx:id="nextButton" onAction="#handleNextClick" text="Next" />
     </HBox>
     <fx:include source="sidebar.fxml" />
 
@@ -39,10 +39,10 @@
                         <content>
                             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                 <children>
-                                    <RadioButton alignment="TOP_LEFT" layoutX="546.0" layoutY="140.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="17.0" prefWidth="58.0" style="-fx-font-weight: bold;" text="+ $40">
-                                        <toggleGroup>
-                                            <ToggleGroup fx:id="pickupGroup" />
-                                        </toggleGroup>
+                                    <RadioButton fx:id="BMapleRadio" alignment="TOP_LEFT" layoutX="546.0" layoutY="140.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="17.0" prefWidth="58.0" style="-fx-font-weight: bold;" text="+ $40">
+                              <toggleGroup>
+                                 <ToggleGroup fx:id="bodyGroup" />
+                              </toggleGroup>
                                     </RadioButton>
                                     <ImageView fx:id="humbuckerImage" fitHeight="133.0" fitWidth="187.0" layoutX="14.0" layoutY="25.0" preserveRatio="true">
                                         <image>
@@ -54,7 +54,7 @@
                             </AnchorPane>
                         </content>
                     </TitledPane>
-                    <TitledPane animated="false" prefWidth="631.0" style="-fx-font-weight: bold;" text="Mogany">
+                    <TitledPane animated="false" prefWidth="631.0" style="-fx-font-weight: bold;" text="Mahogany">
                         <content>
                             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="629.0">
                                 <children>
@@ -64,7 +64,7 @@
                                         </image>
                                     </ImageView>
                                     <Label layoutX="221.0" layoutY="48.0" prefHeight="85.0" prefWidth="383.0" style="-fx-font-weight: normal;" text="Mahogany is known for producing a warm, thick tone with pronounced midrange frequencies. The tone is smooth, mellow, and well-roundedwhit a more intimate sound. Its density and stiffness provide excellent sustain. Mahogany is generally heavier than ash or maple. It has a deep, reddish-brown color with a subtle, straight grain. " textAlignment="JUSTIFY" wrapText="true" />
-                                    <RadioButton alignment="TOP_LEFT" layoutX="549.0" layoutY="140.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="17.0" prefWidth="55.0" style="-fx-font-weight: bold;" text="+ $50" toggleGroup="$pickupGroup" />
+                                    <RadioButton fx:id="BMahoganyRadio" alignment="TOP_LEFT" layoutX="549.0" layoutY="140.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="17.0" prefWidth="55.0" style="-fx-font-weight: bold;" text="+ $50" toggleGroup="$bodyGroup" />
                                 </children>
                             </AnchorPane>
                         </content>
@@ -78,8 +78,8 @@
                                             <Image url="@../images/wood/ash.jpg" />
                                         </image>
                                     </ImageView>
-                                    <Label layoutX="219.0" layoutY="48.0" prefHeight="85.0" prefWidth="383.0" style="-fx-font-weight: normal;" text="Ash bodies provide a bright yet balanced tone. The sound has a crisp, high-end shimmer with articulate mids and a tight low-end. It has a full-range response compared to maple and provides great resonance and sustain. Ash is a relatively lightweight compared to maple and mahogany, making it easier to handle for long playing sessions." textAlignment="JUSTIFY" wrapText="true" />
-                                    <RadioButton alignment="TOP_LEFT" layoutX="546.0" layoutY="140.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="18.0" prefWidth="56.0" style="-fx-font-weight: bold;" text="+ $80" toggleGroup="$pickupGroup" />
+                                    <Label layoutX="219.0" layoutY="42.0" prefHeight="85.0" prefWidth="383.0" style="-fx-font-weight: normal;" text="Ash bodies provide a bright yet balanced tone. The sound has a crisp, high-end shimmer with articulate mids and a tight low-end. It has a full-range response compared to maple and provides great resonance and sustain. Ash is a relatively lightweight compared to maple and mahogany, making it easier to handle for long playing sessions." textAlignment="JUSTIFY" wrapText="true" />
+                                    <RadioButton fx:id="BAshRadio" alignment="TOP_LEFT" layoutX="546.0" layoutY="140.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="18.0" prefWidth="56.0" style="-fx-font-weight: bold;" text="+ $80" toggleGroup="$bodyGroup" />
                                 </children>
                             </AnchorPane>
                         </content>
@@ -87,7 +87,7 @@
                 </panes>
             </Accordion>
         </VBox>
-        <Label alignment="BOTTOM_RIGHT" prefHeight="93.0" prefWidth="630.0" style="-fx-font-weight: bold;" text="TOT = 0$">
+        <Label fx:id="TOTPriceLabel" alignment="BOTTOM_RIGHT" prefHeight="93.0" prefWidth="630.0" style="-fx-font-weight: bold;" text="TOT = 0$">
             <font>
                 <Font size="20.0" />
             </font>
