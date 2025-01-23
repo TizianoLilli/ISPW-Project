@@ -11,7 +11,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
-import javafx.scene.control.ToggleGroup;
 import javafx.stage.Stage;
 
 import java.util.HashMap;
@@ -91,7 +90,7 @@ public class BuyDreamGuitarController {
     @FXML private Label TOT;
 
     @FXML
-    private void handleNextClick(ActionEvent event) {
+    private void handleNextClick(ActionEvent event) { // MEGLIO GESTIRLO CON LE BEAN!
 
         try{
             if (TOTPriceLabel != null) {
