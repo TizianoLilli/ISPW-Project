@@ -13,12 +13,12 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="900.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.ispwprogect.BuyDreamGuitarController">
+<AnchorPane prefHeight="600.0" prefWidth="900.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.ispwprogect.BuyDreamGuitarControllerP">
 
           <!-- Buttons -->
           <HBox alignment="BOTTOM_RIGHT" layoutX="199.0" layoutY="623.0" prefHeight="25.0" prefWidth="673.0" spacing="10">
-              <Button fx:id="backButton" text="Back" onAction="#handleClick"/>
-              <Button text="Next" />
+              <Button fx:id="backButton" onAction="#handleClick" text="Back" />
+              <Button fx:id="nextButton" onAction="#handleNextClick" text="Next" />
           </HBox>
     <fx:include source="sidebar.fxml" />
 
@@ -51,7 +51,7 @@
                                  </children>
                               </AnchorPane>
                                     </HBox>
-                                     <RadioButton alignment="TOP_LEFT" layoutX="546.0" layoutY="147.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="17.0" prefWidth="58.0" style="-fx-font-weight: bold;" text="+ $40">
+                                     <RadioButton fx:id="SingleCoilRadio" alignment="TOP_LEFT" layoutX="546.0" layoutY="147.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="17.0" prefWidth="58.0" style="-fx-font-weight: bold;" text="+ $40">
                               <toggleGroup>
                                  <ToggleGroup fx:id="pickupGroup" />
                               </toggleGroup>
@@ -74,7 +74,7 @@
                                  <Label prefHeight="85.0" prefWidth="383.0" style="-fx-font-weight: normal;" text="A humbucker, humbucking pickup, or double coil, is a guitar pickup that uses two wire coils to cancel out noisy interference from coil pickups. Humbucking coils are also used in dynamic microphones to cancel electromagnetic hum. Humbuckers are one of two main types of guitar pickups." textAlignment="JUSTIFY" wrapText="true" />
                               </children>
                            </HBox>
-                           <RadioButton alignment="TOP_LEFT" layoutX="549.0" layoutY="149.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="17.0" prefWidth="55.0" style="-fx-font-weight: bold;" text="+ $50" toggleGroup="$pickupGroup" />
+                           <RadioButton fx:id="HumbuckerRadio" alignment="TOP_LEFT" layoutX="549.0" layoutY="149.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="17.0" prefWidth="55.0" style="-fx-font-weight: bold;" text="+ $50" toggleGroup="$pickupGroup" />
                         </children>
                      </AnchorPane>
                </content>
@@ -93,7 +93,7 @@
                                  <Label prefHeight="85.0" prefWidth="383.0" style="-fx-font-weight: normal;" text="The P-90 is a single coil pickup produced by Gibson Guitar Corporation since 1946. Compared to other single coil designs, such as the Fender single coil, the bobbin for a P-90 is wider but shorter. The Fender style single coil is wound in a taller bobbin, but the wires are closer to the individual poles. This makes the P-90 produce a somewhat warmer tone with less edge and brightness. As with other single-coil pickups, the P-90 is subject to AC hum unless some form of cancellation is used." textAlignment="JUSTIFY" wrapText="true" />
                               </children>
                            </HBox>
-                           <RadioButton alignment="TOP_LEFT" layoutX="546.0" layoutY="149.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="18.0" prefWidth="56.0" style="-fx-font-weight: bold;" text="+ $80" toggleGroup="$pickupGroup" />
+                           <RadioButton fx:id="P90Radio" alignment="TOP_LEFT" layoutX="546.0" layoutY="149.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="18.0" prefWidth="56.0" style="-fx-font-weight: bold;" text="+ $80" toggleGroup="$pickupGroup" />
                         </children>
                      </AnchorPane>
                </content>

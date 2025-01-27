@@ -9,11 +9,9 @@ public class DreamGuitarBean {
 //    private BridgeBean bridgeBean;
 //    private BodyBean bodyBean;
 
-    public DreamGuitarBean(PickupBean pickupBean, FretboardBean fretboardBean, StringsBean stringsBean) {
-        this.pickupBean = pickupBean;
-        this.fretboardBean = fretboardBean;
-        this.stringsBean = stringsBean;
-    }
+    private double price;
+
+    public DreamGuitarBean() {this.price = 0;} // inizialmente tutte le componenti sono null
 
     public PickupBean getPickupBean() {
         return pickupBean;
@@ -38,4 +36,7 @@ public class DreamGuitarBean {
     public void setStringsBean(StringsBean stringsBean) {
         this.stringsBean = stringsBean;
     }
+
+    public double getPrice() {return price;}
+    public void setPrice(double price) {this.price = price;}
 }

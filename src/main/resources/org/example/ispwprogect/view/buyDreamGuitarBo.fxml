@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="900.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.ispwprogect.BuyDreamGuitarController">
+<AnchorPane prefHeight="600.0" prefWidth="900.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.ispwprogect.BuyDreamGuitarControllerBo">
 
     <!-- Buttons -->
     <HBox alignment="BOTTOM_RIGHT" layoutX="199.0" layoutY="623.0" prefHeight="25.0" prefWidth="673.0" spacing="10">
@@ -39,7 +39,7 @@
                         <content>
                             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                 <children>
-                                    <RadioButton fx:id="BMapleRadio" alignment="TOP_LEFT" layoutX="546.0" layoutY="140.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="17.0" prefWidth="58.0" style="-fx-font-weight: bold;" text="+ $40">
+                                    <RadioButton fx:id="BoMapleRadio" alignment="TOP_LEFT" layoutX="546.0" layoutY="140.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="17.0" prefWidth="58.0" style="-fx-font-weight: bold;" text="+ $40">
                               <toggleGroup>
                                  <ToggleGroup fx:id="bodyGroup" />
                               </toggleGroup>
@@ -64,7 +64,7 @@
                                         </image>
                                     </ImageView>
                                     <Label layoutX="221.0" layoutY="48.0" prefHeight="85.0" prefWidth="383.0" style="-fx-font-weight: normal;" text="Mahogany is known for producing a warm, thick tone with pronounced midrange frequencies. The tone is smooth, mellow, and well-roundedwhit a more intimate sound. Its density and stiffness provide excellent sustain. Mahogany is generally heavier than ash or maple. It has a deep, reddish-brown color with a subtle, straight grain. " textAlignment="JUSTIFY" wrapText="true" />
-                                    <RadioButton fx:id="BMahoganyRadio" alignment="TOP_LEFT" layoutX="549.0" layoutY="140.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="17.0" prefWidth="55.0" style="-fx-font-weight: bold;" text="+ $50" toggleGroup="$bodyGroup" />
+                                    <RadioButton fx:id="BoMahoganyRadio" alignment="TOP_LEFT" layoutX="549.0" layoutY="140.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="17.0" prefWidth="55.0" style="-fx-font-weight: bold;" text="+ $50" toggleGroup="$bodyGroup" />
                                 </children>
                             </AnchorPane>
                         </content>
@@ -79,7 +79,7 @@
                                         </image>
                                     </ImageView>
                                     <Label layoutX="219.0" layoutY="42.0" prefHeight="85.0" prefWidth="383.0" style="-fx-font-weight: normal;" text="Ash bodies provide a bright yet balanced tone. The sound has a crisp, high-end shimmer with articulate mids and a tight low-end. It has a full-range response compared to maple and provides great resonance and sustain. Ash is a relatively lightweight compared to maple and mahogany, making it easier to handle for long playing sessions." textAlignment="JUSTIFY" wrapText="true" />
-                                    <RadioButton fx:id="BAshRadio" alignment="TOP_LEFT" layoutX="546.0" layoutY="140.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="18.0" prefWidth="56.0" style="-fx-font-weight: bold;" text="+ $80" toggleGroup="$bodyGroup" />
+                                    <RadioButton fx:id="BoAshRadio" alignment="TOP_LEFT" layoutX="546.0" layoutY="140.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="18.0" prefWidth="56.0" style="-fx-font-weight: bold;" text="+ $80" toggleGroup="$bodyGroup" />
                                 </children>
                             </AnchorPane>
                         </content>
@@ -87,7 +87,7 @@
                 </panes>
             </Accordion>
         </VBox>
-        <Label fx:id="TOTPriceLabel" alignment="BOTTOM_RIGHT" prefHeight="93.0" prefWidth="630.0" style="-fx-font-weight: bold;" text="TOT = 0$">
+        <Label fx:id="totPriceLabel" alignment="BOTTOM_RIGHT" prefHeight="93.0" prefWidth="630.0" style="-fx-font-weight: bold;" text="TOT = 0$">
             <font>
                 <Font size="20.0" />
             </font>

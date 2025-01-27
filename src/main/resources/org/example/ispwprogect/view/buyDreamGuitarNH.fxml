@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="900.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.ispwprogect.BuyDreamGuitarController">
+<AnchorPane prefHeight="600.0" prefWidth="900.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.ispwprogect.BuyDreamGuitarControllerNH">
 
     <!-- Buttons -->
     <HBox alignment="BOTTOM_RIGHT" layoutX="199.0" layoutY="623.0" prefHeight="25.0" prefWidth="673.0" spacing="10">

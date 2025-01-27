@@ -9,9 +9,12 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 import javafx.scene.input.MouseEvent;
+import org.example.ispwprogect.control.application.BuyDreamGuitarApplicationController;
+import org.example.ispwprogect.utils.bean.DreamGuitarBean;
+
 import java.io.IOException;
 
-public class SidebarController {
+public class SidebarController{
 
     @FXML
     private Label rightStatusLabel;
@@ -51,6 +54,9 @@ public class SidebarController {
 
     @FXML
     public void handleNewDreamGuitarClick(MouseEvent event) {
+        controller = new BuyDreamGuitarApplicationController();
+        dreamGuitarBean = controller.newDreamGuitar();
+
         loadScene("view/buyDreamGuitarStart.fxml", "New Dream Guitar - ", event);
     }
 
@@ -60,6 +66,11 @@ public class SidebarController {
             FXMLLoader loader = new FXMLLoader(getClass().getResource(fxml));
             AnchorPane sidebarRoot = loader.load();
 
+            // Ottieni un controller grafico generico (polimorfismo)
+            GraphicController graphicController = loader.getController();
+//            graphicController.setApplicationController(controller);
+            graphicController.init(dreamGuitarBean, controller);
+
             // Ottieni la finestra corrente e imposta la nuova scena
             Stage stage = (Stage) ((Label)event.getSource()).getScene().getWindow();
             stage.setScene(new Scene(sidebarRoot));
@@ -68,5 +79,9 @@ public class SidebarController {
             e.printStackTrace();
         }
     }
+
+    private BuyDreamGuitarApplicationController controller;
+
+    private DreamGuitarBean dreamGuitarBean;
 
 }

@@ -4,7 +4,7 @@ public abstract class Decorator extends Component{
 
     private Component component;
 
-    public Decorator(Component component) {
+    protected Decorator(Component component) {
         this.component = component;
     }
 
