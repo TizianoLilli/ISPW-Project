@@ -20,8 +20,8 @@ public class SessionManager {
         return instance;
     }
 
-    public Session createSession(DreamGuitarBean dreamGuitarBean, PickupBean pickupBean, FretboardBean fretboardBean, StringsBean stringsBean, IdSessionBean idSessioneBean) {
-        return new Session(dreamGuitarBean, pickupBean, fretboardBean, stringsBean, idSessioneBean);
+    public Session createSession(IdSessionBean idSessioneBean) {
+        return new Session(idSessioneBean);
     }
 
     public Session getSessionFromId(IdSessionBean id){

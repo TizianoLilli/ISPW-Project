@@ -17,8 +17,8 @@
 
     <!-- Buttons -->
     <HBox alignment="BOTTOM_RIGHT" layoutX="199.0" layoutY="623.0" prefHeight="25.0" prefWidth="673.0" spacing="10">
-        <Button fx:id="backButton" text="Back" onAction="#handleClick"/>
-        <Button text="Next" />
+        <Button fx:id="backButton" onAction="#handleBackClick" text="Back" />
+        <Button fx:id="NextButton" onAction="#handleNextClick" text="Next" />
     </HBox>
     <fx:include source="sidebar.fxml" />
 
@@ -29,7 +29,7 @@
         <Label style="-fx-font-size: 20; -fx-font-weight: bold;" text="New Dream Guitar" />
         <Label style="-fx-font-size: 14;" text="Select your favorite components" />
 
-        <VBox spacing="10">
+        <VBox prefHeight="450.0" prefWidth="631.0" spacing="10">
             <!-- Pickup Section -->
             <Label style="-fx-font-weight: bold;" text="Neck &amp; Headstock" />
             <Label prefHeight="97.0" prefWidth="631.0" text="The neck is the part of the guitar that projects from the main body and is the base of the fingerboard. The wood used to make the fretboard will usually differ from the wood in the rest of the neck. The bending stress on the neck is considerable, particularly when heavier gauge strings are used. Many modern guitar has marker dots on certain frets. The main function of a headstock is to house the tuning pegs or other mechanism that holds the strings at the &quot;head&quot; of the instrument. It can be straight or angled and in different shapes." textAlignment="JUSTIFY" wrapText="true" />
@@ -87,11 +87,15 @@
                 </panes>
             </Accordion>
         </VBox>
-        <Label alignment="BOTTOM_RIGHT" prefHeight="93.0" prefWidth="630.0" style="-fx-font-weight: bold;" text="TOT = 0$">
-            <font>
-                <Font size="20.0" />
-            </font>
-        </Label>
+      <AnchorPane prefHeight="47.0" prefWidth="631.0">
+         <children>
+              <Label fx:id="total" alignment="BOTTOM_RIGHT" prefHeight="47.0" prefWidth="630.0" style="-fx-font-weight: bold;" text="TOT = 0.0$">
+                  <font>
+                      <Font size="20.0" />
+                  </font>
+              </Label>
+         </children>
+      </AnchorPane>
     </VBox>
 
 </AnchorPane>

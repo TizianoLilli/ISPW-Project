@@ -17,8 +17,8 @@
 
     <!-- Buttons -->
     <HBox alignment="BOTTOM_RIGHT" layoutX="199.0" layoutY="623.0" prefHeight="25.0" prefWidth="673.0" spacing="10">
-        <Button fx:id="backButton" text="Back" onAction="#handleClick"/>
-        <Button text="Next" />
+        <Button fx:id="backButton" onAction="#handleBackClick" text="Back" />
+        <Button fx:id="nextButton" onAction="#handleNextClick" text="Next" />
     </HBox>
     <fx:include source="sidebar.fxml" />
 
@@ -29,7 +29,7 @@
         <Label style="-fx-font-size: 20; -fx-font-weight: bold;" text="New Dream Guitar" />
         <Label style="-fx-font-size: 14;" text="Select your favorite components" />
 
-        <VBox spacing="10">
+        <VBox prefHeight="436.0" prefWidth="631.0" spacing="10">
             <!-- Pickup Section -->
             <Label style="-fx-font-weight: bold;" text="Strings" />
             <Label prefHeight="97.0" prefWidth="631.0" text="Strings are long flexible structures that produce sound through vibration. Strings are held under tension so that they can vibrate freely. The pitch (frequency) at which a string will vibrate is primarily related to its vibrating length, its tension, and its mass per unit of length. The gauge refers to the thickness of the individual strings, typically measured in thousandths of an inch. A set of strings includes several gauges, ranging from the thinnest (high E) to the thickest (low E)." textAlignment="JUSTIFY" wrapText="true" />
@@ -39,10 +39,10 @@
                         <content>
                             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                 <children>
-                                    <RadioButton alignment="TOP_LEFT" layoutX="546.0" layoutY="140.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="17.0" prefWidth="58.0" style="-fx-font-weight: bold;" text="+ $40">
-                                        <toggleGroup>
-                                            <ToggleGroup fx:id="pickupGroup" />
-                                        </toggleGroup>
+                                    <RadioButton fx:id="nineGaugeRadio" alignment="TOP_LEFT" layoutX="546.0" layoutY="140.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="17.0" prefWidth="58.0" style="-fx-font-weight: bold;" text="+ $40">
+                              <toggleGroup>
+                                 <ToggleGroup fx:id="gaugeGroup" />
+                              </toggleGroup>
                                     </RadioButton>
                                     <ImageView fx:id="humbuckerImage" fitHeight="141.0" fitWidth="136.0" layoutX="29.0" layoutY="17.0" preserveRatio="true">
                                         <image>
@@ -64,7 +64,7 @@
                                         </image>
                                     </ImageView>
                                     <Label layoutX="188.0" layoutY="48.0" prefHeight="85.0" prefWidth="414.0" style="-fx-font-weight: normal;" text="These strings offer a good balance between playability and tone. They are still relatively easy to play but have a bit more substance and a fuller and warmer sound compared to 9s.They can provide a good mix of clarity and depth. This gauge is very popular in many rock genres, blues, and alternative styles." textAlignment="JUSTIFY" wrapText="true" />
-                                    <RadioButton alignment="TOP_LEFT" layoutX="546.0" layoutY="140.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="17.0" prefWidth="55.0" style="-fx-font-weight: bold;" text="+ $50" toggleGroup="$pickupGroup" />
+                                    <RadioButton fx:id="tenGaugeRadio" alignment="TOP_LEFT" layoutX="546.0" layoutY="140.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="17.0" prefWidth="55.0" style="-fx-font-weight: bold;" text="+ $50" toggleGroup="$gaugeGroup" />
                                 </children>
                             </AnchorPane>
                         </content>
@@ -79,7 +79,7 @@
                                         </image>
                                     </ImageView>
                                     <Label layoutX="188.0" layoutY="48.0" prefHeight="85.0" prefWidth="414.0" style="-fx-font-weight: normal;" text="Thicker strings tend to produce a fuller, warmer tone with more sustain and resonance. Thicker strings require more finger strength and pressure, making them more difficult to bend or fret, which may make them less ideal for beginners. 11-gauge strings are favored by players who need a more robust sound, such as for blues, jazz, and heavier rock." textAlignment="JUSTIFY" wrapText="true" />
-                                    <RadioButton alignment="TOP_LEFT" layoutX="546.0" layoutY="140.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="18.0" prefWidth="56.0" style="-fx-font-weight: bold;" text="+ $80" toggleGroup="$pickupGroup" />
+                                    <RadioButton fx:id="elevenGaugeRadio" alignment="TOP_LEFT" layoutX="546.0" layoutY="140.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="18.0" prefWidth="56.0" style="-fx-font-weight: bold;" text="+ $80" toggleGroup="$gaugeGroup" />
                                 </children>
                             </AnchorPane>
                         </content>
@@ -87,11 +87,15 @@
                 </panes>
             </Accordion>
         </VBox>
-        <Label alignment="BOTTOM_RIGHT" prefHeight="93.0" prefWidth="630.0" style="-fx-font-weight: bold;" text="TOT = 0$">
-            <font>
-                <Font size="20.0" />
-            </font>
-        </Label>
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="47.0" prefWidth="631.0">
+         <children>
+              <Label fx:id="total" alignment="BOTTOM_RIGHT" layoutY="1.0" prefHeight="47.0" prefWidth="631.0" style="-fx-font-weight: bold;" text="TOT = 0.0$">
+                  <font>
+                      <Font size="20.0" />
+                  </font>
+              </Label>
+         </children>
+      </AnchorPane>
     </VBox>
 
 </AnchorPane>

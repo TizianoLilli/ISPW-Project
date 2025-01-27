@@ -17,7 +17,7 @@
 
     <!-- Buttons -->
     <HBox alignment="BOTTOM_RIGHT" layoutX="199.0" layoutY="623.0" prefHeight="25.0" prefWidth="673.0" spacing="10">
-        <Button fx:id="backButton" onAction="#handleClick" text="Back" />
+        <Button fx:id="backButton" onAction="#handleBackClick" text="Back" />
         <Button fx:id="nextButton" onAction="#handleNextClick" text="Next" />
     </HBox>
     <fx:include source="sidebar.fxml" />
@@ -29,7 +29,7 @@
         <Label style="-fx-font-size: 20; -fx-font-weight: bold;" text="New Dream Guitar" />
         <Label style="-fx-font-size: 14;" text="Select your favorite components" />
 
-        <VBox spacing="10">
+        <VBox prefHeight="470.0" prefWidth="631.0" spacing="10">
             <!-- Pickup Section -->
             <Label style="-fx-font-weight: bold;" text="Body" />
             <Label prefHeight="97.0" prefWidth="631.0" text="Most electric guitar bodies are made of wood and include a plastic pickguard. Boards wide enough to use as a solid body are very expensive due to the worldwide depletion of hardwood stock since the 1970s, so the wood is rarely one solid piece. Most bodies are made from two pieces of wood with some of them including a seam running down the center line of the body." textAlignment="JUSTIFY" wrapText="true" />
@@ -87,11 +87,15 @@
                 </panes>
             </Accordion>
         </VBox>
-        <Label fx:id="totPriceLabel" alignment="BOTTOM_RIGHT" prefHeight="93.0" prefWidth="630.0" style="-fx-font-weight: bold;" text="TOT = 0$">
-            <font>
-                <Font size="20.0" />
-            </font>
-        </Label>
+         <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="47.0" prefWidth="631.0">
+             <children>
+                 <Label fx:id="total" alignment="BOTTOM_RIGHT" prefHeight="47.0" prefWidth="631.0" style="-fx-font-weight: bold;" text="TOT = 0.0$">
+                     <font>
+                         <Font size="20.0" />
+                     </font>
+                 </Label>
+             </children>
+         </AnchorPane>
     </VBox>
 
 </AnchorPane>

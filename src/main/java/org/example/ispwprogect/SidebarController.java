@@ -11,6 +11,7 @@ import javafx.stage.Stage;
 import javafx.scene.input.MouseEvent;
 import org.example.ispwprogect.control.application.BuyDreamGuitarApplicationController;
 import org.example.ispwprogect.utils.bean.DreamGuitarBean;
+import org.example.ispwprogect.utils.bean.IdSessionBean;
 
 import java.io.IOException;
 
@@ -69,7 +70,7 @@ public class SidebarController{
             // Ottieni un controller grafico generico (polimorfismo)
             GraphicController graphicController = loader.getController();
 //            graphicController.setApplicationController(controller);
-            graphicController.init(dreamGuitarBean, controller);
+            graphicController.init(id, dreamGuitarBean);
 
             // Ottieni la finestra corrente e imposta la nuova scena
             Stage stage = (Stage) ((Label)event.getSource()).getScene().getWindow();
@@ -81,6 +82,8 @@ public class SidebarController{
     }
 
     private BuyDreamGuitarApplicationController controller;
+
+    private IdSessionBean id;
 
     private DreamGuitarBean dreamGuitarBean;
 

@@ -17,8 +17,8 @@
 
     <!-- Buttons -->
     <HBox alignment="BOTTOM_RIGHT" layoutX="199.0" layoutY="623.0" prefHeight="25.0" prefWidth="673.0" spacing="10">
-        <Button fx:id="backButton" text="Back" onAction="#handleClick"/>
-        <Button text="Next" />
+        <Button fx:id="backButton" onAction="#handleBackClick" text="Back" />
+        <Button fx:id="nextButton" onAction="#handleNextClick" text="Next" />
     </HBox>
     <fx:include source="sidebar.fxml" />
 
@@ -29,7 +29,7 @@
         <Label style="-fx-font-size: 20; -fx-font-weight: bold;" text="New Dream Guitar" />
         <Label style="-fx-font-size: 14;" text="Select your favorite components" />
 
-        <VBox spacing="10">
+        <VBox prefHeight="435.0" prefWidth="631.0" spacing="10">
             <!-- Pickup Section -->
             <Label style="-fx-font-weight: bold;" text="Bridge" />
             <Label prefHeight="97.0" prefWidth="631.0" text="A bridge is a device that supports the strings on a stringed musical instrument and transmits the vibration of those strings to another structural component of the instrument (typically a soundboard, such as the top of a guitar) which transfers the sound to the surrounding air." textAlignment="JUSTIFY" wrapText="true" />
@@ -87,11 +87,15 @@
                 </panes>
             </Accordion>
         </VBox>
-        <Label alignment="BOTTOM_RIGHT" prefHeight="93.0" prefWidth="630.0" style="-fx-font-weight: bold;" text="TOT = 0$">
-            <font>
-                <Font size="20.0" />
-            </font>
-        </Label>
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="47.0" prefWidth="631.0">
+         <children>
+              <Label fx:id="total" alignment="BOTTOM_RIGHT" layoutX="1.0" prefHeight="47.0" prefWidth="630.0" style="-fx-font-weight: bold;" text="TOT = 0.0$">
+                  <font>
+                      <Font size="20.0" />
+                  </font>
+              </Label>
+         </children>
+      </AnchorPane>
     </VBox>
 
 </AnchorPane>
