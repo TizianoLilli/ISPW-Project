@@ -10,7 +10,6 @@ import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.RadioButton;
 import javafx.stage.Stage;
 import org.example.ispwprogect.control.application.BuyDreamGuitarApplicationController;
 import org.example.ispwprogect.utils.bean.DreamGuitarBean;
@@ -18,41 +17,22 @@ import org.example.ispwprogect.utils.bean.IdSessionBean;
 import org.example.ispwprogect.utils.bean.PickupBean;
 import org.example.ispwprogect.utils.enumeration.PickupType;
 
-import java.util.HashMap;
-import java.util.Map;
-
 public class BuyDreamGuitarControllerStart extends GraphicController{
 
-//    @FXML private Button bodyButton;
-
+    @FXML private Button pickupsButton;
+    @FXML private Button bodyButton;
+    @FXML private Button bridgeButton;
+    @FXML private Button stringsButton;
+    @FXML private Button fretboardButton;
+    @FXML private Button nesButton;
     @FXML private Button backButton;
-
     @FXML private Button nextButton;
 
-    private Map<Button, String> page = new HashMap<>();
-
     private BuyDreamGuitarApplicationController controller;
-
     private DreamGuitarBean dreamGuitarBean;
-
     private IdSessionBean id;
 
-    @FXML
-    public void initialize() { //ATTENZIONE!! OGNI VOLTA CHE CAMBIO FXML RICHIAMO QUESTO METODO
-
-//        page.put(bodyButton, "view/buyDreamGuitarBo.fxml");
-//        page.put(bridgeButton, "view/buyDreamGuitarBr.fxml");
-//        page.put(pickupsButton, "view/buyDreamGuitarP.fxml");
-//        page.put(fretboardButton, "view/buyDreamGuitarF.fxml");
-//        page.put(stringsButton, "view/buyDreamGuitarS.fxml");
-//        page.put(nesButton, "view/buyDreamGuitarNH.fxml");
-//
-//        page.put(backButtonStart, "view/homePage.fxml");
-//        page.put(backButton, "view/buyDreamGuitarStart.fxml");
-//
-//        page.put(nextButton, "view/buyDreamGuitarStart.fxml");
-
-    }
+    @FXML private Label total;
 
     @Override
     public void init(IdSessionBean id, DreamGuitarBean dreamGuitarBean) {
@@ -65,15 +45,35 @@ public class BuyDreamGuitarControllerStart extends GraphicController{
 
         if (total != null && dreamGuitarBean != null) {
             total.setText("TOT = " + dreamGuitarBean.getPrice() + "$");
+
+            if (dreamGuitarBean.getPickupBean() != null) {
+                pickupsButton.setText("Pickups&#10;(" + dreamGuitarBean.getPickupBean().getType() + ")");
+            } else if (dreamGuitarBean.getBodyBean() != null) {
+                bodyButton.setText("Body&#10;(" + dreamGuitarBean.getBodyBean().getType() + ")");
+            } else if (dreamGuitarBean.getBridgeBean() != null) {
+                bridgeButton.setText("Bridge&#10;(" + dreamGuitarBean.getBridgeBean().getType() + ")");
+            } else if (dreamGuitarBean.getStringsBean() != null) {
+                stringsButton.setText("Strings&#10;(" + dreamGuitarBean.getStringsBean().getType() + ")");
+            } else if (dreamGuitarBean.getFretboardBean() != null) {
+                fretboardButton.setText("Fretboard&#10;(" + dreamGuitarBean.getStringsBean().getType() + ")");
+            } else if (dreamGuitarBean.getNesBean() != null) {
+                nesButton.setText("Nes&#10;(" + dreamGuitarBean.getStringsBean().getType() + ")");
+            }
         }
+    }
+
+    @FXML
+    private void handleBackClick(ActionEvent event) {
+
+        Stage currentStage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        ChangePage istanza = ChangePage.getChangePage();
+        istanza.setStage(currentStage);
+        istanza.change("view/homePage.fxml", id, null);
 
     }
 
     @FXML
-    private void handleBackClick(ActionEvent event) {}
-
-    @FXML
-    private void handleClick(ActionEvent event) {
+    private void handlePickupsClick(ActionEvent event) {
 
         Stage currentStage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         ChangePage istanza = ChangePage.getChangePage();
@@ -82,6 +82,53 @@ public class BuyDreamGuitarControllerStart extends GraphicController{
 
     }
 
-    @FXML private Label total;
+    @FXML
+    private void handleBodyClick(ActionEvent event) {
 
+        Stage currentStage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        ChangePage istanza = ChangePage.getChangePage();
+        istanza.setStage(currentStage);
+        istanza.change("view/buyDreamGuitarBo.fxml", id, dreamGuitarBean);
+
+    }
+
+    @FXML
+    private void handleBridgeClick(ActionEvent event) {
+
+        Stage currentStage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        ChangePage istanza = ChangePage.getChangePage();
+        istanza.setStage(currentStage);
+        istanza.change("view/buyDreamGuitarBr.fxml", id, dreamGuitarBean);
+
+    }
+
+    @FXML
+    private void handleStringsClick(ActionEvent event) {
+
+        Stage currentStage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        ChangePage istanza = ChangePage.getChangePage();
+        istanza.setStage(currentStage);
+        istanza.change("view/buyDreamGuitarS.fxml", id, dreamGuitarBean);
+
+    }
+
+    @FXML
+    private void handleFretboardClick(ActionEvent event) {
+
+        Stage currentStage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        ChangePage istanza = ChangePage.getChangePage();
+        istanza.setStage(currentStage);
+        istanza.change("view/buyDreamGuitarF.fxml", id, dreamGuitarBean);
+
+    }
+
+    @FXML
+    private void handleNesClick(ActionEvent event) {
+
+        Stage currentStage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        ChangePage istanza = ChangePage.getChangePage();
+        istanza.setStage(currentStage);
+        istanza.change("view/buyDreamGuitarNH.fxml", id, dreamGuitarBean);
+
+    }
 }

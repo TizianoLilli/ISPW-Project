@@ -39,12 +39,12 @@
                         <content>
                             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                 <children>
-                                    <RadioButton alignment="TOP_LEFT" layoutX="546.0" layoutY="140.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="17.0" prefWidth="58.0" style="-fx-font-weight: bold;" text="+ $40">
-                                        <toggleGroup>
-                                            <ToggleGroup fx:id="pickupGroup" />
-                                        </toggleGroup>
+                                    <RadioButton fx:id="hardtailRadio" alignment="TOP_LEFT" layoutX="546.0" layoutY="140.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="17.0" prefWidth="58.0" style="-fx-font-weight: bold;" text="+ $40">
+                              <toggleGroup>
+                                 <ToggleGroup fx:id="BridgeGroup" />
+                              </toggleGroup>
                                     </RadioButton>
-                                    <ImageView fx:id="humbuckerImage" fitHeight="133.0" fitWidth="187.0" layoutX="23.0" layoutY="18.0" preserveRatio="true">
+                                    <ImageView fx:id="hardtailImage" fitHeight="133.0" fitWidth="187.0" layoutX="23.0" layoutY="18.0" preserveRatio="true">
                                         <image>
                                             <Image url="@../images/bridge/hardtail.png" />
                                         </image>
@@ -58,13 +58,13 @@
                         <content>
                             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="629.0">
                                 <children>
-                                    <ImageView fx:id="humbuckerImage1" fitHeight="133.0" fitWidth="187.0" layoutX="28.0" layoutY="18.0" preserveRatio="true">
+                                    <ImageView fx:id="tremoloImage" fitHeight="133.0" fitWidth="187.0" layoutX="28.0" layoutY="18.0" preserveRatio="true">
                                         <image>
                                             <Image url="@../images/bridge/tremolo.png" />
                                         </image>
                                     </ImageView>
                                     <Label layoutX="221.0" layoutY="48.0" prefHeight="85.0" prefWidth="383.0" style="-fx-font-weight: normal;" text="A tremolo bridge allows you to adjust the pitch of the strings by pushing or pulling a lever (the whammy bar). The bridge is connected to the guitar via a system of springs, allowing it to alter string tension.You can achieve everything from subtle vibrato to extreme dive bombs and swooping pitch changes, but it's a challenge to keep the guitar in tune." textAlignment="JUSTIFY" wrapText="true" />
-                                    <RadioButton alignment="TOP_LEFT" layoutX="549.0" layoutY="140.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="17.0" prefWidth="55.0" style="-fx-font-weight: bold;" text="+ $50" toggleGroup="$pickupGroup" />
+                                    <RadioButton fx:id="tremoloRadio" alignment="TOP_LEFT" layoutX="549.0" layoutY="140.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="17.0" prefWidth="55.0" style="-fx-font-weight: bold;" text="+ $50" toggleGroup="$BridgeGroup" />
                                 </children>
                             </AnchorPane>
                         </content>
@@ -73,13 +73,13 @@
                         <content>
                             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                 <children>
-                                    <ImageView fx:id="humbuckerImage11" fitHeight="133.0" fitWidth="187.0" layoutX="14.0" layoutY="48.0" preserveRatio="true">
+                                    <ImageView fx:id="tuneomaticImage" fitHeight="133.0" fitWidth="187.0" layoutX="14.0" layoutY="48.0" preserveRatio="true">
                                         <image>
                                             <Image url="@../images/bridge/tune-o-matic.png" />
                                         </image>
                                     </ImageView>
                                     <Label layoutX="219.0" layoutY="48.0" prefHeight="85.0" prefWidth="383.0" style="-fx-font-weight: normal;" text="The Tune-o-Matic bridge design features a separate bridge section (where the strings sit) and a tailpiece (where the strings are anchored to the body). The bridge typically provides great tuning stability (it's a fixed bridge, like hardtail), sustain, and tone. It allows for precise intonation adjustments (like tremolo), but it's very heavy." textAlignment="JUSTIFY" wrapText="true" />
-                                    <RadioButton alignment="TOP_LEFT" layoutX="546.0" layoutY="140.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="18.0" prefWidth="56.0" style="-fx-font-weight: bold;" text="+ $80" toggleGroup="$pickupGroup" />
+                                    <RadioButton fx:id="tuneomaticRadio" alignment="TOP_LEFT" layoutX="546.0" layoutY="140.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="18.0" prefWidth="56.0" style="-fx-font-weight: bold;" text="+ $80" toggleGroup="$BridgeGroup" />
                                 </children>
                             </AnchorPane>
                         </content>

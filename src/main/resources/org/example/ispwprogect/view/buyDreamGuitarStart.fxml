@@ -41,12 +41,12 @@
                      <Image url="@../images/dream-guitar.png" />
                   </image>
                </ImageView>
-               <Button fx:id="bodyButton" layoutX="40.0" layoutY="36.0" mnemonicParsing="false" onAction="#handleClick" text="Body&#10;(NONE)" textAlignment="CENTER" />
-               <Button fx:id="bridgeButton" layoutX="115.0" layoutY="18.0" mnemonicParsing="false" onAction="#handleClick" text="Bridge&#10;(NONE)" textAlignment="CENTER" />
-               <Button fx:id="pickupsButton" layoutX="197.0" layoutY="33.0" mnemonicParsing="false" onAction="#handleClick" text="Pickups&#10;(NONE)" textAlignment="CENTER" />
-               <Button fx:id="stringsButton" layoutX="176.0" layoutY="245.0" mnemonicParsing="false" onAction="#handleClick" text="Strings&#10;(NONE)" textAlignment="CENTER" />
-               <Button fx:id="nesButton" layoutX="467.0" layoutY="234.0" mnemonicParsing="false" onAction="#handleClick" text="Neck&amp;Headstock&#10;(NONE)" textAlignment="CENTER" />
-               <Button fx:id="fretboardButton" layoutX="414.0" layoutY="91.0" mnemonicParsing="false" onAction="#handleClick" text="Fretboard&#10;(NONE)" textAlignment="CENTER" />
+               <Button fx:id="bodyButton" layoutX="40.0" layoutY="36.0" mnemonicParsing="false" onAction="#handleBodyClick" text="Body&#10;(NONE)" textAlignment="CENTER" />
+               <Button fx:id="bridgeButton" layoutX="115.0" layoutY="18.0" mnemonicParsing="false" onAction="#handleBridgeClick" text="Bridge&#10;(NONE)" textAlignment="CENTER" />
+               <Button fx:id="pickupsButton" layoutX="197.0" layoutY="33.0" mnemonicParsing="false" onAction="#handlePickupsClick" text="Pickups&#10;(NONE)" textAlignment="CENTER" />
+               <Button fx:id="stringsButton" layoutX="176.0" layoutY="245.0" mnemonicParsing="false" onAction="#handleStringsClick" text="Strings&#10;(NONE)" textAlignment="CENTER" />
+               <Button fx:id="nesButton" layoutX="467.0" layoutY="234.0" mnemonicParsing="false" onAction="#handleNesClick" text="Neck&amp;Headstock&#10;(NONE)" textAlignment="CENTER" />
+               <Button fx:id="fretboardButton" layoutX="414.0" layoutY="91.0" mnemonicParsing="false" onAction="#handleFretboardClick" text="Fretboard&#10;(NONE)" textAlignment="CENTER" />
             </children>
          </AnchorPane>
         </VBox>

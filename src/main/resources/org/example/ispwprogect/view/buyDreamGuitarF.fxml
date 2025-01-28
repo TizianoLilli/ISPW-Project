@@ -44,7 +44,7 @@
                                  <ToggleGroup fx:id="fretboardGroup" />
                               </toggleGroup>
                                     </RadioButton>
-                                       <ImageView fx:id="humbuckerImage" fitHeight="133.0" fitWidth="187.0" layoutX="14.0" layoutY="28.0" preserveRatio="true">
+                                       <ImageView fx:id="mapleImage" fitHeight="133.0" fitWidth="187.0" layoutX="14.0" layoutY="28.0" preserveRatio="true">
                                            <image>
                                                <Image url="@../images/wood/maple.jpg" />
                                            </image>
@@ -58,7 +58,7 @@
                         <content>
                             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="629.0">
                                 <children>
-                                      <ImageView fx:id="humbuckerImage1" fitHeight="133.0" fitWidth="187.0" layoutX="14.0" layoutY="28.0" preserveRatio="true">
+                                      <ImageView fx:id="rosewoodImage" fitHeight="133.0" fitWidth="187.0" layoutX="14.0" layoutY="28.0" preserveRatio="true">
                                           <image>
                                               <Image url="@../images/wood/rosewood.jpg" />
                                           </image>
@@ -73,7 +73,7 @@
                         <content>
                             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                 <children>
-                                      <ImageView fx:id="humbuckerImage11" fitHeight="133.0" fitWidth="187.0" layoutX="14.0" layoutY="28.0" preserveRatio="true">
+                                      <ImageView fx:id="ebonyImage" fitHeight="133.0" fitWidth="187.0" layoutX="14.0" layoutY="28.0" preserveRatio="true">
                                           <image>
                                               <Image url="@../images/wood/ebony.jpg" />
                                           </image>

@@ -5,9 +5,9 @@ public class DreamGuitarBean {
     private PickupBean pickupBean;
     private FretboardBean fretboardBean;
     private StringsBean stringsBean;
-//    private NeckEHeadstockBean neckEHeadstockBean;
-//    private BridgeBean bridgeBean;
-//    private BodyBean bodyBean;
+    private NesBean nesBean;
+    private BridgeBean bridgeBean;
+    private BodyBean bodyBean;
 
     private double price;
 
@@ -37,6 +37,31 @@ public class DreamGuitarBean {
         this.stringsBean = stringsBean;
     }
 
+    public BodyBean getBodyBean() {
+        return bodyBean;
+    }
+
+    public void setBodyBean(BodyBean bodyBean) {
+        this.bodyBean = bodyBean;
+    }
+
+    public BridgeBean getBridgeBean() {
+        return bridgeBean;
+    }
+
+    public void setBridgeBean(BridgeBean bridgeBean) {
+        this.bridgeBean = bridgeBean;
+    }
+
+    public NesBean getNesBean() {
+        return nesBean;
+    }
+
+    public void setNesBean(NesBean nesBean) {
+        this.nesBean = nesBean;
+    }
+
     public double getPrice() {return price;}
     public void setPrice(double price) {this.price = price;}
+
 }

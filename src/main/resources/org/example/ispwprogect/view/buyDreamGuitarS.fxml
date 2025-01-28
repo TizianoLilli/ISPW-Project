@@ -44,7 +44,7 @@
                                  <ToggleGroup fx:id="gaugeGroup" />
                               </toggleGroup>
                                     </RadioButton>
-                                    <ImageView fx:id="humbuckerImage" fitHeight="141.0" fitWidth="136.0" layoutX="29.0" layoutY="17.0" preserveRatio="true">
+                                    <ImageView fx:id="nineGaugeImage" fitHeight="141.0" fitWidth="136.0" layoutX="29.0" layoutY="17.0" preserveRatio="true">
                                         <image>
                                             <Image url="@../images/strings/9-gauge.jpg" />
                                         </image>
@@ -58,7 +58,7 @@
                         <content>
                             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="629.0">
                                 <children>
-                                    <ImageView fx:id="humbuckerImage1" fitHeight="141.0" fitWidth="136.0" layoutX="29.0" layoutY="17.0" preserveRatio="true">
+                                    <ImageView fx:id="tenGaugeImage" fitHeight="141.0" fitWidth="136.0" layoutX="29.0" layoutY="17.0" preserveRatio="true">
                                         <image>
                                             <Image url="@../images/strings/10-gauge.jpg" />
                                         </image>
@@ -73,7 +73,7 @@
                         <content>
                             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                 <children>
-                                    <ImageView fx:id="humbuckerImage11" fitHeight="141.0" fitWidth="136.0" layoutX="29.0" layoutY="17.0" preserveRatio="true">
+                                    <ImageView fx:id="elevenGaugeImage" fitHeight="141.0" fitWidth="136.0" layoutX="29.0" layoutY="17.0" preserveRatio="true">
                                         <image>
                                             <Image url="@../images/strings/11-gauge.jpg" />
                                         </image>

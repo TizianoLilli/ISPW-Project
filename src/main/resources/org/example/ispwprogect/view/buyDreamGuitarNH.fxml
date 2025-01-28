@@ -39,12 +39,12 @@
                         <content>
                             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                 <children>
-                                    <RadioButton alignment="TOP_LEFT" layoutX="546.0" layoutY="140.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="17.0" prefWidth="58.0" style="-fx-font-weight: bold;" text="+ $40">
-                                        <toggleGroup>
-                                            <ToggleGroup fx:id="pickupGroup" />
-                                        </toggleGroup>
+                                    <RadioButton fx:id="mapleRadio" alignment="TOP_LEFT" layoutX="546.0" layoutY="140.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="17.0" prefWidth="58.0" style="-fx-font-weight: bold;" text="+ $40">
+                              <toggleGroup>
+                                 <ToggleGroup fx:id="nesGroup" />
+                              </toggleGroup>
                                     </RadioButton>
-                                    <ImageView fx:id="humbuckerImage" fitHeight="133.0" fitWidth="187.0" layoutX="14.0" layoutY="28.0" preserveRatio="true">
+                                    <ImageView fx:id="mapleImage" fitHeight="133.0" fitWidth="187.0" layoutX="14.0" layoutY="28.0" preserveRatio="true">
                                         <image>
                                             <Image url="@../images/wood/maple.jpg" />
                                         </image>
@@ -58,13 +58,13 @@
                         <content>
                             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="629.0">
                                 <children>
-                                    <ImageView fx:id="humbuckerImage1" fitHeight="133.0" fitWidth="187.0" layoutX="14.0" layoutY="28.0" preserveRatio="true">
+                                    <ImageView fx:id="rosewoodImage" fitHeight="133.0" fitWidth="187.0" layoutX="14.0" layoutY="28.0" preserveRatio="true">
                                         <image>
                                             <Image url="@../images/wood/rosewood.jpg" />
                                         </image>
                                     </ImageView>
                                     <Label layoutX="221.0" layoutY="48.0" prefHeight="85.0" prefWidth="383.0" style="-fx-font-weight: normal;" text="Rosewood is known for producing a warm tone that makes it great for blues and jazz for its smoother sound. His texture provides a comfortable grip and it is slightly softer than maple, which can be beneficial for playability over long sessions, but requires periodic cleaning. Rosewood has a rich color, with a vintage appearance." textAlignment="JUSTIFY" wrapText="true" />
-                                    <RadioButton alignment="TOP_LEFT" layoutX="549.0" layoutY="140.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="17.0" prefWidth="55.0" style="-fx-font-weight: bold;" text="+ $50" toggleGroup="$pickupGroup" />
+                                    <RadioButton fx:id="rosewoodRadio" alignment="TOP_LEFT" layoutX="549.0" layoutY="140.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="17.0" prefWidth="55.0" style="-fx-font-weight: bold;" text="+ $50" toggleGroup="$nesGroup" />
                                 </children>
                             </AnchorPane>
                         </content>
@@ -73,13 +73,13 @@
                         <content>
                             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                 <children>
-                                    <ImageView fx:id="humbuckerImage11" fitHeight="133.0" fitWidth="187.0" layoutX="14.0" layoutY="28.0" preserveRatio="true">
+                                    <ImageView fx:id="ebonyImage" fitHeight="133.0" fitWidth="187.0" layoutX="14.0" layoutY="28.0" preserveRatio="true">
                                         <image>
                                             <Image url="@../images/wood/ebony.jpg" />
                                         </image>
                                     </ImageView>
                                     <Label layoutX="219.0" layoutY="48.0" prefHeight="85.0" prefWidth="383.0" style="-fx-font-weight: normal;" text="Ebony is known for its incredibly smooth surface, making it one of the fastest fretboards in terms of playability. Ebony contributes to a bright and clear tone. It's very durable and resistant to wear and tear. It also tends to resist dirt and oil buildup. Ebony is often used for premium guitars due to its high-end feel and luxurious appearance." textAlignment="JUSTIFY" wrapText="true" />
-                                    <RadioButton alignment="TOP_LEFT" layoutX="546.0" layoutY="140.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="18.0" prefWidth="56.0" style="-fx-font-weight: bold;" text="+ $80" toggleGroup="$pickupGroup" />
+                                    <RadioButton fx:id="ebonyRadio" alignment="TOP_LEFT" layoutX="546.0" layoutY="140.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="18.0" prefWidth="56.0" style="-fx-font-weight: bold;" text="+ $80" toggleGroup="$nesGroup" />
                                 </children>
                             </AnchorPane>
                         </content>

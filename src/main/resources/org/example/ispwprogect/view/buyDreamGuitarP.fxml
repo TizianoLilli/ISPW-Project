@@ -42,7 +42,7 @@
                                     <HBox alignment="CENTER_LEFT" layoutX="-1.0" layoutY="24.0" prefHeight="108.0" prefWidth="631.0" spacing="10">
                               <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="131.0" prefWidth="631.0">
                                  <children>
-                                              <ImageView fx:id="humbuckerImage" fitHeight="108.0" fitWidth="193.0" layoutX="14.0" layoutY="15.0" preserveRatio="true">
+                                              <ImageView fx:id="singleCoilImage" fitHeight="108.0" fitWidth="193.0" layoutX="14.0" layoutY="15.0" preserveRatio="true">
                                        <image>
                                           <Image url="@../images/pickup/single-coil.png" />
                                        </image>
@@ -66,7 +66,7 @@
                         <children>
                            <HBox alignment="CENTER_LEFT" layoutY="24.0" prefHeight="108.0" prefWidth="631.0" spacing="10">
                               <children>
-                                 <ImageView fx:id="humbuckerImage1" fitHeight="133.0" fitWidth="208.0">
+                                 <ImageView fx:id="humbuckerImage" fitHeight="133.0" fitWidth="208.0">
                                     <image>
                                        <Image url="@../images/pickup/humbucker.png" />
                                     </image>
@@ -85,7 +85,7 @@
                         <children>
                            <HBox alignment="CENTER_LEFT" layoutX="-1.0" layoutY="24.0" prefHeight="133.0" prefWidth="631.0" spacing="10">
                               <children>
-                                 <ImageView fx:id="humbuckerImage11" fitHeight="133.0" fitWidth="208.0">
+                                 <ImageView fx:id="P90Image" fitHeight="133.0" fitWidth="208.0">
                                     <image>
                                        <Image url="@../images/pickup/P90.png" />
                                     </image>
