@@ -13,21 +13,21 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="900.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.ispwprogect.BuyDreamGuitarControllerNH">
+<AnchorPane prefHeight="600.0" prefWidth="900.0" stylesheets="@../style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.ispwprogect.control.graphic.buyDreamGuitar.BuyDreamGuitarControllerNH">
 
     <!-- Buttons -->
     <HBox alignment="BOTTOM_RIGHT" layoutX="199.0" layoutY="623.0" prefHeight="25.0" prefWidth="673.0" spacing="10">
         <Button fx:id="backButton" onAction="#handleBackClick" text="Back" />
         <Button fx:id="NextButton" onAction="#handleNextClick" text="Next" />
     </HBox>
-    <fx:include source="sidebar.fxml" />
+    <fx:include source="../sidebar.fxml" />
 
     <VBox spacing="10" style="-fx-padding: 20;" />
 
     <!-- Main Content -->
     <VBox layoutX="199.0" layoutY="30.0" prefHeight="575.0" prefWidth="673.0" spacing="15" style="-fx-padding: 20; -fx-background-color: #ffffff; -fx-border-color: #cccccc; -fx-border-width: 1;">
         <Label style="-fx-font-size: 20; -fx-font-weight: bold;" text="New Dream Guitar" />
-        <Label style="-fx-font-size: 14;" text="Select your favorite components" />
+        <Label style="-fx-font-size: 14;" text="Please, select ONLY one of the three components" />
 
         <VBox prefHeight="450.0" prefWidth="631.0" spacing="10">
             <!-- Pickup Section -->
@@ -46,7 +46,7 @@
                                     </RadioButton>
                                     <ImageView fx:id="mapleImage" fitHeight="133.0" fitWidth="187.0" layoutX="14.0" layoutY="28.0" preserveRatio="true">
                                         <image>
-                                            <Image url="@../images/wood/maple.jpg" />
+                                            <Image url="@../../images/wood/maple.jpg" />
                                         </image>
                                     </ImageView>
                                     <Label layoutX="221.0" layoutY="48.0" prefHeight="85.0" prefWidth="383.0" style="-fx-font-weight: normal;" text="Maple produces a brighter, more focused tone with a sharp attack. It emphasizes high-end frequencies, making it ideal for players who want a clear, cutting sound. Maple is a dense, stiff wood that offers excellent stability for the neck and a resistant to warping. Its smooth surface makes it easy to move up and down the neck, in addition to a fast feel." textAlignment="JUSTIFY" wrapText="true" />
@@ -60,7 +60,7 @@
                                 <children>
                                     <ImageView fx:id="rosewoodImage" fitHeight="133.0" fitWidth="187.0" layoutX="14.0" layoutY="28.0" preserveRatio="true">
                                         <image>
-                                            <Image url="@../images/wood/rosewood.jpg" />
+                                            <Image url="@../../images/wood/rosewood.jpg" />
                                         </image>
                                     </ImageView>
                                     <Label layoutX="221.0" layoutY="48.0" prefHeight="85.0" prefWidth="383.0" style="-fx-font-weight: normal;" text="Rosewood is known for producing a warm tone that makes it great for blues and jazz for its smoother sound. His texture provides a comfortable grip and it is slightly softer than maple, which can be beneficial for playability over long sessions, but requires periodic cleaning. Rosewood has a rich color, with a vintage appearance." textAlignment="JUSTIFY" wrapText="true" />
@@ -75,7 +75,7 @@
                                 <children>
                                     <ImageView fx:id="ebonyImage" fitHeight="133.0" fitWidth="187.0" layoutX="14.0" layoutY="28.0" preserveRatio="true">
                                         <image>
-                                            <Image url="@../images/wood/ebony.jpg" />
+                                            <Image url="@../../images/wood/ebony.jpg" />
                                         </image>
                                     </ImageView>
                                     <Label layoutX="219.0" layoutY="48.0" prefHeight="85.0" prefWidth="383.0" style="-fx-font-weight: normal;" text="Ebony is known for its incredibly smooth surface, making it one of the fastest fretboards in terms of playability. Ebony contributes to a bright and clear tone. It's very durable and resistant to wear and tear. It also tends to resist dirt and oil buildup. Ebony is often used for premium guitars due to its high-end feel and luxurious appearance." textAlignment="JUSTIFY" wrapText="true" />

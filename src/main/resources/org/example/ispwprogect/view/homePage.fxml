@@ -2,16 +2,15 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<?import javafx.scene.image.ImageView?>
-<AnchorPane prefHeight="600" prefWidth="900" stylesheets="@style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.ispwprogect.HomePageController">
-    <fx:include source="sidebar.fxml"/>
+<AnchorPane prefHeight="600" prefWidth="900" stylesheets="@style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.ispwprogect.control.graphic.HomePageController">
+    <fx:include source="sidebar.fxml" />
 
     <!-- Main Content -->
     <VBox id="mainContent" layoutX="200" layoutY="0" prefWidth="600" spacing="20">
@@ -20,13 +19,13 @@
             <VBox alignment="TOP_LEFT">
                 <Label id="bannerText" style="-fx-font-size: 36px" text="MyGuitar" />
                 <Label id="bannerText" style="-fx-font-size: 18px;" text="Follow your style" />
-                <ImageView fx:id="bannerImage" fitWidth="600" preserveRatio="true"/>
+                <ImageView fx:id="bannerImage" fitWidth="600" preserveRatio="true" />
             </VBox>
         </HBox>
 
 
         <VBox alignment="CENTER">
-            <Button id="createButton" text="Create your Dream Guitar" />
+            <Button id="createButton" fx:id="dreamGuitarButton" onAction="#handleClick" text="Create your Dream Guitar" />
         </VBox>
 
         <!-- Noticeboard Section -->

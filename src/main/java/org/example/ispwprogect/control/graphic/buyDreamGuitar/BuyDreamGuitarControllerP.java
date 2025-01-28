@@ -1,16 +1,20 @@
-package org.example.ispwprogect;
+package org.example.ispwprogect.control.graphic.buyDreamGuitar;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
+import org.example.ispwprogect.ChangePage;
+import org.example.ispwprogect.Session;
+import org.example.ispwprogect.SessionManager;
 import org.example.ispwprogect.control.application.BuyDreamGuitarApplicationController;
+import org.example.ispwprogect.control.graphic.GraphicController;
 import org.example.ispwprogect.utils.bean.DreamGuitarBean;
 import org.example.ispwprogect.utils.bean.IdSessionBean;
 import org.example.ispwprogect.utils.bean.PickupBean;
 import org.example.ispwprogect.utils.enumeration.PickupType;
 
-public class BuyDreamGuitarControllerP extends GraphicController{
+public class BuyDreamGuitarControllerP extends GraphicController {
 
     private DreamGuitarBean dreamGuitarBean;
 
@@ -37,7 +41,7 @@ public class BuyDreamGuitarControllerP extends GraphicController{
     private void handleBackClick(ActionEvent event) {
 
         ChangePage istanza = ChangePage.getChangePage();
-        istanza.change("view/buyDreamGuitarStart.fxml", id, dreamGuitarBean);
+        istanza.change("view/buyDreamGuitar/buyDreamGuitarStart.fxml", id, dreamGuitarBean);
 
     }
 
@@ -89,7 +93,7 @@ public class BuyDreamGuitarControllerP extends GraphicController{
             }
 
             ChangePage istanza = ChangePage.getChangePage();
-            istanza.change("view/buyDreamGuitarStart.fxml", id, dreamGuitarBean);
+            istanza.change("view/buyDreamGuitar/buyDreamGuitarStart.fxml", id, dreamGuitarBean);
 
         } catch (Exception e) {
             throw new RuntimeException(e);

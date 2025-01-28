@@ -1,4 +1,4 @@
-package org.example.ispwprogect;
+package org.example.ispwprogect.control.graphic;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -9,6 +9,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 import javafx.scene.input.MouseEvent;
+import org.example.ispwprogect.ChangePage;
 import org.example.ispwprogect.control.application.BuyDreamGuitarApplicationController;
 import org.example.ispwprogect.utils.bean.DreamGuitarBean;
 import org.example.ispwprogect.utils.bean.IdSessionBean;
@@ -51,7 +52,7 @@ public class SidebarController{
 
             Stage stage = (Stage) ((Label)event.getSource()).getScene().getWindow();
             stage.setScene(new Scene(loginRoot, 400, 300)); // Dimensioni della schermata di login
-            stage.setTitle("Login - MyGuitar");
+            stage.setTitle("MyGuitar");
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -75,7 +76,7 @@ public class SidebarController{
         Stage currentStage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         ChangePage istanza = ChangePage.getChangePage();
         istanza.setStage(currentStage);
-        istanza.change("view/buyDreamGuitarStart.fxml", id, dreamGuitarBean);
+        istanza.change("view/buyDreamGuitar/buyDreamGuitarStart.fxml", id, dreamGuitarBean);
 
     }
 

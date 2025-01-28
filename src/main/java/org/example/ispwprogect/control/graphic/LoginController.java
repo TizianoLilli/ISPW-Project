@@ -1,4 +1,4 @@
-package org.example.ispwprogect;
+package org.example.ispwprogect.control.graphic;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;

@@ -1,9 +1,10 @@
-package org.example.ispwprogect;
+package org.example.ispwprogect.control.graphic;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.stage.Stage;
+import org.example.ispwprogect.ChangePage;
 import org.example.ispwprogect.utils.bean.DreamGuitarBean;
 import org.example.ispwprogect.utils.bean.IdSessionBean;
 

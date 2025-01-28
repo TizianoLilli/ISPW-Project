@@ -13,21 +13,21 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="900.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.ispwprogect.BuyDreamGuitarControllerBr">
+<AnchorPane prefHeight="600.0" prefWidth="900.0" stylesheets="@../style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.ispwprogect.control.graphic.buyDreamGuitar.BuyDreamGuitarControllerBr">
 
     <!-- Buttons -->
     <HBox alignment="BOTTOM_RIGHT" layoutX="199.0" layoutY="623.0" prefHeight="25.0" prefWidth="673.0" spacing="10">
         <Button fx:id="backButton" onAction="#handleBackClick" text="Back" />
         <Button fx:id="nextButton" onAction="#handleNextClick" text="Next" />
     </HBox>
-    <fx:include source="sidebar.fxml" />
+    <fx:include source="../sidebar.fxml" />
 
     <VBox spacing="10" style="-fx-padding: 20;" />
 
     <!-- Main Content -->
     <VBox layoutX="199.0" layoutY="30.0" prefHeight="575.0" prefWidth="673.0" spacing="15" style="-fx-padding: 20; -fx-background-color: #ffffff; -fx-border-color: #cccccc; -fx-border-width: 1;">
         <Label style="-fx-font-size: 20; -fx-font-weight: bold;" text="New Dream Guitar" />
-        <Label style="-fx-font-size: 14;" text="Select your favorite components" />
+        <Label style="-fx-font-size: 14;" text="Please, select ONLY one of the three components" />
 
         <VBox prefHeight="435.0" prefWidth="631.0" spacing="10">
             <!-- Pickup Section -->
@@ -46,7 +46,7 @@
                                     </RadioButton>
                                     <ImageView fx:id="hardtailImage" fitHeight="133.0" fitWidth="187.0" layoutX="23.0" layoutY="18.0" preserveRatio="true">
                                         <image>
-                                            <Image url="@../images/bridge/hardtail.png" />
+                                            <Image url="@../../images/bridge/hardtail.png" />
                                         </image>
                                     </ImageView>
                                     <Label layoutX="221.0" layoutY="48.0" prefHeight="85.0" prefWidth="383.0" style="-fx-font-weight: normal;" text="A hardtail bridge is a fixed bridge where the strings are anchored directly to the body of the guitar without any moving parts for pitch modulation. It provides excellent sustain, exceptional tuning stability and it's easy to set up. There’s no chance of the bridge shifting or pulling the strings out of tune, even during aggressive playing. " textAlignment="JUSTIFY" wrapText="true" />
@@ -60,7 +60,7 @@
                                 <children>
                                     <ImageView fx:id="tremoloImage" fitHeight="133.0" fitWidth="187.0" layoutX="28.0" layoutY="18.0" preserveRatio="true">
                                         <image>
-                                            <Image url="@../images/bridge/tremolo.png" />
+                                            <Image url="@../../images/bridge/tremolo.png" />
                                         </image>
                                     </ImageView>
                                     <Label layoutX="221.0" layoutY="48.0" prefHeight="85.0" prefWidth="383.0" style="-fx-font-weight: normal;" text="A tremolo bridge allows you to adjust the pitch of the strings by pushing or pulling a lever (the whammy bar). The bridge is connected to the guitar via a system of springs, allowing it to alter string tension.You can achieve everything from subtle vibrato to extreme dive bombs and swooping pitch changes, but it's a challenge to keep the guitar in tune." textAlignment="JUSTIFY" wrapText="true" />
@@ -75,7 +75,7 @@
                                 <children>
                                     <ImageView fx:id="tuneomaticImage" fitHeight="133.0" fitWidth="187.0" layoutX="14.0" layoutY="48.0" preserveRatio="true">
                                         <image>
-                                            <Image url="@../images/bridge/tune-o-matic.png" />
+                                            <Image url="@../../images/bridge/tune-o-matic.png" />
                                         </image>
                                     </ImageView>
                                     <Label layoutX="219.0" layoutY="48.0" prefHeight="85.0" prefWidth="383.0" style="-fx-font-weight: normal;" text="The Tune-o-Matic bridge design features a separate bridge section (where the strings sit) and a tailpiece (where the strings are anchored to the body). The bridge typically provides great tuning stability (it's a fixed bridge, like hardtail), sustain, and tone. It allows for precise intonation adjustments (like tremolo), but it's very heavy." textAlignment="JUSTIFY" wrapText="true" />

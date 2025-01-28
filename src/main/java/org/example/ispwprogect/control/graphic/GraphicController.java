@@ -1,10 +1,7 @@
-package org.example.ispwprogect;
+package org.example.ispwprogect.control.graphic;
 
-import org.example.ispwprogect.control.application.BuyDreamGuitarApplicationController;
 import org.example.ispwprogect.utils.bean.DreamGuitarBean;
 import org.example.ispwprogect.utils.bean.IdSessionBean;
-
-import java.awt.*;
 
 public abstract class GraphicController {
 

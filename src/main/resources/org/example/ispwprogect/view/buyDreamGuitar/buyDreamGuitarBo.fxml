@@ -13,21 +13,21 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="900.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.ispwprogect.BuyDreamGuitarControllerBo">
+<AnchorPane prefHeight="600.0" prefWidth="900.0" stylesheets="@../style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.ispwprogect.control.graphic.buyDreamGuitar.BuyDreamGuitarControllerBo">
 
     <!-- Buttons -->
     <HBox alignment="BOTTOM_RIGHT" layoutX="199.0" layoutY="623.0" prefHeight="25.0" prefWidth="673.0" spacing="10">
         <Button fx:id="backButton" onAction="#handleBackClick" text="Back" />
         <Button fx:id="nextButton" onAction="#handleNextClick" text="Next" />
     </HBox>
-    <fx:include source="sidebar.fxml" />
+    <fx:include source="../sidebar.fxml" />
 
     <VBox spacing="10" style="-fx-padding: 20;" />
 
     <!-- Main Content -->
     <VBox layoutX="199.0" layoutY="30.0" prefHeight="575.0" prefWidth="673.0" spacing="15" style="-fx-padding: 20; -fx-background-color: #ffffff; -fx-border-color: #cccccc; -fx-border-width: 1;">
         <Label style="-fx-font-size: 20; -fx-font-weight: bold;" text="New Dream Guitar" />
-        <Label style="-fx-font-size: 14;" text="Select your favorite components" />
+        <Label style="-fx-font-size: 14;" text="Please, select ONLY one of the three components" />
 
         <VBox prefHeight="470.0" prefWidth="631.0" spacing="10">
             <!-- Pickup Section -->
@@ -46,7 +46,7 @@
                                     </RadioButton>
                                     <ImageView fx:id="mapleImage" fitHeight="133.0" fitWidth="187.0" layoutX="14.0" layoutY="25.0" preserveRatio="true">
                                         <image>
-                                            <Image url="@../images/wood/maple.jpg" />
+                                            <Image url="@../../images/wood/maple.jpg" />
                                         </image>
                                     </ImageView>
                                     <Label layoutX="221.0" layoutY="48.0" prefHeight="85.0" prefWidth="383.0" style="-fx-font-weight: normal;" text="Maple produces a brighter, more focused tone with a sharp attack. It emphasizes high-end frequencies, making it ideal for players who want a clear, cutting sound. Maple can be quite heavy compared to other woods, so a full maple body may make the guitar feel weighty, which might be uncomfortable for some players." textAlignment="JUSTIFY" wrapText="true" />
@@ -60,7 +60,7 @@
                                 <children>
                                     <ImageView fx:id="mahoganyImage" fitHeight="133.0" fitWidth="187.0" layoutX="14.0" layoutY="28.0" preserveRatio="true">
                                         <image>
-                                            <Image url="@../images/wood/mahogany.jpg" />
+                                            <Image url="@../../images/wood/mahogany.jpg" />
                                         </image>
                                     </ImageView>
                                     <Label layoutX="221.0" layoutY="48.0" prefHeight="85.0" prefWidth="383.0" style="-fx-font-weight: normal;" text="Mahogany is known for producing a warm, thick tone with pronounced midrange frequencies. The tone is smooth, mellow, and well-roundedwhit a more intimate sound. Its density and stiffness provide excellent sustain. Mahogany is generally heavier than ash or maple. It has a deep, reddish-brown color with a subtle, straight grain. " textAlignment="JUSTIFY" wrapText="true" />
@@ -75,7 +75,7 @@
                                 <children>
                                     <ImageView fx:id="ashImage" fitHeight="133.0" fitWidth="187.0" layoutX="14.0" layoutY="18.0">
                                         <image>
-                                            <Image url="@../images/wood/ash.jpg" />
+                                            <Image url="@../../images/wood/ash.jpg" />
                                         </image>
                                     </ImageView>
                                     <Label layoutX="219.0" layoutY="42.0" prefHeight="85.0" prefWidth="383.0" style="-fx-font-weight: normal;" text="Ash bodies provide a bright yet balanced tone. The sound has a crisp, high-end shimmer with articulate mids and a tight low-end. It has a full-range response compared to maple and provides great resonance and sustain. Ash is a relatively lightweight compared to maple and mahogany, making it easier to handle for long playing sessions." textAlignment="JUSTIFY" wrapText="true" />

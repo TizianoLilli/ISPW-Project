@@ -3,6 +3,7 @@ package org.example.ispwprogect;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import org.example.ispwprogect.control.graphic.GraphicController;
 import org.example.ispwprogect.utils.bean.*;
 
 public class ChangePage {
