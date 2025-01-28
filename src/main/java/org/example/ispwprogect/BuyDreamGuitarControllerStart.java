@@ -5,17 +5,13 @@ package org.example.ispwprogect;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 
-import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 import org.example.ispwprogect.control.application.BuyDreamGuitarApplicationController;
 import org.example.ispwprogect.utils.bean.DreamGuitarBean;
 import org.example.ispwprogect.utils.bean.IdSessionBean;
-import org.example.ispwprogect.utils.bean.PickupBean;
-import org.example.ispwprogect.utils.enumeration.PickupType;
 
 public class BuyDreamGuitarControllerStart extends GraphicController{
 
@@ -25,8 +21,6 @@ public class BuyDreamGuitarControllerStart extends GraphicController{
     @FXML private Button stringsButton;
     @FXML private Button fretboardButton;
     @FXML private Button nesButton;
-    @FXML private Button backButton;
-    @FXML private Button nextButton;
 
     private BuyDreamGuitarApplicationController controller;
     private DreamGuitarBean dreamGuitarBean;
@@ -73,7 +67,7 @@ public class BuyDreamGuitarControllerStart extends GraphicController{
         Stage currentStage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         ChangePage istanza = ChangePage.getChangePage();
         istanza.setStage(currentStage);
-        istanza.change("view/homePage.fxml", id, null);
+        istanza.change("view/homePage.fxml", id, dreamGuitarBean);
 
     }
 

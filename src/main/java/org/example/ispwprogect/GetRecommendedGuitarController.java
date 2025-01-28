@@ -2,32 +2,28 @@ package org.example.ispwprogect;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.stage.Stage;
+import org.example.ispwprogect.utils.bean.DreamGuitarBean;
+import org.example.ispwprogect.utils.bean.IdSessionBean;
 
-import java.io.IOException;
+public class GetRecommendedGuitarController extends GraphicController{
 
-public class GetRecommendedGuitarController {
+    private IdSessionBean id;
+
+    public void init(IdSessionBean id, DreamGuitarBean dreamGuitarBean) {
+        this.id = id;
+    }
 
     public void handleBackClick(ActionEvent event) {
         try {
-            // Carica il file FXML della HomePage
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("view/homePage.fxml"));
-            Parent homePageRoot = loader.load();
 
-            // Crea una nuova scena
-            Scene homePageScene = new Scene(homePageRoot);
+            Stage currentStage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+            ChangePage istanza = ChangePage.getChangePage();
+            istanza.setStage(currentStage);
+            istanza.change("view/homePage.fxml", id, null);
 
-            // Ottieni lo Stage corrente e imposta la nuova scena
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            stage.setScene(homePageScene);
-            stage.setTitle("MyGuitar");
-            stage.show();
-
-        } catch (IOException e) {
+        } catch (Exception e) {
             e.printStackTrace();
             System.out.println("Errore nel caricamento della HomePage.");
         }

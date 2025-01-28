@@ -19,7 +19,6 @@ public class ChangePage {
     }
 
     private Stage stage;
-//    private Scene newScene;
 
     public void change(String fxml, IdSessionBean id, DreamGuitarBean dreamGuitarBean) {
         FXMLLoader loader = new FXMLLoader(getClass().getResource(fxml));

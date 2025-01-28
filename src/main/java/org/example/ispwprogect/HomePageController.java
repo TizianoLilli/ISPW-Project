@@ -1,76 +1,21 @@
 package org.example.ispwprogect;
 
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
-import javafx.scene.control.Label;
-import javafx.scene.control.MenuItem;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import org.example.ispwprogect.utils.bean.DreamGuitarBean;
+import org.example.ispwprogect.utils.bean.IdSessionBean;
 
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class HomePageController implements Initializable {
-
-    @FXML
-    private Label saveText;
-    
-    @FXML
-    private MenuItem newMenuItem;
-
-    @FXML
-    private MenuItem openMenuItem;
-
-    @FXML
-    private MenuItem closeMenuItem;
-
-    @FXML
-    private MenuItem saveMenuItem;
-
-    @FXML
-    private MenuItem saveAsMenuItem;
-
-    @FXML
-    private MenuItem aboutMenuItem;
-
-    @FXML
-    private Label viewLabel;
-
-    @FXML
-    private Label detailsLabel;
-
-    @FXML
-    private void handleNewMenuAction() {
-        System.out.println("Nuovo file creato!");
-    }
-
-    @FXML
-    private void handleOpenMenuAction() {
-        // Puoi inserire qui la logica per aprire un file
-        System.out.println("Apertura file...");
-    }
-
-    @FXML
-    private void handleCloseMenuAction() {
-        System.out.println("Chiusura file.");
-    }
-
-    @FXML
-    private void handleSaveMenuAction() {
-        saveText.setText("Welcome to JavaFX Application!");
-    }
-
-    @FXML
-    private void handleAboutMenuAction() {
-        System.out.println("Informazioni sull'app.");
-    }
+public class HomePageController extends GraphicController {
 
     @FXML
     private ImageView bannerImage;
 
-
-    public void initialize(URL location, ResourceBundle resources) {
+    public void init(IdSessionBean id, DreamGuitarBean dreamGuitarBean){
         // Carica l'immagine e impostala nell'ImageView
         Image banner = new Image("file:main/java/org/example/ispwprogect/images/banner.jpg");
         bannerImage.setImage(banner);

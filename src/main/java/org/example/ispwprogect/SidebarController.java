@@ -2,9 +2,9 @@ package org.example.ispwprogect;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
@@ -29,9 +29,18 @@ public class SidebarController{
         }
     }
 
+    private BuyDreamGuitarApplicationController controller;
+    private IdSessionBean id;
+    private DreamGuitarBean dreamGuitarBean;
+
     @FXML
     private void handleHomeClick(MouseEvent event) {
-        loadScene("view/homePage.fxml", "", event);
+
+        Stage currentStage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        ChangePage istanza = ChangePage.getChangePage();
+        istanza.setStage(currentStage);
+        istanza.change("view/homePage.fxml", id, null);
+
     }
 
     @FXML
@@ -50,7 +59,12 @@ public class SidebarController{
 
     @FXML
     public void handleNewRecommendedGuitarClick(MouseEvent event) {
-        loadScene("view/getRecommendedGuitar.fxml", "New Recommended Guitar - ", event);
+
+        Stage currentStage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        ChangePage istanza = ChangePage.getChangePage();
+        istanza.setStage(currentStage);
+        istanza.change("view/getRecommendedGuitar.fxml", id, null);
+
     }
 
     @FXML
@@ -58,33 +72,11 @@ public class SidebarController{
         controller = new BuyDreamGuitarApplicationController();
         dreamGuitarBean = controller.newDreamGuitar();
 
-        loadScene("view/buyDreamGuitarStart.fxml", "New Dream Guitar - ", event);
+        Stage currentStage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        ChangePage istanza = ChangePage.getChangePage();
+        istanza.setStage(currentStage);
+        istanza.change("view/buyDreamGuitarStart.fxml", id, dreamGuitarBean);
+
     }
-
-    private void loadScene(String fxml, String title, MouseEvent event) {
-        try {
-            // Carica la nuova schermata ".fxml"
-            FXMLLoader loader = new FXMLLoader(getClass().getResource(fxml));
-            AnchorPane sidebarRoot = loader.load();
-
-            // Ottieni un controller grafico generico (polimorfismo)
-            GraphicController graphicController = loader.getController();
-//            graphicController.setApplicationController(controller);
-            graphicController.init(id, dreamGuitarBean);
-
-            // Ottieni la finestra corrente e imposta la nuova scena
-            Stage stage = (Stage) ((Label)event.getSource()).getScene().getWindow();
-            stage.setScene(new Scene(sidebarRoot));
-            stage.setTitle(title + "MyGuitar");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    private BuyDreamGuitarApplicationController controller;
-
-    private IdSessionBean id;
-
-    private DreamGuitarBean dreamGuitarBean;
 
 }
