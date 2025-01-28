@@ -13,7 +13,7 @@ public class StringsBean {
 
     public double getPrice(){ return features.price(); }
 
-    public String getType(){ return features.type(); }
+    public String getType(){ return features.name(); }
 
     public String getDescription(){
         return features.info();

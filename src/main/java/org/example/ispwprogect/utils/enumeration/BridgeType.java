@@ -7,7 +7,7 @@ public enum BridgeType {
     TUNEOMATIC(20.0, "Coming soon...");
 
     private final double price;
-    private static final String type = "Bridge";
+//    private static final String type = "Bridge";
     private final String info;
 
     BridgeType(double price, String info) {
@@ -19,9 +19,9 @@ public enum BridgeType {
         return price;
     }
 
-    public String type() {
-        return type;
-    }
+//    public String type() {
+//        return type;
+//    }
 
     public String info() {
         return info;

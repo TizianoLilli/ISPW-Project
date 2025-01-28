@@ -7,7 +7,7 @@ public enum BodyType {
     ASH(20.0, "Coming soon...");
 
     private final double price;
-    private static final String type = "Body";
+//    private static final String type = "Body";
     private final String info;
 
     BodyType(double price, String info) {
@@ -19,9 +19,9 @@ public enum BodyType {
         return price;
     }
 
-    public String type() {
-        return type;
-    }
+//    public String type() {
+//        return type;
+//    }
 
     public String info() {
         return info;

@@ -7,7 +7,7 @@ public enum PickupType {
     P90(20.0, "Pickup P-90, ha caratteristiche ibride tra Humbucker e Single Coil");
 
     private final double price;
-    private static final String type = "Pickup";
+//    private static final String type = "Pickup";
     private final String info;
 
     PickupType(double price, String info) {
@@ -19,9 +19,9 @@ public enum PickupType {
         return price;
     }
 
-    public String type() {
-        return type;
-    }
+//    public String type() {
+//        return type;
+//    }
 
     public String info() {
         return info;

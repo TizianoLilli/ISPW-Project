@@ -7,7 +7,7 @@ public enum FretboardType {
         EBONY(20.0, "Coming soon...");
 
         private final double price;
-        private static final String type = "Fretboard";
+//        private static final String type = "Fretboard";
         private final String info;
 
         FretboardType(double price, String info) {
@@ -19,9 +19,9 @@ public enum FretboardType {
             return price;
         }
 
-        public String type() {
-            return type;
-        }
+//        public String type() {
+//            return type;
+//        }
 
         public String info() {
             return info;

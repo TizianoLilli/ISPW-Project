@@ -7,7 +7,7 @@ public enum NesType {
     EBONY(20.0, "Coming soon...");
 
     private final double price;
-    private static final String type = "Neck&Headstock";
+//    private static final String type = "Neck&Headstock";
     private final String info;
 
     NesType(double price, String info) {
@@ -19,9 +19,9 @@ public enum NesType {
         return price;
     }
 
-    public String type() {
-        return type;
-    }
+//    public String type() {
+//        return type;
+//    }
 
     public String info() {
         return info;

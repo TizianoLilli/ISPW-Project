@@ -47,17 +47,22 @@ public class BuyDreamGuitarControllerStart extends GraphicController{
             total.setText("TOT = " + dreamGuitarBean.getPrice() + "$");
 
             if (dreamGuitarBean.getPickupBean() != null) {
-                pickupsButton.setText("Pickups&#10;(" + dreamGuitarBean.getPickupBean().getType() + ")");
-            } else if (dreamGuitarBean.getBodyBean() != null) {
-                bodyButton.setText("Body&#10;(" + dreamGuitarBean.getBodyBean().getType() + ")");
-            } else if (dreamGuitarBean.getBridgeBean() != null) {
-                bridgeButton.setText("Bridge&#10;(" + dreamGuitarBean.getBridgeBean().getType() + ")");
-            } else if (dreamGuitarBean.getStringsBean() != null) {
-                stringsButton.setText("Strings&#10;(" + dreamGuitarBean.getStringsBean().getType() + ")");
-            } else if (dreamGuitarBean.getFretboardBean() != null) {
-                fretboardButton.setText("Fretboard&#10;(" + dreamGuitarBean.getStringsBean().getType() + ")");
-            } else if (dreamGuitarBean.getNesBean() != null) {
-                nesButton.setText("Nes&#10;(" + dreamGuitarBean.getStringsBean().getType() + ")");
+                pickupsButton.setText("Pickups\n(" + dreamGuitarBean.getPickupBean().getType() + ")");
+            }
+            if (dreamGuitarBean.getBodyBean() != null) {
+                bodyButton.setText("Body\n(" + dreamGuitarBean.getBodyBean().getType() + ")");
+            }
+            if (dreamGuitarBean.getBridgeBean() != null) {
+                bridgeButton.setText("Bridge\n(" + dreamGuitarBean.getBridgeBean().getType() + ")");
+            }
+            if (dreamGuitarBean.getStringsBean() != null) {
+                stringsButton.setText("Strings\n(" + dreamGuitarBean.getStringsBean().getType() + ")");
+            }
+            if (dreamGuitarBean.getFretboardBean() != null) {
+                fretboardButton.setText("Fretboard\n(" + dreamGuitarBean.getFretboardBean().getType() + ")");
+            }
+            if (dreamGuitarBean.getNesBean() != null) {
+                nesButton.setText("Nes\n(" + dreamGuitarBean.getNesBean().getType() + ")");
             }
         }
     }

@@ -7,7 +7,7 @@ public enum StringsType {
     ELEVENGAUGE(20.0, "Coming soon...");
 
     private final double price;
-    private static final String type = "Strings";
+//    private static final String type = "Strings";
     private final String info;
 
     StringsType(double price, String info) {
@@ -19,9 +19,9 @@ public enum StringsType {
         return price;
     }
 
-    public String type() {
-        return type;
-    }
+//    public String type() {
+//        return type;
+//    }
 
     public String info() {
         return info;
