@@ -12,6 +12,7 @@ import org.example.ispwprogect.control.graphic.GraphicController;
 import org.example.ispwprogect.utils.bean.DreamGuitarBean;
 import org.example.ispwprogect.utils.bean.IdSessionBean;
 import org.example.ispwprogect.utils.bean.StringsBean;
+import org.example.ispwprogect.utils.enumeration.PickupType;
 import org.example.ispwprogect.utils.enumeration.StringsType;
 
 public class BuyDreamGuitarControllerS extends GraphicController {
@@ -58,40 +59,25 @@ public class BuyDreamGuitarControllerS extends GraphicController {
 
         try {
 
-            if (dreamGuitarBean.getStringsBean() != null) {
-                dreamGuitarBean.setPrice(dreamGuitarBean.getPrice() - dreamGuitarBean.getStringsBean().getPrice());
-            }
+            BuyDreamGuitarApplicationController controller = new BuyDreamGuitarApplicationController();
+
+            StringsType alternative = null;
 
             if (nineGaugeRadio.isSelected()) {
 
-                StringsBean stringsBean = new StringsBean(StringsType.NINEGAUGE);
-                dreamGuitarBean.setStringsBean(stringsBean);
-
-                // aggiorno il prezzo con l'aggiunta del nuovo componente
-                dreamGuitarBean.setPrice(dreamGuitarBean.getPrice() + dreamGuitarBean.getStringsBean().getPrice());
-                // prezzo associato all'alternativa NINEGAUGE
+                alternative = StringsType.NINEGAUGE;
 
             } else if (tenGaugeRadio.isSelected()) {
 
-                StringsBean stringsBean = new StringsBean(StringsType.TENGAUGE);
-                dreamGuitarBean.setStringsBean(stringsBean);
-
-                // aggiorno il prezzo con l'aggiunta del nuovo componente
-                dreamGuitarBean.setPrice(dreamGuitarBean.getPrice() + dreamGuitarBean.getStringsBean().getPrice());
-                // prezzo associato all'alternativa TENGAUGE
+                alternative = StringsType.TENGAUGE;
 
             } else if (elevenGaugeRadio.isSelected()) {
 
-                StringsBean stringsBean = new StringsBean(StringsType.ELEVENGAUGE);
-                dreamGuitarBean.setStringsBean(stringsBean);
+                alternative = StringsType.ELEVENGAUGE;
 
-                // aggiorno il prezzo con l'aggiunta del nuovo componente
-                dreamGuitarBean.setPrice(dreamGuitarBean.getPrice() + dreamGuitarBean.getStringsBean().getPrice());
-                // prezzo associato all'alternativa ELEVENGAUGE
-
-            }else{
-                dreamGuitarBean.setPrice(dreamGuitarBean.getPrice() + dreamGuitarBean.getStringsBean().getPrice());
             }
+
+            controller.addStrings(dreamGuitarBean, alternative);
 
             ChangePage istanza = ChangePage.getChangePage();
             istanza.change("view/buyDreamGuitar/buyDreamGuitarStart.fxml", id, dreamGuitarBean);

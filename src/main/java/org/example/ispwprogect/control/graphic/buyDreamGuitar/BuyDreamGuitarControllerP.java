@@ -58,42 +58,25 @@ public class BuyDreamGuitarControllerP extends GraphicController {
 
         try {
 
-            if (dreamGuitarBean.getPickupBean() != null) {
-                dreamGuitarBean.setPrice(dreamGuitarBean.getPrice() - dreamGuitarBean.getPickupBean().getPrice());
-            }
+            BuyDreamGuitarApplicationController controller = new BuyDreamGuitarApplicationController();
+
+            PickupType alternative = null;
 
             if (SingleCoilRadio.isSelected()) {
 
-                PickupBean pickupBean = new PickupBean(PickupType.SINGLECOIL);
-                dreamGuitarBean.setPickupBean(pickupBean);
-
-                // aggiorno il prezzo con l'aggiunta del nuovo componente
-                dreamGuitarBean.setPrice(dreamGuitarBean.getPrice() + dreamGuitarBean.getPickupBean().getPrice());
-                // prezzo associato all'alternativa SINGLECOIL
+                alternative = PickupType.SINGLECOIL;
 
             } else if (HumbuckerRadio.isSelected()) {
 
-                PickupBean pickupBean = new PickupBean(PickupType.HUMBUCKER);
-                dreamGuitarBean.setPickupBean(pickupBean);
-
-                // aggiorno il prezzo con l'aggiunta del nuovo componente
-                dreamGuitarBean.setPrice(dreamGuitarBean.getPrice() + dreamGuitarBean.getPickupBean().getPrice());
-                // prezzo associato all'alternativa HUMBUCKER
+                alternative = PickupType.HUMBUCKER;
 
             } else if (P90Radio.isSelected()) {
 
-                PickupBean pickupBean = new PickupBean(PickupType.P90);
-                dreamGuitarBean.setPickupBean(pickupBean);
+                alternative = PickupType.P90;
 
-                // aggiorno il prezzo con l'aggiunta del nuovo componente
-                dreamGuitarBean.setPrice(dreamGuitarBean.getPrice() + dreamGuitarBean.getPickupBean().getPrice());
-                // prezzo associato all'alternativa P90
-            }else{
-                dreamGuitarBean.setPrice(dreamGuitarBean.getPrice() + dreamGuitarBean.getPickupBean().getPrice());
             }
 
-//            BuyDreamGuitarApplicationController controller = new BuyDreamGuitarApplicationController();
-//            controller.addComponent(Pick);
+            controller.addPickup(dreamGuitarBean, alternative);
 
             ChangePage istanza = ChangePage.getChangePage();
             istanza.change("view/buyDreamGuitar/buyDreamGuitarStart.fxml", id, dreamGuitarBean);

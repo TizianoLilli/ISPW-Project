@@ -13,6 +13,7 @@ public class PickupDecorator extends Decorator{
         super(component);
     }
 
+    double toDefine=3; //momentanea!!
     protected double applySupplement(double previousPrice){
         return previousPrice + toDefine; //toDefine sarebbe il prezzo di uno dei PickupType (enum)
     }
