@@ -5,15 +5,15 @@ import org.example.ispwprogect.utils.bean.DreamGuitarBean;
 public class DreamGuitar extends Component{
 
         private double totalPrice;
-        private String[] components;
-        private String[] infos;
-        private boolean[] alternatives;
+//        private String[] components;
+//        private String[] infos;
+//        private boolean[] alternatives;
 
         public DreamGuitar(){
                 this.totalPrice = 0.0;
-                this.components = new String[6];
-                this.infos = new String[6];
-                this.alternatives = new boolean[6];
+//                this.components = new String[6];
+//                this.infos = new String[6];
+//                this.alternatives = new boolean[6];
         }
 
 //        public DreamGuitar(DreamGuitarBean guitarBean){

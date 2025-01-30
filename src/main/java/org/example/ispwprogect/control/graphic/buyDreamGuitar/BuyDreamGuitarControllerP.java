@@ -92,6 +92,9 @@ public class BuyDreamGuitarControllerP extends GraphicController {
                 dreamGuitarBean.setPrice(dreamGuitarBean.getPrice() + dreamGuitarBean.getPickupBean().getPrice());
             }
 
+//            BuyDreamGuitarApplicationController controller = new BuyDreamGuitarApplicationController();
+//            controller.addComponent(Pick);
+
             ChangePage istanza = ChangePage.getChangePage();
             istanza.change("view/buyDreamGuitar/buyDreamGuitarStart.fxml", id, dreamGuitarBean);
 

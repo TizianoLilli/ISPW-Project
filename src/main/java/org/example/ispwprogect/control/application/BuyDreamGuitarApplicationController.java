@@ -10,4 +10,11 @@ public class BuyDreamGuitarApplicationController {
         return new DreamGuitarBean();
     }
 
+    public void addComponent(){}
+
+//    public void verifyCompleteness(){}
+//
+//    public DreamGuitarBean recoverDreamGuitar(){}
+//
+//    public void storeDreamGuitar(DreamGuitarBean bean){}
 }
