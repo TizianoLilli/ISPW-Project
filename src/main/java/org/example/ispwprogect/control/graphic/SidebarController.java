@@ -64,7 +64,7 @@ public class SidebarController{
         Stage currentStage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         ChangePage istanza = ChangePage.getChangePage();
         istanza.setStage(currentStage);
-        istanza.change("view/getRecommendedGuitar.fxml", id, null);
+        istanza.change("view/getRecommendedGuitar/getRecommendedGuitar.fxml", id, null);
 
     }
 

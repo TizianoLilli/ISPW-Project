@@ -31,9 +31,17 @@ public class GetRecommendedGuitarController extends GraphicController{
     }
 
     @FXML
-    private void handleNextClick() {
+    private void handleNextClick(ActionEvent event) {
         // Logica per passare alla prossima schermata
-        System.out.println("Next button clicked!");
+        try {
+            Stage currentStage = (Stage) ((Node)  event.getSource()).getScene().getWindow();
+            ChangePage istanza = ChangePage.getChangePage();
+            istanza.setStage(currentStage);
+            istanza.change("view/getRecommendedGuitar/selectGuitar.fxml", id, null);
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("Errore nel caricamento della pagina Select Guitar.");
+        }
     }
 
     @FXML
