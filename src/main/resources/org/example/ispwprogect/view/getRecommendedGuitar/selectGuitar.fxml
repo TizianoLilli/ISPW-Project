@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+<AnchorPane prefHeight="600" prefWidth="900" stylesheets="@../style.css" xmlns="http://javafx.com/javafx/23.0.1"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.ispwprogect.control.graphic.SelectGuitarController">
+
+    <!-- Include Sidebar -->
+    <fx:include source="../sidebar.fxml"/>
+
+    <!-- Header -->
+    <HBox layoutX="200" layoutY="10" spacing="10" alignment="CENTER">
+        <Label text="New Recommended Guitar" styleClass="header-title" />
+        <Label text="Select your favorite guitar" styleClass="subtitle" />
+    </HBox>
+
+    <!-- Guitarists Selection -->
+    <VBox layoutX="200" layoutY="50" spacing="10">
+        <Label text="Guitarists" styleClass="subtitle" />
+        <ListView fx:id="guitaristListView" prefHeight="100" />
+
+<!--        <HBox spacing="10">-->
+<!--        <Button text="Select Price Range" onAction="#handlePriceButtonClick" />-->
+        <ComboBox fx:id="priceRangeComboBox" promptText="Select price range" onAction="#handlePriceSelection">
+            <items>
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:value="50-250 $" />
+                    <String fx:value="250-500 $" />
+                    <String fx:value="500-1000 $" />
+                </FXCollections>
+            </items>
+        </ComboBox>
+<!--        </HBox>-->
+    </VBox>
+
+    <!-- Grid of Guitars -->
+    <GridPane layoutX="200" layoutY="180" hgap="20" vgap="20">
+        <VBox spacing="10" GridPane.columnIndex="0" GridPane.rowIndex="0">
+            <ImageView fx:id="guitar1Image" fitWidth="150" fitHeight="150" />
+            <Button fx:id="guitar1Button" text="Guitar Name" onAction="#handleGuitarClick" />
+            <Label fx:id="guitar1Price" text="Price" />
+        </VBox>
+        <VBox spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="0">
+            <ImageView fx:id="guitar2Image" fitWidth="150" fitHeight="150" />
+            <Button fx:id="guitar2Button" text="Guitar Name" onAction="#handleGuitarClick" />
+            <Label fx:id="guitar2Price" text="Price" />
+        </VBox>
+        <VBox spacing="10" GridPane.columnIndex="0" GridPane.rowIndex="1">
+            <ImageView fx:id="guitar3Image" fitWidth="150" fitHeight="150" />
+            <Button fx:id="guitar3Button" text="Guitar Name" onAction="#handleGuitarClick" />
+            <Label fx:id="guitar3Price" text="Price" />
+        </VBox>
+        <VBox spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <ImageView fx:id="guitar4Image" fitWidth="150" fitHeight="150" />
+            <Button fx:id="guitar4Button" text="Guitar Name" onAction="#handleGuitarClick" />
+            <Label fx:id="guitar4Price" text="Price" />
+        </VBox>
+    </GridPane>
+
+
+    <!-- Navigation Buttons -->
+    <HBox layoutX="700" layoutY="550" spacing="20" alignment="CENTER_RIGHT">
+        <Button text="Back" onAction="#handleBackClick" />
+    </HBox>
+
+</AnchorPane>
