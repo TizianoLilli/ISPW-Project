@@ -74,3 +74,8 @@
     -fx-font-size: 12px;
     -fx-text-fill: gray;
 }
+
+.combo-box {
+    visibility: visible;
+    opacity: 1;
+}

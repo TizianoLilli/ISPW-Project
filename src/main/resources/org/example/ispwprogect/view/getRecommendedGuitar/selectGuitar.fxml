@@ -19,13 +19,13 @@
     </HBox>
 
     <!-- Guitarists Selection -->
-    <VBox layoutX="200" layoutY="50" spacing="10">
+    <VBox layoutX="200" layoutY="50" >
         <Label text="Guitarists" styleClass="subtitle" />
         <ListView fx:id="guitaristListView" prefHeight="100" />
 
 <!--        <HBox spacing="10">-->
 <!--        <Button text="Select Price Range" onAction="#handlePriceButtonClick" />-->
-        <ComboBox fx:id="priceRangeComboBox" promptText="Select price range" onAction="#handlePriceSelection">
+        <ComboBox fx:id="priceRangeComboBox" promptText="Price range" onAction="#handlePriceSelection">
             <items>
                 <FXCollections fx:factory="observableArrayList">
                     <String fx:value="50-250 $" />

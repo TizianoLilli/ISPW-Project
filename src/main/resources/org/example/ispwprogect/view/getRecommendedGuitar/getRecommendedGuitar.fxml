@@ -8,6 +8,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.image.Image?>
 
 <AnchorPane prefHeight="600" prefWidth="900" stylesheets="@../style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.ispwprogect.control.graphic.GetRecommendedGuitarController">
     <fx:include source="../sidebar.fxml"/>
@@ -25,6 +26,11 @@
         <GridPane hgap="20" vgap="20" layoutX="50" layoutY="50">
             <!-- Row 1 -->
             <VBox spacing="10" GridPane.columnIndex="0" GridPane.rowIndex="0" alignment="CENTER">
+<!--                <ImageView fitHeight="100" fitWidth="100">-->
+<!--                    <image>-->
+<!--                        <Image url="@/org/example/ispwprogect/images/guitarists/pino_daniele.jpeg"/>-->
+<!--                    </image>-->
+<!--                </ImageView>-->
                 <Label text="Pino Daniele" />
                 <CheckBox />
             </VBox>
