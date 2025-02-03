@@ -23,36 +23,37 @@
         <Label text="Select your favorite guitarists" styleClass="subtitle" />
 
         <!-- Grid of Guitarists -->
-        <GridPane hgap="20" vgap="20" layoutX="50" layoutY="50">
+        <GridPane hgap="50" vgap="50" layoutX="50" layoutY="50">
             <!-- Row 1 -->
             <VBox spacing="10" GridPane.columnIndex="0" GridPane.rowIndex="0" alignment="CENTER">
-<!--                <ImageView fitHeight="100" fitWidth="100">-->
-<!--                    <image>-->
-<!--                        <Image url="@/org/example/ispwprogect/images/guitarists/pino_daniele.jpeg"/>-->
-<!--                    </image>-->
-<!--                </ImageView>-->
+                <ImageView fx:id="pinoImage" fitHeight="200" fitWidth="200" preserveRatio="true"/>
                 <Label text="Pino Daniele" />
                 <CheckBox />
             </VBox>
             <VBox spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="0" alignment="CENTER">
+                <ImageView fx:id="brittiImage" fitHeight="200" fitWidth="200" preserveRatio="true"/>
                 <Label text="Alex Britti" />
                 <CheckBox />
             </VBox>
             <VBox spacing="10" GridPane.columnIndex="2" GridPane.rowIndex="0" alignment="CENTER">
+                <ImageView fx:id="celentanoImage" fitHeight="200" fitWidth="190" preserveRatio="true"/>
                 <Label text="Adriano Celentano" />
                 <CheckBox />
             </VBox>
 
             <!-- Row 2 -->
             <VBox spacing="10" GridPane.columnIndex="0" GridPane.rowIndex="1" alignment="CENTER">
+                <ImageView fx:id="claptonImage" fitHeight="200" fitWidth="200" preserveRatio="true"/>
                 <Label text="Eric Clapton" />
                 <CheckBox />
             </VBox>
             <VBox spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="1" alignment="CENTER">
+                <ImageView fx:id="ultimoImage" fitHeight="200" fitWidth="200" preserveRatio="true"/>
                 <Label text="Ultimo" />
                 <CheckBox />
             </VBox>
             <VBox spacing="10" GridPane.columnIndex="2" GridPane.rowIndex="1" alignment="CENTER">
+                <ImageView fx:id="slashImage" fitHeight="170" fitWidth="200" preserveRatio="true"/>
                 <Label text="Slash" />
                 <CheckBox />
             </VBox>

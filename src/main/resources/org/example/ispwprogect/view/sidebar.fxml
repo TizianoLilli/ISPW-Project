@@ -21,7 +21,7 @@
             <Label onMouseClicked="#handleNewRecommendedGuitarClick" text="New Recommended Guitar" />
             <Label text="Discover Dream Guitars" />
             <Label onMouseClicked="#handleNewDreamGuitarClick" text="New Dream Guitar" />
-            <Label text="Find Music Shops" />
+            <Label onMouseClicked="#handleBuyAccessoriesClick" text="Buy accessories" />
             <Label text="Discover Concerts" />
         </ListView>
         <Label id="helpLabel" text="Help" />

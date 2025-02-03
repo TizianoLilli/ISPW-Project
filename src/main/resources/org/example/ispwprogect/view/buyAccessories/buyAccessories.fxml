@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+<AnchorPane prefHeight="600" prefWidth="900" stylesheets="@../style.css" xmlns="http://javafx.com/javafx/23.0.1"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.ispwprogect.control.graphic.BuyAccessoriesController">
+
+    <!-- Include Sidebar -->
+    <fx:include source="../sidebar.fxml"/>
+
+    <!-- Header -->
+    <HBox layoutX="200" layoutY="10" spacing="10" alignment="CENTER">
+        <Label text="Buy accessories" styleClass="header-title" />
+        <Label text="Select your favorite accessories" styleClass="subtitle" />
+    </HBox>
+
+
+    <VBox layoutX="200" layoutY="50" >
+
+        <!--        <Button text="Select Price Range" onAction="#handlePriceButtonClick" />-->
+        <ComboBox fx:id="priceRangeComboBox" promptText="Price range" onAction="#handlePriceSelection">
+            <items>
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:value="50-250 $" />
+                    <String fx:value="250-500 $" />
+                    <String fx:value="500-1000 $" />
+                </FXCollections>
+            </items>
+        </ComboBox>
+        <!--        </HBox>-->
+    </VBox>
+
+    <!-- Grid of Accessory -->
+    <GridPane layoutX="200" layoutY="180" hgap="20" vgap="20">
+        <VBox spacing="10" GridPane.columnIndex="0" GridPane.rowIndex="0">
+            <ImageView fx:id="accessory1Image" fitWidth="150" fitHeight="150" />
+            <Button fx:id="accessory1Button" text="Accessory Name" onAction="#handleAccessoryClick" />
+            <Label fx:id="accessory1Price" text="Price" />
+        </VBox>
+        <VBox spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="0">
+            <ImageView fx:id="accessory2Image" fitWidth="150" fitHeight="150" />
+            <Button fx:id="accessory2Button" text="Accessory Name" onAction="#handleAccessoryClick" />
+            <Label fx:id="accessory2Price" text="Price" />
+        </VBox>
+        <VBox spacing="10" GridPane.columnIndex="0" GridPane.rowIndex="1">
+            <ImageView fx:id="accessory3Image" fitWidth="150" fitHeight="150" />
+            <Button fx:id="accessory3Button" text="Accessory Name" onAction="#handleAccessoryClick" />
+            <Label fx:id="accessory3Price" text="Price" />
+        </VBox>
+        <VBox spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <ImageView fx:id="accessory4Image" fitWidth="150" fitHeight="150" />
+            <Button fx:id="accessory4Button" text="Accessory Name" onAction="#handleAccessoryClick" />
+            <Label fx:id="accessory4Price" text="Price" />
+        </VBox>
+    </GridPane>
+
+
+    <!-- Navigation Buttons -->
+    <HBox layoutX="700" layoutY="550" spacing="20" alignment="CENTER_RIGHT">
+        <Button text="Back" onAction="#handleBackClick" />
+    </HBox>
+
+</AnchorPane>

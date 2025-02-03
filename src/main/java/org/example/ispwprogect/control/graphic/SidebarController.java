@@ -80,4 +80,14 @@ public class SidebarController{
 
     }
 
+    @FXML
+    public void handleBuyAccessoriesClick(MouseEvent event) {
+
+        Stage currentStage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        ChangePage istanza = ChangePage.getChangePage();
+        istanza.setStage(currentStage);
+        istanza.change("view/buyAccessories/buyAccessories.fxml", id, null);
+
+    }
+
 }
