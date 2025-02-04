@@ -13,6 +13,8 @@ import org.example.ispwprogect.ChangePage;
 import org.example.ispwprogect.utils.bean.DreamGuitarBean;
 import org.example.ispwprogect.utils.bean.IdSessionBean;
 
+import java.util.List;
+
 public class SelectGuitarController extends GraphicController {
 
     private IdSessionBean id;
@@ -32,8 +34,22 @@ public class SelectGuitarController extends GraphicController {
     @FXML
     private Label guitar1Price, guitar2Price, guitar3Price, guitar4Price;
 
+    private DreamGuitarBean dreamGuitarBean;
+
+    @Override
     public void init(IdSessionBean id, DreamGuitarBean dreamGuitarBean) {
         this.id = id;
+        this.dreamGuitarBean = dreamGuitarBean;
+    }
+
+    // Nuovo metodo per inizializzare anche la lista di artisti
+    public void init(IdSessionBean id, DreamGuitarBean dreamGuitarBean, List<String> selectedArtists) {
+        this.init(id, dreamGuitarBean);  // Chiama il metodo base
+
+        // Aggiunge i nomi degli artisti alla ListView
+        if (selectedArtists != null && guitaristListView != null) {
+            guitaristListView.getItems().setAll(selectedArtists);
+        }
     }
 
     @FXML
@@ -86,5 +102,9 @@ public class SelectGuitarController extends GraphicController {
         System.out.println("Fascia di prezzo selezionata: " + selectedRange);
 
         // Qui puoi aggiungere codice per filtrare le chitarre in base al prezzo selezionato
+    }
+
+    public void setSelectedGuitarists(List<String> guitarists){
+            guitaristListView.getItems().setAll(guitarists);
     }
 }

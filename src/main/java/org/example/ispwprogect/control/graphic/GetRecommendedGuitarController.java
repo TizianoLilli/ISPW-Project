@@ -2,7 +2,12 @@ package org.example.ispwprogect.control.graphic;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.CheckBox;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
@@ -10,9 +15,14 @@ import org.example.ispwprogect.ChangePage;
 import org.example.ispwprogect.utils.bean.DreamGuitarBean;
 import org.example.ispwprogect.utils.bean.IdSessionBean;
 
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
 public class GetRecommendedGuitarController extends GraphicController{
 
     private IdSessionBean id;
+    private List<String> selectedGuitarists = new ArrayList<>();
 
     public void init(IdSessionBean id, DreamGuitarBean dreamGuitarBean) {
         this.id = id;
@@ -32,15 +42,77 @@ public class GetRecommendedGuitarController extends GraphicController{
         }
     }
 
+
+    @FXML
+    private CheckBox pinoCheck;
+
+    @FXML
+    private CheckBox brittiCheck;
+
+    @FXML
+    private CheckBox celentanoCheck;
+
+    @FXML
+    private CheckBox claptonCheck;
+
+    @FXML
+    private CheckBox ultimoCheck;
+
+    @FXML
+    private CheckBox slashCheck;
+
+    @FXML
+    private Label pinoLabel;
+
+    @FXML
+    private Label brittiLabel;
+
+    @FXML
+    private Label celentanoLabel;
+
+    @FXML
+    private Label claptonLabel;
+
+    @FXML
+    private Label ultimoLabel;
+
+    @FXML
+    private Label slashLabel;
+
+
+
+    private List<String> getSelectedArtists() {
+        List<String> artists = new ArrayList<>();
+
+        if (pinoCheck.isSelected()) artists.add("Pino Daniele");
+        if (brittiCheck.isSelected()) artists.add("Alex Britti");
+        if (celentanoCheck.isSelected()) artists.add("Adriano Celentano");
+        if (claptonCheck.isSelected()) artists.add("Eric Clapton");
+        if (ultimoCheck.isSelected()) artists.add("Ultimo");
+        if (slashCheck.isSelected()) artists.add("Slash");
+
+        return artists;
+    }
+
     @FXML
     private void handleNextClick(ActionEvent event) {
-        // Logica per passare alla prossima schermata
         try {
-            Stage currentStage = (Stage) ((Node)  event.getSource()).getScene().getWindow();
-            ChangePage istanza = ChangePage.getChangePage();
-            istanza.setStage(currentStage);
-            istanza.change("view/getRecommendedGuitar/selectGuitar.fxml", id, null);
-        } catch (Exception e) {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/example/ispwprogect/view/getRecommendedGuitar/selectGuitar.fxml"));
+            Parent root = loader.load();
+
+            // Ottieni il controller della nuova scena
+            SelectGuitarController controller = loader.getController();
+
+            // Passa i nomi degli artisti selezionati
+            List<String> selectedArtists = getSelectedArtists();
+            controller.init(id, new DreamGuitarBean(), selectedArtists);
+
+            // Cambia la scena
+            Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            currentStage.setScene(new Scene(root));
+            currentStage.show();
+
+        } catch (IOException e) {
             e.printStackTrace();
             System.out.println("Errore nel caricamento della pagina Select Guitar.");
         }
