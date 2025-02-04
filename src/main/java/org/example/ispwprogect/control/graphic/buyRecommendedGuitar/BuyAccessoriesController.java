@@ -1,4 +1,4 @@
-package org.example.ispwprogect.control.graphic;
+package org.example.ispwprogect.control.graphic.buyRecommendedGuitar;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -10,6 +10,7 @@ import javafx.scene.control.ListView;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import org.example.ispwprogect.ChangePage;
+import org.example.ispwprogect.control.graphic.GraphicController;
 import org.example.ispwprogect.utils.bean.DreamGuitarBean;
 import org.example.ispwprogect.utils.bean.IdSessionBean;
 

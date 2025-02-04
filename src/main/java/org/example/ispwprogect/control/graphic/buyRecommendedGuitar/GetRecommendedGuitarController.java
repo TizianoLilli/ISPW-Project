@@ -1,4 +1,4 @@
-package org.example.ispwprogect.control.graphic;
+package org.example.ispwprogect.control.graphic.buyRecommendedGuitar;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -12,6 +12,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import org.example.ispwprogect.ChangePage;
+import org.example.ispwprogect.control.graphic.GraphicController;
 import org.example.ispwprogect.utils.bean.DreamGuitarBean;
 import org.example.ispwprogect.utils.bean.IdSessionBean;
 
@@ -19,13 +20,16 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class GetRecommendedGuitarController extends GraphicController{
+public class GetRecommendedGuitarController extends GraphicController {
 
     private IdSessionBean id;
     private List<String> selectedGuitarists = new ArrayList<>();
+    private org.example.ispwproject.model.MusicShop musicShop;
+
 
     public void init(IdSessionBean id, DreamGuitarBean dreamGuitarBean) {
         this.id = id;
+        musicShop = new org.example.ispwproject.model.MusicShop();
     }
 
     public void handleBackClick(ActionEvent event) {
@@ -96,6 +100,14 @@ public class GetRecommendedGuitarController extends GraphicController{
 
     @FXML
     private void handleNextClick(ActionEvent event) {
+        List<String> selectedArtists = getSelectedArtists();
+
+        if (musicShop != null) {  // Controlla se musicShop è stato inizializzato
+            musicShop.setSelectedArtists(selectedArtists); // Notifica observers
+        } else {
+            System.out.println("Errore: musicShop non inizializzato.");
+        }
+
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/example/ispwprogect/view/getRecommendedGuitar/selectGuitar.fxml"));
             Parent root = loader.load();
@@ -104,7 +116,7 @@ public class GetRecommendedGuitarController extends GraphicController{
             SelectGuitarController controller = loader.getController();
 
             // Passa i nomi degli artisti selezionati
-            List<String> selectedArtists = getSelectedArtists();
+
             controller.init(id, new DreamGuitarBean(), selectedArtists);
 
             // Cambia la scena

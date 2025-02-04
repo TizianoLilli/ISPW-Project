@@ -1,4 +1,4 @@
-package org.example.ispwprogect.control.graphic;
+package org.example.ispwprogect.control.graphic.buyRecommendedGuitar;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -10,17 +10,21 @@ import javafx.scene.control.ListView;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import org.example.ispwprogect.ChangePage;
+import org.example.ispwprogect.control.graphic.GraphicController;
 import org.example.ispwprogect.utils.bean.DreamGuitarBean;
 import org.example.ispwprogect.utils.bean.IdSessionBean;
 
+import java.util.ArrayList;
 import java.util.List;
 
-public class SelectGuitarController extends GraphicController {
+public class SelectGuitarController extends GraphicController implements org.example.ispwproject.observer.Observer {
 
     private IdSessionBean id;
 
     @FXML
     private ListView<String> guitaristListView;
+
+    private List<String> selectedArtists = new ArrayList<>();
 
     @FXML
     private ComboBox<String> priceRangeComboBox;
@@ -106,5 +110,13 @@ public class SelectGuitarController extends GraphicController {
 
     public void setSelectedGuitarists(List<String> guitarists){
             guitaristListView.getItems().setAll(guitarists);
+    }
+
+    @Override
+    public void update(List<String> artists) {
+
+        System.out.println("Artisti selezionati aggiornati: " + artists);
+
+
     }
 }

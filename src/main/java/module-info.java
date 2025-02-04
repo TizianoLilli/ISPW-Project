@@ -10,4 +10,6 @@ module org.example.ispwprogect {
     opens org.example.ispwprogect.control.graphic to javafx.fxml;
     exports org.example.ispwprogect.control.graphic.buyDreamGuitar;
     opens org.example.ispwprogect.control.graphic.buyDreamGuitar to javafx.fxml;
+    exports org.example.ispwprogect.control.graphic.buyRecommendedGuitar;
+    opens org.example.ispwprogect.control.graphic.buyRecommendedGuitar to javafx.fxml;
 }
