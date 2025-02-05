@@ -20,6 +20,7 @@ import java.util.List;
 
 public class SelectGuitarController extends GraphicController implements org.example.ispwproject.observer.Observer {
 
+   private DreamGuitarBean dreamGuitarBean;
     private IdSessionBean id;
 
     @FXML
@@ -41,20 +42,16 @@ public class SelectGuitarController extends GraphicController implements org.exa
 
     private RecommendedGuitarBean recommendedGuitarBean;
 
-    @Override
-    public void initDreamGuitar(IdSessionBean idSessionBean, DreamGuitarBean bean) {
-        throw new UnsupportedOperationException("Questo controller non usa DreamGuitarBean");
-    }
 
     @Override
-    public void initRecommendedGuitar(IdSessionBean id, RecommendedGuitarBean recommendedGuitarBean) {
+    public void init(IdSessionBean id, DreamGuitarBean dreamGuitarBean,RecommendedGuitarBean recommendedGuitarBean) {
         this.id = id;
         this.recommendedGuitarBean = recommendedGuitarBean;
     }
 
     // Nuovo metodo per inizializzare anche la lista di artisti
-    public void initRecommendedGuitar(IdSessionBean id, RecommendedGuitarBean recommendedGuitarBean, List<String> selectedArtists) {
-        this.initRecommendedGuitar(id, recommendedGuitarBean);  // Chiama il metodo base
+    public void init(IdSessionBean id, DreamGuitarBean dreamGuitarBean,RecommendedGuitarBean recommendedGuitarBean, List<String> selectedArtists) {
+        this.init(id, dreamGuitarBean, recommendedGuitarBean);  // Chiama il metodo base
 
         // Aggiunge i nomi degli artisti alla ListView
         if (selectedArtists != null && guitaristListView != null) {
@@ -68,7 +65,7 @@ public class SelectGuitarController extends GraphicController implements org.exa
             Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             ChangePage istanza = ChangePage.getChangePage();
             istanza.setStage(currentStage);
-            istanza.changeRecommendedGuitar("view/getRecommendedGuitar/getRecommendedGuitar.fxml", id, null);
+            istanza.change("view/getRecommendedGuitar/getRecommendedGuitar.fxml", id, dreamGuitarBean, recommendedGuitarBean);
         } catch (Exception e) {
             e.printStackTrace();
             System.out.println("Errore nel caricamento della schermata precedente.");

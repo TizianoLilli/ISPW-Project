@@ -13,6 +13,7 @@ import org.example.ispwprogect.ChangePage;
 import org.example.ispwprogect.control.application.BuyDreamGuitarApplicationController;
 import org.example.ispwprogect.utils.bean.DreamGuitarBean;
 import org.example.ispwprogect.utils.bean.IdSessionBean;
+import org.example.ispwprogect.utils.bean.RecommendedGuitarBean;
 
 import java.io.IOException;
 
@@ -33,6 +34,7 @@ public class SidebarController{
     private BuyDreamGuitarApplicationController controller;
     private IdSessionBean id;
     private DreamGuitarBean dreamGuitarBean;
+    private RecommendedGuitarBean recommendedGuitarBean;
 
     @FXML
     private void handleHomeClick(MouseEvent event) {
@@ -40,7 +42,7 @@ public class SidebarController{
         Stage currentStage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         ChangePage istanza = ChangePage.getChangePage();
         istanza.setStage(currentStage);
-        istanza.changeDreamGuitar("view/homePage.fxml", id, null);
+        istanza.change("view/homePage.fxml", id, null, null);
 
     }
 
@@ -64,7 +66,7 @@ public class SidebarController{
         Stage currentStage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         ChangePage istanza = ChangePage.getChangePage();
         istanza.setStage(currentStage);
-        istanza.changeRecommendedGuitar("view/getRecommendedGuitar/getRecommendedGuitar.fxml", id, null);
+        istanza.change("view/getRecommendedGuitar/getRecommendedGuitar.fxml", id, null, null);
 
     }
 
@@ -76,7 +78,7 @@ public class SidebarController{
         Stage currentStage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         ChangePage istanza = ChangePage.getChangePage();
         istanza.setStage(currentStage);
-        istanza.changeDreamGuitar("view/buyDreamGuitar/buyDreamGuitarStart.fxml", id, dreamGuitarBean);
+        istanza.change("view/buyDreamGuitar/buyDreamGuitarStart.fxml", id, dreamGuitarBean, recommendedGuitarBean);
 
     }
 
@@ -86,7 +88,7 @@ public class SidebarController{
         Stage currentStage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         ChangePage istanza = ChangePage.getChangePage();
         istanza.setStage(currentStage);
-        istanza.changeRecommendedGuitar("view/buyAccessories/buyAccessories.fxml", id, null);
+        istanza.change("view/buyAccessories/buyAccessories.fxml", id, null, null);
 
     }
 

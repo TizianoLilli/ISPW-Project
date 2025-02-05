@@ -17,11 +17,9 @@ public class HomePageController extends GraphicController {
     @FXML
     private ImageView bannerImage;
 
-    @Override
-    public void initRecommendedGuitar(IdSessionBean idSessionBean, RecommendedGuitarBean bean) {}
 
     @Override
-    public void initDreamGuitar(IdSessionBean id, DreamGuitarBean dreamGuitarBean){
+    public void init(IdSessionBean id, DreamGuitarBean dreamGuitarBean, RecommendedGuitarBean recommendedGuitarBean){
         // Carica l'immagine e impostala nell'ImageView
         Image banner = new Image("file:main/java/org/example/ispwprogect/images/banner.jpg");
         bannerImage.setImage(banner);
@@ -30,6 +28,7 @@ public class HomePageController extends GraphicController {
     private BuyDreamGuitarApplicationController controller;
     private IdSessionBean id;
     private DreamGuitarBean dreamGuitarBean;
+    private RecommendedGuitarBean recommendedGuitarBean;
 
     @FXML
     public void handleClick(ActionEvent event){
@@ -40,7 +39,7 @@ public class HomePageController extends GraphicController {
         Stage currentStage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         ChangePage istanza = ChangePage.getChangePage();
         istanza.setStage(currentStage);
-        istanza.changeDreamGuitar("view/buyDreamGuitar/buyDreamGuitarStart.fxml", id, dreamGuitarBean);
+        istanza.change("view/buyDreamGuitar/buyDreamGuitarStart.fxml", id, dreamGuitarBean, recommendedGuitarBean);
 
     }
 

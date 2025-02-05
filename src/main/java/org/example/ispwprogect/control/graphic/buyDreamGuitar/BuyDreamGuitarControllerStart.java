@@ -29,16 +29,14 @@ public class BuyDreamGuitarControllerStart extends GraphicController {
 
     private BuyDreamGuitarApplicationController controller;
     private DreamGuitarBean dreamGuitarBean;
+    private RecommendedGuitarBean recommendedGuitarBean;
     private IdSessionBean id;
 
     @FXML private Label total;
 
-    public void initRecommendedGuitar(IdSessionBean idSessionBean, RecommendedGuitarBean bean) {
-        throw new UnsupportedOperationException("Questo controller non usa RecommendedGuitarBean");
-    }
 
     @Override
-    public void initDreamGuitar(IdSessionBean id, DreamGuitarBean dreamGuitarBean) {
+    public void init(IdSessionBean id, DreamGuitarBean dreamGuitarBean, RecommendedGuitarBean recommendedGuitarBean) {
 
         controller = new BuyDreamGuitarApplicationController();
         this.dreamGuitarBean = dreamGuitarBean;
@@ -76,7 +74,7 @@ public class BuyDreamGuitarControllerStart extends GraphicController {
         Stage currentStage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         ChangePage istanza = ChangePage.getChangePage();
         istanza.setStage(currentStage);
-        istanza.changeDreamGuitar("view/homePage.fxml", id, dreamGuitarBean);
+        istanza.change("view/homePage.fxml", id, dreamGuitarBean, recommendedGuitarBean);
 
     }
 
@@ -86,7 +84,7 @@ public class BuyDreamGuitarControllerStart extends GraphicController {
         Stage currentStage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         ChangePage istanza = ChangePage.getChangePage();
         istanza.setStage(currentStage);
-        istanza.changeDreamGuitar("view/buyDreamGuitar/buyDreamGuitarP.fxml", id, dreamGuitarBean);
+        istanza.change("view/buyDreamGuitar/buyDreamGuitarP.fxml", id, dreamGuitarBean, recommendedGuitarBean);
 
     }
 
@@ -96,7 +94,7 @@ public class BuyDreamGuitarControllerStart extends GraphicController {
         Stage currentStage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         ChangePage istanza = ChangePage.getChangePage();
         istanza.setStage(currentStage);
-        istanza.changeDreamGuitar("view/buyDreamGuitar/buyDreamGuitarBo.fxml", id, dreamGuitarBean);
+        istanza.change("view/buyDreamGuitar/buyDreamGuitarBo.fxml", id, dreamGuitarBean, recommendedGuitarBean);
 
     }
 
@@ -106,7 +104,7 @@ public class BuyDreamGuitarControllerStart extends GraphicController {
         Stage currentStage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         ChangePage istanza = ChangePage.getChangePage();
         istanza.setStage(currentStage);
-        istanza.changeDreamGuitar("view/buyDreamGuitar/buyDreamGuitarBr.fxml", id, dreamGuitarBean);
+        istanza.change("view/buyDreamGuitar/buyDreamGuitarBr.fxml", id, dreamGuitarBean, recommendedGuitarBean);
 
     }
 
@@ -116,7 +114,7 @@ public class BuyDreamGuitarControllerStart extends GraphicController {
         Stage currentStage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         ChangePage istanza = ChangePage.getChangePage();
         istanza.setStage(currentStage);
-        istanza.changeDreamGuitar("view/buyDreamGuitar/buyDreamGuitarS.fxml", id, dreamGuitarBean);
+        istanza.change("view/buyDreamGuitar/buyDreamGuitarS.fxml", id, dreamGuitarBean, recommendedGuitarBean);
 
     }
 
@@ -126,7 +124,7 @@ public class BuyDreamGuitarControllerStart extends GraphicController {
         Stage currentStage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         ChangePage istanza = ChangePage.getChangePage();
         istanza.setStage(currentStage);
-        istanza.changeDreamGuitar("view/buyDreamGuitar/buyDreamGuitarF.fxml", id, dreamGuitarBean);
+        istanza.change("view/buyDreamGuitar/buyDreamGuitarF.fxml", id, dreamGuitarBean, recommendedGuitarBean);
 
     }
 
@@ -136,7 +134,7 @@ public class BuyDreamGuitarControllerStart extends GraphicController {
         Stage currentStage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         ChangePage istanza = ChangePage.getChangePage();
         istanza.setStage(currentStage);
-        istanza.changeDreamGuitar("view/buyDreamGuitar/buyDreamGuitarNH.fxml", id, dreamGuitarBean);
+        istanza.change("view/buyDreamGuitar/buyDreamGuitarNH.fxml", id, dreamGuitarBean, recommendedGuitarBean);
 
     }
 }

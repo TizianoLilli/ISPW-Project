@@ -1,4 +1,4 @@
-package org.example.ispwproject.model;
+package org.example.ispwprogect.model;
 
 public class RecommendedGuitar {
     private String name;

@@ -18,16 +18,13 @@ import org.example.ispwprogect.utils.enumeration.BodyType;
 public class BuyDreamGuitarControllerBo extends GraphicController {
 
     private DreamGuitarBean dreamGuitarBean;
+    private RecommendedGuitarBean recommendedGuitarBean;
     private IdSessionBean id;
     private BuyDreamGuitarApplicationController controller;
 
-    @Override
-    public void initRecommendedGuitar(IdSessionBean idSessionBean, RecommendedGuitarBean bean) {
-        throw new UnsupportedOperationException("Questo controller non usa RecommendedGuitarBean");
-    }
 
     @Override
-    public void initDreamGuitar(IdSessionBean id, DreamGuitarBean dreamGuitarBean) {
+    public void init(IdSessionBean id, DreamGuitarBean dreamGuitarBean, RecommendedGuitarBean recommendedGuitarBean) {
 
         controller = new BuyDreamGuitarApplicationController();
         this.dreamGuitarBean = dreamGuitarBean;
@@ -45,7 +42,7 @@ public class BuyDreamGuitarControllerBo extends GraphicController {
     private void handleBackClick(ActionEvent event) {
 
         ChangePage istanza = ChangePage.getChangePage();
-        istanza.changeDreamGuitar("view/buyDreamGuitar/buyDreamGuitarStart.fxml", id, dreamGuitarBean);
+        istanza.change("view/buyDreamGuitar/buyDreamGuitarStart.fxml", id, dreamGuitarBean, recommendedGuitarBean);
 
     }
 
@@ -95,7 +92,7 @@ public class BuyDreamGuitarControllerBo extends GraphicController {
             }
 
             ChangePage istanza = ChangePage.getChangePage();
-            istanza.changeDreamGuitar("view/buyDreamGuitar/buyDreamGuitarStart.fxml", id, dreamGuitarBean);
+            istanza.change("view/buyDreamGuitar/buyDreamGuitarStart.fxml", id, dreamGuitarBean, recommendedGuitarBean);
 
         } catch (Exception e) {
             throw new RuntimeException(e);

@@ -16,6 +16,8 @@ import org.example.ispwprogect.utils.bean.IdSessionBean;
 import org.example.ispwprogect.utils.bean.RecommendedGuitarBean;
 
 public class BuyAccessoriesController extends GraphicController {
+    private RecommendedGuitarBean recommendedGuitarBean;
+    private DreamGuitarBean dreamGuitarBean;
     private IdSessionBean id;
 
     @FXML
@@ -33,12 +35,9 @@ public class BuyAccessoriesController extends GraphicController {
     @FXML
     private Label accessory1Price, accessory2Price, accessory3Price, accessory4Price;
 
-    @Override
-    public void initDreamGuitar(IdSessionBean idSessionBean, DreamGuitarBean bean) {
-        throw new UnsupportedOperationException("Questo controller non usa DreamGuitarBean");
-    }
 
-    public void initRecommendedGuitar(IdSessionBean id, RecommendedGuitarBean recommendedGuitarBean) {
+
+    public void init(IdSessionBean id,DreamGuitarBean dreamGuitarBean, RecommendedGuitarBean recommendedGuitarBean) {
         this.id = id;
     }
 
@@ -48,7 +47,7 @@ public class BuyAccessoriesController extends GraphicController {
             Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             ChangePage istanza = ChangePage.getChangePage();
             istanza.setStage(currentStage);
-            istanza.changeRecommendedGuitar("view/homepage.fxml", id, null);
+            istanza.change("view/homepage.fxml", id, dreamGuitarBean, recommendedGuitarBean);
         } catch (Exception e) {
             e.printStackTrace();
             System.out.println("Errore nel caricamento della schermata precedente.");

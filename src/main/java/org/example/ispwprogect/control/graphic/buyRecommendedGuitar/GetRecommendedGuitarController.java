@@ -13,6 +13,7 @@ import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import org.example.ispwprogect.ChangePage;
 import org.example.ispwprogect.control.graphic.GraphicController;
+import org.example.ispwprogect.control.graphic.SidebarController;
 import org.example.ispwprogect.utils.bean.DreamGuitarBean;
 import org.example.ispwprogect.utils.bean.RecommendedGuitarBean;
 import org.example.ispwprogect.utils.bean.IdSessionBean;
@@ -23,18 +24,25 @@ import java.util.List;
 
 public class GetRecommendedGuitarController extends GraphicController {
 
+    private RecommendedGuitarBean recommendedGuitarBean;
+    private DreamGuitarBean dreamGuitarBean;
     private IdSessionBean id;
     private List<String> selectedGuitarists = new ArrayList<>();
     private org.example.ispwproject.model.MusicShop musicShop;
 
-    @Override
-    public void initDreamGuitar(IdSessionBean idSessionBean, DreamGuitarBean bean) {
-        throw new UnsupportedOperationException("Questo controller non usa DreamGuitarBean");
-    }
+    private List<org.example.ispwproject.model.Guitarist> guitarists = new ArrayList<>();
 
-    public void initRecommendedGuitar(IdSessionBean id, RecommendedGuitarBean recommendedGuitarBean) {
+
+    @Override
+    public void init(IdSessionBean id, DreamGuitarBean dreamGuitarBean,RecommendedGuitarBean recommendedGuitarBean) {
         this.id = id;
         musicShop = new org.example.ispwproject.model.MusicShop();
+        initializeGuitarists();
+    }
+
+    private void initializeGuitarists(){
+
+
     }
 
     public void handleBackClick(ActionEvent event) {
@@ -43,7 +51,7 @@ public class GetRecommendedGuitarController extends GraphicController {
             Stage currentStage = (Stage) ((Node)event.getSource()).getScene().getWindow();
             ChangePage istanza = ChangePage.getChangePage();
             istanza.setStage(currentStage);
-            istanza.changeRecommendedGuitar("view/homePage.fxml", id, null);
+            istanza.change("view/homePage.fxml", id, dreamGuitarBean, recommendedGuitarBean);
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -131,7 +139,7 @@ public class GetRecommendedGuitarController extends GraphicController {
 
             // Passa i nomi degli artisti selezionati
 
-            controller.initRecommendedGuitar(id, new RecommendedGuitarBean(), selectedArtists);
+            controller.init(id, null ,new RecommendedGuitarBean(),  selectedArtists);
 
             // Cambia la scena
             Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
