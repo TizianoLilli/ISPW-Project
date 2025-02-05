@@ -21,7 +21,7 @@ public class ChangePage {
 
     private Stage stage;
 
-    public void change(String fxml, IdSessionBean id, DreamGuitarBean dreamGuitarBean) {
+    public void changeDreamGuitar(String fxml, IdSessionBean id, DreamGuitarBean dreamGuitarBean) {
         FXMLLoader loader = new FXMLLoader(getClass().getResource(fxml));
         Scene newScene=null;
 
@@ -34,12 +34,29 @@ public class ChangePage {
         //alla quale in base al pagina caricata associo l'istanza di uno dei controller grafici figli
         //l'operazione inizializza quindi avrà comportamenti diversi in base all'istanza
         GraphicController controller = loader.getController();
-        controller.init(id, dreamGuitarBean);
+        controller.initDreamGuitar(id, dreamGuitarBean);
         this.stage.setScene(newScene);
         this.stage.show();
 
 
     }
+
+    public void changeRecommendedGuitar(String fxml, IdSessionBean id, RecommendedGuitarBean recommendedGuitarBean) {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource(fxml));
+        Scene newScene = null;
+
+        try {
+            newScene = new Scene(loader.load());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        GraphicController controller = loader.getController();
+        controller.initRecommendedGuitar(id, recommendedGuitarBean); // Usa il nuovo init con RecommendedGuitarBean
+        this.stage.setScene(newScene);
+        this.stage.show();
+    }
+
 
     public void setStage(Stage stageParam){
         this.stage=stageParam;

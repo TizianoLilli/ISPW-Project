@@ -12,6 +12,7 @@ import org.example.ispwprogect.control.graphic.GraphicController;
 import org.example.ispwprogect.utils.bean.DreamGuitarBean;
 import org.example.ispwprogect.utils.bean.IdSessionBean;
 import org.example.ispwprogect.utils.bean.PickupBean;
+import org.example.ispwprogect.utils.bean.RecommendedGuitarBean;
 import org.example.ispwprogect.utils.enumeration.PickupType;
 
 public class BuyDreamGuitarControllerP extends GraphicController {
@@ -20,8 +21,12 @@ public class BuyDreamGuitarControllerP extends GraphicController {
 
     private IdSessionBean id;
 
+    public void initRecommendedGuitar(IdSessionBean idSessionBean, RecommendedGuitarBean bean) {
+        throw new UnsupportedOperationException("Questo controller non usa RecommendedGuitarBean");
+    }
+
     @Override
-    public void init(IdSessionBean id, DreamGuitarBean dreamGuitarBean) {
+    public void initDreamGuitar(IdSessionBean id, DreamGuitarBean dreamGuitarBean) {
 
         controller = new BuyDreamGuitarApplicationController();
         this.dreamGuitarBean = dreamGuitarBean;
@@ -41,7 +46,7 @@ public class BuyDreamGuitarControllerP extends GraphicController {
     private void handleBackClick(ActionEvent event) {
 
         ChangePage istanza = ChangePage.getChangePage();
-        istanza.change("view/buyDreamGuitar/buyDreamGuitarStart.fxml", id, dreamGuitarBean);
+        istanza.changeDreamGuitar("view/buyDreamGuitar/buyDreamGuitarStart.fxml", id, dreamGuitarBean);
 
     }
 
@@ -79,7 +84,7 @@ public class BuyDreamGuitarControllerP extends GraphicController {
             controller.addPickup(dreamGuitarBean, alternative);
 
             ChangePage istanza = ChangePage.getChangePage();
-            istanza.change("view/buyDreamGuitar/buyDreamGuitarStart.fxml", id, dreamGuitarBean);
+            istanza.changeDreamGuitar("view/buyDreamGuitar/buyDreamGuitarStart.fxml", id, dreamGuitarBean);
 
         } catch (Exception e) {
             throw new RuntimeException(e);

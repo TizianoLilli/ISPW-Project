@@ -40,7 +40,7 @@ public class SidebarController{
         Stage currentStage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         ChangePage istanza = ChangePage.getChangePage();
         istanza.setStage(currentStage);
-        istanza.change("view/homePage.fxml", id, null);
+        istanza.changeDreamGuitar("view/homePage.fxml", id, null);
 
     }
 
@@ -64,7 +64,7 @@ public class SidebarController{
         Stage currentStage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         ChangePage istanza = ChangePage.getChangePage();
         istanza.setStage(currentStage);
-        istanza.change("view/getRecommendedGuitar/getRecommendedGuitar.fxml", id, null);
+        istanza.changeRecommendedGuitar("view/getRecommendedGuitar/getRecommendedGuitar.fxml", id, null);
 
     }
 
@@ -76,7 +76,7 @@ public class SidebarController{
         Stage currentStage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         ChangePage istanza = ChangePage.getChangePage();
         istanza.setStage(currentStage);
-        istanza.change("view/buyDreamGuitar/buyDreamGuitarStart.fxml", id, dreamGuitarBean);
+        istanza.changeDreamGuitar("view/buyDreamGuitar/buyDreamGuitarStart.fxml", id, dreamGuitarBean);
 
     }
 
@@ -86,7 +86,7 @@ public class SidebarController{
         Stage currentStage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         ChangePage istanza = ChangePage.getChangePage();
         istanza.setStage(currentStage);
-        istanza.change("view/buyAccessories/buyAccessories.fxml", id, null);
+        istanza.changeRecommendedGuitar("view/buyAccessories/buyAccessories.fxml", id, null);
 
     }
 

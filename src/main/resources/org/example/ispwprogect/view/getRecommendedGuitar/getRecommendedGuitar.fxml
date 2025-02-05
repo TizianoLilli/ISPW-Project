@@ -59,6 +59,8 @@
             </VBox>
         </GridPane>
 
+        <Label fx:id="errorMessageLabel" text="Puoi selezionare al massimo 3 chitarristi!" style="-fx-text-fill: red;" visible="false" />
+
         <!-- Navigation Buttons -->
         <HBox spacing="20" alignment="CENTER_RIGHT">
             <Button text="Back" onAction="#handleBackClick" />

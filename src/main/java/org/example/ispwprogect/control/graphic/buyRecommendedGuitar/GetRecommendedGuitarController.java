@@ -14,6 +14,7 @@ import javafx.stage.Stage;
 import org.example.ispwprogect.ChangePage;
 import org.example.ispwprogect.control.graphic.GraphicController;
 import org.example.ispwprogect.utils.bean.DreamGuitarBean;
+import org.example.ispwprogect.utils.bean.RecommendedGuitarBean;
 import org.example.ispwprogect.utils.bean.IdSessionBean;
 
 import java.io.IOException;
@@ -26,8 +27,12 @@ public class GetRecommendedGuitarController extends GraphicController {
     private List<String> selectedGuitarists = new ArrayList<>();
     private org.example.ispwproject.model.MusicShop musicShop;
 
+    @Override
+    public void initDreamGuitar(IdSessionBean idSessionBean, DreamGuitarBean bean) {
+        throw new UnsupportedOperationException("Questo controller non usa DreamGuitarBean");
+    }
 
-    public void init(IdSessionBean id, DreamGuitarBean dreamGuitarBean) {
+    public void initRecommendedGuitar(IdSessionBean id, RecommendedGuitarBean recommendedGuitarBean) {
         this.id = id;
         musicShop = new org.example.ispwproject.model.MusicShop();
     }
@@ -38,7 +43,7 @@ public class GetRecommendedGuitarController extends GraphicController {
             Stage currentStage = (Stage) ((Node)event.getSource()).getScene().getWindow();
             ChangePage istanza = ChangePage.getChangePage();
             istanza.setStage(currentStage);
-            istanza.change("view/homePage.fxml", id, null);
+            istanza.changeRecommendedGuitar("view/homePage.fxml", id, null);
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -99,8 +104,17 @@ public class GetRecommendedGuitarController extends GraphicController {
     }
 
     @FXML
+    private Label errorMessageLabel;
+
+    @FXML
     private void handleNextClick(ActionEvent event) {
         List<String> selectedArtists = getSelectedArtists();
+
+        if(selectedArtists.size() > 3){
+            errorMessageLabel.setText("Puoi selezionare al massimo 3 chitarristi!");
+            errorMessageLabel.setVisible(true);
+            return;
+        }
 
         if (musicShop != null) {  // Controlla se musicShop è stato inizializzato
             musicShop.setSelectedArtists(selectedArtists); // Notifica observers
@@ -117,7 +131,7 @@ public class GetRecommendedGuitarController extends GraphicController {
 
             // Passa i nomi degli artisti selezionati
 
-            controller.init(id, new DreamGuitarBean(), selectedArtists);
+            controller.initRecommendedGuitar(id, new RecommendedGuitarBean(), selectedArtists);
 
             // Cambia la scena
             Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();

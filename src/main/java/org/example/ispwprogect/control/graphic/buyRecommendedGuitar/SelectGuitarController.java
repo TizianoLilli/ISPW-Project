@@ -12,6 +12,7 @@ import javafx.stage.Stage;
 import org.example.ispwprogect.ChangePage;
 import org.example.ispwprogect.control.graphic.GraphicController;
 import org.example.ispwprogect.utils.bean.DreamGuitarBean;
+import org.example.ispwprogect.utils.bean.RecommendedGuitarBean;
 import org.example.ispwprogect.utils.bean.IdSessionBean;
 
 import java.util.ArrayList;
@@ -38,17 +39,22 @@ public class SelectGuitarController extends GraphicController implements org.exa
     @FXML
     private Label guitar1Price, guitar2Price, guitar3Price, guitar4Price;
 
-    private DreamGuitarBean dreamGuitarBean;
+    private RecommendedGuitarBean recommendedGuitarBean;
 
     @Override
-    public void init(IdSessionBean id, DreamGuitarBean dreamGuitarBean) {
+    public void initDreamGuitar(IdSessionBean idSessionBean, DreamGuitarBean bean) {
+        throw new UnsupportedOperationException("Questo controller non usa DreamGuitarBean");
+    }
+
+    @Override
+    public void initRecommendedGuitar(IdSessionBean id, RecommendedGuitarBean recommendedGuitarBean) {
         this.id = id;
-        this.dreamGuitarBean = dreamGuitarBean;
+        this.recommendedGuitarBean = recommendedGuitarBean;
     }
 
     // Nuovo metodo per inizializzare anche la lista di artisti
-    public void init(IdSessionBean id, DreamGuitarBean dreamGuitarBean, List<String> selectedArtists) {
-        this.init(id, dreamGuitarBean);  // Chiama il metodo base
+    public void initRecommendedGuitar(IdSessionBean id, RecommendedGuitarBean recommendedGuitarBean, List<String> selectedArtists) {
+        this.initRecommendedGuitar(id, recommendedGuitarBean);  // Chiama il metodo base
 
         // Aggiunge i nomi degli artisti alla ListView
         if (selectedArtists != null && guitaristListView != null) {
@@ -62,7 +68,7 @@ public class SelectGuitarController extends GraphicController implements org.exa
             Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             ChangePage istanza = ChangePage.getChangePage();
             istanza.setStage(currentStage);
-            istanza.change("view/getRecommendedGuitar/getRecommendedGuitar.fxml", id, null);
+            istanza.changeRecommendedGuitar("view/getRecommendedGuitar/getRecommendedGuitar.fxml", id, null);
         } catch (Exception e) {
             e.printStackTrace();
             System.out.println("Errore nel caricamento della schermata precedente.");
