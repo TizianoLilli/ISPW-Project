@@ -6,11 +6,11 @@ public enum AgeOfWood {
     THIRTY(2),
     FIFTY(2.5);
 
-    private final double MULTIPLIER;
+    private final double multiplier;
 
     AgeOfWood(double multi) {
-        this.MULTIPLIER = multi;
+        this.multiplier = multi;
     }
 
-    public double getMultiplier() {return MULTIPLIER;}
+    public double getMultiplier() {return multiplier;}
 }

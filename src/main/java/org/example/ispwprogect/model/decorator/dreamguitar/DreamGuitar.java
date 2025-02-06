@@ -1,8 +1,8 @@
-package org.example.ispwprogect.model;
+package org.example.ispwprogect.model.decorator.dreamguitar;
 
-import org.example.ispwprogect.utils.bean.DreamGuitarBean;
+import org.example.ispwprogect.model.decorator.Component;
 
-public class DreamGuitar extends Component{
+public class DreamGuitar extends Component {
 
         private double totalPrice;
 //        private String[] components;

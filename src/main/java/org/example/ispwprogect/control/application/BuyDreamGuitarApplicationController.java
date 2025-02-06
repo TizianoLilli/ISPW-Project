@@ -1,6 +1,6 @@
 package org.example.ispwprogect.control.application;
 
-import org.example.ispwprogect.model.DreamGuitar;
+import org.example.ispwprogect.model.decorator.dreamguitar.DreamGuitar;
 import org.example.ispwprogect.utils.bean.DreamGuitarBean;
 import org.example.ispwprogect.utils.enumeration.*;
 

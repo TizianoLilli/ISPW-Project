@@ -6,18 +6,18 @@ public enum BridgeType implements GenericType{
     TREMOLO(50.0,  "Coming soon..."),
     TUNEOMATIC(20.0, "Coming soon...");
 
-    private final double PRICE;
+    private final double price;
     private static final String TYPE = "Bridge";
-    private final String INFO;
+    private final String info;
 
     BridgeType(double price, String info) {
-        this.PRICE = price;
-        this.INFO = info;
+        this.price = price;
+        this.info = info;
     }
 
     @Override
     public double price() {
-        return PRICE;
+        return price;
     }
 
     public String type() {
@@ -26,7 +26,7 @@ public enum BridgeType implements GenericType{
 
     @Override
     public String info() {
-        return INFO;
+        return info;
     }
 
 }

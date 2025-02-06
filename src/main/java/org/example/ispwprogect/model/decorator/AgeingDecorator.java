@@ -1,8 +1,8 @@
-package org.example.ispwprogect.model;
+package org.example.ispwprogect.model.decorator;
 
 import org.example.ispwprogect.utils.enumeration.AgeOfWood;
 
-public class AgeingDecorator extends Decorator{
+public class AgeingDecorator extends Decorator {
 
     private AgeOfWood age;
 

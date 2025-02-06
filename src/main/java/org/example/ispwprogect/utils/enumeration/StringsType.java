@@ -6,18 +6,18 @@ public enum StringsType implements GenericType{
     TENGAUGE(50.0, "Coming soon..."),
     ELEVENGAUGE(20.0, "Coming soon...");
 
-    private final double PRICE;
+    private final double price;
     private static final String TYPE = "Strings";
-    private final String INFO;
+    private final String info;
 
     StringsType(double price, String info) {
-        this.PRICE = price;
-        this.INFO = info;
+        this.price = price;
+        this.info = info;
     }
 
     @Override
     public double price() {
-        return PRICE;
+        return price;
     }
 
     public String type() {
@@ -26,7 +26,7 @@ public enum StringsType implements GenericType{
 
     @Override
     public String info() {
-        return INFO;
+        return info;
     }
 
 }

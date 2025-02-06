@@ -6,18 +6,18 @@ public enum PickupType implements GenericType {
     SINGLECOIL(50.0, 5),
     P90(20.0, 4);
 
-    private final double PRICE;
+    private final double price;
     private static final String TYPE = "Pickup";
-    private final int INFO;
+    private final int info;
 
     PickupType(double price, int info) {
-        this.PRICE = price;
-        this.INFO = info;
+        this.price = price;
+        this.info = info;
     }
 
     @Override
     public double price() {
-        return PRICE;
+        return price;
     }
 
     public String type() {
@@ -26,6 +26,6 @@ public enum PickupType implements GenericType {
 
     @Override
     public String info() {
-        return "Brilliance: " + INFO + "/5";
+        return "Brilliance: " + info + "/5";
     }
 }

@@ -1,8 +1,8 @@
-package org.example.ispwprogect.model;
+package org.example.ispwprogect.model.decorator;
 
 import org.example.ispwprogect.utils.enumeration.Color;
 
-public class ColorDecorator extends Decorator{
+public class ColorDecorator extends Decorator {
 
     private Color color;
     private boolean matteFinish;

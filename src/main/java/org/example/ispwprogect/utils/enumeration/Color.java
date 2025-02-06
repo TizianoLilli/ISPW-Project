@@ -6,9 +6,9 @@ public enum Color {
     BLUE(30),
     BLACK(45);
 
-    private final int PRICE;
+    private final int price;
 
-    Color(int price) {this.PRICE = price;}
+    Color(int price) {this.price = price;}
 
-    public int getPrice() {return PRICE;}
+    public int getPrice() {return price;}
 }

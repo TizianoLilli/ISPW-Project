@@ -1,4 +1,4 @@
-package org.example.ispwprogect.model;
+package org.example.ispwprogect.model.decorator;
 
 public class StickerDecorator extends Decorator {
 
