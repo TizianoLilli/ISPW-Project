@@ -9,7 +9,6 @@ import org.example.ispwprogect.Session;
 import org.example.ispwprogect.SessionManager;
 import org.example.ispwprogect.control.application.BuyDreamGuitarApplicationController;
 import org.example.ispwprogect.control.graphic.GraphicController;
-import org.example.ispwprogect.utils.bean.BodyBean;
 import org.example.ispwprogect.utils.bean.DreamGuitarBean;
 import org.example.ispwprogect.utils.bean.IdSessionBean;
 import org.example.ispwprogect.utils.bean.RecommendedGuitarBean;
@@ -56,40 +55,25 @@ public class BuyDreamGuitarControllerBo extends GraphicController {
 
         try {
 
-            if (dreamGuitarBean.getBodyBean() != null) {
-                dreamGuitarBean.setPrice(dreamGuitarBean.getPrice() - dreamGuitarBean.getBodyBean().getPrice());
-            }
+            BuyDreamGuitarApplicationController controller = new BuyDreamGuitarApplicationController();
+
+            BodyType alternative = null;
 
             if (mapleRadio.isSelected()) {
 
-                BodyBean bodyBean = new BodyBean(BodyType.MAPLE);
-                dreamGuitarBean.setBodyBean(bodyBean);
-
-                // aggiorno il prezzo con l'aggiunta del nuovo componente
-                dreamGuitarBean.setPrice(dreamGuitarBean.getPrice() + dreamGuitarBean.getBodyBean().getPrice());
-                // prezzo associato all'alternativa MAPLE
+                alternative = BodyType.MAPLE;
 
             } else if (mahoganyRadio.isSelected()) {
 
-                BodyBean bodyBean = new BodyBean(BodyType.MAPLE);
-                dreamGuitarBean.setBodyBean(bodyBean);
-
-                // aggiorno il prezzo con l'aggiunta del nuovo componente
-                dreamGuitarBean.setPrice(dreamGuitarBean.getPrice() + dreamGuitarBean.getBodyBean().getPrice());
-                // prezzo associato all'alternativa MAPLE
+                alternative = BodyType.MAHOGANY;
 
             } else if (ashRadio.isSelected()) {
 
-                BodyBean bodyBean = new BodyBean(BodyType.MAPLE);
-                dreamGuitarBean.setBodyBean(bodyBean);
+                alternative = BodyType.ASH;
 
-                // aggiorno il prezzo con l'aggiunta del nuovo componente
-                dreamGuitarBean.setPrice(dreamGuitarBean.getPrice() + dreamGuitarBean.getBodyBean().getPrice());
-                // prezzo associato all'alternativa MAPLE
-
-            } else {
-                dreamGuitarBean.setPrice(dreamGuitarBean.getPrice() + dreamGuitarBean.getBodyBean().getPrice());
             }
+
+            controller.addComponent(dreamGuitarBean, alternative);
 
             ChangePage istanza = ChangePage.getChangePage();
             istanza.change("view/buyDreamGuitar/buyDreamGuitarStart.fxml", id, dreamGuitarBean, recommendedGuitarBean);

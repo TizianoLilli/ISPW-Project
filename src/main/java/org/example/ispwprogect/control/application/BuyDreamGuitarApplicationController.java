@@ -2,10 +2,7 @@ package org.example.ispwprogect.control.application;
 
 import org.example.ispwprogect.model.DreamGuitar;
 import org.example.ispwprogect.utils.bean.DreamGuitarBean;
-import org.example.ispwprogect.utils.bean.PickupBean;
-import org.example.ispwprogect.utils.bean.StringsBean;
-import org.example.ispwprogect.utils.enumeration.PickupType;
-import org.example.ispwprogect.utils.enumeration.StringsType;
+import org.example.ispwprogect.utils.enumeration.*;
 
 public class BuyDreamGuitarApplicationController {
 
@@ -14,43 +11,88 @@ public class BuyDreamGuitarApplicationController {
         return new DreamGuitarBean();
     }
 
-    public void addPickup(DreamGuitarBean dreamGuitarBean, PickupType alternative){
+    public void addComponent(DreamGuitarBean dreamGuitarBean, GenericType alternative){
 
         if (alternative != null) {
 
-            if (dreamGuitarBean.getPickupBean() != null) {
-                dreamGuitarBean.setPrice(dreamGuitarBean.getPrice() - dreamGuitarBean.getPickupBean().getPrice());
-            }
+                // Pattern Matching
+                switch (alternative) {
+                    // controllo il tipo dell'oggetto nello switch e assegno automaticamene l'oggetto a pickup in questo caso
+                    case PickupType pickup -> {
+                        if (dreamGuitarBean.getPickup() != null) {
+                            dreamGuitarBean.setPrice(dreamGuitarBean.getPrice() - dreamGuitarBean.getPickup().price());
+                        }
 
-            PickupBean pickupBean = new PickupBean(alternative);
-            dreamGuitarBean.setPickupBean(pickupBean);
+                        dreamGuitarBean.setPickup(pickup);
 
-            // aggiorno il prezzo con l'aggiunta del nuovo componente (prezzo associato all'alternativa selezionata)
-            dreamGuitarBean.setPrice(dreamGuitarBean.getPrice() + dreamGuitarBean.getPickupBean().getPrice());
+                        // aggiorno il prezzo con l'aggiunta del nuovo componente (prezzo associato all'alternativa selezionata)
+                        dreamGuitarBean.setPrice(dreamGuitarBean.getPrice() + dreamGuitarBean.getPickup().price());
+                    }
+                    case StringsType strings -> {
+                        if (dreamGuitarBean.getStrings() != null) {
+                            dreamGuitarBean.setPrice(dreamGuitarBean.getPrice() - dreamGuitarBean.getStrings().price());
+                        }
+
+                        dreamGuitarBean.setStrings(strings);
+
+                        // aggiorno il prezzo con l'aggiunta del nuovo componente (prezzo associato all'alternativa selezionata)
+                        dreamGuitarBean.setPrice(dreamGuitarBean.getPrice() + dreamGuitarBean.getStrings().price());
+                    }
+                    case NesType nes -> {
+                        if (dreamGuitarBean.getNes() != null) {
+                            dreamGuitarBean.setPrice(dreamGuitarBean.getPrice() - dreamGuitarBean.getNes().price());
+                        }
+
+                        dreamGuitarBean.setNes(nes);
+
+                        // aggiorno il prezzo con l'aggiunta del nuovo componente (prezzo associato all'alternativa selezionata)
+                        dreamGuitarBean.setPrice(dreamGuitarBean.getPrice() + dreamGuitarBean.getNes().price());
+                    }
+                    case FretboardType fretboard -> {
+                        if (dreamGuitarBean.getFretboard() != null) {
+                            dreamGuitarBean.setPrice(dreamGuitarBean.getPrice() - dreamGuitarBean.getFretboard().price());
+                        }
+
+                        dreamGuitarBean.setFretboard(fretboard);
+
+                        // aggiorno il prezzo con l'aggiunta del nuovo componente (prezzo associato all'alternativa selezionata)
+                        dreamGuitarBean.setPrice(dreamGuitarBean.getPrice() + dreamGuitarBean.getFretboard().price());
+                    }
+                    case BridgeType bridge -> {
+                        if (dreamGuitarBean.getBridge() != null) {
+                            dreamGuitarBean.setPrice(dreamGuitarBean.getPrice() - dreamGuitarBean.getBridge().price());
+                        }
+
+                        dreamGuitarBean.setBridge(bridge);
+
+                        // aggiorno il prezzo con l'aggiunta del nuovo componente (prezzo associato all'alternativa selezionata)
+                        dreamGuitarBean.setPrice(dreamGuitarBean.getPrice() + dreamGuitarBean.getBridge().price());
+                    }
+                    case BodyType body -> {
+                        if (dreamGuitarBean.getBody() != null) {
+                            dreamGuitarBean.setPrice(dreamGuitarBean.getPrice() - dreamGuitarBean.getBody().price());
+                        }
+
+                        dreamGuitarBean.setBody(body);
+
+                        // aggiorno il prezzo con l'aggiunta del nuovo componente (prezzo associato all'alternativa selezionata)
+                        dreamGuitarBean.setPrice(dreamGuitarBean.getPrice() + dreamGuitarBean.getBody().price());
+                    }
+                    default -> System.out.println("Invalid alternative type");
+                }
         }
-
     }
 
-    public void addStrings(DreamGuitarBean dreamGuitarBean, StringsType alternative){
-
-        if (alternative != null) {
-
-            if (dreamGuitarBean.getStringsBean() != null) {
-                dreamGuitarBean.setPrice(dreamGuitarBean.getPrice() - dreamGuitarBean.getStringsBean().getPrice());
-            }
-
-            StringsBean stringsBean = new StringsBean(alternative);
-            dreamGuitarBean.setStringsBean(stringsBean);
-
-            // aggiorno il prezzo con l'aggiunta del nuovo componente (prezzo associato all'alternativa selezionata)
-            dreamGuitarBean.setPrice(dreamGuitarBean.getPrice() + dreamGuitarBean.getStringsBean().getPrice());
-        }
-
+    public boolean verifyCompleteness(DreamGuitarBean g){
+        return g.getPickup() != null && g.getStrings() != null && g.getNes() != null && g.getFretboard() != null && g.getBody() != null && g.getBridge() != null;
     }
 
-//    public void verifyCompleteness(){}
+    public void storeDreamGuitar(DreamGuitarBean guitar){
+        // dovrei farlo comparire a schermo
+        if (!verifyCompleteness(guitar)) {System.out.println("Please, select all the components!");}
+    }
+
 //
 //    public DreamGuitarBean recoverDreamGuitar(){}
-//
-//    public void storeDreamGuitar(DreamGuitarBean bean){}
+
 }

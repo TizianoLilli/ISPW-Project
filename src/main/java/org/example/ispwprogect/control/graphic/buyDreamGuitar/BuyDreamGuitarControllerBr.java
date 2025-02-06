@@ -9,7 +9,6 @@ import org.example.ispwprogect.Session;
 import org.example.ispwprogect.SessionManager;
 import org.example.ispwprogect.control.application.BuyDreamGuitarApplicationController;
 import org.example.ispwprogect.control.graphic.GraphicController;
-import org.example.ispwprogect.utils.bean.BridgeBean;
 import org.example.ispwprogect.utils.bean.DreamGuitarBean;
 import org.example.ispwprogect.utils.bean.IdSessionBean;
 import org.example.ispwprogect.utils.bean.RecommendedGuitarBean;
@@ -56,40 +55,25 @@ public class BuyDreamGuitarControllerBr extends GraphicController {
 
         try {
 
-            if (dreamGuitarBean.getBridgeBean() != null) {
-                dreamGuitarBean.setPrice(dreamGuitarBean.getPrice() - dreamGuitarBean.getBridgeBean().getPrice());
-            }
+            BuyDreamGuitarApplicationController controller = new BuyDreamGuitarApplicationController();
+
+            BridgeType alternative = null;
 
             if (hardtailRadio.isSelected()) {
 
-                BridgeBean bridgeBean = new BridgeBean(BridgeType.HARDTAIL);
-                dreamGuitarBean.setBridgeBean(bridgeBean);
-
-                // aggiorno il prezzo con l'aggiunta del nuovo componente
-                dreamGuitarBean.setPrice(dreamGuitarBean.getPrice() + dreamGuitarBean.getBridgeBean().getPrice());
-                // prezzo associato all'alternativa HARDTAIL
+                alternative = BridgeType.HARDTAIL;
 
             } else if (tremoloRadio.isSelected()) {
 
-                BridgeBean bridgeBean = new BridgeBean(BridgeType.TREMOLO);
-                dreamGuitarBean.setBridgeBean(bridgeBean);
-
-                // aggiorno il prezzo con l'aggiunta del nuovo componente
-                dreamGuitarBean.setPrice(dreamGuitarBean.getPrice() + dreamGuitarBean.getBridgeBean().getPrice());
-                // prezzo associato all'alternativa TREMOLO
+                alternative = BridgeType.TREMOLO;
 
             } else if (tuneomaticRadio.isSelected()) {
 
-                BridgeBean bridgeBean = new BridgeBean(BridgeType.TUNEOMATIC);
-                dreamGuitarBean.setBridgeBean(bridgeBean);
+                alternative = BridgeType.TUNEOMATIC;
 
-                // aggiorno il prezzo con l'aggiunta del nuovo componente
-                dreamGuitarBean.setPrice(dreamGuitarBean.getPrice() + dreamGuitarBean.getBridgeBean().getPrice());
-                // prezzo associato all'alternativa TUNEOMATIC
-
-            } else {
-                dreamGuitarBean.setPrice(dreamGuitarBean.getPrice() + dreamGuitarBean.getBridgeBean().getPrice());
             }
+
+            controller.addComponent(dreamGuitarBean, alternative);
 
             ChangePage istanza = ChangePage.getChangePage();
             istanza.change("view/buyDreamGuitar/buyDreamGuitarStart.fxml", id, dreamGuitarBean, recommendedGuitarBean);

@@ -30,7 +30,7 @@ public class GetRecommendedGuitarController extends GraphicController {
     private List<String> selectedGuitarists = new ArrayList<>();
     private org.example.ispwproject.model.MusicShop musicShop;
 
-    private List<org.example.ispwproject.model.Guitarist> guitarists = new ArrayList<>();
+    //private List<org.example.ispwproject.model.Guitarist> guitarists = new ArrayList<>();
 
 
     @Override

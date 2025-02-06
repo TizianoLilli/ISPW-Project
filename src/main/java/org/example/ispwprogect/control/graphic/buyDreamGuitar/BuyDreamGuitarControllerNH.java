@@ -11,9 +11,9 @@ import org.example.ispwprogect.control.application.BuyDreamGuitarApplicationCont
 import org.example.ispwprogect.control.graphic.GraphicController;
 import org.example.ispwprogect.utils.bean.DreamGuitarBean;
 import org.example.ispwprogect.utils.bean.IdSessionBean;
-import org.example.ispwprogect.utils.bean.NesBean;
 import org.example.ispwprogect.utils.bean.RecommendedGuitarBean;
 import org.example.ispwprogect.utils.enumeration.NesType;
+import org.example.ispwprogect.utils.enumeration.PickupType;
 
 public class BuyDreamGuitarControllerNH extends GraphicController {
 
@@ -57,40 +57,25 @@ public class BuyDreamGuitarControllerNH extends GraphicController {
 
         try {
 
-            if (dreamGuitarBean.getNesBean() != null) {
-                dreamGuitarBean.setPrice(dreamGuitarBean.getPrice() - dreamGuitarBean.getNesBean().getPrice());
-            }
+            BuyDreamGuitarApplicationController controller = new BuyDreamGuitarApplicationController();
+
+            NesType alternative = null;
 
             if (mapleRadio.isSelected()) {
 
-                NesBean nesBean = new NesBean(NesType.MAPLE);
-                dreamGuitarBean.setNesBean(nesBean);
-
-                // aggiorno il prezzo con l'aggiunta del nuovo componente
-                dreamGuitarBean.setPrice(dreamGuitarBean.getPrice() + dreamGuitarBean.getNesBean().getPrice());
-                // prezzo associato all'alternativa MAPLE
+                alternative = NesType.MAPLE;
 
             } else if (rosewoodRadio.isSelected()) {
 
-                NesBean nesBean = new NesBean(NesType.ROSEWOOD);
-                dreamGuitarBean.setNesBean(nesBean);
-
-                // aggiorno il prezzo con l'aggiunta del nuovo componente
-                dreamGuitarBean.setPrice(dreamGuitarBean.getPrice() + dreamGuitarBean.getNesBean().getPrice());
-                // prezzo associato all'alternativa ROSEWOOD
+                alternative = NesType.ROSEWOOD;
 
             } else if (ebonyRadio.isSelected()) {
 
-                NesBean nesBean = new NesBean(NesType.EBONY);
-                dreamGuitarBean.setNesBean(nesBean);
+                alternative = NesType.EBONY;
 
-                // aggiorno il prezzo con l'aggiunta del nuovo componente
-                dreamGuitarBean.setPrice(dreamGuitarBean.getPrice() + dreamGuitarBean.getNesBean().getPrice());
-                // prezzo associato all'alternativa EBONY
-
-            } else {
-                dreamGuitarBean.setPrice(dreamGuitarBean.getPrice() + dreamGuitarBean.getNesBean().getPrice());
             }
+
+            controller.addComponent(dreamGuitarBean, alternative);
 
             ChangePage istanza = ChangePage.getChangePage();
             istanza.change("view/buyDreamGuitar/buyDreamGuitarStart.fxml", id, dreamGuitarBean, recommendedGuitarBean);

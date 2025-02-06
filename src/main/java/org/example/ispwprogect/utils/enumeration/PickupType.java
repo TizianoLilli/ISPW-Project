@@ -1,29 +1,31 @@
 package org.example.ispwprogect.utils.enumeration;
 
-public enum PickupType {
+public enum PickupType implements GenericType {
 
-    HUMBUCKER(100.0, "Pickup Humbucker, ideale per suoni caldi e pieni"),
-    SINGLECOIL(50.0, "Pickup Single Coil, ideale per suoni puliti e brillanti"),
-    P90(20.0, "Pickup P-90, ha caratteristiche ibride tra Humbucker e Single Coil");
+    HUMBUCKER(100.0, 3),
+    SINGLECOIL(50.0, 5),
+    P90(20.0, 4);
 
-    private final double price;
-//    private static final String type = "Pickup";
-    private final String info;
+    private final double PRICE;
+    private static final String TYPE = "Pickup";
+    private final int INFO;
 
-    PickupType(double price, String info) {
-        this.price = price;
-        this.info = info;
+    PickupType(double price, int info) {
+        this.PRICE = price;
+        this.INFO = info;
     }
 
+    @Override
     public double price() {
-        return price;
+        return PRICE;
     }
 
-//    public String type() {
-//        return type;
-//    }
+    public String type() {
+        return TYPE;
+    }
 
+    @Override
     public String info() {
-        return info;
+        return "Brilliance: " + INFO + "/5";
     }
 }

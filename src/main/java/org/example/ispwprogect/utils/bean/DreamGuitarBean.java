@@ -1,64 +1,66 @@
 package org.example.ispwprogect.utils.bean;
 
+import org.example.ispwprogect.utils.enumeration.*;
+
 public class DreamGuitarBean {
 
-    private PickupBean pickupBean;
-    private FretboardBean fretboardBean;
-    private StringsBean stringsBean;
-    private NesBean nesBean;
-    private BridgeBean bridgeBean;
-    private BodyBean bodyBean;
+    private PickupType pickup;
+    private FretboardType fretboard;
+    private StringsType strings;
+    private NesType nes;
+    private BridgeType bridge;
+    private BodyType body;
 
     private double price;
 
-    public DreamGuitarBean() {this.price = 0;} // inizialmente tutte le componenti sono null
+    public DreamGuitarBean() {setPrice(0);} // inizialmente tutte le componenti sono null
 
-    public PickupBean getPickupBean() {
-        return pickupBean;
+    public PickupType getPickup() {
+        return pickup;
     }
 
-    public void setPickupBean(PickupBean pickupBean) {
-        this.pickupBean = pickupBean;
+    public void setPickup(PickupType pickup) {
+        this.pickup = pickup;
     }
 
-    public FretboardBean getFretboardBean() {
-        return fretboardBean;
+    public FretboardType getFretboard() {
+        return fretboard;
     }
 
-    public void setFretboardBean(FretboardBean fretboardBean) {
-        this.fretboardBean = fretboardBean;
+    public void setFretboard(FretboardType fretboard) {
+        this.fretboard = fretboard;
     }
 
-    public StringsBean getStringsBean() {
-        return stringsBean;
+    public StringsType getStrings() {
+        return strings;
     }
 
-    public void setStringsBean(StringsBean stringsBean) {
-        this.stringsBean = stringsBean;
+    public void setStrings(StringsType strings) {
+        this.strings = strings;
     }
 
-    public BodyBean getBodyBean() {
-        return bodyBean;
+    public BodyType getBody() {
+        return body;
     }
 
-    public void setBodyBean(BodyBean bodyBean) {
-        this.bodyBean = bodyBean;
+    public void setBody(BodyType body) {
+        this.body = body;
     }
 
-    public BridgeBean getBridgeBean() {
-        return bridgeBean;
+    public BridgeType getBridge() {
+        return bridge;
     }
 
-    public void setBridgeBean(BridgeBean bridgeBean) {
-        this.bridgeBean = bridgeBean;
+    public void setBridge(BridgeType bridge) {
+        this.bridge = bridge;
     }
 
-    public NesBean getNesBean() {
-        return nesBean;
+    public NesType getNes() {
+        return nes;
     }
 
-    public void setNesBean(NesBean nesBean) {
-        this.nesBean = nesBean;
+    public void setNes(NesType nes) {
+        this.nes = nes;
     }
 
     public double getPrice() {return price;}

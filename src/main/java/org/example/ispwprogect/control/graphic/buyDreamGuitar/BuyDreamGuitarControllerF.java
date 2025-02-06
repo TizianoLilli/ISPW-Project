@@ -10,7 +10,6 @@ import org.example.ispwprogect.SessionManager;
 import org.example.ispwprogect.control.application.BuyDreamGuitarApplicationController;
 import org.example.ispwprogect.control.graphic.GraphicController;
 import org.example.ispwprogect.utils.bean.DreamGuitarBean;
-import org.example.ispwprogect.utils.bean.FretboardBean;
 import org.example.ispwprogect.utils.bean.IdSessionBean;
 import org.example.ispwprogect.utils.bean.RecommendedGuitarBean;
 import org.example.ispwprogect.utils.enumeration.FretboardType;
@@ -61,40 +60,25 @@ public class BuyDreamGuitarControllerF extends GraphicController {
 
         try {
 
-            if (dreamGuitarBean.getFretboardBean() != null) {
-                dreamGuitarBean.setPrice(dreamGuitarBean.getPrice() - dreamGuitarBean.getFretboardBean().getPrice());
-            }
+            BuyDreamGuitarApplicationController controller = new BuyDreamGuitarApplicationController();
+
+            FretboardType alternative = null;
 
             if (mapleRadio.isSelected()) {
 
-                FretboardBean fretboardBean = new FretboardBean(FretboardType.MAPLE);
-                dreamGuitarBean.setFretboardBean(fretboardBean);
-
-                // aggiorno il prezzo con l'aggiunta del nuovo componente
-                dreamGuitarBean.setPrice(dreamGuitarBean.getPrice() + dreamGuitarBean.getFretboardBean().getPrice());
-                // prezzo associato all'alternativa MAPLE
+                alternative = FretboardType.MAPLE;
 
             } else if (rosewoodRadio.isSelected()) {
 
-                FretboardBean fretboardBean = new FretboardBean(FretboardType.ROSEWOOD);
-                dreamGuitarBean.setFretboardBean(fretboardBean);
-
-                // aggiorno il prezzo con l'aggiunta del nuovo componente
-                dreamGuitarBean.setPrice(dreamGuitarBean.getPrice() + dreamGuitarBean.getFretboardBean().getPrice());
-                // prezzo associato all'alternativa ROSEWOOD
+                alternative = FretboardType.ROSEWOOD;
 
             } else if (ebonyRadio.isSelected()) {
 
-                FretboardBean fretboardBean = new FretboardBean(FretboardType.EBONY);
-                dreamGuitarBean.setFretboardBean(fretboardBean);
+                alternative = FretboardType.EBONY;
 
-                // aggiorno il prezzo con l'aggiunta del nuovo componente
-                dreamGuitarBean.setPrice(dreamGuitarBean.getPrice() + dreamGuitarBean.getFretboardBean().getPrice());
-                // prezzo associato all'alternativa EBONY
-
-            }else{
-                dreamGuitarBean.setPrice(dreamGuitarBean.getPrice() + dreamGuitarBean.getFretboardBean().getPrice());
             }
+
+            controller.addComponent(dreamGuitarBean, alternative);
 
             ChangePage istanza = ChangePage.getChangePage();
             istanza.change("view/buyDreamGuitar/buyDreamGuitarStart.fxml", id, dreamGuitarBean, recommendedGuitarBean);

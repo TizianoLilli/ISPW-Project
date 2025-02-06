@@ -11,7 +11,6 @@ import org.example.ispwprogect.control.application.BuyDreamGuitarApplicationCont
 import org.example.ispwprogect.control.graphic.GraphicController;
 import org.example.ispwprogect.utils.bean.DreamGuitarBean;
 import org.example.ispwprogect.utils.bean.IdSessionBean;
-import org.example.ispwprogect.utils.bean.PickupBean;
 import org.example.ispwprogect.utils.bean.RecommendedGuitarBean;
 import org.example.ispwprogect.utils.enumeration.PickupType;
 
@@ -78,7 +77,7 @@ public class BuyDreamGuitarControllerP extends GraphicController {
 
             }
 
-            controller.addPickup(dreamGuitarBean, alternative);
+            controller.addComponent(dreamGuitarBean, alternative);
 
             ChangePage istanza = ChangePage.getChangePage();
             istanza.change("view/buyDreamGuitar/buyDreamGuitarStart.fxml", id, dreamGuitarBean, recommendedGuitarBean);
