@@ -73,7 +73,7 @@ public class BuyDreamGuitarControllerBr extends GraphicController {
 
             }
 
-            controller.addComponent(dreamGuitarBean, alternative);
+            controller.addComponent(dreamGuitarBean, "bridge", alternative);
 
             ChangePage istanza = ChangePage.getChangePage();
             istanza.change("view/buyDreamGuitar/buyDreamGuitarStart.fxml", id, dreamGuitarBean, recommendedGuitarBean);

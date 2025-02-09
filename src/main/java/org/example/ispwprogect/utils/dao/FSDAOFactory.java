@@ -1,14 +1,16 @@
 package org.example.ispwprogect.utils.dao;
 
 import org.example.ispwprogect.model.decorator.dreamguitar.DreamGuitarDAO;
+import org.example.ispwprogect.model.decorator.dreamguitar.InMemoryDreamGuitarDAO;
 import org.example.ispwprogect.model.luthier.LuthierDAO;
 import org.example.ispwprogect.model.noticeboard.NoticeboardDAO;
 import org.example.ispwprogect.model.user.UserDAO;
 
 public class FSDAOFactory extends DAOFactory {
 
+    // OVVIAMENTE DA MDIFICARE CON FS
     @Override
-    public DreamGuitarDAO getDreamGuitarDAO(){}
+    public DreamGuitarDAO getDreamGuitarDAO(){return InMemoryDreamGuitarDAO.getInstance();}
 
 //    @Override
 //    public NoticeboardDAO getNoticeboardDAO(){}

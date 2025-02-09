@@ -14,7 +14,7 @@
     <!-- Buttons -->
     <HBox alignment="BOTTOM_RIGHT" layoutX="199.0" layoutY="623.0" prefHeight="25.0" prefWidth="673.0" spacing="10">
         <Button fx:id="backButtonStart" onAction="#handleBackClick" text="Back" />
-        <Button text="Save" />
+        <Button fx:id="saveButton" onAction="#handleSaveClick" text="Save" />
     </HBox>
     <fx:include source="../sidebar.fxml" />
 

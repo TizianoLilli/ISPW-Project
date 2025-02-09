@@ -7,14 +7,16 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import javafx.scene.image.Image;
+import org.example.ispwprogect.utils.enumeration.PersistenceProvider;
+
 import java.io.IOException;
+import java.util.Scanner;
 
 public class MyGuitar extends Application {
 
     @Override
     public void start(Stage primaryStage) throws IOException {
 
-        //FXMLLoader fxmlLoader = new FXMLLoader(MyGuitar.class.getResource("view/homePage.fxml"));
         FXMLLoader fxmlLoader = new FXMLLoader(MyGuitar.class.getResource("view/homePage.fxml"));
         Parent root = fxmlLoader.load();
 
@@ -27,6 +29,14 @@ public class MyGuitar extends Application {
     }
 
     public static void main(String[] args) {
+
+        Config conf = new Config();
+
+        int choice = -1;
+        Scanner s = new Scanner(System.in);
+
+        conf.setPersistenceProvider(choice, s);
+
         launch();
     }
 }

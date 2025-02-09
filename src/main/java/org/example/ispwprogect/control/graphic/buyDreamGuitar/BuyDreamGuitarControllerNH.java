@@ -75,7 +75,7 @@ public class BuyDreamGuitarControllerNH extends GraphicController {
 
             }
 
-            controller.addComponent(dreamGuitarBean, alternative);
+            controller.addComponent(dreamGuitarBean, "neck&headstock", alternative);
 
             ChangePage istanza = ChangePage.getChangePage();
             istanza.change("view/buyDreamGuitar/buyDreamGuitarStart.fxml", id, dreamGuitarBean, recommendedGuitarBean);

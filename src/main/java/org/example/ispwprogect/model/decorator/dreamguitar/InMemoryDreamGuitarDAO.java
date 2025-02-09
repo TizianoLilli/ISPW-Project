@@ -1,6 +1,6 @@
 package org.example.ispwprogect.model.decorator.dreamguitar;
 
-public class InMemoryDreamGuitarDAO extends DreamGuitarDAO {
+public class InMemoryDreamGuitarDAO implements DreamGuitarDAO {
 
     private static InMemoryDreamGuitarDAO instance;
 
@@ -13,5 +13,10 @@ public class InMemoryDreamGuitarDAO extends DreamGuitarDAO {
             instance = new InMemoryDreamGuitarDAO();
         }
         return instance;
+    }
+
+    @Override
+    public void create(DreamGuitar guitarM) {
+
     }
 }

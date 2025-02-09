@@ -17,6 +17,7 @@ import org.example.ispwprogect.control.graphic.GraphicController;
 import org.example.ispwprogect.utils.bean.DreamGuitarBean;
 import org.example.ispwprogect.utils.bean.IdSessionBean;
 import org.example.ispwprogect.utils.bean.RecommendedGuitarBean;
+import org.example.ispwprogect.utils.enumeration.*;
 
 public class BuyDreamGuitarControllerStart extends GraphicController {
 
@@ -47,23 +48,31 @@ public class BuyDreamGuitarControllerStart extends GraphicController {
         if (total != null && dreamGuitarBean != null) {
             total.setText("TOT = " + dreamGuitarBean.getPrice() + "$");
 
-            if (dreamGuitarBean.getPickup() != null) {
-                pickupsButton.setText("Pickups\n(" + dreamGuitarBean.getPickup().name() + ")");
+            GenericType alternative;
+
+            alternative = dreamGuitarBean.getComponent("pickup");
+            if (alternative != null) {
+                pickupsButton.setText("Pickups\n(" + ((PickupType)alternative).name() + ")");
             }
-            if (dreamGuitarBean.getBody() != null) {
-                bodyButton.setText("Body\n(" + dreamGuitarBean.getBody().name() + ")");
+            alternative = dreamGuitarBean.getComponent("body");
+            if (alternative != null) {
+                bodyButton.setText("Body\n(" + ((BodyType)alternative).name() + ")");
             }
-            if (dreamGuitarBean.getBridge() != null) {
-                bridgeButton.setText("Bridge\n(" + dreamGuitarBean.getBridge().name() + ")");
+            alternative = dreamGuitarBean.getComponent("bridge");
+            if (alternative != null) {
+                bridgeButton.setText("Bridge\n(" + ((BridgeType)alternative).name() + ")");
             }
-            if (dreamGuitarBean.getStrings() != null) {
-                stringsButton.setText("Strings\n(" + dreamGuitarBean.getStrings().name() + ")");
+            alternative = dreamGuitarBean.getComponent("strings");
+            if (alternative != null) {
+                stringsButton.setText("Strings\n(" + ((StringsType)alternative).name() + ")");
             }
-            if (dreamGuitarBean.getFretboard() != null) {
-                fretboardButton.setText("Fretboard\n(" + dreamGuitarBean.getFretboard().name() + ")");
+            alternative = dreamGuitarBean.getComponent("fretboard");
+            if (alternative != null) {
+                fretboardButton.setText("Fretboard\n(" + ((FretboardType)alternative).name() + ")");
             }
-            if (dreamGuitarBean.getNes() != null) {
-                nesButton.setText("Nes\n(" + dreamGuitarBean.getNes().name() + ")");
+            alternative = dreamGuitarBean.getComponent("neck&headstock");
+            if (alternative != null) {
+                nesButton.setText("Nes\n(" + ((NesType)alternative).name() + ")");
             }
         }
     }
@@ -136,5 +145,10 @@ public class BuyDreamGuitarControllerStart extends GraphicController {
         istanza.setStage(currentStage);
         istanza.change("view/buyDreamGuitar/buyDreamGuitarNH.fxml", id, dreamGuitarBean, recommendedGuitarBean);
 
+    }
+
+    public void handleSaveClick(ActionEvent actionEvent) {
+        controller = new BuyDreamGuitarApplicationController();
+        controller.saveDreamGuitar(dreamGuitarBean);
     }
 }
