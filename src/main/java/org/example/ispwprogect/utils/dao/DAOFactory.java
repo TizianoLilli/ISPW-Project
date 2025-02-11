@@ -1,6 +1,7 @@
 package org.example.ispwprogect.utils.dao;
 
 import org.example.ispwprogect.model.decorator.dreamguitar.DreamGuitarDAO;
+import org.example.ispwprogect.model.login.LoginDAO;
 import org.example.ispwprogect.model.luthier.LuthierDAO;
 import org.example.ispwprogect.model.noticeboard.NoticeboardDAO;
 import org.example.ispwprogect.model.user.UserDAO;
@@ -19,7 +20,8 @@ public abstract class DAOFactory {
     public abstract DreamGuitarDAO getDreamGuitarDAO();
 //    public abstract NoticeboardDAO getNoticeboardDAO();
 //    public abstract LuthierDAO getLuthierDAO();
-//    public abstract UserDAO getUserDAO();
+    public abstract UserDAO getUserDAO();
+    public abstract LoginDAO getLoginDAO();
 
     public static DAOFactory getInstance() throws NoPersistenceProviderException {
         if (daoFactoryIstance == null) {

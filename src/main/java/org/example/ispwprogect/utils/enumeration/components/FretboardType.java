@@ -1,4 +1,4 @@
-package org.example.ispwprogect.utils.enumeration;
+package org.example.ispwprogect.utils.enumeration.components;
 
 public enum FretboardType implements GenericType {
 

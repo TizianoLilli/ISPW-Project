@@ -2,6 +2,8 @@ package org.example.ispwprogect.utils.dao;
 
 import org.example.ispwprogect.model.decorator.dreamguitar.DreamGuitarDAO;
 import org.example.ispwprogect.model.decorator.dreamguitar.InMemoryDreamGuitarDAO;
+import org.example.ispwprogect.model.login.InMemoryLoginDAO;
+import org.example.ispwprogect.model.login.LoginDAO;
 import org.example.ispwprogect.model.luthier.InMemoryLuthierDAO;
 import org.example.ispwprogect.model.luthier.LuthierDAO;
 import org.example.ispwprogect.model.noticeboard.InMemoryNoticeboardDAO;
@@ -20,7 +22,10 @@ public class InMemoryDAOFactory extends DAOFactory {
 //    @Override
 //    public LuthierDAO getLuthierDAO(){return InMemoryLuthierDAO.getIstance();}
 
-//    @Override
-//    public UserDAO getUserDAO(){return InMemoryUserDAO.getIstance();}
+    @Override
+    public UserDAO getUserDAO(){return InMemoryUserDAO.getIstance();}
+
+    @Override
+    public LoginDAO getLoginDAO() {return InMemoryLoginDAO.getIstance();}
 
 }

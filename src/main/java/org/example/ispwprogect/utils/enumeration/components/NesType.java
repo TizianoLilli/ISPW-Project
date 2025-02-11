@@ -1,16 +1,16 @@
-package org.example.ispwprogect.utils.enumeration;
+package org.example.ispwprogect.utils.enumeration.components;
 
-public enum BridgeType implements GenericType{
+public enum NesType implements GenericType {
 
-    HARDTAIL(100.0, "Coming soon..."),
-    TREMOLO(50.0,  "Coming soon..."),
-    TUNEOMATIC(20.0, "Coming soon...");
+    MAPLE(100.0, "Coming soon..."),
+    ROSEWOOD(50.0,  "Coming soon..."),
+    EBONY(20.0, "Coming soon...");
 
     private final double price;
-    private static final String TYPE = "Bridge";
+    private static final String TYPE = "Neck&Headstock";
     private final String info;
 
-    BridgeType(double price, String info) {
+    NesType(double price, String info) {
         this.price = price;
         this.info = info;
     }

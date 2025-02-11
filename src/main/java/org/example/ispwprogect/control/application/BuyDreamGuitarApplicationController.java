@@ -2,18 +2,21 @@ package org.example.ispwprogect.control.application;
 
 import org.example.ispwprogect.model.decorator.dreamguitar.DreamGuitar;
 import org.example.ispwprogect.model.decorator.dreamguitar.DreamGuitarDAO;
+import org.example.ispwprogect.model.user.UserDAO;
 import org.example.ispwprogect.utils.bean.DreamGuitarBean;
 import org.example.ispwprogect.utils.dao.DAOFactory;
-import org.example.ispwprogect.utils.enumeration.*;
+import org.example.ispwprogect.utils.enumeration.components.GenericType;
 
 import java.util.Collection;
 
 public class BuyDreamGuitarApplicationController {
 
+    private UserDAO userDAO;
     private DreamGuitarDAO dreamGuitarDAO;
 
     public DreamGuitarBean newDreamGuitar(){
         DAOFactory daoFactory = DAOFactory.getInstance();
+        userDAO = daoFactory.getUserDAO();
         dreamGuitarDAO = daoFactory.getDreamGuitarDAO();
         //DreamGuitar guitar = new DreamGuitar();
         return new DreamGuitarBean();

@@ -2,7 +2,7 @@ package org.example.ispwprogect.model.decorator.dreamguitar;
 
 import org.example.ispwprogect.model.decorator.Component;
 import org.example.ispwprogect.utils.bean.DreamGuitarBean;
-import org.example.ispwprogect.utils.enumeration.GenericType;
+import org.example.ispwprogect.utils.enumeration.components.GenericType;
 
 import java.util.Collection;
 

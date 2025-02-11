@@ -1,6 +1,6 @@
 package org.example.ispwprogect.utils.bean;
 
-import org.example.ispwprogect.utils.enumeration.*;
+import org.example.ispwprogect.utils.enumeration.components.GenericType;
 
 import java.util.Collection;
 import java.util.HashMap;

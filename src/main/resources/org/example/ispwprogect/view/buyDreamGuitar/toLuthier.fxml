@@ -27,18 +27,22 @@
         <VBox spacing="10">
             <!-- Pickup Section -->
             <Label alignment="CENTER" prefHeight="17.0" prefWidth="633.0" style="-fx-font-weight: bold;" text="What's next?" />
-            <Label alignment="CENTER" prefHeight="66.0" prefWidth="631.0" text="Send your Dream Guitar to a Master Luthier and let him realize your project.&#10;Touch your creation and enjoy playing your favourite songs." textAlignment="CENTER" wrapText="true" />
+            <Label fx:id="luthierDescription" alignment="CENTER" prefHeight="66.0" prefWidth="631.0" text="Send your Dream Guitar to a Master Luthier and let him realize your project.&#10;Touch your creation and enjoy playing your favourite songs." textAlignment="CENTER" wrapText="true" />
             <AnchorPane prefHeight="350.0" prefWidth="631.0">
             <children>
-               <ImageView fx:id="luthierImage" fitHeight="262.0" fitWidth="497.0" layoutX="27.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <Button fx:id="luthierButton" layoutX="241.0" layoutY="291.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="150.0" style="-fx-background-color: #333; -fx-text-fill: white; -fx-font-size: 16; -fx-font-weight: bold; -fx-padding: 10;" text="Contact a Master" />
+                <ImageView fx:id="image" fitHeight="262.0" fitWidth="497.0" layoutX="27.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image fx:id="luthierImage" url="@../../images/luthier.jpg" />
+                    </image>
+                </ImageView>
+                <!-- You can declare noticeboard image without an ImageView and switch from this two -->
+                    <fx:define>
+                        <Image fx:id="noticeboardImage" url="@../../images/noticeboard.jpg" />
+                    </fx:define>
+                <ImageView fx:id="arrowImage" fitHeight="45.0" fitWidth="51.0" layoutX="554.0" layoutY="115.0" onMouseClicked="#handleSwitch" opacity="0.86" pickOnBounds="true" preserveRatio="true" rotate="180.0">
                   <image>
-                     <Image url="@../../images/luthier.jpg" />
-                  </image>
-               </ImageView>
-               <Button layoutX="241.0" layoutY="291.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="150.0" style="-fx-background-color: #333; -fx-text-fill: white; -fx-font-size: 16; -fx-font-weight: bold; -fx-padding: 10;" text="Contact a Master" />
-               <ImageView fitHeight="45.0" fitWidth="51.0" layoutX="554.0" layoutY="115.0" opacity="0.86" pickOnBounds="true" preserveRatio="true" rotate="180.0">
-                  <image>
-                     <Image url="@../../images/l_arrow.png" />
+                     <Image url="@../../images/r_arrow.png" />
                   </image>
                </ImageView>
             </children></AnchorPane>

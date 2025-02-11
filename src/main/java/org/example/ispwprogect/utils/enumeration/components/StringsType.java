@@ -1,6 +1,6 @@
-package org.example.ispwprogect.utils.enumeration;
+package org.example.ispwprogect.utils.enumeration.components;
 
-public enum StringsType implements GenericType{
+public enum StringsType implements GenericType {
 
     NINEGAUGE(100.0, "Coming soon..."),
     TENGAUGE(50.0, "Coming soon..."),

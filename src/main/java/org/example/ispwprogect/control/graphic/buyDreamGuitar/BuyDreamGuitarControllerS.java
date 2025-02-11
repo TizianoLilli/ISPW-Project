@@ -12,7 +12,7 @@ import org.example.ispwprogect.control.graphic.GraphicController;
 import org.example.ispwprogect.utils.bean.DreamGuitarBean;
 import org.example.ispwprogect.utils.bean.IdSessionBean;
 import org.example.ispwprogect.utils.bean.RecommendedGuitarBean;
-import org.example.ispwprogect.utils.enumeration.StringsType;
+import org.example.ispwprogect.utils.enumeration.components.StringsType;
 
 public class BuyDreamGuitarControllerS extends GraphicController {
 

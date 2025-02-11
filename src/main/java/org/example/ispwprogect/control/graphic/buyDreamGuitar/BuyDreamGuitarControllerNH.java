@@ -12,8 +12,7 @@ import org.example.ispwprogect.control.graphic.GraphicController;
 import org.example.ispwprogect.utils.bean.DreamGuitarBean;
 import org.example.ispwprogect.utils.bean.IdSessionBean;
 import org.example.ispwprogect.utils.bean.RecommendedGuitarBean;
-import org.example.ispwprogect.utils.enumeration.NesType;
-import org.example.ispwprogect.utils.enumeration.PickupType;
+import org.example.ispwprogect.utils.enumeration.components.NesType;
 
 public class BuyDreamGuitarControllerNH extends GraphicController {
 

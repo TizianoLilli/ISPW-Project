@@ -17,7 +17,7 @@ import org.example.ispwprogect.control.graphic.GraphicController;
 import org.example.ispwprogect.utils.bean.DreamGuitarBean;
 import org.example.ispwprogect.utils.bean.IdSessionBean;
 import org.example.ispwprogect.utils.bean.RecommendedGuitarBean;
-import org.example.ispwprogect.utils.enumeration.*;
+import org.example.ispwprogect.utils.enumeration.components.*;
 
 public class BuyDreamGuitarControllerStart extends GraphicController {
 
@@ -147,8 +147,14 @@ public class BuyDreamGuitarControllerStart extends GraphicController {
 
     }
 
-    public void handleSaveClick(ActionEvent actionEvent) {
-        controller = new BuyDreamGuitarApplicationController();
-        controller.saveDreamGuitar(dreamGuitarBean);
+    @FXML
+    public void handleSaveClick(ActionEvent event) {
+//        controller = new BuyDreamGuitarApplicationController();
+//        controller.saveDreamGuitar(dreamGuitarBean);
+
+        Stage currentStage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        ChangePage istanza = ChangePage.getChangePage();
+        istanza.setStage(currentStage);
+        istanza.change("view/buyDreamGuitar/toLuthier.fxml", id, dreamGuitarBean, recommendedGuitarBean);
     }
 }
