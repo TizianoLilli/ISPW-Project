@@ -1,18 +1,18 @@
 package org.example.ispwprogect.utils.bean;
 
-import org.example.ispwprogect.model.login.Login;
 import org.example.ispwprogect.utils.enumeration.Role;
 
-public class LoginBean {
+public class AccountBean {
 
     private String userId;
     private String password;
 
     private Role role;
 
-    public LoginBean(String id, String password) {
+    public AccountBean(String id, String password, Role role) {
         this.userId = id;
         this.password = password;
+        this.role = role;
     }
 
     public String getUserId() {return userId;}

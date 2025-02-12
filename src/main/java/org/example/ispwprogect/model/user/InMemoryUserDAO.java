@@ -1,6 +1,7 @@
 package org.example.ispwprogect.model.user;
 
-import org.example.ispwprogect.model.decorator.dreamguitar.DreamGuitar;
+import org.example.ispwprogect.model.login.Account;
+import org.example.ispwprogect.model.login.AccountDAO;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -8,7 +9,6 @@ import java.util.Collection;
 public class InMemoryUserDAO implements UserDAO {
 
     private static InMemoryUserDAO instance;
-    private static Collection<User> usersList;
 
     private InMemoryUserDAO() {
         // evito di istanziarlo dall'esterno
@@ -21,26 +21,48 @@ public class InMemoryUserDAO implements UserDAO {
         return instance;
     }
 
-    //@Override
+    private Collection<User> usersList = new ArrayList<>();
+
+    // funziona anche come update
+    @Override
     public void create(User userM) {
-        if (usersList == null) {
-            usersList = new ArrayList<User>();
-        }
         usersList.add(userM);
     }
 
-/*
-    //@Override
+
+    // mantengo il rifermento alla dao account: accedo per indirizzo (non valore) allo username
+    @Override
+    public User read(String userId, AccountDAO accountD){
+        for (User u : usersList) {
+            if (u.username().equals(userId)) {
+                Account a = accountD.read(userId);
+                u.setAccount(a);
+                return u;
+            }
+        }
+        return null;
+    }
+
+    @Override
+    public Collection<User> readAll() {
+        return usersList;
+    }
+
+//    // PER ADESSO FA LA SESSA COSA DEL CREATE
+//    @Override
+//    public void update(User userM){
+//        if (usersMap.containsKey(userM.username())) {
+//            usersMap.put(userM.username(), userM);
+//        }
+//    }
+
+    @Override
     public void delete(String userId) {
-        if (usersList != null) {
-            for (User u : usersList) {
-                if (u.id() == userId) {
-                    usersList.remove(u);
-                    //aggiungi messaggi di successo
-                    return;
-                }
+        for (User u : usersList) {
+            if (u.username().equals(userId)) {
+                usersList.remove(u);
             }
         }
     }
-*/
+
 }

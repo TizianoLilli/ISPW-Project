@@ -1,14 +1,14 @@
 package org.example.ispwprogect.model.user;
 
 import org.example.ispwprogect.model.decorator.dreamguitar.DreamGuitar;
+import org.example.ispwprogect.model.login.Account;
 import org.example.ispwprogect.utils.bean.UserBean;
 import org.example.ispwprogect.utils.enumeration.Role;
 
 public class User {
 
-    // corrisponde allo username (deve essere univoco)
-    private int id;
-    private Role role;
+    // deve essere univoco
+    private String username;
 
     private DreamGuitar guitar;
 
@@ -17,21 +17,24 @@ public class User {
     private String email;
     private String address;
 
+    private Account account;
+
     public User(UserBean user){
-        this.id = user.getId();
-        this.role = user.getRole();
-        // l'inserimento della chitarra viene fatto separatamente
+        this.username = user.getId();
+        // l'inserimento della chitarra/account viene fatto separatamente
         this.name = user.getName();
         this.surname = user.getSurname();
         this.email = user.getEmail();
         this.address = user.getAddress();
     }
 
-    public int id() {return this.id;}
-    public Role role() {return this.role;}
-
     public DreamGuitar dreamGuitar() {return guitar;}
     public void setDreamGuitar(DreamGuitar d) {this.guitar = d;}
+
+    public Account account() {return account;}
+    public void setAccount(Account a) {this.account = a;}
+
+    public String username() {return username;}
 
     public String name() {return this.name;}
     public String surname() {return this.surname;}

@@ -48,16 +48,21 @@ public class SidebarController{
 
     @FXML
     public void handleLoginClick(MouseEvent event) {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("view/login.fxml"));
-            VBox loginRoot = loader.load();
+        Stage currentStage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        ChangePage istanza = ChangePage.getChangePage();
+        istanza.setStage(currentStage);
+        istanza.change("view/login.fxml", id, null, null);
 
-            Stage stage = (Stage) ((Label)event.getSource()).getScene().getWindow();
-            stage.setScene(new Scene(loginRoot, 400, 300)); // Dimensioni della schermata di login
-            stage.setTitle("MyGuitar");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+//        try {
+//            FXMLLoader loader = new FXMLLoader(getClass().getResource("view/login.fxml"));
+//            VBox loginRoot = loader.load();
+//
+//            Stage stage = (Stage) ((Label)event.getSource()).getScene().getWindow();
+//            stage.setScene(new Scene(loginRoot, 300, 300)); // Dimensioni della schermata di login
+//            stage.setTitle("MyGuitar");
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
     }
 
     @FXML

@@ -4,34 +4,31 @@ import org.example.ispwprogect.utils.enumeration.Role;
 
 public class UserBean {
 
-    private int id;
-    private Role role;
+    private String id;
 
-    private DreamGuitarBean guitarB;
+    private String guitarId;
 
     private String name;
     private String surname;
     private String email;
     private String address;
 
-    public UserBean(int id, Role role, String name, String surname, String email, String address) {
+    //private String accountId;
+
+    public UserBean(String id, String name, String surname, String email, String address) {
         this.id = id;
-        this.role = role;
-        // l'inserimento della chitarra viene fatto separatamente
+        // l'inserimento della chitarra/account viene fatto separatamente
         this.name = name;
         this.surname = surname;
         this.email = email;
         this.address = address;
     }
 
-    public int getId() {return id;}
-    public void setId(int id) {this.id = id;}
+    public String getId() {return id;}
+    public void setId(String id) {this.id = id;}
 
-    public Role getRole() {return role;}
-    public void setRole(Role role) {this.role = role;}
-
-    public DreamGuitarBean getDreamGuitar() {return guitarB;}
-    public void setDreamGuitar(DreamGuitarBean guitarB) {this.guitarB = guitarB;}
+    public String getDreamGuitar() {return guitarId;}
+    public void setDreamGuitar(String g) {this.guitarId = g;}
 
     public String getName() {return name;}
     public void setName(String name) {this.name = name;}
@@ -44,4 +41,8 @@ public class UserBean {
 
     public String getAddress() {return address;}
     public void setAddress(String address) {this.address = address;}
+
+    // uso l'id
+//    public String getAccount() {return accountId;}
+//    public void setAccount(String a) {this.accountId = a;}
 }
