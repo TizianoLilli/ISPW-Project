@@ -9,6 +9,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
+import org.example.ispwprogect.control.application.LoginApplicationController;
 import org.example.ispwprogect.model.login.Account;
 import org.example.ispwprogect.utils.bean.*;
 import org.example.ispwprogect.utils.enumeration.Role;
@@ -26,20 +27,18 @@ public class LoginController extends GraphicController{
     @FXML
     private Label errorLabel;
 
-    private AccountBean account1;
-    private AccountBean account2;
-
-    private UserBean user1;
-    private UserBean user2;
-
     @Override
     public void init(IdSessionBean idSessionBean, DreamGuitarBean dreamGuitarBean, RecommendedGuitarBean recommendedGuitarBean) {
-        // creo degli utenti fittizzi
-        account1 = new AccountBean("ciccio123", "2025a", Role.BASE);
-        account2 = new AccountBean("clau456", "1000b", Role.PREMIUM);
+    }
 
-        user1 = new UserBean("ciccio123", "francesco", "renga", "fra@gmail.com", "via del campo 22");
-        user2 = new UserBean("clau456", "claudia", "quaranta", "cla@gmail.com", "via del campo 11");
+    public void registerUser(String id, String name, String surname, String email, String address) {
+        UserBean user = new UserBean(id, name, surname, email, address);
+        LoginApplicationController controller = new LoginApplicationController();
+    }
+
+    public void registerAccount(String id, String password, Role role) {
+        AccountBean account = new AccountBean(id, password, role);
+        LoginApplicationController controller = new LoginApplicationController();
     }
 
     // Metodo chiamato quando l'utente clicca "Log In"

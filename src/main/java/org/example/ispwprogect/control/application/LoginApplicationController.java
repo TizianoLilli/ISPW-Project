@@ -29,6 +29,8 @@ public class LoginApplicationController {
         }  // ECCEZIONE
     }
 
+    public void registration() {}
+
     public void login(UserBean userB) {
         daoFactory = DAOFactory.getInstance();
         userD = daoFactory.getUserDAO();

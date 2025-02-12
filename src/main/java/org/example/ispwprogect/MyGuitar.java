@@ -7,7 +7,9 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import javafx.scene.image.Image;
+import org.example.ispwprogect.control.graphic.LoginController;
 import org.example.ispwprogect.utils.enumeration.PersistenceProvider;
+import org.example.ispwprogect.utils.enumeration.Role;
 
 import java.io.IOException;
 import java.util.Scanner;
@@ -38,5 +40,11 @@ public class MyGuitar extends Application {
         conf.setPersistenceProvider(choice, s);
 
         launch();
+
+        LoginController registration = new LoginController();
+        registration.registerUser("ciccio123", "francesco", "renga", "fra@gmail.com", "via del campo 22");
+        registration.registerUser("clau456", "claudia", "quaranta", "cla@gmail.com", "via del campo 11");
+        registration.registerAccount("ciccio123", "2025a", Role.BASE);
+        registration.registerAccount("clau456", "1000b", Role.PREMIUM);
     }
 }
