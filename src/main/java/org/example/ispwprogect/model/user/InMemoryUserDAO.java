@@ -1,7 +1,6 @@
 package org.example.ispwprogect.model.user;
 
-import org.example.ispwprogect.model.login.Account;
-import org.example.ispwprogect.model.login.AccountDAO;
+import org.example.ispwprogect.model.decorator.dreamguitar.InMemoryDreamGuitarDAO;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -14,7 +13,7 @@ public class InMemoryUserDAO implements UserDAO {
         // evito di istanziarlo dall'esterno
     }
 
-    public static UserDAO getIstance() {
+    public static InMemoryUserDAO getIstance() {
         if (instance == null) {
             instance = new InMemoryUserDAO();
         }
@@ -32,11 +31,9 @@ public class InMemoryUserDAO implements UserDAO {
 
     // mantengo il rifermento alla dao account: accedo per indirizzo (non valore) allo username
     @Override
-    public User read(String userId, AccountDAO accountD){
+    public User read(String userId){
         for (User u : usersList) {
             if (u.username().equals(userId)) {
-                Account a = accountD.read(userId);
-                u.setAccount(a);
                 return u;
             }
         }
@@ -48,21 +45,18 @@ public class InMemoryUserDAO implements UserDAO {
         return usersList;
     }
 
-//    // PER ADESSO FA LA SESSA COSA DEL CREATE
-//    @Override
-//    public void update(User userM){
-//        if (usersMap.containsKey(userM.username())) {
-//            usersMap.put(userM.username(), userM);
-//        }
-//    }
+    // aggiorno l'utente aggiungendo una dream guitar
+    @Override
+    public void update(User userM, int guitarId){
+        delete(userM.username());
+        // user dao interagisce con la dao della chitarra
+        userM.setDreamGuitar(InMemoryDreamGuitarDAO.getInstance().read(guitarId));
+        usersList.add(userM);
+    }
 
     @Override
     public void delete(String userId) {
-        for (User u : usersList) {
-            if (u.username().equals(userId)) {
-                usersList.remove(u);
-            }
-        }
+        usersList.remove(read(userId));
     }
 
 }

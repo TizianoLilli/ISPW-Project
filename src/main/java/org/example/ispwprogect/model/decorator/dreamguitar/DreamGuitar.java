@@ -9,6 +9,8 @@ import java.util.Collection;
 public class DreamGuitar extends Component {
 
         private double totalPrice;
+        private int id;
+
         private Collection<GenericType> all;
 //        private String[] components;
 //        private String[] infos;
@@ -33,4 +35,6 @@ public class DreamGuitar extends Component {
         public double price(){
                 return this.totalPrice;
         }
+
+        public int id(){return this.id;}
 }

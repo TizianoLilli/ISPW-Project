@@ -37,14 +37,15 @@ public class MyGuitar extends Application {
         int choice = -1;
         Scanner s = new Scanner(System.in);
 
+        // inizializzo il tipo di persistenza in base all'input dell'utente
         conf.setPersistenceProvider(choice, s);
+
+        // inizializzo degli utenti fittizzi
+        LoginController registration = new LoginController();
+        registration.registerUser("ciccio123", "2025a", Role.BASE, "fra@gmail.com", "via del campo 22");
+        registration.registerUser("clau456", "1000b", Role.PREMIUM, "cla@gmail.com", "via del campo 11");
 
         launch();
 
-        LoginController registration = new LoginController();
-        registration.registerUser("ciccio123", "francesco", "renga", "fra@gmail.com", "via del campo 22");
-        registration.registerUser("clau456", "claudia", "quaranta", "cla@gmail.com", "via del campo 11");
-        registration.registerAccount("ciccio123", "2025a", Role.BASE);
-        registration.registerAccount("clau456", "1000b", Role.PREMIUM);
     }
 }

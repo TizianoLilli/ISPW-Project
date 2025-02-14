@@ -3,7 +3,9 @@ package org.example.ispwprogect.model.decorator.dreamguitar;
 public interface DreamGuitarDAO {
 
     // da implementare nelle sottoclassi
-    public void create(DreamGuitar model);
+    void create(DreamGuitar model);
+
+    DreamGuitar read(int guitarId);
 
 //    public void update(){}
 //

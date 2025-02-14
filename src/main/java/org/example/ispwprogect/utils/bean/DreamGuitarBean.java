@@ -11,6 +11,8 @@ public class DreamGuitarBean {
     // uso una hash map per memorizzare tutte le componenti e il tipo relativo
     private final Map<String, GenericType> components = new HashMap<>();
 
+    // DEVE ANCORA GESTIRE GLI ID DELLE CHITARRE
+    private int id;
     private double price;
 
     public DreamGuitarBean() {setPrice(0);} // inizialmente tutte le componenti sono null
@@ -27,5 +29,8 @@ public class DreamGuitarBean {
 
     public double getPrice() {return price;}
     public void setPrice(double price) {this.price = price;}
+
+    public int getId() {return id;}
+    public void setId(int id) {this.id = id;}
 
 }

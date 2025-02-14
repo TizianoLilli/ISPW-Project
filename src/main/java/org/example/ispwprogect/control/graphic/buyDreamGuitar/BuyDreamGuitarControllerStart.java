@@ -15,7 +15,6 @@ import org.example.ispwprogect.SessionManager;
 import org.example.ispwprogect.control.application.BuyDreamGuitarApplicationController;
 import org.example.ispwprogect.control.graphic.GraphicController;
 import org.example.ispwprogect.utils.bean.DreamGuitarBean;
-import org.example.ispwprogect.utils.bean.IdSessionBean;
 import org.example.ispwprogect.utils.bean.RecommendedGuitarBean;
 import org.example.ispwprogect.utils.enumeration.components.*;
 
@@ -31,13 +30,13 @@ public class BuyDreamGuitarControllerStart extends GraphicController {
     private BuyDreamGuitarApplicationController controller;
     private DreamGuitarBean dreamGuitarBean;
     private RecommendedGuitarBean recommendedGuitarBean;
-    private IdSessionBean id;
+    private int id;
 
     @FXML private Label total;
 
 
     @Override
-    public void init(IdSessionBean id, DreamGuitarBean dreamGuitarBean, RecommendedGuitarBean recommendedGuitarBean) {
+    public void init(int id, DreamGuitarBean dreamGuitarBean, RecommendedGuitarBean recommendedGuitarBean) {
 
         controller = new BuyDreamGuitarApplicationController();
         this.dreamGuitarBean = dreamGuitarBean;

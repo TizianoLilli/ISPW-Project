@@ -8,7 +8,6 @@ import javafx.stage.Stage;
 import org.example.ispwprogect.ChangePage;
 import org.example.ispwprogect.control.application.BuyDreamGuitarApplicationController;
 import org.example.ispwprogect.utils.bean.DreamGuitarBean;
-import org.example.ispwprogect.utils.bean.IdSessionBean;
 import javafx.event.ActionEvent;
 import org.example.ispwprogect.utils.bean.RecommendedGuitarBean;
 
@@ -19,14 +18,15 @@ public class HomePageController extends GraphicController {
 
 
     @Override
-    public void init(IdSessionBean id, DreamGuitarBean dreamGuitarBean, RecommendedGuitarBean recommendedGuitarBean){
+    public void init(int id, DreamGuitarBean dreamGuitarBean, RecommendedGuitarBean recommendedGuitarBean){
         // Carica l'immagine e impostala nell'ImageView
         Image banner = new Image("file:main/java/org/example/ispwprogect/images/banner.jpg");
         bannerImage.setImage(banner);
+        this.id = id;
     }
 
     private BuyDreamGuitarApplicationController controller;
-    private IdSessionBean id;
+    private int id;
     private DreamGuitarBean dreamGuitarBean;
     private RecommendedGuitarBean recommendedGuitarBean;
 

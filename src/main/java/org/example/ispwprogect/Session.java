@@ -4,22 +4,23 @@ import org.example.ispwprogect.utils.bean.*;
 
 public class Session {
 
-//    private final UserBean userBean;
+     // DOVREI SALVARCI LE BEAN O I MODEL??
+    private final UserBean userBean;
 //    private final PremiumUserBean premiumUserBean;
 //    private final LuthierBean luthierBean;
 
-    private final IdSessionBean idSessionBean;
+    private final int sessionId;
 
-//    public UserBean getUserBean() {return userBean;}
+    public UserBean getUserBean() {return userBean;}
 //    public PremiumUserBean getPremiumUserBean() {return premiumUserBean;}
 //    public LuthierBean getLuthierBean() {return luthierBean;}
 
-    public Session(IdSessionBean idSessioneBean) {
-//        this.userBean = userBean;
+    public Session(int id, UserBean userBean) {
+        this.userBean = userBean;
 //        this.premiumUserBean = premiumUserBean;
 //        this.luthierBean = luthierBean;
-        this.idSessionBean = idSessioneBean;
+        this.sessionId = id;
     }
 
-    public IdSessionBean getIdSessionBean() {return idSessionBean;}
+    public int getSessionId() {return sessionId;}
 }

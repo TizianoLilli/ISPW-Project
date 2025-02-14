@@ -21,7 +21,7 @@ public class ChangePage {
 
     private Stage stage;
 
-    public void change(String fxml, IdSessionBean id, DreamGuitarBean dreamGuitarBean, RecommendedGuitarBean recommendedGuitarBean) {
+    public void change(String fxml, int id, DreamGuitarBean dreamGuitarBean, RecommendedGuitarBean recommendedGuitarBean) {
         FXMLLoader loader = new FXMLLoader(getClass().getResource(fxml));
         Scene newScene=null;
 

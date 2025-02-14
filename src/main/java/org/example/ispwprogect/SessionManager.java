@@ -11,28 +11,31 @@ public class SessionManager {
 
     private static SessionManager instance = null;
 
-    protected SessionManager(int i) {}
+    private static int nextId = 0;
+
+    protected SessionManager() {}
 
     public static SessionManager getSessionManager() {
         if (SessionManager.instance == null) {
-            SessionManager.instance = new SessionManager(0);
+            SessionManager.instance = new SessionManager();
         }
         return instance;
     }
 
-    public Session createSession(IdSessionBean idSessioneBean) {
-        return new Session(idSessioneBean);
+    public Session createSession(UserBean userBean) {
+        nextId++;
+        return new Session(nextId, userBean);
     }
 
-    public Session getSessionFromId(IdSessionBean id){
+    public Session getSessionFromId(int id){
         for (Session session : activeSessions) {
-            if(session.getIdSessionBean().getId() == id.getId()){
+            if(session.getSessionId() == id){
                 return session;
             }
         }
         return null;
     }
 
-    public void newSession(Session session) {activeSessions.add(session);}
-    public void removeSession(IdSessionBean id) {activeSessions.removeIf(session -> session.getIdSessionBean().getId() == id.getId());}
+    public void addSession(Session session) {activeSessions.add(session);}
+    public void removeSession(int id) {activeSessions.removeIf(session -> session.getSessionId() == id);}
 }

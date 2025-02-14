@@ -13,7 +13,6 @@ import org.example.ispwprogect.ChangePage;
 import org.example.ispwprogect.control.graphic.GraphicController;
 import org.example.ispwprogect.utils.bean.DreamGuitarBean;
 import org.example.ispwprogect.utils.bean.RecommendedGuitarBean;
-import org.example.ispwprogect.utils.bean.IdSessionBean;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,7 +20,7 @@ import java.util.List;
 public class SelectGuitarController extends GraphicController implements org.example.ispwproject.observer.Observer {
 
    private DreamGuitarBean dreamGuitarBean;
-    private IdSessionBean id;
+    private int id;
 
     @FXML
     private ListView<String> guitaristListView;
@@ -44,20 +43,20 @@ public class SelectGuitarController extends GraphicController implements org.exa
 
 
     @Override
-    public void init(IdSessionBean id, DreamGuitarBean dreamGuitarBean,RecommendedGuitarBean recommendedGuitarBean) {
+    public void init(int id, DreamGuitarBean dreamGuitarBean, RecommendedGuitarBean recommendedGuitarBean) {
         this.id = id;
         this.recommendedGuitarBean = recommendedGuitarBean;
     }
 
-    // Nuovo metodo per inizializzare anche la lista di artisti
-    public void init(IdSessionBean id, DreamGuitarBean dreamGuitarBean,RecommendedGuitarBean recommendedGuitarBean, List<String> selectedArtists) {
-        this.init(id, dreamGuitarBean, recommendedGuitarBean);  // Chiama il metodo base
-
-        // Aggiunge i nomi degli artisti alla ListView
-        if (selectedArtists != null && guitaristListView != null) {
-            guitaristListView.getItems().setAll(selectedArtists);
-        }
-    }
+//    // Nuovo metodo per inizializzare anche la lista di artisti
+//    public void init(IdSessionBean id, DreamGuitarBean dreamGuitarBean,RecommendedGuitarBean recommendedGuitarBean, List<String> selectedArtists) {
+//        this.init(id, dreamGuitarBean, recommendedGuitarBean);  // Chiama il metodo base
+//
+//        // Aggiunge i nomi degli artisti alla ListView
+//        if (selectedArtists != null && guitaristListView != null) {
+//            guitaristListView.getItems().setAll(selectedArtists);
+//        }
+//    }
 
     @FXML
     private void handleBackClick(ActionEvent event) {

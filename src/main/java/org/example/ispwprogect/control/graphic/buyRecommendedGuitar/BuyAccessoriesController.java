@@ -12,13 +12,12 @@ import javafx.stage.Stage;
 import org.example.ispwprogect.ChangePage;
 import org.example.ispwprogect.control.graphic.GraphicController;
 import org.example.ispwprogect.utils.bean.DreamGuitarBean;
-import org.example.ispwprogect.utils.bean.IdSessionBean;
 import org.example.ispwprogect.utils.bean.RecommendedGuitarBean;
 
 public class BuyAccessoriesController extends GraphicController {
     private RecommendedGuitarBean recommendedGuitarBean;
     private DreamGuitarBean dreamGuitarBean;
-    private IdSessionBean id;
+    private int id;
 
     @FXML
     private ListView<String> guitaristListView;
@@ -37,7 +36,7 @@ public class BuyAccessoriesController extends GraphicController {
 
 
 
-    public void init(IdSessionBean id,DreamGuitarBean dreamGuitarBean, RecommendedGuitarBean recommendedGuitarBean) {
+    public void init(int id, DreamGuitarBean dreamGuitarBean, RecommendedGuitarBean recommendedGuitarBean) {
         this.id = id;
     }
 

@@ -1,5 +1,6 @@
 package org.example.ispwprogect.control.application;
 
+import org.example.ispwprogect.SessionManager;
 import org.example.ispwprogect.model.decorator.dreamguitar.DreamGuitar;
 import org.example.ispwprogect.model.decorator.dreamguitar.DreamGuitarDAO;
 import org.example.ispwprogect.model.user.UserDAO;
@@ -53,10 +54,14 @@ public class BuyDreamGuitarApplicationController {
             return;
         }
 
+        DAOFactory daoFactory = DAOFactory.getInstance();
+        userDAO = daoFactory.getUserDAO();
+        dreamGuitarDAO = daoFactory.getDreamGuitarDAO();
+
         DreamGuitar guitarM = new DreamGuitar(guitarB);
-        DreamGuitarDAO guitarD = DAOFactory.getInstance().getDreamGuitarDAO();
 
-
+//        SessionManager.getSessionManager();
+//        userDAO.update(userM, guitarB.getId());
     }
 
 //
