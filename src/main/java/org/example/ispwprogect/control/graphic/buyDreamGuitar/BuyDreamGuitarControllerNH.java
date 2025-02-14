@@ -15,12 +15,10 @@ import org.example.ispwprogect.utils.enumeration.components.NesType;
 
 public class BuyDreamGuitarControllerNH extends GraphicController {
 
-    private DreamGuitarBean dreamGuitarBean;
-    private RecommendedGuitarBean recommendedGuitarBean;
-    private int id;
     private BuyDreamGuitarApplicationController controller;
+    private DreamGuitarBean dreamGuitarBean;
 
-
+    private int id;
 
     @Override
     public void init(int id, DreamGuitarBean dreamGuitarBean, RecommendedGuitarBean recommendedGuitarBean) {
@@ -28,8 +26,6 @@ public class BuyDreamGuitarControllerNH extends GraphicController {
         controller = new BuyDreamGuitarApplicationController();
         this.dreamGuitarBean = dreamGuitarBean;
         this.id = id;
-        SessionManager manager = SessionManager.getSessionManager();
-        Session session = manager.getSessionFromId(id);
 
         if (total != null && dreamGuitarBean != null) {
             total.setText("TOT = " + dreamGuitarBean.getPrice() + "$");
@@ -41,7 +37,7 @@ public class BuyDreamGuitarControllerNH extends GraphicController {
     private void handleBackClick(ActionEvent event) {
 
         ChangePage istanza = ChangePage.getChangePage();
-        istanza.change("view/buyDreamGuitar/buyDreamGuitarStart.fxml", id, dreamGuitarBean, recommendedGuitarBean);
+        istanza.change("view/buyDreamGuitar/buyDreamGuitarStart.fxml", id, dreamGuitarBean, null);
 
     }
 
@@ -55,7 +51,7 @@ public class BuyDreamGuitarControllerNH extends GraphicController {
 
         try {
 
-            BuyDreamGuitarApplicationController controller = new BuyDreamGuitarApplicationController();
+            //BuyDreamGuitarApplicationController controller = new BuyDreamGuitarApplicationController();
 
             NesType alternative = null;
 
@@ -76,7 +72,7 @@ public class BuyDreamGuitarControllerNH extends GraphicController {
             controller.addComponent(dreamGuitarBean, "neck&headstock", alternative);
 
             ChangePage istanza = ChangePage.getChangePage();
-            istanza.change("view/buyDreamGuitar/buyDreamGuitarStart.fxml", id, dreamGuitarBean, recommendedGuitarBean);
+            istanza.change("view/buyDreamGuitar/buyDreamGuitarStart.fxml", id, dreamGuitarBean, null);
 
         } catch (Exception e) {
             throw new RuntimeException(e);

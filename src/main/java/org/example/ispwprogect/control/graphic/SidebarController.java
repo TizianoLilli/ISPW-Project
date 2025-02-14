@@ -11,7 +11,7 @@ import org.example.ispwprogect.control.application.BuyDreamGuitarApplicationCont
 import org.example.ispwprogect.utils.bean.DreamGuitarBean;
 import org.example.ispwprogect.utils.bean.RecommendedGuitarBean;
 
-public class SidebarController{
+public class SidebarController extends GraphicController{
 
     @FXML
     private Label rightStatusLabel;
@@ -25,10 +25,13 @@ public class SidebarController{
         }
     }
 
-    private BuyDreamGuitarApplicationController controller;
+    // voglio mantenere solo la sessione
     private int id;
-    private DreamGuitarBean dreamGuitarBean;
-    private RecommendedGuitarBean recommendedGuitarBean;
+
+    @Override
+    public void init(int sessionId, DreamGuitarBean dreamGuitarBean, RecommendedGuitarBean recommendedGuitarBean) {
+        this.id = sessionId;
+    }
 
     @FXML
     private void handleHomeClick(MouseEvent event) {
@@ -61,13 +64,13 @@ public class SidebarController{
 
     @FXML
     public void handleNewDreamGuitarClick(MouseEvent event) {
-        controller = new BuyDreamGuitarApplicationController();
-        dreamGuitarBean = controller.newDreamGuitar();
+        BuyDreamGuitarApplicationController controller = new BuyDreamGuitarApplicationController();
+        DreamGuitarBean dreamGuitarBean = controller.newDreamGuitar();
 
         Stage currentStage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         ChangePage istanza = ChangePage.getChangePage();
         istanza.setStage(currentStage);
-        istanza.change("view/buyDreamGuitar/buyDreamGuitarStart.fxml", id, dreamGuitarBean, recommendedGuitarBean);
+        istanza.change("view/buyDreamGuitar/buyDreamGuitarStart.fxml", id, dreamGuitarBean, null);
 
     }
 

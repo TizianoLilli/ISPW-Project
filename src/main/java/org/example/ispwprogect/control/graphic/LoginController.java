@@ -26,7 +26,9 @@ public class LoginController extends GraphicController{
     private int sessionId = 0;
 
     @Override
-    public void init(int sessionId, DreamGuitarBean dreamGuitarBean, RecommendedGuitarBean recommendedGuitarBean) {}
+    public void init(int sessionId, DreamGuitarBean dreamGuitarBean, RecommendedGuitarBean recommendedGuitarBean) {
+        this.sessionId = sessionId;
+    }
 
     public void registerUser(String id,  String password, Role role, String email, String address) {
         UserBean user = new UserBean(id, password, role, email, address);

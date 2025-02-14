@@ -25,21 +25,18 @@ public class HomePageController extends GraphicController {
         this.id = id;
     }
 
-    private BuyDreamGuitarApplicationController controller;
     private int id;
-    private DreamGuitarBean dreamGuitarBean;
-    private RecommendedGuitarBean recommendedGuitarBean;
 
     @FXML
     public void handleClick(ActionEvent event){
 
-        controller = new BuyDreamGuitarApplicationController();
-        dreamGuitarBean = controller.newDreamGuitar();
+        BuyDreamGuitarApplicationController controller = new BuyDreamGuitarApplicationController();
+        DreamGuitarBean dreamGuitarBean = controller.newDreamGuitar();
 
         Stage currentStage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         ChangePage istanza = ChangePage.getChangePage();
         istanza.setStage(currentStage);
-        istanza.change("view/buyDreamGuitar/buyDreamGuitarStart.fxml", id, dreamGuitarBean, recommendedGuitarBean);
+        istanza.change("view/buyDreamGuitar/buyDreamGuitarStart.fxml", id, dreamGuitarBean, null);
 
     }
 

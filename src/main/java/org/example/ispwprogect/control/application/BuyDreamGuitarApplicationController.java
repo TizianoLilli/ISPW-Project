@@ -3,8 +3,10 @@ package org.example.ispwprogect.control.application;
 import org.example.ispwprogect.SessionManager;
 import org.example.ispwprogect.model.decorator.dreamguitar.DreamGuitar;
 import org.example.ispwprogect.model.decorator.dreamguitar.DreamGuitarDAO;
+import org.example.ispwprogect.model.user.User;
 import org.example.ispwprogect.model.user.UserDAO;
 import org.example.ispwprogect.utils.bean.DreamGuitarBean;
+import org.example.ispwprogect.utils.bean.UserBean;
 import org.example.ispwprogect.utils.dao.DAOFactory;
 import org.example.ispwprogect.utils.enumeration.components.GenericType;
 
@@ -16,10 +18,6 @@ public class BuyDreamGuitarApplicationController {
     private DreamGuitarDAO dreamGuitarDAO;
 
     public DreamGuitarBean newDreamGuitar(){
-        DAOFactory daoFactory = DAOFactory.getInstance();
-        userDAO = daoFactory.getUserDAO();
-        dreamGuitarDAO = daoFactory.getDreamGuitarDAO();
-        //DreamGuitar guitar = new DreamGuitar();
         return new DreamGuitarBean();
     }
 
@@ -47,7 +45,7 @@ public class BuyDreamGuitarApplicationController {
         return true;
     }
 
-    public void saveDreamGuitar(DreamGuitarBean guitarB){
+    public void saveDreamGuitar(DreamGuitarBean guitarB, UserBean userB){
         // dovrei farlo comparire a schermo
         if (!verifyCompleteness(guitarB)) {
             System.out.println("Please, select all the components!");
@@ -59,9 +57,8 @@ public class BuyDreamGuitarApplicationController {
         dreamGuitarDAO = daoFactory.getDreamGuitarDAO();
 
         DreamGuitar guitarM = new DreamGuitar(guitarB);
-
-//        SessionManager.getSessionManager();
-//        userDAO.update(userM, guitarB.getId());
+        User userM = new User(userB);
+        userDAO.update(userM, guitarM.id());
     }
 
 //
