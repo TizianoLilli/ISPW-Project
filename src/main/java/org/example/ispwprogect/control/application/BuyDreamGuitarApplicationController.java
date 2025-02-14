@@ -36,6 +36,7 @@ public class BuyDreamGuitarApplicationController {
         }
     }
 
+    // DA RIVEDE IL CONTROLLO DELLE COMPONENTI (PASSA SEMPRE)
     public boolean verifyCompleteness(DreamGuitarBean g){
         Collection<GenericType> all = g.getAllComponents();
         for (GenericType t : all){
@@ -45,11 +46,11 @@ public class BuyDreamGuitarApplicationController {
         return true;
     }
 
-    public void saveDreamGuitar(DreamGuitarBean guitarB, UserBean userB){
+    public boolean saveDreamGuitar(DreamGuitarBean guitarB, UserBean userB){
         // dovrei farlo comparire a schermo
         if (!verifyCompleteness(guitarB)) {
             System.out.println("Please, select all the components!");
-            return;
+            return false;
         }
 
         DAOFactory daoFactory = DAOFactory.getInstance();
@@ -59,6 +60,7 @@ public class BuyDreamGuitarApplicationController {
         DreamGuitar guitarM = new DreamGuitar(guitarB);
         User userM = new User(userB);
         userDAO.update(userM, guitarM.id());
+        return true;
     }
 
 //

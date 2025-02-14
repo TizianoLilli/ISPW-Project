@@ -7,30 +7,32 @@ import javafx.stage.Stage;
 
 import javafx.scene.input.MouseEvent;
 import org.example.ispwprogect.ChangePage;
+import org.example.ispwprogect.Session;
+import org.example.ispwprogect.SessionManager;
 import org.example.ispwprogect.control.application.BuyDreamGuitarApplicationController;
 import org.example.ispwprogect.utils.bean.DreamGuitarBean;
 import org.example.ispwprogect.utils.bean.RecommendedGuitarBean;
 
-public class SidebarController extends GraphicController{
+public class SidebarController{
 
     @FXML
     private Label rightStatusLabel;
 
     @FXML
-    public void initialize() {
-        if (rightStatusLabel != null) {
-            rightStatusLabel.setText("Benvenuto!");
-        } else {
-            System.out.println("rightStatusLabel è null!");
-        }
-    }
+    private Label userLabel;
 
     // voglio mantenere solo la sessione
-    private int id;
+    private int id = -1;
 
-    @Override
-    public void init(int sessionId, DreamGuitarBean dreamGuitarBean, RecommendedGuitarBean recommendedGuitarBean) {
-        this.id = sessionId;
+    public void initialize(){
+        this.id = SessionManager.getSessionManager().getCurrentId();
+        if (id != -1){
+            SessionManager manager = SessionManager.getSessionManager();
+            Session session = manager.getSessionFromId(id);
+            userLabel.setText("Hi, " + session.getUserBean().getId());
+        } else {
+            userLabel.setText("Guest");
+        }
     }
 
     @FXML

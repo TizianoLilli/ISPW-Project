@@ -11,7 +11,7 @@ public class SessionManager {
 
     private static SessionManager instance = null;
 
-    private static int nextId = 0;
+    private static int nextId = -1;
 
     protected SessionManager() {}
 
@@ -36,6 +36,7 @@ public class SessionManager {
         return null;
     }
 
+    public int getCurrentId() {return nextId;}
     public void addSession(Session session) {activeSessions.add(session);}
     public void removeSession(int id) {activeSessions.removeIf(session -> session.getSessionId() == id);}
 }

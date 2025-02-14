@@ -151,7 +151,9 @@ public class BuyDreamGuitarControllerStart extends GraphicController {
         Session session = manager.getSessionFromId(id);
         UserBean userBean = session.getUserBean();
 
-        controller.saveDreamGuitar(dreamGuitarBean, userBean);
+        if (!controller.saveDreamGuitar(dreamGuitarBean, userBean)){
+            System.out.println("save failed");
+        } else {System.out.println("save successfull");}
 
         Stage currentStage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         ChangePage istanza = ChangePage.getChangePage();

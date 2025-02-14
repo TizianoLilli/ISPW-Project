@@ -12,7 +12,7 @@
 
     <!-- Sidebar -->
     <VBox id="sidebar" layoutX="0" layoutY="0" prefHeight="681.0" prefWidth="200">
-        <Label id="userLabel" text="Guest" />
+        <Label fx:id="userLabel" text="Guest" />
         <Label fx:id="rightStatusLabel" text="Benvenuto!" />
         <ListView id="menuList" prefHeight="550">
             <Label onMouseClicked="#handleHomeClick" text="Home" />

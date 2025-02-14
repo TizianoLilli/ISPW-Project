@@ -1,9 +1,12 @@
 package org.example.ispwprogect.control.graphic;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import org.example.ispwprogect.ChangePage;
 import org.example.ispwprogect.control.application.BuyDreamGuitarApplicationController;
@@ -11,21 +14,25 @@ import org.example.ispwprogect.utils.bean.DreamGuitarBean;
 import javafx.event.ActionEvent;
 import org.example.ispwprogect.utils.bean.RecommendedGuitarBean;
 
+import java.io.IOException;
+
 public class HomePageController extends GraphicController {
 
     @FXML
     private ImageView bannerImage;
 
-
     @Override
     public void init(int id, DreamGuitarBean dreamGuitarBean, RecommendedGuitarBean recommendedGuitarBean){
+
         // Carica l'immagine e impostala nell'ImageView
         Image banner = new Image("file:main/java/org/example/ispwprogect/images/banner.jpg");
         bannerImage.setImage(banner);
         this.id = id;
+        System.out.println(this.id);
+
     }
 
-    private int id;
+    private int id = -1;
 
     @FXML
     public void handleClick(ActionEvent event){
@@ -39,5 +46,10 @@ public class HomePageController extends GraphicController {
         istanza.change("view/buyDreamGuitar/buyDreamGuitarStart.fxml", id, dreamGuitarBean, null);
 
     }
+
+    @FXML
+    private AnchorPane sidebarInclude;
+
+    private SidebarController sidebarController;
 
 }

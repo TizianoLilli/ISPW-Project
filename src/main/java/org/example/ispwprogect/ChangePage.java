@@ -38,7 +38,6 @@ public class ChangePage {
         this.stage.setScene(newScene);
         this.stage.show();
 
-
     }
 
     public void setStage(Stage stageParam){

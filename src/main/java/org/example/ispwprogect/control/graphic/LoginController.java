@@ -23,7 +23,7 @@ public class LoginController extends GraphicController{
     @FXML
     private Label errorLabel;
 
-    private int sessionId = 0;
+    private int sessionId = -1;
 
     @Override
     public void init(int sessionId, DreamGuitarBean dreamGuitarBean, RecommendedGuitarBean recommendedGuitarBean) {
@@ -46,7 +46,6 @@ public class LoginController extends GraphicController{
         sessionId = controller.login(username, password);
         if (sessionId != -1) {
             // fai qualcosa
-            System.out.println("Login successful");
 
             Stage currentStage = (Stage) ((Node)event.getSource()).getScene().getWindow();
             ChangePage istanza = ChangePage.getChangePage();
