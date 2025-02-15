@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 public class Config {
 
-    public void setPersistenceProvider(int choice, Scanner s) {
+    public boolean setPersistenceProvider(Scanner s) {
 
         PersistenceProvider provider = null;
         boolean ok = false;
@@ -16,7 +16,7 @@ public class Config {
         while (!ok){
             try {
                 System.out.println("Select a Persistence Provider (1-4): \n1. In Memory\n2. File System\n3. DBMS\n4. Exit");
-                choice = Integer.parseInt(String.valueOf(s.nextInt()));
+                int choice = Integer.parseInt(String.valueOf(s.nextInt()));
                 ok = true;
                 switch (choice) {
                     case 1:
@@ -30,7 +30,8 @@ public class Config {
                         break;
                     case 4:
                         System.out.println("Exiting...");
-                        System.exit(0);
+                        s.close();
+                        return false;
                     default:
                         System.out.println("Invalid choice. Please try again.");
                         ok = false;
@@ -44,5 +45,6 @@ public class Config {
         System.out.println("Using " + provider.name() + " Persistence Provider");
 
         DAOFactory.setPersistenceProvider(provider);
+        return true;
     }
 }

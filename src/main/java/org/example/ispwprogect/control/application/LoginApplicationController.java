@@ -28,15 +28,13 @@ public class LoginApplicationController {
     public int login(String username, String password) {
         // entro con le credenziali di un utente preimpostato
         User userM = userD.read(username);
-        if (userM != null) {
-            if (userM.username().equals(username) && userM.password().equals(password)) {
-                SessionManager manager = SessionManager.getSessionManager();
-                UserBean userB = new UserBean(userM.username(), userM.password(), userM.role(), userM.email(), userM.address());
-                // il controller passa dati all'esterno sotto forma di bean
-                Session session = manager.createSession(userB);
-                manager.addSession(session);
-                return session.getSessionId();
-            }
+        if (userM != null && userM.username().equals(username) && userM.password().equals(password)) {
+            SessionManager manager = SessionManager.getSessionManager();
+            UserBean userB = new UserBean(userM.username(), userM.password(), userM.role(), userM.email(), userM.address());
+            // il controller passa dati all'esterno sotto forma di bean
+            Session session = manager.createSession(userB);
+            manager.addSession(session);
+            return session.getSessionId();
         }
         return -1;
     }

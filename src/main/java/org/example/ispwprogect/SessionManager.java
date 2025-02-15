@@ -11,7 +11,7 @@ public class SessionManager {
 
     private static SessionManager instance = null;
 
-    private static int nextId = -1;
+    private int nextId = -1;
 
     protected SessionManager() {}
 

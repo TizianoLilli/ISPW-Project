@@ -7,8 +7,4 @@ public abstract class GraphicController {
 
     public abstract void init(int sessionId, DreamGuitarBean dreamGuitarBean, RecommendedGuitarBean recommendedGuitarBean);
 
-//    public abstract void initRecommendedGuitar(IdSessionBean idSessionBean, RecommendedGuitarBean bean);
-
-//    public void setApplicationController(BuyDreamGuitarApplicationController controller) {
-//    }
 }

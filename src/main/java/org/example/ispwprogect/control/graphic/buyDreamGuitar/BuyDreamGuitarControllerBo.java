@@ -51,22 +51,14 @@ public class BuyDreamGuitarControllerBo extends GraphicController {
 
         try {
 
-            //BuyDreamGuitarApplicationController controller = new BuyDreamGuitarApplicationController();
-
             BodyType alternative = null;
 
             if (mapleRadio.isSelected()) {
-
                 alternative = BodyType.MAPLE;
-
             } else if (mahoganyRadio.isSelected()) {
-
                 alternative = BodyType.MAHOGANY;
-
             } else if (ashRadio.isSelected()) {
-
                 alternative = BodyType.ASH;
-
             }
 
             controller.addComponent(dreamGuitarBean, "body", alternative);

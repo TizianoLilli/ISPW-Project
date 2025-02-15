@@ -55,22 +55,14 @@ public class BuyDreamGuitarControllerF extends GraphicController {
 
         try {
 
-            //BuyDreamGuitarApplicationController controller = new BuyDreamGuitarApplicationController();
-
             FretboardType alternative = null;
 
             if (mapleRadio.isSelected()) {
-
                 alternative = FretboardType.MAPLE;
-
             } else if (rosewoodRadio.isSelected()) {
-
                 alternative = FretboardType.ROSEWOOD;
-
             } else if (ebonyRadio.isSelected()) {
-
                 alternative = FretboardType.EBONY;
-
             }
 
             controller.addComponent(dreamGuitarBean, "fretboard", alternative);

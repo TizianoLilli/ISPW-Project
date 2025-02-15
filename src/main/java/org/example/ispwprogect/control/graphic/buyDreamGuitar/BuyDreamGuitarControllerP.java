@@ -54,22 +54,14 @@ public class BuyDreamGuitarControllerP extends GraphicController {
 
         try {
 
-            //BuyDreamGuitarApplicationController controller = new BuyDreamGuitarApplicationController();
-
             PickupType alternative = null;
 
             if (SingleCoilRadio.isSelected()) {
-
                 alternative = PickupType.SINGLECOIL;
-
             } else if (HumbuckerRadio.isSelected()) {
-
                 alternative = PickupType.HUMBUCKER;
-
             } else if (P90Radio.isSelected()) {
-
                 alternative = PickupType.P90;
-
             }
 
             controller.addComponent(dreamGuitarBean, "pickup", alternative);

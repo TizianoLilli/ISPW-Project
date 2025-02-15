@@ -54,22 +54,14 @@ public class BuyDreamGuitarControllerS extends GraphicController {
 
         try {
 
-            //BuyDreamGuitarApplicationController controller = new BuyDreamGuitarApplicationController();
-
             StringsType alternative = null;
 
             if (nineGaugeRadio.isSelected()) {
-
                 alternative = StringsType.NINEGAUGE;
-
             } else if (tenGaugeRadio.isSelected()) {
-
                 alternative = StringsType.TENGAUGE;
-
             } else if (elevenGaugeRadio.isSelected()) {
-
                 alternative = StringsType.ELEVENGAUGE;
-
             }
 
             controller.addComponent(dreamGuitarBean, "strings",alternative);

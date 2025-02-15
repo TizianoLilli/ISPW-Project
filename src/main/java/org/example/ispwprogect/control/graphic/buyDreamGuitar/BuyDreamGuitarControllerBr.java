@@ -51,22 +51,14 @@ public class BuyDreamGuitarControllerBr extends GraphicController {
 
         try {
 
-            //BuyDreamGuitarApplicationController controller = new BuyDreamGuitarApplicationController();
-
             BridgeType alternative = null;
 
             if (hardtailRadio.isSelected()) {
-
                 alternative = BridgeType.HARDTAIL;
-
             } else if (tremoloRadio.isSelected()) {
-
                 alternative = BridgeType.TREMOLO;
-
             } else if (tuneomaticRadio.isSelected()) {
-
                 alternative = BridgeType.TUNEOMATIC;
-
             }
 
             controller.addComponent(dreamGuitarBean, "bridge", alternative);

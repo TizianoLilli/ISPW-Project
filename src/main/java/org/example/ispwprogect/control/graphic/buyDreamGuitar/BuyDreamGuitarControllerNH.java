@@ -51,22 +51,14 @@ public class BuyDreamGuitarControllerNH extends GraphicController {
 
         try {
 
-            //BuyDreamGuitarApplicationController controller = new BuyDreamGuitarApplicationController();
-
             NesType alternative = null;
 
             if (mapleRadio.isSelected()) {
-
                 alternative = NesType.MAPLE;
-
             } else if (rosewoodRadio.isSelected()) {
-
                 alternative = NesType.ROSEWOOD;
-
             } else if (ebonyRadio.isSelected()) {
-
                 alternative = NesType.EBONY;
-
             }
 
             controller.addComponent(dreamGuitarBean, "neck&headstock", alternative);
