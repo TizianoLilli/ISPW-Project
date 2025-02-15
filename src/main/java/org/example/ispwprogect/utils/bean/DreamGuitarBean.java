@@ -20,12 +20,14 @@ public class DreamGuitarBean {
     public GenericType getComponent(String key) {return components.get(key);}
 
     public void setComponent(String key, GenericType type) {
-        if (components == null) return;
+        if (components == null) {return;}
         //aggiunge il nuovo componente (o lo sovrascrive) -> posso avere solo valore collegato a una chiave (quindi solo un'alterativa per tipo)
         components.put(key, type);
     }
 
     public Collection<GenericType> getAllComponents(){return components.values();}
+
+    public boolean isFull() {return components.size() == 6;}
 
     public double getPrice() {return price;}
     public void setPrice(double price) {this.price = price;}

@@ -153,6 +153,7 @@ public class BuyDreamGuitarControllerStart extends GraphicController {
 
         if (!controller.saveDreamGuitar(dreamGuitarBean, userBean)){
             System.out.println("save failed");
+            return;
         } else {System.out.println("save successfull");}
 
         Stage currentStage = (Stage) ((Node)event.getSource()).getScene().getWindow();

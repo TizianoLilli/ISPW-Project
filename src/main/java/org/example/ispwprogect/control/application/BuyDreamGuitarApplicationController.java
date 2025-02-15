@@ -36,19 +36,9 @@ public class BuyDreamGuitarApplicationController {
         }
     }
 
-    // DA RIVEDE IL CONTROLLO DELLE COMPONENTI (PASSA SEMPRE)
-    public boolean verifyCompleteness(DreamGuitarBean g){
-        Collection<GenericType> all = g.getAllComponents();
-        for (GenericType t : all){
-            // se mi accorgo che manca un componente esco e lo segnalo
-            if (t == null){return false;}
-        }
-        return true;
-    }
-
     public boolean saveDreamGuitar(DreamGuitarBean guitarB, UserBean userB){
-        // dovrei farlo comparire a schermo
-        if (!verifyCompleteness(guitarB)) {
+
+        if (!guitarB.isFull()) {
             System.out.println("Please, select all the components!");
             return false;
         }
