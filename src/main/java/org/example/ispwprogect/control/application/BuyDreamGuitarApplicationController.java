@@ -1,6 +1,7 @@
 package org.example.ispwprogect.control.application;
 
 import org.example.ispwprogect.SessionManager;
+import org.example.ispwprogect.control.graphic.buyDreamGuitar.BuyDreamGuitarControllerStart;
 import org.example.ispwprogect.model.decorator.dreamguitar.DreamGuitar;
 import org.example.ispwprogect.model.decorator.dreamguitar.DreamGuitarDAO;
 import org.example.ispwprogect.model.user.User;
@@ -10,12 +11,19 @@ import org.example.ispwprogect.utils.bean.UserBean;
 import org.example.ispwprogect.utils.dao.DAOFactory;
 import org.example.ispwprogect.utils.enumeration.components.GenericType;
 
-import java.util.Collection;
+import java.util.Set;
 
 public class BuyDreamGuitarApplicationController {
 
+    private DAOFactory daoFactory;
     private UserDAO userDAO;
     private DreamGuitarDAO dreamGuitarDAO;
+
+    public BuyDreamGuitarApplicationController() {
+        daoFactory = DAOFactory.getInstance();
+        userDAO = daoFactory.getUserDAO();
+        dreamGuitarDAO = daoFactory.getDreamGuitarDAO();
+    }
 
     public DreamGuitarBean newDreamGuitar(){
         return new DreamGuitarBean();
@@ -36,24 +44,37 @@ public class BuyDreamGuitarApplicationController {
         }
     }
 
-    public boolean saveDreamGuitar(DreamGuitarBean guitarB, UserBean userB){
+    public boolean saveDreamGuitar(DreamGuitarBean guitarB, String uid){
 
         if (!guitarB.isFull()) {
             System.out.println("Please, select all the components!");
             return false;
         }
 
-        DAOFactory daoFactory = DAOFactory.getInstance();
-        userDAO = daoFactory.getUserDAO();
-        dreamGuitarDAO = daoFactory.getDreamGuitarDAO();
-
         DreamGuitar guitarM = new DreamGuitar(guitarB);
-        User userM = new User(userB);
+        dreamGuitarDAO.create(guitarM);
+        User userM = userDAO.read(uid);
         userDAO.update(userM, guitarM.id());
+
         return true;
     }
 
-//
-//    public DreamGuitarBean recoverDreamGuitar(){}
+    // per verificare se un utente ha una chitarra associata
+    public boolean checkGuitar(String id){
+        User userM = userDAO.read(id);
+        DreamGuitar guitarM = userM.dreamGuitar();
+        return guitarM != null;
+    }
+
+    public DreamGuitarBean recoverDreamGuitar(String uid) {
+        User userM = userDAO.read(uid);
+        DreamGuitar guitarM = userM.dreamGuitar();
+        if (guitarM != null) {
+            // la devo passare al controller grafico
+            DreamGuitarBean guitarB = new DreamGuitarBean(guitarM);
+            return guitarB;
+        } // altrimenti continuo con una nuova chitarra
+        return null;
+    }
 
 }

@@ -12,6 +12,7 @@ public class SessionManager {
     private static SessionManager instance = null;
 
     private int nextId = -1;
+    private int guitarId = -1;
 
     protected SessionManager() {}
 
@@ -22,9 +23,9 @@ public class SessionManager {
         return instance;
     }
 
-    public Session createSession(UserBean userBean) {
+    public Session createSession(String username) {
         nextId++;
-        return new Session(nextId, userBean);
+        return new Session(nextId, username);
     }
 
     public Session getSessionFromId(int id){
@@ -37,6 +38,7 @@ public class SessionManager {
     }
 
     public int getCurrentId() {return nextId;}
+    public int curGuitarId() {return guitarId++;}
     public void addSession(Session session) {activeSessions.add(session);}
     public void removeSession(int id) {activeSessions.removeIf(session -> session.getSessionId() == id);}
 }

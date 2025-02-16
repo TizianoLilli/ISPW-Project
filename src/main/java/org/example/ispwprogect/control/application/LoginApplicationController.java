@@ -30,9 +30,8 @@ public class LoginApplicationController {
         User userM = userD.read(username);
         if (userM != null && userM.username().equals(username) && userM.password().equals(password)) {
             SessionManager manager = SessionManager.getSessionManager();
-            UserBean userB = new UserBean(userM.username(), userM.password(), userM.role(), userM.email(), userM.address());
             // il controller passa dati all'esterno sotto forma di bean
-            Session session = manager.createSession(userB);
+            Session session = manager.createSession(username);
             manager.addSession(session);
             return session.getSessionId();
         }

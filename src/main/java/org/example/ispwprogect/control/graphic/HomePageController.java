@@ -9,7 +9,10 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import org.example.ispwprogect.ChangePage;
+import org.example.ispwprogect.Session;
+import org.example.ispwprogect.SessionManager;
 import org.example.ispwprogect.control.application.BuyDreamGuitarApplicationController;
+import org.example.ispwprogect.control.graphic.buyDreamGuitar.BuyDreamGuitarControllerStart;
 import org.example.ispwprogect.utils.bean.DreamGuitarBean;
 import javafx.event.ActionEvent;
 import org.example.ispwprogect.utils.bean.RecommendedGuitarBean;
@@ -28,7 +31,6 @@ public class HomePageController extends GraphicController {
         Image banner = new Image("file:main/java/org/example/ispwprogect/images/banner.jpg");
         bannerImage.setImage(banner);
         this.id = id;
-        System.out.println(this.id);
 
     }
 
@@ -39,6 +41,12 @@ public class HomePageController extends GraphicController {
 
         BuyDreamGuitarApplicationController controller = new BuyDreamGuitarApplicationController();
         DreamGuitarBean dreamGuitarBean = controller.newDreamGuitar();
+
+        SessionManager manager = SessionManager.getSessionManager();
+        Session session = manager.getSessionFromId(id);
+
+        boolean value = controller.checkGuitar(session.getUserId());
+        BuyDreamGuitarControllerStart.setToRecover(value);
 
         Stage currentStage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         ChangePage istanza = ChangePage.getChangePage();

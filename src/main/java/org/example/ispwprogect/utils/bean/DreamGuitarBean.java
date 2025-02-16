@@ -1,38 +1,48 @@
 package org.example.ispwprogect.utils.bean;
 
+import org.example.ispwprogect.SessionManager;
+import org.example.ispwprogect.model.decorator.dreamguitar.DreamGuitar;
 import org.example.ispwprogect.utils.enumeration.components.GenericType;
 
-import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
 public class DreamGuitarBean {
 
     // uso una hash map per memorizzare tutte le componenti e il tipo relativo
-    private final Map<String, GenericType> components = new HashMap<>();
+    private Map<String, GenericType> components = new HashMap<>();
 
-    // DEVE ANCORA GESTIRE GLI ID DELLE CHITARRE
-    private int id;
+    private int gid;
     private double price;
 
-    public DreamGuitarBean() {setPrice(0);} // inizialmente tutte le componenti sono null
+    // inizialmente ho una hash map vuota
+    public DreamGuitarBean() {
+        gid = SessionManager.getSessionManager().curGuitarId();
+        setPrice(0);
+    }
+
+    public DreamGuitarBean(DreamGuitar guitar) {
+        this.components = new HashMap<>(guitar.allComponents());
+        this.price = guitar.price();
+        this.gid = guitar.id();
+    }
 
     public GenericType getComponent(String key) {return components.get(key);}
 
     public void setComponent(String key, GenericType type) {
-        if (components == null) {return;}
         //aggiunge il nuovo componente (o lo sovrascrive) -> posso avere solo valore collegato a una chiave (quindi solo un'alterativa per tipo)
         components.put(key, type);
     }
 
-    public Collection<GenericType> getAllComponents(){return components.values();}
+    public Map<String, GenericType> getAllComponents(){return components;}
 
+    // POTREI ANCHE IMPLEMENTARLO TRAMITE UNA VARIABILE CHE AUMENTA DI 1 OGNI VOLTA CHE AGGIUNGO UN COMPONENTE (POI FACCIO LA VERIFICA)
     public boolean isFull() {return components.size() == 6;}
 
     public double getPrice() {return price;}
     public void setPrice(double price) {this.price = price;}
 
-    public int getId() {return id;}
-    public void setId(int id) {this.id = id;}
+    public int getId() {return gid;}
+    public void setId(int id) {this.gid = id;}
 
 }

@@ -1,5 +1,6 @@
 package org.example.ispwprogect.utils.bean;
 
+import org.example.ispwprogect.model.user.User;
 import org.example.ispwprogect.utils.enumeration.Role;
 
 public class UserBean {
@@ -20,6 +21,15 @@ public class UserBean {
         this.role = role;
         this.email = email;
         this.address = address;
+    }
+
+    public UserBean(User user) {
+        this.id = user.username();
+        // l'inserimento della chitarra viene fatto separatamente
+        this.password = user.password();
+        this.role = user.role();
+        this.email = user.email();
+        this.address = user.address();
     }
 
     public String getId() {return id;}

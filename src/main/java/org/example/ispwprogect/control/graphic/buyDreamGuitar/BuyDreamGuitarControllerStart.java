@@ -8,6 +8,7 @@ import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import org.example.ispwprogect.ChangePage;
 import org.example.ispwprogect.Session;
@@ -34,6 +35,8 @@ public class BuyDreamGuitarControllerStart extends GraphicController {
 
     @FXML private Label total;
 
+    // se false significa che ho già chiesto all'utente se voleva recuperare la chitarra || non ci sono chitarre da recuperare
+    private static boolean toRecover = false;
 
     @Override
     public void init(int id, DreamGuitarBean dreamGuitarBean, RecommendedGuitarBean recommendedGuitarBean) {
@@ -72,6 +75,16 @@ public class BuyDreamGuitarControllerStart extends GraphicController {
                 nesButton.setText("Nes\n(" + ((NesType)alternative).name() + ")");
             }
         }
+
+        if (toRecover){
+            showBanner();
+            boolean value = false;
+            setToRecover(value);
+        }
+    }
+
+    public static void setToRecover(boolean value){
+        toRecover = value;
     }
 
     @FXML
@@ -149,16 +162,46 @@ public class BuyDreamGuitarControllerStart extends GraphicController {
 
         SessionManager manager = SessionManager.getSessionManager();
         Session session = manager.getSessionFromId(id);
-        UserBean userBean = session.getUserBean();
+        String uid = session.getUserId();
 
-        if (!controller.saveDreamGuitar(dreamGuitarBean, userBean)){
+        if (!controller.saveDreamGuitar(dreamGuitarBean, uid)){
             System.out.println("save failed");
             return;
-        } else {System.out.println("save successfull");}
+        } else {
+            System.out.println("save successfull");
+        }
 
         Stage currentStage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         ChangePage istanza = ChangePage.getChangePage();
         istanza.setStage(currentStage);
         istanza.change("view/buyDreamGuitar/toLuthier.fxml", id, dreamGuitarBean, null);
+    }
+
+    @FXML
+    private Pane overlay;
+
+    @FXML
+    private void showBanner(){
+        overlay.setVisible(true);
+    }
+
+    @FXML
+    private void onRecover(){
+
+        overlay.setVisible(false);
+
+        SessionManager manager = SessionManager.getSessionManager();
+        Session session = manager.getSessionFromId(id);
+        String uid = session.getUserId();
+
+        DreamGuitarBean oldGuitar = controller.recoverDreamGuitar(uid);
+        if (oldGuitar != null) {
+            init(id, oldGuitar, null);
+        } else {System.out.println("guitar not found");}
+    }
+
+    @FXML
+    private void onBlank(){
+        overlay.setVisible(false);
     }
 }
