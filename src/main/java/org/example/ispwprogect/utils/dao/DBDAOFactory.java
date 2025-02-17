@@ -1,5 +1,7 @@
 package org.example.ispwprogect.utils.dao;
 
+import org.example.ispwprogect.model.decorator.color.ColorDAO;
+import org.example.ispwprogect.model.decorator.color.InMemoryColorDAO;
 import org.example.ispwprogect.model.decorator.dreamguitar.DreamGuitarDAO;
 import org.example.ispwprogect.model.decorator.dreamguitar.InMemoryDreamGuitarDAO;
 import org.example.ispwprogect.model.user.InMemoryUserDAO;
@@ -10,6 +12,9 @@ public class DBDAOFactory extends DAOFactory {
     // OVVIAMENTE DA MDIFICARE CON DB
     @Override
     public DreamGuitarDAO getDreamGuitarDAO(){return InMemoryDreamGuitarDAO.getInstance();}
+
+    @Override
+    public ColorDAO getColorDAO(){return InMemoryColorDAO.getIstance();}
 
 //    @Override
 //    public NoticeboardDAO getNoticeboardDAO(){}

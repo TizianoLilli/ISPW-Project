@@ -1,4 +1,7 @@
-package org.example.ispwprogect.model.decorator;
+package org.example.ispwprogect.model.decorator.sticker;
+
+import org.example.ispwprogect.model.decorator.Component;
+import org.example.ispwprogect.model.decorator.Decorator;
 
 public class StickerDecorator extends Decorator {
 

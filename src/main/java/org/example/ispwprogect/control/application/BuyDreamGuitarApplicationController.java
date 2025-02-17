@@ -2,10 +2,13 @@ package org.example.ispwprogect.control.application;
 
 import org.example.ispwprogect.SessionManager;
 import org.example.ispwprogect.control.graphic.buyDreamGuitar.BuyDreamGuitarControllerStart;
+import org.example.ispwprogect.model.decorator.Component;
+import org.example.ispwprogect.model.decorator.color.ColorDecorator;
 import org.example.ispwprogect.model.decorator.dreamguitar.DreamGuitar;
 import org.example.ispwprogect.model.decorator.dreamguitar.DreamGuitarDAO;
 import org.example.ispwprogect.model.user.User;
 import org.example.ispwprogect.model.user.UserDAO;
+import org.example.ispwprogect.utils.bean.ColorBean;
 import org.example.ispwprogect.utils.bean.DreamGuitarBean;
 import org.example.ispwprogect.utils.bean.UserBean;
 import org.example.ispwprogect.utils.dao.DAOFactory;
@@ -42,6 +45,21 @@ public class BuyDreamGuitarApplicationController {
             guitar.setComponent(componentKey, alternative);
             guitar.setPrice(guitar.getPrice() + alternative.price());
         }
+    }
+
+    private Component fullGuitar;
+
+    public void registerGuitar(Component guitar){this.fullGuitar = guitar;}
+
+    //POTREI ANCHE FARLA PRIVATA CHIAMATA DA SAVE GUITAR
+    public void addDecoration(DreamGuitarBean guitarB, ColorBean colorB){
+        DreamGuitar guitarM = new DreamGuitar(guitarB);
+        registerGuitar(guitarM);
+        if (colorB != null) {
+            fullGuitar = new ColorDecorator(fullGuitar, colorB);
+        }
+        double finalPrice = fullGuitar.price();
+        // NON SO SE ORA DOVREI CHIAMARE LA DAO DELLA CHITARRA PER SALVARE
     }
 
     public boolean saveDreamGuitar(DreamGuitarBean guitarB, String uid){

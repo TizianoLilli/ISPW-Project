@@ -1,5 +1,6 @@
 package org.example.ispwprogect.utils.dao;
 
+import org.example.ispwprogect.model.decorator.color.ColorDAO;
 import org.example.ispwprogect.model.decorator.dreamguitar.DreamGuitarDAO;
 import org.example.ispwprogect.model.user.UserDAO;
 import org.example.ispwprogect.utils.enumeration.PersistenceProvider;
@@ -15,6 +16,7 @@ public abstract class DAOFactory {
     protected DAOFactory() {}
 
     public abstract DreamGuitarDAO getDreamGuitarDAO();
+    public abstract ColorDAO getColorDAO();
 //    public abstract NoticeboardDAO getNoticeboardDAO();
 //    public abstract LuthierDAO getLuthierDAO();
     public abstract UserDAO getUserDAO();

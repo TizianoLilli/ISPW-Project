@@ -1,5 +1,8 @@
 package org.example.ispwprogect.model.decorator.dreamguitar;
 
+import org.example.ispwprogect.model.decorator.color.ColorDecorator;
+import org.example.ispwprogect.model.decorator.color.InMemoryColorDAO;
+
 import java.util.ArrayList;
 import java.util.Collection;
 
@@ -29,9 +32,26 @@ public class InMemoryDreamGuitarDAO implements DreamGuitarDAO {
     public DreamGuitar read(int guitarId){
         for (DreamGuitar g : dreamGuitars) {
             if (g.id() == guitarId) {
+
+                Collection<ColorDecorator> selectedColor = InMemoryColorDAO.getIstance().read(guitarId);
+                for (ColorDecorator c : selectedColor) {
+                    // DA FINIRE
+                }
                 return g;
             }
         }
         return null;
     }
+
+    @Override
+    public void update(DreamGuitar guitarM, ColorDecorator colorDecoratorM) {
+        // user dao interagisce con la dao dei decorator
+        InMemoryColorDAO.getIstance().create(colorDecoratorM);
+    }
+
+    @Override
+    public void delete(int guitarId) {
+        dreamGuitars.remove(read(guitarId));
+    }
+
 }
