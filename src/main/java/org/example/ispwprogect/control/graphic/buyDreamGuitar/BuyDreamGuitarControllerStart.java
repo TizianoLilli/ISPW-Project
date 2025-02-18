@@ -174,7 +174,8 @@ public class BuyDreamGuitarControllerStart extends GraphicController {
         Stage currentStage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         ChangePage istanza = ChangePage.getChangePage();
         istanza.setStage(currentStage);
-        istanza.change("view/buyDreamGuitar/toLuthier.fxml", id, dreamGuitarBean, null);
+        istanza.change("view/buyDreamGuitar/addons.fxml", id, dreamGuitarBean, null);
+
     }
 
     @FXML

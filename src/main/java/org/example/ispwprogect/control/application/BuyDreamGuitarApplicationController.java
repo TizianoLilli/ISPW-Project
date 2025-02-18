@@ -6,14 +6,17 @@ import org.example.ispwprogect.model.decorator.Component;
 import org.example.ispwprogect.model.decorator.color.ColorDecorator;
 import org.example.ispwprogect.model.decorator.dreamguitar.DreamGuitar;
 import org.example.ispwprogect.model.decorator.dreamguitar.DreamGuitarDAO;
+import org.example.ispwprogect.model.decorator.sticker.StickerDecorator;
 import org.example.ispwprogect.model.user.User;
 import org.example.ispwprogect.model.user.UserDAO;
+import org.example.ispwprogect.utils.bean.AddonsBean;
 import org.example.ispwprogect.utils.bean.ColorBean;
 import org.example.ispwprogect.utils.bean.DreamGuitarBean;
 import org.example.ispwprogect.utils.bean.UserBean;
 import org.example.ispwprogect.utils.dao.DAOFactory;
 import org.example.ispwprogect.utils.enumeration.components.GenericType;
 
+import java.util.HashMap;
 import java.util.Set;
 
 public class BuyDreamGuitarApplicationController {
@@ -53,9 +56,15 @@ public class BuyDreamGuitarApplicationController {
 
     //POTREI ANCHE FARLA PRIVATA CHIAMATA DA SAVE GUITAR
     //POTREI ANCHE PASSARE COME PARAMETRO UNA LSTA DI DECORATOR
-    public void addDecoration(DreamGuitarBean guitarB, ColorBean colorB){
+    public void addDecorations(DreamGuitarBean guitarB, AddonsBean addonsB){
         DreamGuitar guitarM = new DreamGuitar(guitarB);
         registerGuitar(guitarM);
+
+        HashMap<String, Integer> stickers = addonsB.getStickerMap();
+        for (String key : stickers.keySet()) {
+            fullGuitar = new StickerDecorator(fullGuitar, stickerBean);
+        }
+
         if (colorB != null) {
             fullGuitar = new ColorDecorator(fullGuitar, colorB);
         }
