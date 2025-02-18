@@ -52,6 +52,7 @@ public class BuyDreamGuitarApplicationController {
     public void registerGuitar(Component guitar){this.fullGuitar = guitar;}
 
     //POTREI ANCHE FARLA PRIVATA CHIAMATA DA SAVE GUITAR
+    //POTREI ANCHE PASSARE COME PARAMETRO UNA LSTA DI DECORATOR
     public void addDecoration(DreamGuitarBean guitarB, ColorBean colorB){
         DreamGuitar guitarM = new DreamGuitar(guitarB);
         registerGuitar(guitarM);

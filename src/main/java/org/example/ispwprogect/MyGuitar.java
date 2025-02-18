@@ -19,7 +19,7 @@ public class MyGuitar extends Application {
     @Override
     public void start(Stage primaryStage) throws IOException {
 
-        FXMLLoader fxmlLoader = new FXMLLoader(MyGuitar.class.getResource("view/homePage.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(MyGuitar.class.getResource("view/buyDreamGuitar/addons.fxml"));
         Parent root = fxmlLoader.load();
 
         primaryStage.getIcons().add(new Image("logoApp.png"));

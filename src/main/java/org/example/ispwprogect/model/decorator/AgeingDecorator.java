@@ -2,6 +2,7 @@ package org.example.ispwprogect.model.decorator;
 
 import org.example.ispwprogect.utils.enumeration.AgeOfWood;
 
+// PROBABILMENTE NON LO IMPLEMENTERò
 public class AgeingDecorator extends Decorator {
 
     private AgeOfWood age;
