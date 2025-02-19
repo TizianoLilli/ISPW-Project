@@ -50,7 +50,7 @@ public class LoginController extends GraphicController{
             Stage currentStage = (Stage) ((Node)event.getSource()).getScene().getWindow();
             ChangePage istanza = ChangePage.getChangePage();
             istanza.setStage(currentStage);
-            istanza.change("view/homepage.fxml", sessionId, null, null);
+            istanza.change("view/homePage.fxml", sessionId, null, null);
 
         } else {errorLabel.setText("Invalid username or password.");}
 
@@ -61,7 +61,7 @@ public class LoginController extends GraphicController{
         Stage currentStage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         ChangePage istanza = ChangePage.getChangePage();
         istanza.setStage(currentStage);
-        istanza.change("view/buyDreamGuitar/buyDreamGuitarStart.fxml", sessionId, null, null);
+        istanza.change("view/homePage.fxml", sessionId, null, null);
     }
 
 }

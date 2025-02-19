@@ -14,8 +14,11 @@ import org.example.ispwprogect.utils.bean.ColorBean;
 import org.example.ispwprogect.utils.bean.DreamGuitarBean;
 import org.example.ispwprogect.utils.bean.UserBean;
 import org.example.ispwprogect.utils.dao.DAOFactory;
+import org.example.ispwprogect.utils.enumeration.Color;
 import org.example.ispwprogect.utils.enumeration.components.GenericType;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Set;
 
@@ -56,20 +59,32 @@ public class BuyDreamGuitarApplicationController {
 
     //POTREI ANCHE FARLA PRIVATA CHIAMATA DA SAVE GUITAR
     //POTREI ANCHE PASSARE COME PARAMETRO UNA LSTA DI DECORATOR
-    public void addDecorations(DreamGuitarBean guitarB, AddonsBean addonsB){
+    public double addDecorations(DreamGuitarBean guitarB, AddonsBean addonsB){
         DreamGuitar guitarM = new DreamGuitar(guitarB);
         registerGuitar(guitarM);
 
         HashMap<String, Integer> stickers = addonsB.getStickerMap();
         for (String key : stickers.keySet()) {
-            fullGuitar = new StickerDecorator(fullGuitar, stickerBean);
+            Integer value = stickers.get(key);
+            if(value == null) {System.out.println(key);}
+            for (int i=0; i < value; i++) {
+                fullGuitar = new StickerDecorator(fullGuitar, key);
+            }
         }
 
-        if (colorB != null) {
-            fullGuitar = new ColorDecorator(fullGuitar, colorB);
+        boolean[][] colors = addonsB.getColorArray();
+        // metto tutti i colori di Color in una lista
+        ArrayList<Color> type = new ArrayList<>(Arrays.asList(Color.values()));
+        for (int x = 0; x < colors.length; x++) {
+            // se il colore è selezionato
+            if (colors[x][0]) {
+                boolean matte = colors[x][1];
+                fullGuitar = new ColorDecorator(fullGuitar, type.get(x), matte);
+            }
         }
-        double finalPrice = fullGuitar.price();
+
         // NON SO SE ORA DOVREI CHIAMARE LA DAO DELLA CHITARRA PER SALVARE
+        return fullGuitar.price();
     }
 
     public boolean saveDreamGuitar(DreamGuitarBean guitarB, String uid){

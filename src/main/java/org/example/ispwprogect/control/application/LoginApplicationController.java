@@ -6,6 +6,7 @@ import org.example.ispwprogect.model.user.User;
 import org.example.ispwprogect.model.user.UserDAO;
 import org.example.ispwprogect.utils.bean.UserBean;
 import org.example.ispwprogect.utils.dao.DAOFactory;
+import org.example.ispwprogect.utils.enumeration.Role;
 
 public class LoginApplicationController {
 
@@ -38,4 +39,10 @@ public class LoginApplicationController {
         return -1;
     }
 
+    public boolean checkRole(String uid, Role role) {
+        User userM = userD.read(uid);
+        if (role != userM.role()){
+            return false;
+        } else {return true;}
+    }
 }

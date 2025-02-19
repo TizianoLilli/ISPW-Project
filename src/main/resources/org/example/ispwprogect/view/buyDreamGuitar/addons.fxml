@@ -18,6 +18,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
+<?import java.lang.Integer?>
 <AnchorPane prefHeight="600.0" prefWidth="900.0" stylesheets="@../style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.ispwprogect.control.graphic.buyDreamGuitar.AddonsController">
 
     <!-- Buttons -->
@@ -132,40 +133,40 @@
                <ComboBox fx:id="comboBoxKiss" prefHeight="25.0" prefWidth="17.0" promptText="0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                    <items>
                        <FXCollections fx:factory="observableArrayList">
-                           <String fx:value="0" />
-                           <String fx:value="1" />
-                           <String fx:value="2" />
-                           <String fx:value="3" />
+                           <Integer fx:value="0" />
+                           <Integer fx:value="1" />
+                           <Integer fx:value="2" />
+                           <Integer fx:value="3" />
                        </FXCollections>
                    </items>
                </ComboBox>
                <ComboBox fx:id="comboBoxStar" layoutX="228.0" layoutY="92.0" prefHeight="25.0" prefWidth="17.0" promptText="0" GridPane.rowIndex="1">
                    <items>
                        <FXCollections fx:factory="observableArrayList">
-                           <String fx:value="0" />
-                           <String fx:value="1" />
-                           <String fx:value="2" />
-                           <String fx:value="3" />
+                           <Integer fx:value="0" />
+                           <Integer fx:value="1" />
+                           <Integer fx:value="2" />
+                           <Integer fx:value="3" />
                        </FXCollections>
                    </items>
                </ComboBox>
                <ComboBox fx:id="comboBoxPink" layoutX="228.0" layoutY="92.0" prefHeight="25.0" prefWidth="17.0" promptText="0" GridPane.columnIndex="2" GridPane.rowIndex="1">
                    <items>
                        <FXCollections fx:factory="observableArrayList">
-                           <String fx:value="0" />
-                           <String fx:value="1" />
-                           <String fx:value="2" />
-                           <String fx:value="3" />
+                           <Integer fx:value="0" />
+                           <Integer fx:value="1" />
+                           <Integer fx:value="2" />
+                           <Integer fx:value="3" />
                        </FXCollections>
                    </items>
                </ComboBox>
                <ComboBox fx:id="comboBoxFerrari" layoutX="390.0" layoutY="92.0" prefHeight="25.0" prefWidth="17.0" promptText="0" GridPane.columnIndex="3" GridPane.rowIndex="1">
                    <items>
                        <FXCollections fx:factory="observableArrayList">
-                           <String fx:value="0" />
-                           <String fx:value="1" />
-                           <String fx:value="2" />
-                           <String fx:value="3" />
+                           <Integer fx:value="0" />
+                           <Integer fx:value="1" />
+                           <Integer fx:value="2" />
+                           <Integer fx:value="3" />
                        </FXCollections>
                    </items>
                </ComboBox>

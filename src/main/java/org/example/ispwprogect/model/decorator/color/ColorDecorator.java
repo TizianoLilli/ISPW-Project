@@ -18,10 +18,10 @@ public class ColorDecorator extends Decorator {
         super(component);
     }
 
-    public ColorDecorator(Component component, ColorBean colorB) {
+    public ColorDecorator(Component component, Color color, boolean matteFinish) {
         super(component);
-        this.color = colorB.getColor();
-        this.matteFinish = colorB.getMatteFinish();
+        this.color = color;
+        this.matteFinish = matteFinish;
     }
 
     public void defineColor(Color c) {

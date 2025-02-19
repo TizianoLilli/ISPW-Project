@@ -3,25 +3,18 @@ package org.example.ispwprogect.control.graphic.buyDreamGuitar;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.RadioButton;
-import javafx.scene.control.ToggleGroup;
+import javafx.scene.control.*;
 import javafx.stage.Stage;
 import org.example.ispwprogect.ChangePage;
 import org.example.ispwprogect.Session;
 import org.example.ispwprogect.SessionManager;
 import org.example.ispwprogect.control.application.BuyDreamGuitarApplicationController;
 import org.example.ispwprogect.control.graphic.GraphicController;
-import org.example.ispwprogect.model.decorator.Decorator;
 import org.example.ispwprogect.utils.bean.AddonsBean;
 import org.example.ispwprogect.utils.bean.DreamGuitarBean;
 import org.example.ispwprogect.utils.bean.RecommendedGuitarBean;
-import org.example.ispwprogect.utils.enumeration.Color;
-import org.example.ispwprogect.utils.enumeration.components.Sticker;
+import org.example.ispwprogect.utils.enumeration.Sticker;
 
-import java.util.ArrayList;
-import java.util.Collection;
 import java.util.HashMap;
 
 public class AddonsController extends GraphicController {
@@ -77,9 +70,6 @@ public class AddonsController extends GraphicController {
                     updateColor(i, false, false);
                 }
 
-                for (Sticker s : Sticker.values()) {
-                    updateStickers(s.name(), 0);
-                }
             }
         });
     }
@@ -93,6 +83,18 @@ public class AddonsController extends GraphicController {
         controller = new BuyDreamGuitarApplicationController();
         this.dreamGuitarBean = dreamGuitarBean;
         this.id = id;
+
+        extraPrice.setText("Extra Price: " + dreamGuitarBean.getPrice() + "$");
+
+        for (Sticker s : Sticker.values()) {
+            System.out.println(s.name());
+            updateStickers(s.name(), 0);
+        }
+
+        comboBoxStar.setValue(0);
+        comboBoxKiss.setValue(0);
+        comboBoxPink.setValue(0);
+        comboBoxFerrari.setValue(0);
     }
 
     // Inizializza l'array: 3 colori (nero, rosso, blu) e 2 stati (selezionato, opacità)
@@ -165,6 +167,7 @@ public class AddonsController extends GraphicController {
         colors[colorId][1] = matte;
     }
 
+    // salvo la coppia (nomeSticker, nrStickers)
     private HashMap<String, Integer> stickers = new HashMap<String, Integer>();
 
     @FXML
@@ -183,30 +186,27 @@ public class AddonsController extends GraphicController {
         stickers.put(name, quantity);
     }
 
-//    public void handleCalculate(ActionEvent event) {
-//        double extra = 0;
-//        if (blackRadio.isSelected()) {
-//            colors[0][1] = true;
-//            if (blackMatteBox.isSelected()) {
-//                colors[1][1] = true;
-//                extra += Color.BLACK.getPrice() * 1.5;
-//            } else {
-//                colors[1][1] = false;
-//                extra += Color.BLACK.getPrice();
-//            }
-//        }
-//    }
-
     public void handleBackClick(ActionEvent event) {
+    }
+
+    @FXML
+    private Label extraPrice;
+
+    public void handleCalculate(ActionEvent event) {
+        stickers.put(Sticker.STAR.name(), (Integer) comboBoxStar.getValue());
+        stickers.put(Sticker.KISS.name(), (Integer) comboBoxKiss.getValue());
+        stickers.put(Sticker.PINK.name(), (Integer) comboBoxPink.getValue());
+        stickers.put(Sticker.FERRARI.name(), (Integer) comboBoxFerrari.getValue());
+
+        AddonsBean addonsBean = new AddonsBean(stickers, colors);
+        double addonsPrice = controller.addDecorations(dreamGuitarBean, addonsBean);
+        extraPrice.setText("Extra Price: " + addonsPrice + "$");
     }
 
     public void handleNextClick(ActionEvent event) {
         SessionManager manager = SessionManager.getSessionManager();
         Session session = manager.getSessionFromId(id);
         String uid = session.getUserId();
-
-        AddonsBean addonsBean = new AddonsBean(stickers, colors);
-        controller.addDecorations(dreamGuitarBean, addonsBean);
 
         Stage currentStage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         ChangePage istanza = ChangePage.getChangePage();

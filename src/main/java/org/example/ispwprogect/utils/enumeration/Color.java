@@ -2,9 +2,9 @@ package org.example.ispwprogect.utils.enumeration;
 
 public enum Color {
 
+    BLACK(45),
     RED(20),
-    BLUE(30),
-    BLACK(45);
+    BLUE(30);
 
     private final int price;
 

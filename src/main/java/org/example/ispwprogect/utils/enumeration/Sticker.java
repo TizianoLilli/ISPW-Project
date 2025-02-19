@@ -1,4 +1,4 @@
-package org.example.ispwprogect.utils.enumeration.components;
+package org.example.ispwprogect.utils.enumeration;
 
 public enum Sticker {
     STAR,
