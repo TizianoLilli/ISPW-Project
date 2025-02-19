@@ -13,7 +13,6 @@ import org.example.ispwprogect.control.application.BuyDreamGuitarApplicationCont
 import org.example.ispwprogect.control.application.LoginApplicationController;
 import org.example.ispwprogect.control.graphic.buyDreamGuitar.BuyDreamGuitarControllerStart;
 import org.example.ispwprogect.utils.bean.DreamGuitarBean;
-import org.example.ispwprogect.utils.bean.RecommendedGuitarBean;
 import org.example.ispwprogect.utils.enumeration.Role;
 
 public class SidebarController{
@@ -45,7 +44,7 @@ public class SidebarController{
         Stage currentStage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         ChangePage istanza = ChangePage.getChangePage();
         istanza.setStage(currentStage);
-        istanza.change("view/homePage.fxml", id, null, null);
+        istanza.change("view/homePage.fxml", id, null);
 
     }
 
@@ -54,18 +53,12 @@ public class SidebarController{
         Stage currentStage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         ChangePage istanza = ChangePage.getChangePage();
         istanza.setStage(currentStage);
-        istanza.change("view/login.fxml", id, null, null);
+        istanza.change("view/login.fxml", id, null);
 
     }
 
     @FXML
     public void handleNewRecommendedGuitarClick(MouseEvent event) {
-
-        Stage currentStage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        ChangePage istanza = ChangePage.getChangePage();
-        istanza.setStage(currentStage);
-        istanza.change("view/getRecommendedGuitar/getRecommendedGuitar.fxml", id, null, null);
-
     }
 
     @FXML
@@ -77,7 +70,7 @@ public class SidebarController{
             Stage currentStage = (Stage) ((Node)event.getSource()).getScene().getWindow();
             ChangePage istanza = ChangePage.getChangePage();
             istanza.setStage(currentStage);
-            istanza.change("view/login.fxml", id, null, null);
+            istanza.change("view/login.fxml", id, null);
         } else {
 
             BuyDreamGuitarApplicationController controller = new BuyDreamGuitarApplicationController();
@@ -89,18 +82,12 @@ public class SidebarController{
             Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             ChangePage istanza = ChangePage.getChangePage();
             istanza.setStage(currentStage);
-            istanza.change("view/buyDreamGuitar/buyDreamGuitarStart.fxml", id, dreamGuitarBean, null);
+            istanza.change("view/buyDreamGuitar/buyDreamGuitarStart.fxml", id, dreamGuitarBean);
         }
     }
 
     @FXML
     public void handleBuyAccessoriesClick(MouseEvent event) {
-
-        Stage currentStage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        ChangePage istanza = ChangePage.getChangePage();
-        istanza.setStage(currentStage);
-        istanza.change("view/buyAccessories/buyAccessories.fxml", id, null, null);
-
     }
 
 }

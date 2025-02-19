@@ -21,7 +21,7 @@ public class ChangePage {
 
     private Stage stage;
 
-    public void change(String fxml, int id, DreamGuitarBean dreamGuitarBean, RecommendedGuitarBean recommendedGuitarBean) {
+    public void change(String fxml, int id, DreamGuitarBean dreamGuitarBean) {
         FXMLLoader loader = new FXMLLoader(getClass().getResource(fxml));
         Scene newScene=null;
 
@@ -34,7 +34,7 @@ public class ChangePage {
         //alla quale in base al pagina caricata associo l'istanza di uno dei controller grafici figli
         //l'operazione inizializza quindi avrà comportamenti diversi in base all'istanza
         GraphicController controller = loader.getController();
-        controller.init(id, dreamGuitarBean, recommendedGuitarBean);
+        controller.init(id, dreamGuitarBean);
         this.stage.setScene(newScene);
         this.stage.show();
 

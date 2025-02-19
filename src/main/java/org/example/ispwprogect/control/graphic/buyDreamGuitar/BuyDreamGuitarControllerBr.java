@@ -5,12 +5,9 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import org.example.ispwprogect.ChangePage;
-import org.example.ispwprogect.Session;
-import org.example.ispwprogect.SessionManager;
 import org.example.ispwprogect.control.application.BuyDreamGuitarApplicationController;
 import org.example.ispwprogect.control.graphic.GraphicController;
 import org.example.ispwprogect.utils.bean.DreamGuitarBean;
-import org.example.ispwprogect.utils.bean.RecommendedGuitarBean;
 import org.example.ispwprogect.utils.enumeration.components.BridgeType;
 
 public class BuyDreamGuitarControllerBr extends GraphicController {
@@ -21,7 +18,7 @@ public class BuyDreamGuitarControllerBr extends GraphicController {
     private int id;
 
     @Override
-    public void init(int id, DreamGuitarBean dreamGuitarBean, RecommendedGuitarBean recommendedGuitarBean) {
+    public void init(int id, DreamGuitarBean dreamGuitarBean) {
 
         controller = new BuyDreamGuitarApplicationController();
         this.dreamGuitarBean = dreamGuitarBean;
@@ -37,7 +34,7 @@ public class BuyDreamGuitarControllerBr extends GraphicController {
     private void handleBackClick(ActionEvent event) {
 
         ChangePage istanza = ChangePage.getChangePage();
-        istanza.change("view/buyDreamGuitar/buyDreamGuitarStart.fxml", id, dreamGuitarBean, null);
+        istanza.change("view/buyDreamGuitar/buyDreamGuitarStart.fxml", id, dreamGuitarBean);
 
     }
 
@@ -64,7 +61,7 @@ public class BuyDreamGuitarControllerBr extends GraphicController {
             controller.addComponent(dreamGuitarBean, "bridge", alternative);
 
             ChangePage istanza = ChangePage.getChangePage();
-            istanza.change("view/buyDreamGuitar/buyDreamGuitarStart.fxml", id, dreamGuitarBean, null);
+            istanza.change("view/buyDreamGuitar/buyDreamGuitarStart.fxml", id, dreamGuitarBean);
 
         } catch (Exception e) {
             throw new RuntimeException(e);

@@ -2,7 +2,6 @@ package org.example.ispwprogect.model.decorator.color;
 
 import org.example.ispwprogect.model.decorator.Component;
 import org.example.ispwprogect.model.decorator.Decorator;
-import org.example.ispwprogect.utils.bean.ColorBean;
 import org.example.ispwprogect.utils.enumeration.Color;
 
 public class ColorDecorator extends Decorator {

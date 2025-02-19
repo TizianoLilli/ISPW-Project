@@ -1,9 +1,7 @@
 package org.example.ispwprogect.control.graphic;
 
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
-import javafx.scene.Parent;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
@@ -15,9 +13,6 @@ import org.example.ispwprogect.control.application.BuyDreamGuitarApplicationCont
 import org.example.ispwprogect.control.graphic.buyDreamGuitar.BuyDreamGuitarControllerStart;
 import org.example.ispwprogect.utils.bean.DreamGuitarBean;
 import javafx.event.ActionEvent;
-import org.example.ispwprogect.utils.bean.RecommendedGuitarBean;
-
-import java.io.IOException;
 
 public class HomePageController extends GraphicController {
 
@@ -25,7 +20,7 @@ public class HomePageController extends GraphicController {
     private ImageView bannerImage;
 
     @Override
-    public void init(int id, DreamGuitarBean dreamGuitarBean, RecommendedGuitarBean recommendedGuitarBean){
+    public void init(int id, DreamGuitarBean dreamGuitarBean){
 
         // Carica l'immagine e impostala nell'ImageView
         Image banner = new Image("file:main/java/org/example/ispwprogect/images/banner.jpg");
@@ -51,7 +46,7 @@ public class HomePageController extends GraphicController {
         Stage currentStage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         ChangePage istanza = ChangePage.getChangePage();
         istanza.setStage(currentStage);
-        istanza.change("view/buyDreamGuitar/buyDreamGuitarStart.fxml", id, dreamGuitarBean, null);
+        istanza.change("view/buyDreamGuitar/buyDreamGuitarStart.fxml", id, dreamGuitarBean);
 
     }
 

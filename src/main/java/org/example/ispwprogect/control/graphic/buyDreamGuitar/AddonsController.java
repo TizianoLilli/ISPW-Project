@@ -12,7 +12,6 @@ import org.example.ispwprogect.control.application.BuyDreamGuitarApplicationCont
 import org.example.ispwprogect.control.graphic.GraphicController;
 import org.example.ispwprogect.utils.bean.AddonsBean;
 import org.example.ispwprogect.utils.bean.DreamGuitarBean;
-import org.example.ispwprogect.utils.bean.RecommendedGuitarBean;
 import org.example.ispwprogect.utils.enumeration.Sticker;
 
 import java.util.HashMap;
@@ -79,7 +78,7 @@ public class AddonsController extends GraphicController {
     private int id;
 
     @Override
-    public void init(int sessionId, DreamGuitarBean dreamGuitarBean, RecommendedGuitarBean recommendedGuitarBean) {
+    public void init(int sessionId, DreamGuitarBean dreamGuitarBean) {
         controller = new BuyDreamGuitarApplicationController();
         this.dreamGuitarBean = dreamGuitarBean;
         this.id = id;
@@ -87,7 +86,6 @@ public class AddonsController extends GraphicController {
         extraPrice.setText("Extra Price: " + dreamGuitarBean.getPrice() + "$");
 
         for (Sticker s : Sticker.values()) {
-            System.out.println(s.name());
             updateStickers(s.name(), 0);
         }
 
@@ -187,6 +185,10 @@ public class AddonsController extends GraphicController {
     }
 
     public void handleBackClick(ActionEvent event) {
+        Stage currentStage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        ChangePage istanza = ChangePage.getChangePage();
+        istanza.setStage(currentStage);
+        istanza.change("view/buyDreamGuitar/buyDreamGuitarStart.fxml", id, dreamGuitarBean);
     }
 
     @FXML
@@ -208,10 +210,12 @@ public class AddonsController extends GraphicController {
         Session session = manager.getSessionFromId(id);
         String uid = session.getUserId();
 
+//        controller.saveAddons(dreamGuitarBean);
+
         Stage currentStage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         ChangePage istanza = ChangePage.getChangePage();
         istanza.setStage(currentStage);
-        istanza.change("view/buyDreamGuitar/toLuthier.fxml", id, dreamGuitarBean, null);
+        istanza.change("view/buyDreamGuitar/toLuthier.fxml", id, dreamGuitarBean);
     }
 
 }

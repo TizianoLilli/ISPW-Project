@@ -11,12 +11,11 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.text.TextAlignment;
 import org.example.ispwprogect.control.graphic.GraphicController;
 import org.example.ispwprogect.utils.bean.DreamGuitarBean;
-import org.example.ispwprogect.utils.bean.RecommendedGuitarBean;
 
 public class ToLuthierController extends GraphicController {
 
     @Override
-    public void init(int sessionId, DreamGuitarBean dreamGuitarBean, RecommendedGuitarBean recommendedGuitarBean) {
+    public void init(int sessionId, DreamGuitarBean dreamGuitarBean) {
 
     }
 

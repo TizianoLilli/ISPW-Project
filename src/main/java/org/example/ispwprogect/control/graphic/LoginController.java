@@ -26,7 +26,7 @@ public class LoginController extends GraphicController{
     private int sessionId = -1;
 
     @Override
-    public void init(int sessionId, DreamGuitarBean dreamGuitarBean, RecommendedGuitarBean recommendedGuitarBean) {
+    public void init(int sessionId, DreamGuitarBean dreamGuitarBean) {
         this.sessionId = sessionId;
     }
 
@@ -50,7 +50,7 @@ public class LoginController extends GraphicController{
             Stage currentStage = (Stage) ((Node)event.getSource()).getScene().getWindow();
             ChangePage istanza = ChangePage.getChangePage();
             istanza.setStage(currentStage);
-            istanza.change("view/homePage.fxml", sessionId, null, null);
+            istanza.change("view/homePage.fxml", sessionId, null);
 
         } else {errorLabel.setText("Invalid username or password.");}
 
@@ -61,7 +61,7 @@ public class LoginController extends GraphicController{
         Stage currentStage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         ChangePage istanza = ChangePage.getChangePage();
         istanza.setStage(currentStage);
-        istanza.change("view/homePage.fxml", sessionId, null, null);
+        istanza.change("view/homePage.fxml", sessionId, null);
     }
 
 }
