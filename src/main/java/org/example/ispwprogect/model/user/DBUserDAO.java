@@ -84,11 +84,23 @@ public class DBUserDAO implements UserDAO {
         String query = "UPDATE users SET dream_guitar_id = ? WHERE username = ?";
         try (Connection connection = ConnectionDB.getConnection();
              PreparedStatement statement = connection.prepareStatement(query)) {
+            deleteGuitar(userM);
             statement.setInt(1, guitarId);
             statement.setString(2, userM.username());
             statement.executeUpdate();
         } catch (SQLException e) {
             throw new SystemException("Errore durante l'aggiornamento dell'utente nel database");
+        }
+    }
+
+    private void deleteGuitar(User userM) throws SystemException {
+        String query = "UPDATE users SET dream_guitar_id = NULL WHERE username = ?";
+        try (Connection connection = ConnectionDB.getConnection();
+             PreparedStatement statement = connection.prepareStatement(query)) {
+            statement.setString(1, userM.username());
+            statement.executeUpdate();
+        } catch (SQLException e) {
+            throw new SystemException("Errore durante la rimozione della chitarra dei sogni dell'utente nel database");
         }
     }
 

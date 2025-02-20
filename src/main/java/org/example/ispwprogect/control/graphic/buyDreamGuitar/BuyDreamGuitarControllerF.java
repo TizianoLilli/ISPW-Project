@@ -7,6 +7,7 @@ import javafx.scene.control.RadioButton;
 import org.example.ispwprogect.ChangePage;
 import org.example.ispwprogect.control.application.BuyDreamGuitarApplicationController;
 import org.example.ispwprogect.control.graphic.GraphicController;
+import org.example.ispwprogect.utils.bean.AddComponentBean;
 import org.example.ispwprogect.utils.bean.DreamGuitarBean;
 import org.example.ispwprogect.utils.enumeration.components.FretboardType;
 
@@ -62,7 +63,8 @@ public class BuyDreamGuitarControllerF extends GraphicController {
                 alternative = FretboardType.EBONY;
             }
 
-            controller.addComponent(dreamGuitarBean, "fretboard", alternative);
+            AddComponentBean addComponentBean = new AddComponentBean("fretboard", alternative);
+            controller.addComponent(dreamGuitarBean, addComponentBean);
 
             ChangePage istanza = ChangePage.getChangePage();
             istanza.change("view/buyDreamGuitar/buyDreamGuitarStart.fxml", id, dreamGuitarBean);

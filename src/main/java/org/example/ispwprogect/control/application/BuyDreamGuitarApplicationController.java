@@ -9,8 +9,10 @@ import org.example.ispwprogect.model.decorator.sticker.StickerDAO;
 import org.example.ispwprogect.model.decorator.sticker.StickerDecorator;
 import org.example.ispwprogect.model.user.User;
 import org.example.ispwprogect.model.user.UserDAO;
+import org.example.ispwprogect.utils.bean.AddComponentBean;
 import org.example.ispwprogect.utils.bean.AddonsBean;
 import org.example.ispwprogect.utils.bean.DreamGuitarBean;
+import org.example.ispwprogect.utils.bean.SaveOrRecoverBean;
 import org.example.ispwprogect.utils.dao.DAOFactory;
 import org.example.ispwprogect.utils.enumeration.Color;
 import org.example.ispwprogect.utils.enumeration.components.GenericType;
@@ -40,17 +42,20 @@ public class BuyDreamGuitarApplicationController {
         return new DreamGuitarBean();
     }
 
-    public void addComponent(DreamGuitarBean guitar, String componentKey, GenericType alternative){
+    public void addComponent(DreamGuitarBean guitar, AddComponentBean a){
+
+        String component = a.getComponentKey();
+        GenericType alternative = a.getAlternative();
 
         if (alternative != null) {
             // tolgo il prezzo della vecchia alternativa (se presente)
-            GenericType oldComponent = guitar.getComponent(componentKey);
+            GenericType oldComponent = guitar.getComponent(component);
             if (oldComponent != null) {
                 guitar.setPrice(guitar.getPrice() - oldComponent.price());
             }
 
             // aggiungo la nuova alternativa e aggiorno il prezzo
-            guitar.setComponent(componentKey, alternative);
+            guitar.setComponent(component, alternative);
             guitar.setPrice(guitar.getPrice() + alternative.price());
         }
     }
@@ -89,7 +94,9 @@ public class BuyDreamGuitarApplicationController {
         return fullGuitar.price();
     }
 
-    public boolean saveDreamGuitar(DreamGuitarBean guitarB, String uid){
+    public boolean saveDreamGuitar(DreamGuitarBean guitarB, SaveOrRecoverBean dataB){
+
+        String uid = dataB.getUserId();
 
         if (!guitarB.isFull()) {
             System.out.println("Please, select all the components!");
@@ -120,8 +127,9 @@ public class BuyDreamGuitarApplicationController {
     }
 
     // per verificare se un utente ha una chitarra associata
-    public boolean checkGuitar(String id){
+    public boolean checkGuitar(SaveOrRecoverBean dataB){
         User userM = null;
+        String id = dataB.getUserId();
         try {
             userM = userDAO.read(id);
         } catch (org.example.ispwprogect.utils.exception.SystemException e) {
@@ -131,8 +139,9 @@ public class BuyDreamGuitarApplicationController {
         return guitarM != null;
     }
 
-    public DreamGuitarBean recoverDreamGuitar(String uid) {
+    public DreamGuitarBean recoverDreamGuitar(SaveOrRecoverBean dataB) {
         User userM = null;
+        String uid = dataB.getUserId();
         try {
             userM = userDAO.read(uid);
         } catch (org.example.ispwprogect.utils.exception.SystemException e) {

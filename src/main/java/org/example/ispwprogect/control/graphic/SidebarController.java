@@ -12,7 +12,9 @@ import org.example.ispwprogect.SessionManager;
 import org.example.ispwprogect.control.application.BuyDreamGuitarApplicationController;
 import org.example.ispwprogect.control.application.LoginApplicationController;
 import org.example.ispwprogect.control.graphic.buyDreamGuitar.BuyDreamGuitarControllerStart;
+import org.example.ispwprogect.utils.bean.CheckRoleBean;
 import org.example.ispwprogect.utils.bean.DreamGuitarBean;
+import org.example.ispwprogect.utils.bean.SaveOrRecoverBean;
 import org.example.ispwprogect.utils.enumeration.Role;
 
 public class SidebarController{
@@ -66,23 +68,26 @@ public class SidebarController{
 
         LoginApplicationController loginController = new LoginApplicationController();
         // è necessario il ruolo PREMIUM per questa funzionalità
-        if (session == null || (!loginController.checkRole(session.getUserId(), Role.PREMIUM))){
-            Stage currentStage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-            ChangePage istanza = ChangePage.getChangePage();
-            istanza.setStage(currentStage);
-            istanza.change("view/login.fxml", id, null);
+        if (session != null) {
+            CheckRoleBean checkBean = new CheckRoleBean(session.getUserId(), Role.PREMIUM);
+            if (loginController.checkRole(checkBean)){
+                BuyDreamGuitarApplicationController controller = new BuyDreamGuitarApplicationController();
+                DreamGuitarBean dreamGuitarBean = controller.newDreamGuitar();
+
+                SaveOrRecoverBean dataBean = new SaveOrRecoverBean(session.getUserId());
+                boolean value = controller.checkGuitar(dataBean);
+                BuyDreamGuitarControllerStart.setToRecover(value);
+
+                Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                ChangePage istanza = ChangePage.getChangePage();
+                istanza.setStage(currentStage);
+                istanza.change("view/buyDreamGuitar/buyDreamGuitarStart.fxml", id, dreamGuitarBean);
+            }
         } else {
-
-            BuyDreamGuitarApplicationController controller = new BuyDreamGuitarApplicationController();
-            DreamGuitarBean dreamGuitarBean = controller.newDreamGuitar();
-
-            boolean value = controller.checkGuitar(session.getUserId());
-            BuyDreamGuitarControllerStart.setToRecover(value);
-
             Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             ChangePage istanza = ChangePage.getChangePage();
             istanza.setStage(currentStage);
-            istanza.change("view/buyDreamGuitar/buyDreamGuitarStart.fxml", id, dreamGuitarBean);
+            istanza.change("view/login.fxml", id, null);
         }
     }
 

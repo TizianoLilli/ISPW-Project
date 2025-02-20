@@ -16,6 +16,7 @@ import org.example.ispwprogect.SessionManager;
 import org.example.ispwprogect.control.application.BuyDreamGuitarApplicationController;
 import org.example.ispwprogect.control.graphic.GraphicController;
 import org.example.ispwprogect.utils.bean.DreamGuitarBean;
+import org.example.ispwprogect.utils.bean.SaveOrRecoverBean;
 import org.example.ispwprogect.utils.enumeration.components.*;
 
 public class BuyDreamGuitarControllerStart extends GraphicController {
@@ -162,7 +163,9 @@ public class BuyDreamGuitarControllerStart extends GraphicController {
         Session session = manager.getSessionFromId(id);
         String uid = session.getUserId();
 
-        if (!controller.saveDreamGuitar(dreamGuitarBean, uid)){
+        SaveOrRecoverBean dataBean = new SaveOrRecoverBean(uid);
+
+        if (!controller.saveDreamGuitar(dreamGuitarBean, dataBean)){
             System.out.println("save failed");
             return;
         } else {
@@ -193,7 +196,9 @@ public class BuyDreamGuitarControllerStart extends GraphicController {
         Session session = manager.getSessionFromId(id);
         String uid = session.getUserId();
 
-        DreamGuitarBean oldGuitar = controller.recoverDreamGuitar(uid);
+        SaveOrRecoverBean dataBean = new SaveOrRecoverBean(uid);
+
+        DreamGuitarBean oldGuitar = controller.recoverDreamGuitar(dataBean);
         if (oldGuitar != null) {
             init(id, oldGuitar);
         } else {System.out.println("guitar not found");}

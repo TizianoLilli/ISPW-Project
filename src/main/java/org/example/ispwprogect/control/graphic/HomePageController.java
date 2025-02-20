@@ -13,6 +13,7 @@ import org.example.ispwprogect.control.application.BuyDreamGuitarApplicationCont
 import org.example.ispwprogect.control.graphic.buyDreamGuitar.BuyDreamGuitarControllerStart;
 import org.example.ispwprogect.utils.bean.DreamGuitarBean;
 import javafx.event.ActionEvent;
+import org.example.ispwprogect.utils.bean.SaveOrRecoverBean;
 
 public class HomePageController extends GraphicController {
 
@@ -40,7 +41,8 @@ public class HomePageController extends GraphicController {
         SessionManager manager = SessionManager.getSessionManager();
         Session session = manager.getSessionFromId(id);
 
-        boolean value = controller.checkGuitar(session.getUserId());
+        SaveOrRecoverBean dataBean = new SaveOrRecoverBean(session.getUserId());
+        boolean value = controller.checkGuitar(dataBean);
         BuyDreamGuitarControllerStart.setToRecover(value);
 
         Stage currentStage = (Stage) ((Node)event.getSource()).getScene().getWindow();

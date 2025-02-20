@@ -4,6 +4,8 @@ import org.example.ispwprogect.Session;
 import org.example.ispwprogect.SessionManager;
 import org.example.ispwprogect.model.user.User;
 import org.example.ispwprogect.model.user.UserDAO;
+import org.example.ispwprogect.utils.bean.CheckRoleBean;
+import org.example.ispwprogect.utils.bean.CredentialBean;
 import org.example.ispwprogect.utils.bean.UserBean;
 import org.example.ispwprogect.utils.dao.DAOFactory;
 import org.example.ispwprogect.utils.enumeration.Role;
@@ -30,9 +32,12 @@ public class LoginApplicationController {
 
     }
 
-    public int login(String username, String password) {
+    public int login(CredentialBean credB) {
         // entro con le credenziali di un utente preimpostato
         User userM = null;
+
+        String username = credB.getUsername();
+        String password = credB.getPassword();
         try {
             userM = userD.read(username);
         } catch (org.example.ispwprogect.utils.exception.SystemException e) {
@@ -48,8 +53,11 @@ public class LoginApplicationController {
         return -1;
     }
 
-    public boolean checkRole(String uid, Role role) {
+    public boolean checkRole(CheckRoleBean roleB) {
         User userM = null;
+
+        String uid = roleB.getUid();
+        Role role = roleB.getRole();
         try {
             userM = userD.read(uid);
         } catch (org.example.ispwprogect.utils.exception.SystemException e) {

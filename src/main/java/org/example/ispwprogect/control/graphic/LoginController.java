@@ -43,7 +43,8 @@ public class LoginController extends GraphicController{
         String password = passwordField.getText();
 
         LoginApplicationController controller = new LoginApplicationController();
-        sessionId = controller.login(username, password);
+        CredentialBean credential = new CredentialBean(username, password);
+        sessionId = controller.login(credential);
         if (sessionId != -1) {
             // fai qualcosa
 
