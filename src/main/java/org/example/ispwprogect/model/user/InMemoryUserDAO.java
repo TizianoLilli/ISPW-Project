@@ -1,6 +1,7 @@
 package org.example.ispwprogect.model.user;
 
 import org.example.ispwprogect.model.decorator.dreamguitar.InMemoryDreamGuitarDAO;
+import org.example.ispwprogect.utils.exception.SystemException;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -24,13 +25,13 @@ public class InMemoryUserDAO implements UserDAO {
 
     // funziona anche come update
     @Override
-    public void create(User userM) {
+    public void create(User userM) throws SystemException {
         usersList.add(userM);
     }
 
     // mantengo il rifermento alla dao account: accedo per indirizzo (non valore) allo username
     @Override
-    public User read(String userId){
+    public User read(String userId) throws SystemException {
         for (User u : usersList) {
             if (u.username().equals(userId)) {
                 return u;
@@ -39,14 +40,14 @@ public class InMemoryUserDAO implements UserDAO {
         return null;
     }
 
-    @Override
-    public Collection<User> readAll() {
-        return usersList;
-    }
+//    @Override
+//    public Collection<User> readAll() throws SystemException {
+//        return usersList;
+//    }
 
     // aggiorno l'utente aggiungendo una dream guitar
     @Override
-    public void update(User userM, int guitarId){
+    public void update(User userM, int guitarId) throws SystemException {
         delete(userM.username());
         // user dao interagisce con la dao della chitarra
         userM.setDreamGuitar(InMemoryDreamGuitarDAO.getInstance().read(guitarId));
@@ -54,8 +55,12 @@ public class InMemoryUserDAO implements UserDAO {
     }
 
     @Override
-    public void delete(String userId) {
-        usersList.remove(read(userId));
+    public void delete(String userId) throws SystemException {
+        try {
+            usersList.remove(read(userId));
+        } catch (SystemException e) {
+            throw new RuntimeException(e);
+        }
     }
 
 }

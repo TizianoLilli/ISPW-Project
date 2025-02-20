@@ -30,6 +30,12 @@ public class DreamGuitar extends Component {
                 this.all = new HashMap<>(guitar.getAllComponents());
         }
 
+        public DreamGuitar(double price, int id, Map<String, GenericType> all){
+                this.totalPrice = price;
+                this.id = id;
+                this.all = all;
+        }
+
         @Override
         public double price(){
                 return this.totalPrice;

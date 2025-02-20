@@ -25,6 +25,14 @@ public class User {
         this.address = user.getAddress();
     }
 
+    public User(String username, String password, Role role, String email, String address){
+        this.username = username;
+        this.password = password;
+        this.role = role;
+        this.email = email;
+        this.address = address;
+    }
+
     public DreamGuitar dreamGuitar() {return guitar;}
     public void setDreamGuitar(DreamGuitar d) {this.guitar = d;}
 

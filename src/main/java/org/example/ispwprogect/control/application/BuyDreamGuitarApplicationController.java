@@ -89,18 +89,6 @@ public class BuyDreamGuitarApplicationController {
         return fullGuitar.price();
     }
 
-//    public void saveAddons(DreamGuitarBean guitarB){
-//        DreamGuitar guitarM = new DreamGuitar(guitarB);
-//        for (String key : stickers.keySet()) {
-//            Integer value = stickers.get(key);
-//            for (int i=0; i < value; i++) {
-//                StickerDecorator stickerM = new StickerDecorator(guitarM, key);
-//                stickerDAO.create(value);
-//            }
-//        }
-//
-//    }
-
     public boolean saveDreamGuitar(DreamGuitarBean guitarB, String uid){
 
         if (!guitarB.isFull()) {
@@ -108,23 +96,48 @@ public class BuyDreamGuitarApplicationController {
             return false;
         }
 
+        System.out.println(guitarB.getId());
         DreamGuitar guitarM = new DreamGuitar(guitarB);
-        dreamGuitarDAO.create(guitarM);
-        User userM = userDAO.read(uid);
-        userDAO.update(userM, guitarM.id());
+        try {
+            System.out.println(guitarM.id());
+            dreamGuitarDAO.create(guitarM);
+        } catch (org.example.ispwprogect.utils.exception.SystemException e) {
+            throw new RuntimeException(e);
+        }
+        User userM = null;
+        try {
+            userM = userDAO.read(uid);
+        } catch (org.example.ispwprogect.utils.exception.SystemException e) {
+            throw new RuntimeException(e);
+        }
+        try {
+            userDAO.update(userM, guitarM.id());
+        } catch (org.example.ispwprogect.utils.exception.SystemException e) {
+            throw new RuntimeException(e);
+        }
 
         return true;
     }
 
     // per verificare se un utente ha una chitarra associata
     public boolean checkGuitar(String id){
-        User userM = userDAO.read(id);
+        User userM = null;
+        try {
+            userM = userDAO.read(id);
+        } catch (org.example.ispwprogect.utils.exception.SystemException e) {
+            throw new RuntimeException(e);
+        }
         DreamGuitar guitarM = userM.dreamGuitar();
         return guitarM != null;
     }
 
     public DreamGuitarBean recoverDreamGuitar(String uid) {
-        User userM = userDAO.read(uid);
+        User userM = null;
+        try {
+            userM = userDAO.read(uid);
+        } catch (org.example.ispwprogect.utils.exception.SystemException e) {
+            throw new RuntimeException(e);
+        }
         DreamGuitar guitarM = userM.dreamGuitar();
         if (guitarM != null) {
             // la devo passare al controller grafico

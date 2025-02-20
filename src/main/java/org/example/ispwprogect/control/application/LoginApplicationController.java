@@ -22,13 +22,22 @@ public class LoginApplicationController {
 
         // registro gli utenti fittizzi
         User userM = new User(userB);
-        userD.create(userM);
+        try {
+            userD.create(userM);
+        } catch (org.example.ispwprogect.utils.exception.SystemException e) {
+            throw new RuntimeException(e);
+        }
 
     }
 
     public int login(String username, String password) {
         // entro con le credenziali di un utente preimpostato
-        User userM = userD.read(username);
+        User userM = null;
+        try {
+            userM = userD.read(username);
+        } catch (org.example.ispwprogect.utils.exception.SystemException e) {
+            throw new RuntimeException(e);
+        }
         if (userM != null && userM.username().equals(username) && userM.password().equals(password)) {
             SessionManager manager = SessionManager.getSessionManager();
             // il controller passa dati all'esterno sotto forma di bean
@@ -40,7 +49,12 @@ public class LoginApplicationController {
     }
 
     public boolean checkRole(String uid, Role role) {
-        User userM = userD.read(uid);
+        User userM = null;
+        try {
+            userM = userD.read(uid);
+        } catch (org.example.ispwprogect.utils.exception.SystemException e) {
+            throw new RuntimeException(e);
+        }
         if (role != userM.role()){
             return false;
         } else {return true;}

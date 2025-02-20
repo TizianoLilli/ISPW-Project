@@ -38,7 +38,7 @@ public class SessionManager {
     }
 
     public int getCurrentId() {return nextId;}
-    public int curGuitarId() {return guitarId++;}
+    public int curGuitarId() {return ++guitarId;}
     public void addSession(Session session) {activeSessions.add(session);}
     public void removeSession(int id) {activeSessions.removeIf(session -> session.getSessionId() == id);}
 }
