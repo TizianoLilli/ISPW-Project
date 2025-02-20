@@ -19,8 +19,6 @@ public abstract class DAOFactory {
     public abstract DreamGuitarDAO getDreamGuitarDAO();
     public abstract ColorDAO getColorDAO();
     public abstract StickerDAO getStickerDAO();
-//    public abstract NoticeboardDAO getNoticeboardDAO();
-//    public abstract LuthierDAO getLuthierDAO();
     public abstract UserDAO getUserDAO();
 
     public static DAOFactory getInstance() throws NoPersistenceProviderException {

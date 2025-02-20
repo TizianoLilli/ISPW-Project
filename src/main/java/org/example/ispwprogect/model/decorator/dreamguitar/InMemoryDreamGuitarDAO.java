@@ -33,22 +33,11 @@ public class InMemoryDreamGuitarDAO implements DreamGuitarDAO {
     public DreamGuitar read(int guitarId) throws SystemException {
         for (DreamGuitar g : dreamGuitars) {
             if (g.id() == guitarId) {
-
-//                Collection<ColorDecorator> selectedColor = InMemoryColorDAO.getIstance().read(guitarId);
-//                for (ColorDecorator c : selectedColor) {
-//                    // DA FINIRE
-//                }
                 return g;
             }
         }
         return null;
     }
-
-//    @Override
-//    public void update(DreamGuitar guitarM, ColorDecorator colorDecoratorM) throws SystemException {
-//        // user dao interagisce con la dao dei decorator
-//        InMemoryColorDAO.getIstance().create(colorDecoratorM);
-//    }
 
     @Override
     public void delete(int guitarId) throws SystemException {

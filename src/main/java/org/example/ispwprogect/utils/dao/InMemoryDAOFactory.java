@@ -20,12 +20,6 @@ public class InMemoryDAOFactory extends DAOFactory {
     @Override
     public StickerDAO getStickerDAO(){return InMemoryStickerDAO.getIstance();}
 
-//    @Override
-//    public NoticeboardDAO getNoticeboardDAO(){return InMemoryNoticeboardDAO.getIstance();}
-
-//    @Override
-//    public LuthierDAO getLuthierDAO(){return InMemoryLuthierDAO.getIstance();}
-
     @Override
     public UserDAO getUserDAO(){return InMemoryUserDAO.getIstance();}
 

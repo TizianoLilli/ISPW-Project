@@ -6,6 +6,7 @@ import org.example.ispwprogect.model.decorator.dreamguitar.DreamGuitarDAO;
 import org.example.ispwprogect.model.decorator.dreamguitar.InMemoryDreamGuitarDAO;
 import org.example.ispwprogect.model.decorator.sticker.InMemoryStickerDAO;
 import org.example.ispwprogect.model.decorator.sticker.StickerDAO;
+import org.example.ispwprogect.model.user.FSUserDAO;
 import org.example.ispwprogect.model.user.InMemoryUserDAO;
 import org.example.ispwprogect.model.user.UserDAO;
 
@@ -21,13 +22,7 @@ public class FSDAOFactory extends DAOFactory {
     @Override
     public StickerDAO getStickerDAO(){return InMemoryStickerDAO.getIstance();}
 
-//    @Override
-//    public NoticeboardDAO getNoticeboardDAO(){}
-
-//    @Override
-//    public LuthierDAO getLuthierDAO(){}
-
     @Override
-    public UserDAO getUserDAO(){return InMemoryUserDAO.getIstance();}
+    public UserDAO getUserDAO(){return new FSUserDAO();}
 
 }

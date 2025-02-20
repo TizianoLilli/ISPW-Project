@@ -23,12 +23,6 @@ public class DBDAOFactory extends DAOFactory {
     @Override
     public StickerDAO getStickerDAO(){return InMemoryStickerDAO.getIstance();}
 
-//    @Override
-//    public NoticeboardDAO getNoticeboardDAO(){}
-//
-//    @Override
-//    public LuthierDAO getLuthierDAO(){}
-
     @Override
     public UserDAO getUserDAO(){return new DBUserDAO();}
 

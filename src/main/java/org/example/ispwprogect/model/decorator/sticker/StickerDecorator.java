@@ -6,7 +6,7 @@ import org.example.ispwprogect.model.decorator.Decorator;
 public class StickerDecorator extends Decorator {
 
     // private immagine : GESTISCILE SUCCESSIVAMENTE
-//    private double[] stickerSize = new double[2];
+    private double[] stickerSize = new double[2];
     private String sticker;
 
     //solitamente passo al costruttore dei ConcreteDecorator la dream guitar
@@ -24,10 +24,10 @@ public class StickerDecorator extends Decorator {
     }
 
     // DA IMPLEMENTARE ANCORA
-//    public void defineStickerSize(double width, double height) {
-//        this.stickerSize[0] = width;
-//        this.stickerSize[1] = height;
-//    }
+    public void defineStickerSize(double width, double height) {
+        this.stickerSize[0] = width;
+        this.stickerSize[1] = height;
+    }
 
     @Override
     public double price() {

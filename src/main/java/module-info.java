@@ -11,4 +11,10 @@ module org.example.ispwprogect {
     opens org.example.ispwprogect.control.graphic to javafx.fxml;
     exports org.example.ispwprogect.control.graphic.buyDreamGuitar;
     opens org.example.ispwprogect.control.graphic.buyDreamGuitar to javafx.fxml;
+    exports org.example.ispwprogect.model.decorator.dreamguitar;
+    exports org.example.ispwprogect.model.decorator.sticker;
+    exports org.example.ispwprogect.model.decorator.color;
+    exports org.example.ispwprogect.utils.enumeration;
+    exports org.example.ispwprogect.utils.db;
+    exports org.example.ispwprogect.utils.exception;
 }

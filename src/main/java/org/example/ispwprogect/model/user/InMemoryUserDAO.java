@@ -40,11 +40,6 @@ public class InMemoryUserDAO implements UserDAO {
         return null;
     }
 
-//    @Override
-//    public Collection<User> readAll() throws SystemException {
-//        return usersList;
-//    }
-
     // aggiorno l'utente aggiungendo una dream guitar
     @Override
     public void update(User userM, int guitarId) throws SystemException {

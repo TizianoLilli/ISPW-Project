@@ -74,11 +74,6 @@ public class DBUserDAO implements UserDAO {
         }
     }
 
-//    @Override
-//    public Collection<User> readAll() throws SystemException {
-//        return List.of();
-//    }
-
     @Override
     public void update(User userM, int guitarId) throws SystemException {
         String query = "UPDATE users SET dream_guitar_id = ? WHERE username = ?";

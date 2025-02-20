@@ -10,10 +10,6 @@ public interface DreamGuitarDAO {
 
     DreamGuitar read(int guitarId) throws SystemException;
 
-//    public void update(DreamGuitar guitar, ColorDecorator colorDecorator) throws SystemException;
-
-//    public void retrieve();
-
     public void delete(int guitarId) throws SystemException;
 
 }

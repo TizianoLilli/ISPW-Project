@@ -13,15 +13,9 @@ public class DreamGuitar extends Component {
         private int id;
 
         private Map<String, GenericType> all = new HashMap<>();
-//        private String[] components;
-//        private String[] infos;
-//        private boolean[] alternatives;
 
-        public DreamGuitar(){
-                this.totalPrice = 0.0;
-//                this.components = new String[6];
-//                this.infos = new String[6];
-//                this.alternatives = new boolean[6];
+        public DreamGuitar(double price){
+                this.totalPrice = price;
         }
 
         public DreamGuitar(DreamGuitarBean guitar){
