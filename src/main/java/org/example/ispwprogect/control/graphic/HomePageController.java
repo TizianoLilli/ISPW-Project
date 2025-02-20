@@ -14,6 +14,11 @@ import org.example.ispwprogect.control.graphic.buyDreamGuitar.BuyDreamGuitarCont
 import org.example.ispwprogect.utils.bean.DreamGuitarBean;
 import javafx.event.ActionEvent;
 import org.example.ispwprogect.utils.bean.SaveOrRecoverBean;
+import org.example.ispwprogect.utils.exception.SystemException;
+
+import javax.security.auth.login.LoginException;
+import java.io.IOException;
+import java.sql.SQLException;
 
 public class HomePageController extends GraphicController {
 
@@ -21,7 +26,7 @@ public class HomePageController extends GraphicController {
     private ImageView bannerImage;
 
     @Override
-    public void init(int id, DreamGuitarBean dreamGuitarBean){
+    public void init(int id, DreamGuitarBean dreamGuitarBean) throws SystemException, IOException, LoginException, SQLException {
 
         // Carica l'immagine e impostala nell'ImageView
         Image banner = new Image("file:main/java/org/example/ispwprogect/images/banner.jpg");

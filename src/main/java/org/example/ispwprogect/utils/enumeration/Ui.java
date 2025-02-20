@@ -1,7 +1,7 @@
 package org.example.ispwprogect.utils.enumeration;
 
 public enum Ui {
-    NONE(-1), GUI(1), CLI(0);
+    NONE(-1), GUI(1), CLI(2);
 
     private final int value;
 

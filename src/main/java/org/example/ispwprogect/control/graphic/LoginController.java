@@ -11,6 +11,11 @@ import org.example.ispwprogect.ChangePage;
 import org.example.ispwprogect.control.application.LoginApplicationController;
 import org.example.ispwprogect.utils.bean.*;
 import org.example.ispwprogect.utils.enumeration.Role;
+import org.example.ispwprogect.utils.exception.SystemException;
+
+import javax.security.auth.login.LoginException;
+import java.io.IOException;
+import java.sql.SQLException;
 
 public class LoginController extends GraphicController{
 
@@ -26,7 +31,7 @@ public class LoginController extends GraphicController{
     private int sessionId = -1;
 
     @Override
-    public void init(int sessionId, DreamGuitarBean dreamGuitarBean) {
+    public void init(int sessionId, DreamGuitarBean dreamGuitarBean) throws SystemException, IOException, LoginException, SQLException {
         this.sessionId = sessionId;
     }
 

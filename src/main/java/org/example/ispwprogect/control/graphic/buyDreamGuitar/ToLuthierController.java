@@ -11,11 +11,16 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.text.TextAlignment;
 import org.example.ispwprogect.control.graphic.GraphicController;
 import org.example.ispwprogect.utils.bean.DreamGuitarBean;
+import org.example.ispwprogect.utils.exception.SystemException;
+
+import javax.security.auth.login.LoginException;
+import java.io.IOException;
+import java.sql.SQLException;
 
 public class ToLuthierController extends GraphicController {
 
     @Override
-    public void init(int sessionId, DreamGuitarBean dreamGuitarBean) {
+    public void init(int sessionId, DreamGuitarBean dreamGuitarBean) throws SystemException, IOException, LoginException, SQLException {
 
     }
 

@@ -8,13 +8,14 @@ import javafx.stage.Stage;
 
 import javafx.scene.image.Image;
 import org.example.ispwprogect.control.graphic.LoginController;
-import org.example.ispwprogect.utils.enumeration.PersistenceProvider;
 import org.example.ispwprogect.utils.enumeration.Role;
-import org.example.ispwprogect.utils.enumeration.Ui;
-import org.example.ispwprogect.view.CliController;
+import org.example.ispwprogect.utils.exception.SystemException;
+import org.example.ispwprogect.view.cli.CliHome;
+import org.example.ispwprogect.view.cli.CliLogin;
 
+import javax.security.auth.login.LoginException;
 import java.io.IOException;
-import java.util.Scanner;
+import java.sql.SQLException;
 
 public class MyGuitar extends Application {
 
@@ -32,7 +33,7 @@ public class MyGuitar extends Application {
         primaryStage.show();
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SystemException, SQLException, LoginException, IOException {
 
         Config conf = new Config();
 
@@ -41,7 +42,13 @@ public class MyGuitar extends Application {
 
         switch (conf.setUI()){
             case CLI:
-                new CliController();
+                // inizializzo degli utenti fittizzi
+                CliLogin account = new CliLogin();
+                account.register("ciccio123", "2025a", Role.BASE, "fra@gmail.com", "via del campo 22");
+                account.register("clau456", "1000b", Role.PREMIUM, "cla@gmail.com", "via del campo 11");
+                account.register("a", "a", Role.PREMIUM, "a@gmail.com", "via a 11");
+
+                new CliHome().init(-1, null);
                 break;
             case GUI:
                 // inizializzo degli utenti fittizzi

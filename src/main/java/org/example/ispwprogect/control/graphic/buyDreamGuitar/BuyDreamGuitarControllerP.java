@@ -10,6 +10,11 @@ import org.example.ispwprogect.control.graphic.GraphicController;
 import org.example.ispwprogect.utils.bean.AddComponentBean;
 import org.example.ispwprogect.utils.bean.DreamGuitarBean;
 import org.example.ispwprogect.utils.enumeration.components.PickupType;
+import org.example.ispwprogect.utils.exception.SystemException;
+
+import javax.security.auth.login.LoginException;
+import java.io.IOException;
+import java.sql.SQLException;
 
 public class BuyDreamGuitarControllerP extends GraphicController {
 
@@ -19,7 +24,7 @@ public class BuyDreamGuitarControllerP extends GraphicController {
     private int id;
 
     @Override
-    public void init(int id, DreamGuitarBean dreamGuitarBean) {
+    public void init(int id, DreamGuitarBean dreamGuitarBean) throws SystemException, IOException, LoginException, SQLException {
 
         controller = new BuyDreamGuitarApplicationController();
         this.dreamGuitarBean = dreamGuitarBean;

@@ -34,7 +34,17 @@ public class ChangePage {
         //alla quale in base al pagina caricata associo l'istanza di uno dei controller grafici figli
         //l'operazione inizializza quindi avrà comportamenti diversi in base all'istanza
         GraphicController controller = loader.getController();
-        controller.init(id, dreamGuitarBean);
+        try {
+            controller.init(id, dreamGuitarBean);
+        } catch (org.example.ispwprogect.utils.exception.SystemException e) {
+            throw new RuntimeException(e);
+        } catch (java.io.IOException e) {
+            throw new RuntimeException(e);
+        } catch (javax.security.auth.login.LoginException e) {
+            throw new RuntimeException(e);
+        } catch (java.sql.SQLException throwables) {
+            throw new RuntimeException(throwables);
+        }
         this.stage.setScene(newScene);
         this.stage.show();
 

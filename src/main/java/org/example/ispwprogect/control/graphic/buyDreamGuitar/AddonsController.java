@@ -13,7 +13,11 @@ import org.example.ispwprogect.control.graphic.GraphicController;
 import org.example.ispwprogect.utils.bean.AddonsBean;
 import org.example.ispwprogect.utils.bean.DreamGuitarBean;
 import org.example.ispwprogect.utils.enumeration.Sticker;
+import org.example.ispwprogect.utils.exception.SystemException;
 
+import javax.security.auth.login.LoginException;
+import java.io.IOException;
+import java.sql.SQLException;
 import java.util.HashMap;
 
 public class AddonsController extends GraphicController {
@@ -78,7 +82,7 @@ public class AddonsController extends GraphicController {
     private int id;
 
     @Override
-    public void init(int sessionId, DreamGuitarBean dreamGuitarBean) {
+    public void init(int sessionId, DreamGuitarBean dreamGuitarBean) throws SystemException, IOException, LoginException, SQLException {
         controller = new BuyDreamGuitarApplicationController();
         this.dreamGuitarBean = dreamGuitarBean;
         this.id = id;

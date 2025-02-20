@@ -18,6 +18,11 @@ import org.example.ispwprogect.control.graphic.GraphicController;
 import org.example.ispwprogect.utils.bean.DreamGuitarBean;
 import org.example.ispwprogect.utils.bean.SaveOrRecoverBean;
 import org.example.ispwprogect.utils.enumeration.components.*;
+import org.example.ispwprogect.utils.exception.SystemException;
+
+import javax.security.auth.login.LoginException;
+import java.io.IOException;
+import java.sql.SQLException;
 
 public class BuyDreamGuitarControllerStart extends GraphicController {
 
@@ -38,7 +43,7 @@ public class BuyDreamGuitarControllerStart extends GraphicController {
     private static boolean toRecover = false;
 
     @Override
-    public void init(int id, DreamGuitarBean dreamGuitarBean) {
+    public void init(int id, DreamGuitarBean dreamGuitarBean) throws SystemException, IOException, LoginException, SQLException {
 
         controller = new BuyDreamGuitarApplicationController();
         this.dreamGuitarBean = dreamGuitarBean;
@@ -200,7 +205,17 @@ public class BuyDreamGuitarControllerStart extends GraphicController {
 
         DreamGuitarBean oldGuitar = controller.recoverDreamGuitar(dataBean);
         if (oldGuitar != null) {
-            init(id, oldGuitar);
+            try {
+                init(id, oldGuitar);
+            } catch (SystemException e) {
+                throw new RuntimeException(e);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            } catch (LoginException e) {
+                throw new RuntimeException(e);
+            } catch (SQLException throwables) {
+                throw new RuntimeException(throwables);
+            }
         } else {System.out.println("guitar not found");}
     }
 

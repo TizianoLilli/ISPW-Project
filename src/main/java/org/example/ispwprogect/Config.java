@@ -44,7 +44,7 @@ public class Config {
             }
         }
 
-        System.out.println("Using " + provider.name() + " Persistence Provider");
+        System.out.println("Using " + provider.name() + " Persistence Provider\n");
 
         DAOFactory.setPersistenceProvider(provider);
         return true;
@@ -61,10 +61,10 @@ public class Config {
 
                 switch (uiValue) {
                     case 1:
-                        System.out.println("Using GUI");
+                        System.out.println("Using GUI\n");
                         break;
                     case 2:
-                        System.out.println("Using CLI");
+                        System.out.println("Using CLI\n");
                         break;
                     case 3:
                         System.out.println("Exiting...");
