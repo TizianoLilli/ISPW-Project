@@ -5,7 +5,7 @@ import org.example.ispwprogect.utils.exception.SystemException;
 public class FSDreamGuitarDAO implements DreamGuitarDAO{
     @Override
     public void create(DreamGuitar guitar) throws SystemException {
-
+        // da implementare
     }
 
     @Override
@@ -15,6 +15,6 @@ public class FSDreamGuitarDAO implements DreamGuitarDAO{
 
     @Override
     public void delete(int guitarId) throws SystemException {
-
+        // da implementare
     }
 }

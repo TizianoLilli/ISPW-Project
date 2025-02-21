@@ -94,6 +94,7 @@ public class SidebarController{
 
     @FXML
     public void handleBuyAccessoriesClick(MouseEvent event) {
+        // da implementare
     }
 
 }

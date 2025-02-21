@@ -21,7 +21,7 @@ public class ToLuthierController extends GraphicController {
 
     @Override
     public void init(int sessionId, DreamGuitarBean dreamGuitarBean) throws SystemException, IOException, LoginException, SQLException {
-
+        // da implementare
     }
 
     @FXML
@@ -65,8 +65,10 @@ public class ToLuthierController extends GraphicController {
     }
 
     public void handleBackClick(ActionEvent actionEvent) {
+        // da implementare
     }
 
     public void handleSaveClick(ActionEvent actionEvent) {
+        // da implementare
     }
 }

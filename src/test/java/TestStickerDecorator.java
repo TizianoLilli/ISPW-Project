@@ -1,5 +1,6 @@
 import org.example.ispwprogect.model.decorator.dreamguitar.DreamGuitar;
 import org.example.ispwprogect.model.decorator.sticker.StickerDecorator;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -9,6 +10,7 @@ public class TestStickerDecorator {
     private DreamGuitar guitar;
     private StickerDecorator stickerDecorator;
 
+    @BeforeEach
     public void setUp() {
         // Crea una DreamGuitar con un prezzo base di 100
         guitar = new DreamGuitar(100);
@@ -17,7 +19,6 @@ public class TestStickerDecorator {
     @Test
     public void testStickerDecoratorPrice() {
 
-        setUp();
         stickerDecorator = new StickerDecorator(guitar, "Star");
 
         // Calcola il prezzo finale della chitarra con lo sticker

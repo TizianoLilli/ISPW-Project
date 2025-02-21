@@ -75,6 +75,9 @@ public class DBDreamGuitarDAO implements DreamGuitarDAO{
                         case "bridge" -> enumValue = BridgeType.valueOf(BridgeType.class, componentValue);
                         case "fretboard" -> enumValue = FretboardType.valueOf(FretboardType.class, componentValue);
                         case "neck&headstock" -> enumValue = NesType.valueOf(NesType.class, componentValue);
+                        default -> {
+                            //non faccio nulla
+                        }
                     }
                     if (enumValue != null) {
                         components.put(componentName, enumValue);

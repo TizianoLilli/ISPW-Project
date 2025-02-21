@@ -19,7 +19,9 @@ import java.util.List;
 
 public class CliHome extends CliController {
 
-    public CliHome() {}
+    public CliHome() {
+        // costruttore vuoto
+    }
 
     private int sessionId;
     private DreamGuitarBean dreamGuitarBean;
