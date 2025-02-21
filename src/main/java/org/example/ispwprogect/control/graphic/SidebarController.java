@@ -61,6 +61,7 @@ public class SidebarController{
 
     @FXML
     public void handleNewRecommendedGuitarClick(MouseEvent event) {
+        // da implementare
     }
 
     @FXML
